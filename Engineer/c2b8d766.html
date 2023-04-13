@@ -26,28 +26,28 @@
     <meta name="description" content="link  前言　　关于挂载阿里云盘到本地网络上有很多种办法，大同小异，这里只是自己推荐一种办法。此办法是利用 RaiDrive 和 webdav-aliyundriver 在将其安装到服务中，进行开机自启动，并不会感受到任何弹窗情况。个人使用阿里网盘体验感觉还行，百兆移动宽带，直接播放百兆视频也就缓冲一会就可以播放 第一步：准备软件　　首先我们要准备三款软件，作者已经打包基本配置好，方便直接">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RaiDrive 实现挂载阿里云盘到本地 并且 开机自启动">
-<meta property="og:url" content="https://floatdesu.github.io/Engineer/c2b8d766.html">
+<meta property="og:url" content="https://float0108.github.io/Engineer/c2b8d766.html">
 <meta property="og:site_name" content="極楽浄土">
 <meta property="og:description" content="link  前言　　关于挂载阿里云盘到本地网络上有很多种办法，大同小异，这里只是自己推荐一种办法。此办法是利用 RaiDrive 和 webdav-aliyundriver 在将其安装到服务中，进行开机自启动，并不会感受到任何弹窗情况。个人使用阿里网盘体验感觉还行，百兆移动宽带，直接播放百兆视频也就缓冲一会就可以播放 第一步：准备软件　　首先我们要准备三款软件，作者已经打包基本配置好，方便直接">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://floatdesu.github.io/Engineer/0e7a912e77744b749f72e88637bce288-20220809113607-fwb5w68.png">
-<meta property="og:image" content="https://floatdesu.github.io/Engineer/ea14ec1566094cc18857dab68c06e032-20220809113607-xzok9sg.png">
-<meta property="og:image" content="https://floatdesu.github.io/Engineer/7aa926b069b242a98efcd613ae097040-20220809113607-75dymle.png">
-<meta property="og:image" content="https://floatdesu.github.io/Engineer/4a7ba8c7e274480e933dbb1dd1a63185-20220809113607-05ve335.png">
-<meta property="og:image" content="https://floatdesu.github.io/Engineer/assets/6d8c8e47de864d429cf6eaf4e82a7ac0-20220809113607-y2dac8g.png">
-<meta property="og:image" content="https://floatdesu.github.io/Engineer/assets/ca87103f330543fb8f697736588c562d-20220809113607-z9zoj0b.png">
-<meta property="og:image" content="https://floatdesu.github.io/Engineer/assets/aafa59d0ab314ea9b644d1f52a7a11a7-20220809113607-92q7ese.png">
-<meta property="og:image" content="https://floatdesu.github.io/Engineer/056798677be14713bc4b097d6c31b7a5-20220809113607-00k2cr0.png">
-<meta property="og:image" content="https://floatdesu.github.io/Engineer/assets/e14f16bbcb8a49b5a0529a93322b58b6-20220809113607-617fg65.png">
-<meta property="og:image" content="https://floatdesu.github.io/Engineer/assets/3ba475c0c8e04531969923271b467348-20220809113607-1oogz8c.png">
-<meta property="og:image" content="https://floatdesu.github.io/Engineer/assets/9772646fb882417898613d581882eaf2-20220809113607-b7786dc.png">
-<meta property="og:image" content="https://floatdesu.github.io/Engineer/assets/0a3b917663c945f2a444bbb20f882cf4-20220809113607-zbtg682.png">
-<meta property="og:image" content="https://floatdesu.github.io/Engineer/assets/34c8cbdb551f4d5d8f93575b08eca8c4-20220809113607-ft70qis.png">
+<meta property="og:image" content="https://float0108.github.io/Engineer/0e7a912e77744b749f72e88637bce288-20220809113607-fwb5w68.png">
+<meta property="og:image" content="https://float0108.github.io/Engineer/ea14ec1566094cc18857dab68c06e032-20220809113607-xzok9sg.png">
+<meta property="og:image" content="https://float0108.github.io/Engineer/7aa926b069b242a98efcd613ae097040-20220809113607-75dymle.png">
+<meta property="og:image" content="https://float0108.github.io/Engineer/4a7ba8c7e274480e933dbb1dd1a63185-20220809113607-05ve335.png">
+<meta property="og:image" content="https://float0108.github.io/Engineer/assets/6d8c8e47de864d429cf6eaf4e82a7ac0-20220809113607-y2dac8g.png">
+<meta property="og:image" content="https://float0108.github.io/Engineer/assets/ca87103f330543fb8f697736588c562d-20220809113607-z9zoj0b.png">
+<meta property="og:image" content="https://float0108.github.io/Engineer/assets/aafa59d0ab314ea9b644d1f52a7a11a7-20220809113607-92q7ese.png">
+<meta property="og:image" content="https://float0108.github.io/Engineer/056798677be14713bc4b097d6c31b7a5-20220809113607-00k2cr0.png">
+<meta property="og:image" content="https://float0108.github.io/Engineer/assets/e14f16bbcb8a49b5a0529a93322b58b6-20220809113607-617fg65.png">
+<meta property="og:image" content="https://float0108.github.io/Engineer/assets/3ba475c0c8e04531969923271b467348-20220809113607-1oogz8c.png">
+<meta property="og:image" content="https://float0108.github.io/Engineer/assets/9772646fb882417898613d581882eaf2-20220809113607-b7786dc.png">
+<meta property="og:image" content="https://float0108.github.io/Engineer/assets/0a3b917663c945f2a444bbb20f882cf4-20220809113607-zbtg682.png">
+<meta property="og:image" content="https://float0108.github.io/Engineer/assets/34c8cbdb551f4d5d8f93575b08eca8c4-20220809113607-ft70qis.png">
 <meta property="article:published_time" content="2022-10-30T02:26:19.000Z">
 <meta property="article:modified_time" content="2023-01-27T17:33:49.675Z">
 <meta property="article:author" content="AleryXiao">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://floatdesu.github.io/Engineer/0e7a912e77744b749f72e88637bce288-20220809113607-fwb5w68.png">
+<meta name="twitter:image" content="https://float0108.github.io/Engineer/0e7a912e77744b749f72e88637bce288-20220809113607-fwb5w68.png">
   
   
 
