@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>Golang爬取picaComic - 極楽浄土</title>
+
+  
+    <meta name="description" content="web #golang第二次的Golang代码！纪念一下~~也是第二次的picaComic爬虫，是之前python程序的再开，但也不算再开，因为做了很多很多的优化，比之前那个性能和稳定性都好得多 又是一次被迫99%在自己写的代码（）CV工程师已经名不副实了！！ 程序思路复盘粗体为比起上次的python程序添加的内容 在写的过程中，进一步巩固了部分chromedp的函数，学习了chanel和进度条，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Golang爬取picaComic">
+<meta property="og:url" content="https://floatdesu.github.io/Codes/b6f6fe6f.html">
+<meta property="og:site_name" content="極楽浄土">
+<meta property="og:description" content="web #golang第二次的Golang代码！纪念一下~~也是第二次的picaComic爬虫，是之前python程序的再开，但也不算再开，因为做了很多很多的优化，比之前那个性能和稳定性都好得多 又是一次被迫99%在自己写的代码（）CV工程师已经名不副实了！！ 程序思路复盘粗体为比起上次的python程序添加的内容 在写的过程中，进一步巩固了部分chromedp的函数，学习了chanel和进度条，">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-01-30T17:58:19.000Z">
+<meta property="article:modified_time" content="2023-01-31T09:18:11.986Z">
+<meta property="article:author" content="AleryXiao">
+<meta property="article:tag" content="web">
+<meta property="article:tag" content="golang">
+<meta name="twitter:card" content="summary">
+  
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="極楽浄土" type="application/atom+xml">
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="/site_assets/favicon.jpg">
+  
+
+  
+
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/site_assets/head.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">極楽浄土</div><div class="sub normal cap">フロトの理发店</div><div class="sub hover cap" style="opacity:0"> @AleryXiao</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item active" href="/">posts</a><a class="nav-item" href="/wiki/">collection</a><a class="nav-item" href="/about/">about</a></nav>
+</header>
+
+
+<div class="widgets">
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/blog/" placeholder="文章搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">Golang爬取picaComic</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E6%80%9D%E8%B7%AF%E5%A4%8D%E7%9B%98"><span class="toc-text">程序思路复盘</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%84%9F%E6%83%B3"><span class="toc-text">感想</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%90%E4%BB%A3%E7%A0%81"><span class="toc-text">源代码</span></a></li></ol></div></div></widget>
+
+
+
+
+</div>
+<footer class="footer dis-select"><div class="social-wrap"><a class="social" href="http://wpa.qq.com/msgrd?v=3&uin=2498742177&site=qq&menu=yes" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="\site_assets\qqIcon.png"/></a><a class="social" href="https://space.bilibili.com/19610138" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="\site_assets\bilibiliIcon.png"/></a><a class="social" href="mailto:aleryxiao@163.com" rel="noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="\site_assets\mailIcon.png"/></a></div></footer>
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/Codes/">Codes</a></div><div id="post-meta">发布于&nbsp;<time datetime="2023-01-30T17:58:19.000Z">2023-01-31</time></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>Golang爬取picaComic</span></h1>
+<h1 id="web-golang"><a href="#web-golang" class="headerlink" title="web #golang"></a>web #golang</h1><p>第二次的Golang代码！纪念一下~~<br>也是第二次的picaComic爬虫，是之前python程序的再开，但也不算再开，因为做了很多很多的优化，比之前那个性能和稳定性都好得多</p>
+<p>又是一次被迫99%在自己写的代码（）CV工程师已经名不副实了！！</p>
+<h2 id="程序思路复盘"><a href="#程序思路复盘" class="headerlink" title="程序思路复盘"></a>程序思路复盘</h2><p>粗体为比起上次的python程序添加的内容</p>
+<p>在写的过程中，进一步巩固了部分chromedp的函数，学习了chanel和进度条，有机会进一步使用了goroutine（可惜线程池使用失败了，下次再试试），对爬虫的技巧也有了更好一点的理解</p>
+<ol>
+<li>login<ol>
+<li><strong>自动填写</strong>json文件里的用户名的和密码，如果没有就用户手填</li>
+<li><strong>检测</strong>到appcasule框架表示进入了主页，进入下一环节</li>
+</ol>
+</li>
+<li>选择画质<ol>
+<li>本来想做自动选择的但是失败了，弹窗也不能点，原因不明（我怀疑是因为元素在后台的时候是可查询但不可点击的，但在chromedp里似乎没有waitClickable的选项）</li>
+<li>所以放20秒给用户自己点（进入一个漫画页面的左上角就可以改设置）</li>
+<li>没办法做是否选完的检测，除非要求用户发一个信号，太麻烦了不如定时</li>
+</ol>
+</li>
+<li>检查idlist的每一本书，对于每一本书：<ol>
+<li>进入书本主页，获取书本名字，标准化后在savePath（json中设置）中建立一个对应名字的文件夹</li>
+<li>获取<strong>章节数</strong>和<strong>章节名字</strong>，建立子文件夹</li>
+<li>对于每一个章节：<ol>
+<li>进入章节页面，<strong>下拉到页面底部</strong>，重复2-3次检查顶端progressBar的值是否改变（事实上，页面和图片都使用了懒加载，但是图片的懒加载没关系，在标签里可以查询到真实链接），直到到达真正的页面尾部</li>
+<li>查询所有图片元素，获取真实链接，将书的序号、章的序号、图的序号、图的链接绑成一个结构体，把指针送进<strong>下载通道</strong>picChan里</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>下载程序：<ol>
+<li>初始化时就开始运行，监听下载通道中是否有内容，一旦出现内容就创建一个图片下载<strong>进程</strong>，命名按结构体中的序号值来确定</li>
+</ol>
+</li>
+<li><strong>进度条</strong>：vscode自带终端不能在同一行内刷新，cmd运行时正常。<br>本来想试试做多个进度条同时加载（每一章节的图片下载情况），但是考虑到go-progressbar的原理（上下行切换和读取），所以只能用一个条，显示的是浏览器爬取图片真实src的进度而不是图片下载的进度</li>
+</ol>
+<h2 id="感想"><a href="#感想" class="headerlink" title="感想"></a>感想</h2><ul>
+<li>运行效果很棒！多线程下载也非常给力&gt;w&lt;（虽然没有用线程池，是go自带的线程管理，据说会block）</li>
+<li>比python快，而且封包只有13M，震惊</li>
+<li>不能处理弹窗，有点遗憾，不过不处理弹窗并不影响图片链接的获取，这个还不错（x）</li>
+<li>做了很多上次程序没有做的事情，很开心</li>
+<li>没办法把pdf合成也用go做比较遗憾</li>
+</ul>
+<p>别的</p>
+<ul>
+<li>感觉这次程序的结构可以说是依托答辩，应该多分一点文件的，太长了太乱了！！！下次试试</li>
+</ul>
+<h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><details class="tag-plugin folding" child="codeblock"><summary><span>main.go</span></summary><div class="body"><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">&quot;context&quot;</span></span><br><span class="line">	<span class="string">&quot;encoding/json&quot;</span></span><br><span class="line">	<span class="string">&quot;fmt&quot;</span></span><br><span class="line">	<span class="string">&quot;io/ioutil&quot;</span></span><br><span class="line">	<span class="string">&quot;log&quot;</span></span><br><span class="line">	<span class="string">&quot;net/http&quot;</span></span><br><span class="line">	<span class="string">&quot;net/url&quot;</span></span><br><span class="line">	<span class="string">&quot;os&quot;</span></span><br><span class="line">	<span class="string">&quot;path&quot;</span></span><br><span class="line">	<span class="string">&quot;runtime&quot;</span></span><br><span class="line">	<span class="string">&quot;strconv&quot;</span></span><br><span class="line">	<span class="string">&quot;strings&quot;</span></span><br><span class="line">	<span class="string">&quot;sync&quot;</span></span><br><span class="line">	<span class="string">&quot;time&quot;</span></span><br><span class="line"></span><br><span class="line">	<span class="string">&quot;github.com/schollz/progressbar&quot;</span></span><br><span class="line"></span><br><span class="line">	<span class="string">&quot;github.com/chromedp/cdproto/cdp&quot;</span></span><br><span class="line">	<span class="string">&quot;github.com/chromedp/cdproto/page&quot;</span></span><br><span class="line">	<span class="string">&quot;github.com/chromedp/chromedp&quot;</span></span><br><span class="line">	<span class="string">&quot;github.com/chromedp/chromedp/kb&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 全局变量</span></span><br><span class="line"><span class="keyword">const</span> (</span><br><span class="line">	homeUrl  <span class="type">string</span> = <span class="string">&quot;https://manhuabika.com/pLogin/&quot;</span></span><br><span class="line">	pageUrl  <span class="type">string</span> = <span class="string">&quot;https://manhuabika.com/pcomicview/?cid=&quot;</span></span><br><span class="line">	pageUrl2 <span class="type">string</span> = <span class="string">&quot;https://manhuabika.com/pchapter/?cid=&quot;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> (</span><br><span class="line">	account  <span class="type">string</span></span><br><span class="line">	password <span class="type">string</span></span><br><span class="line">	idList   []<span class="type">string</span></span><br><span class="line">	savePath <span class="type">string</span></span><br><span class="line">	PROXY    <span class="type">string</span> <span class="comment">//以上从json读取</span></span><br><span class="line">	ctx      context.Context</span><br><span class="line">	wg       sync.WaitGroup</span><br><span class="line">	NmList   [<span class="number">100</span>][<span class="number">100</span>]<span class="type">string</span> <span class="comment">//对于漫画i，[i][0]为书的path，[i][1]-[i][n]为章节的path</span></span><br><span class="line">	picChan  <span class="keyword">chan</span> *pic</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> pic <span class="keyword">struct</span> &#123; <span class="comment">//图片中包含书编号,章编号,图编号</span></span><br><span class="line">	bkNum  <span class="type">int</span></span><br><span class="line">	chNum  <span class="type">int</span></span><br><span class="line">	picNum <span class="type">int</span></span><br><span class="line">	src    <span class="type">string</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">len</span>(idList) == <span class="number">0</span> &#123;</span><br><span class="line">		fmt.Println(<span class="string">&quot;no books&quot;</span>)</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br><span class="line">	Login() <span class="comment">//登录</span></span><br><span class="line"></span><br><span class="line">	wg.Add(<span class="number">1</span>)</span><br><span class="line">	<span class="keyword">go</span> PicsDownload() <span class="comment">//开启图片监听线程</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> index, id := <span class="keyword">range</span> idList &#123;</span><br><span class="line">		LoadBook(index, id)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">close</span>(picChan)</span><br><span class="line"></span><br><span class="line">	wg.Wait()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">standarlizeName</span><span class="params">(oriStr <span class="type">string</span>)</span></span> <span class="type">string</span> &#123;</span><br><span class="line">	replacer := strings.NewReplacer(<span class="string">&quot;/&quot;</span>, <span class="string">&quot;&quot;</span>, <span class="string">&quot;|&quot;</span>, <span class="string">&quot;&quot;</span>, <span class="string">&quot;\\&quot;</span>, <span class="string">&quot;&quot;</span>, <span class="string">&quot;:&quot;</span>, <span class="string">&quot; &quot;</span>, <span class="string">&quot;*&quot;</span>, <span class="string">&quot;&quot;</span>, <span class="string">&quot;?&quot;</span>, <span class="string">&quot;&quot;</span>, <span class="string">&quot;&lt;&quot;</span>, <span class="string">&quot;[&quot;</span>, <span class="string">&quot;&gt;&quot;</span>, <span class="string">&quot;]&quot;</span>, <span class="string">&quot;:&quot;</span>, <span class="string">&quot; &quot;</span>)</span><br><span class="line">	<span class="keyword">return</span> replacer.Replace(oriStr)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">PicsDownload</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">defer</span> wg.Done()</span><br><span class="line">	picChan = <span class="built_in">make</span>(<span class="keyword">chan</span> *pic, <span class="number">100000</span>)</span><br><span class="line">	<span class="keyword">for</span> picture := <span class="keyword">range</span> picChan &#123;</span><br><span class="line">		wg.Add(<span class="number">1</span>)</span><br><span class="line">		<span class="keyword">go</span> PicDownload(picture)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">PicDownload</span><span class="params">(picture *pic)</span></span> &#123;</span><br><span class="line">	<span class="keyword">defer</span> wg.Done()</span><br><span class="line">	<span class="comment">//HTTP代理</span></span><br><span class="line">	proxyAddress, _ := url.Parse(PROXY)</span><br><span class="line">	client := &amp;http.Client&#123;Transport: &amp;http.Transport&#123;Proxy: http.ProxyURL(proxyAddress)&#125;&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//打开链接</span></span><br><span class="line">	req, _ := http.NewRequest(<span class="string">&quot;GET&quot;</span>, picture.src, <span class="literal">nil</span>)</span><br><span class="line">	resp, err := client.Do(req)</span><br><span class="line">	Check(err)</span><br><span class="line"></span><br><span class="line">	<span class="comment">//读取内容</span></span><br><span class="line">	body, err := ioutil.ReadAll(resp.Body)</span><br><span class="line">	Check(err)</span><br><span class="line">	<span class="keyword">defer</span> resp.Body.Close()</span><br><span class="line"></span><br><span class="line">	<span class="comment">//检查路径,保存</span></span><br><span class="line">	filePath := NmList[picture.bkNum][picture.chNum] + <span class="string">&quot;/&quot;</span> + fmt.Sprintf(<span class="string">&quot;%02d&quot;</span>, picture.picNum) + <span class="string">&quot;.jpg&quot;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 以写|创建的方式打开目标文件(因为文件夹在创建时就已经建好，所以k可以不用检查)</span></span><br><span class="line">	f, err := os.OpenFile(filePath, os.O_WRONLY|os.O_CREATE, <span class="number">0644</span>)</span><br><span class="line">	Check(err)</span><br><span class="line">	<span class="keyword">defer</span> f.Close()</span><br><span class="line"></span><br><span class="line">	f.Write(body)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Load</span><span class="params">(url <span class="type">string</span>)</span></span> &#123;</span><br><span class="line">	err := chromedp.Run(ctx,</span><br><span class="line">		chromedp.Navigate(url),</span><br><span class="line">		chromedp.WaitVisible(<span class="string">`//div[@class=&#x27;appBottomMenu&#x27;]`</span>))</span><br><span class="line">	Check(err)</span><br><span class="line">	time.Sleep(<span class="number">2</span> * time.Second) <span class="comment">//无论如何，等待2秒再进行下一步操作</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">LoadBook</span><span class="params">(index <span class="type">int</span>, id <span class="type">string</span>)</span></span> &#123;</span><br><span class="line">	bookNm := <span class="string">&quot;&quot;</span></span><br><span class="line">	<span class="keyword">var</span> contentNode []*cdp.Node</span><br><span class="line"></span><br><span class="line">	Load(pageUrl + id)</span><br><span class="line">	err := chromedp.Run(ctx,</span><br><span class="line">		chromedp.TextContent(<span class="string">`//div[@class=&#x27;comic-title text-start&#x27;]`</span>, &amp;bookNm, chromedp.BySearch),</span><br><span class="line">		chromedp.Nodes(<span class="string">`//div[@class=&quot;col-3 m-0 mb-1&quot;]`</span>, &amp;contentNode))</span><br><span class="line">	Check(err)</span><br><span class="line"></span><br><span class="line">	fmt.Printf(<span class="string">&quot;\nStart to process book [%d]%s \n&quot;</span>, index+<span class="number">1</span>, bookNm)</span><br><span class="line"></span><br><span class="line">	NmList[index][<span class="number">0</span>] = savePath + <span class="string">&quot;/&quot;</span> + standarlizeName(bookNm)</span><br><span class="line"></span><br><span class="line">	<span class="comment">//章节数</span></span><br><span class="line">	chaps := <span class="built_in">len</span>(contentNode)</span><br><span class="line">	fmt.Printf(<span class="string">&quot;\nTotal: %d Chapters \n&quot;</span>, chaps)</span><br><span class="line"></span><br><span class="line">	<span class="comment">//章节base1</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt;= chaps; i++ &#123;</span><br><span class="line">		chapNm := <span class="string">&quot;&quot;</span></span><br><span class="line">		chromedp.Run(ctx, chromedp.TextContent(contentNode[chaps-i].PartialXPath(), &amp;chapNm))</span><br><span class="line">		chapNm = standarlizeName(chapNm)</span><br><span class="line">		fmt.Printf(<span class="string">&quot;[%d] %s \n&quot;</span>, i, chapNm)</span><br><span class="line">		NmList[index][i] = NmList[index][<span class="number">0</span>] + <span class="string">&quot;/[&quot;</span> + fmt.Sprintf(<span class="string">&quot;%02d&quot;</span>, i) + <span class="string">&quot;] &quot;</span> + chapNm <span class="comment">//章节数补全2位,加上章节名</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> !pathExists(NmList[index][i]) &#123; <span class="comment">//建好文件夹</span></span><br><span class="line">			err = os.MkdirAll(NmList[index][i], <span class="number">0766</span>)</span><br><span class="line">			Check(err)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Printf(<span class="string">&quot;\n&quot;</span>)</span><br><span class="line">	bar := progressbar.New(chaps) <span class="comment">//显示一个进度条，用来展示每本书的进度</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt;= chaps; i++ &#123;</span><br><span class="line">		LoadChap(index, i, bar)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">LoadChap</span><span class="params">(bookNum <span class="type">int</span>, chapNum <span class="type">int</span>, bar *progressbar.ProgressBar)</span></span> &#123;</span><br><span class="line">	<span class="comment">//分为两步，下拉</span></span><br><span class="line">	Load(pageUrl2 + idList[bookNum] + <span class="string">&quot;&amp;chapter=&quot;</span> + strconv.Itoa(chapNum))</span><br><span class="line">	ScrollDown()</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> picNodes []*cdp.Node</span><br><span class="line">	err := chromedp.Run(ctx,</span><br><span class="line">		chromedp.Nodes(<span class="string">`//div[@class=&#x27;chapter-images wide-block pt-2 pb-2 my-bg-white&#x27;]/img`</span>, &amp;picNodes))</span><br><span class="line">	Check(err)</span><br><span class="line"></span><br><span class="line">	<span class="comment">// println(&quot;total Picnum = &quot;, len(picNodes))</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(picNodes); i++ &#123;</span><br><span class="line">		picture := &amp;pic&#123;bookNum, chapNum, i, picNodes[i].AttributeValue(<span class="string">&quot;data-src&quot;</span>)&#125;</span><br><span class="line">		picChan &lt;- picture</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	bar.Add(<span class="number">1</span>) <span class="comment">//标记这章节已经完成</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">ScrollDown</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> prgsBar <span class="type">string</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; ; &#123;</span><br><span class="line">		err := chromedp.Run(ctx,</span><br><span class="line">			chromedp.Evaluate(<span class="string">&quot;window.scrollBy(0,document.body.scrollHeight)&quot;</span>, <span class="literal">nil</span>),</span><br><span class="line">			chromedp.Sleep(<span class="number">2</span>*time.Second),</span><br><span class="line">			chromedp.TextContent(<span class="string">`.//div[@class=&quot;w-100 text-center text-black-50 my-read-tip&quot;]`</span>, &amp;prgsBar))</span><br><span class="line">		Check(err)</span><br><span class="line">		<span class="keyword">if</span> prgsBar == <span class="string">&quot;100 % （點擊可跳轉）&quot;</span> &#123;</span><br><span class="line">			<span class="keyword">if</span> i &gt; <span class="number">2</span> &#123;</span><br><span class="line">				<span class="keyword">break</span></span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				i++</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">if</span> i != <span class="number">0</span> &#123;</span><br><span class="line">				i = <span class="number">0</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Login</span><span class="params">()</span></span> &#123;</span><br><span class="line">	err := chromedp.Run(ctx,</span><br><span class="line">		chromedp.Navigate(homeUrl),</span><br><span class="line">		chromedp.WaitVisible(<span class="string">&quot;#email1&quot;</span>, chromedp.ByID),</span><br><span class="line">		chromedp.SendKeys(<span class="string">&quot;#email1&quot;</span>, account+kb.Tab+password, chromedp.ByID),</span><br><span class="line">		chromedp.Click(<span class="string">`.//button[@type=&quot;submit&quot;]`</span>, chromedp.BySearch),</span><br><span class="line">		chromedp.WaitVisible(<span class="string">`//div[@class=&#x27;appBottomMenu&#x27;]`</span>))</span><br><span class="line">	Check(err)</span><br><span class="line">	fmt.Println(<span class="string">&quot;login complete&quot;</span>)</span><br><span class="line"></span><br><span class="line">	fmt.Println(<span class="string">&quot;\n...you&#x27;ve 15 second to change the picture quality...&quot;</span>)</span><br><span class="line">	time.Sleep(<span class="number">100</span>)</span><br><span class="line">	Load(pageUrl2 + idList[<span class="number">0</span>] + <span class="string">&quot;&amp;chapter=1&quot;</span>)</span><br><span class="line">	time.Sleep(<span class="number">10</span> * time.Second)</span><br><span class="line">	fmt.Println(<span class="string">&quot;processing start&quot;</span>)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">pathExists</span><span class="params">(path <span class="type">string</span>)</span></span> <span class="type">bool</span> &#123;</span><br><span class="line">	_, err := os.Stat(path)</span><br><span class="line">	<span class="keyword">if</span> err == <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> os.IsNotExist(err) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">init</span><span class="params">()</span></span> &#123; <span class="comment">//chromedp初始化</span></span><br><span class="line">	headlessFlag := chromedp.Flag(<span class="string">&quot;headless&quot;</span>, <span class="literal">false</span>) <span class="comment">//有头模式</span></span><br><span class="line">	opts := <span class="built_in">append</span>(</span><br><span class="line">		chromedp.DefaultExecAllocatorOptions[:],</span><br><span class="line">		chromedp.NoDefaultBrowserCheck,                               <span class="comment">//不检查默认浏览器</span></span><br><span class="line">		headlessFlag,                                                 <span class="comment">//无头</span></span><br><span class="line">		chromedp.IgnoreCertErrors,                                    <span class="comment">//忽略错误</span></span><br><span class="line">		chromedp.Flag(<span class="string">&quot;blink-settings&quot;</span>, <span class="string">&quot;imagesEnabled=false&quot;</span>),       <span class="comment">//不加载gif图像 因为有可能会卡住</span></span><br><span class="line">		chromedp.DisableGPU,                                          <span class="comment">//关闭GPU渲染</span></span><br><span class="line">		chromedp.NoSandbox,                                           <span class="comment">//不适用谷歌的sanbox模式运行</span></span><br><span class="line">		chromedp.NoFirstRun,                                          <span class="comment">//设置网站不是首次运行</span></span><br><span class="line">		chromedp.Flag(<span class="string">&quot;disable-web-security&quot;</span>, <span class="literal">true</span>),                  <span class="comment">//禁用网络安全标志</span></span><br><span class="line">		chromedp.Flag(<span class="string">&quot;disable-extensions&quot;</span>, <span class="literal">true</span>),                    <span class="comment">//关闭插件支持</span></span><br><span class="line">		chromedp.Flag(<span class="string">&quot;disable-default-apps&quot;</span>, <span class="literal">true</span>),                  <span class="comment">//关闭默认浏览器检查</span></span><br><span class="line">		chromedp.WindowSize(<span class="number">1280</span>, <span class="number">1024</span>),                              <span class="comment">//初始大小</span></span><br><span class="line">		chromedp.Flag(<span class="string">&quot;run-all-compositor-stages-before-draw&quot;</span>, <span class="literal">true</span>), <span class="comment">//在呈现所有数据之前防止创建Pdf</span></span><br><span class="line">		chromedp.UserAgent(<span class="string">`Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36`</span>), <span class="comment">//设置UserAgent</span></span><br><span class="line">	)</span><br><span class="line"></span><br><span class="line">	allocCtx, _ := chromedp.NewExecAllocator(context.Background(), opts...)</span><br><span class="line">	ctx, _ = chromedp.NewContext(</span><br><span class="line">		allocCtx,</span><br><span class="line">		chromedp.WithLogf(log.Printf),</span><br><span class="line">	)</span><br><span class="line">	chromedp.Run(ctx, <span class="built_in">make</span>([]chromedp.Action, <span class="number">0</span>, <span class="number">1</span>)...) <span class="comment">//打开，但是什么都不干</span></span><br><span class="line">	fmt.Println(<span class="string">&quot;-- chromedp start success --&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">init</span><span class="params">()</span></span> &#123; <span class="comment">//customsettings初始化</span></span><br><span class="line">	<span class="keyword">type</span> custom <span class="keyword">struct</span> &#123;</span><br><span class="line">		Account  <span class="type">string</span>   <span class="string">`json:&quot;Account&quot;`</span></span><br><span class="line">		Password <span class="type">string</span>   <span class="string">`json:&quot;Password&quot;`</span></span><br><span class="line">		IDList   []<span class="type">string</span> <span class="string">`json:&quot;IDList&quot;`</span> <span class="comment">//漫画列表</span></span><br><span class="line">		SavePath <span class="type">string</span>   <span class="string">`json:&quot;SavePath&quot;`</span></span><br><span class="line">		PROXY    <span class="type">string</span>   <span class="string">`json:&quot;PROXY&quot;`</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	_, projectPath, _, _ := runtime.Caller(<span class="number">0</span>)</span><br><span class="line">	filePath := path.Dir(projectPath) + <span class="string">&quot;/custom.json&quot;</span></span><br><span class="line"></span><br><span class="line">	fmt.Println(<span class="string">&quot;&gt;fetch customInfo from&quot;</span>, filePath)</span><br><span class="line"></span><br><span class="line">	jsonFile, err := os.Open(filePath)</span><br><span class="line">	Check(err)</span><br><span class="line">	<span class="keyword">defer</span> jsonFile.Close()</span><br><span class="line"></span><br><span class="line">	jsonData, err := ioutil.ReadAll(jsonFile)</span><br><span class="line">	Check(err)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> customInfo custom</span><br><span class="line">	json.Unmarshal(jsonData, &amp;customInfo)</span><br><span class="line">	account, password, idList, savePath, PROXY = customInfo.Account, customInfo.Password, customInfo.IDList, customInfo.SavePath, customInfo.PROXY</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> PROXY == <span class="string">&quot;&quot;</span> &#123;</span><br><span class="line">		PROXY = <span class="string">&quot;http://127.0.0.1:1080/&quot;</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	fmt.Println(<span class="string">&quot;-- custom.json loadng success --&quot;</span>)</span><br><span class="line">	fmt.Println(<span class="string">&quot;Welcome!&quot;</span>, account)</span><br><span class="line">	fmt.Println(<span class="string">&quot;your savePath:&quot;</span>, savePath)</span><br><span class="line">	fmt.Println(<span class="string">&quot;your cidList:&quot;</span>, idList)</span><br><span class="line">	fmt.Println(<span class="string">&quot;your proxy:&quot;</span>, idList)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Check</span><span class="params">(err <span class="type">error</span>)</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		log.Fatal(err)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></details>
+<details class="tag-plugin folding" child="codeblock"><summary><span>./custom.json</span></summary><div class="body"><ul><li>放在.exe或者.go的同目录下</li></ul><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;Account&quot;</span><span class="punctuation">:</span> <span class="string">&quot;账号，空置则手动填写（不着急，检定登陆成功才会开始下一步）&quot;</span><span class="punctuation">,</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;Password&quot;</span><span class="punctuation">:</span> <span class="string">&quot;密码，空置则手动填写，建议不要空置&quot;</span><span class="punctuation">,</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;IdList&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;63944d19d6ffb644413e139f漫画的cid列表，用逗号分割&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;SavePath&quot;</span><span class="punctuation">:</span> <span class="string">&quot;G:/Comic/2023.02，文件目录&quot;</span><span class="punctuation">,</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;PROXY&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http://127.0.0.1:1080/默认端口，空置也行&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div></details>
+
+<div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div></section></div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/Private/ca7300c6.html">2022学年第一学期总结</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/Codes/482da7d4.html">Python爬取picaComic</a></div></section></div>
+
+
+
+
+
+
+  <div class='related-wrap md-text reveal' id="comments">
+    <section class='header cmt-title cap theme'>
+      快来参与讨论吧
+    </section>
+    <section class='body cmt-body giscus'>
+      
+
+<svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="giscus" data-repo="aleryxiao/aleryxiao.github.io" data-repo-id="R_kgDOIdw0jw" data-category="Announcements" data-category-id="DIC_kwDOIdw0j84CTXeH" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" data-loading="lazy" crossorigin="anonymous"></div>
+
+    </section>
+  </div>
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="sitemap"><div class="sitemap-group"><span class="fs14">博客</span><a href="/">近期</a><a href="/categories">分类</a><a href="/tags">标签</a><a href="/">归档</a></div><div class="sitemap-group"><span class="fs14">整理</span><a href="/wiki">文件夹</a></div><div class="sitemap-group"><span class="fs14">社交</span><a href="/friend">友链</a><a href="/guestbook">留言板</a></div><div class="sitemap-group"><span class="fs14">更多</span><a href="/about">关于</a><a target="_blank" rel="noopener" href="https://github.com/aleryxiao">GitHub</a></div></div><div class="text"><p>本站由 <a target="_blank" rel="noopener" href="https://space.bilibili.com/19610138">@AleryXiao</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.18.5';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+  <script>
+  function loadJS() {
+    const els = document.querySelectorAll("#comments #giscus");
+    if (els.length === 0) return;
+    els.forEach((el, i) => {
+      try {
+        el.innerHTML = '';
+      } catch (error) {
+        console.log(error);
+      }
+      var script = document.createElement('script');
+      script.src = 'https://giscus.app/client.js';
+      script.async = true;
+      for (let key of Object.keys(el.attributes)) {
+        let attr = el.attributes[key];
+        if (['class', 'id'].includes(attr.name) === false) {
+          script.setAttribute(attr.name, attr.value);
+        }
+      }
+      el.appendChild(script);
+    });
+  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+    loadJS();
+  });
+</script>
+
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>

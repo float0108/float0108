@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>courseNotes：现代操作系统CS2310 速效版 - 極楽浄土</title>
+
+  
+    <meta name="description" content="SJTU-CS2310 现代操作系统 （速效版）">
+<meta property="og:type" content="website">
+<meta property="og:title" content="现代操作系统CS2310 速效版">
+<meta property="og:url" content="https://floatdesu.github.io/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F0.html">
+<meta property="og:site_name" content="極楽浄土">
+<meta property="og:description" content="SJTU-CS2310 现代操作系统 （速效版）">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://floatdesu.github.io/assets/Pasted%20image%2020230320014833.png">
+<meta property="og:image" content="https://floatdesu.github.io/assets/Pasted%20image%2020230320014441.png">
+<meta property="og:image" content="https://floatdesu.github.io/assets/Pasted%20image%2020230320011903.png">
+<meta property="og:image" content="https://floatdesu.github.io/assets/Pasted%20image%2020230320012314.png">
+<meta property="og:image" content="https://floatdesu.github.io/assets/Pasted%20image%2020230320012354.png">
+<meta property="og:image" content="https://floatdesu.github.io/assets/Pasted%20image%2020230320013040.png">
+<meta property="og:image" content="https://floatdesu.github.io/assets/Pasted%20image%2020230320013107.png">
+<meta property="og:image" content="https://floatdesu.github.io/assets/Pasted%20image%2020230224141118.png">
+<meta property="og:image" content="https://floatdesu.github.io/assets/Pasted%20image%2020230224141611.png">
+<meta property="og:image" content="https://floatdesu.github.io/assets/Pasted%20image%2020230315211405.png">
+<meta property="article:published_time" content="2023-03-10T15:54:37.000Z">
+<meta property="article:modified_time" content="2023-03-19T17:57:22.402Z">
+<meta property="article:author" content="AleryXiao">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://floatdesu.github.io/assets/Pasted%20image%2020230320014833.png">
+  
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="極楽浄土" type="application/atom+xml">
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="/site_assets/favicon.jpg">
+  
+
+  
+
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='wiki'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/site_assets/head.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">極楽浄土</div><div class="sub normal cap">フロトの理发店</div><div class="sub hover cap" style="opacity:0"> @AleryXiao</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item" href="/">posts</a><a class="nav-item active" href="/wiki/">collection</a><a class="nav-item" href="/about/">about</a></nav>
+</header>
+
+
+<div class="widgets">
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/files/courseNotes/" placeholder="在 /files/courseNotes/ 中搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+
+
+
+<widget class="widget-wrapper toc multi" id="data-toc"><div class="widget-header cap dis-select"><span class="name">现代操作系统CS2310 速效版</span></div><div class="widget-body fs14"><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84.html#start"><span class="toc-text">计算机系统结构-CS2305</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E7%AE%97%E6%B3%95%E4%B8%8E%E5%A4%8D%E6%9D%82%E6%80%A7.html"><span class="toc-text">算法与复杂性-CS2308</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F1.html"><span class="toc-text">现代操作系统1-CS2310</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F2.html"><span class="toc-text">现代操作系统2-CS2310</span></a></div><div class="doc-tree active"><a class="doc-tree-link active" href="/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F0.html"><span class="toc-text">现代操作系统CS2310 速效版</span></a><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80"><span class="toc-text">操作系统基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B-%E7%BA%BF%E7%A8%8B%E8%B0%83%E5%BA%A6"><span class="toc-text">进&#x2F;线程调度</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B-threads"><span class="toc-text">线程 threads</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B6%E5%8F%91-amp-%E5%B9%B6%E8%A1%8C"><span class="toc-text">并发 &amp; 并行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B-vs-%E7%BA%BF%E7%A8%8B"><span class="toc-text">进程 vs 线程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%BA%BF%E7%A8%8B-user-threads-amp-%E6%A0%B8%E7%BA%BF%E7%A8%8B-kernel-threads"><span class="toc-text">用户线程 (user threads) &amp; 核线程 (kernel threads)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B-process"><span class="toc-text">进程 process</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CPU%E8%B0%83%E5%BA%A6-cpu-scheduling"><span class="toc-text">CPU调度 cpu scheduling</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%A2%E5%8D%A0-preemptive-%E5%92%8C-%E9%9D%9E%E6%8A%A2%E5%8D%A0-nonpreemptive"><span class="toc-text">抢占 preemptive 和 非抢占 nonpreemptive</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFCPU%E8%B0%83%E5%BA%A6"><span class="toc-text">什么是CPU调度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B0%83%E5%BA%A6%E5%99%A8-Dispatcher"><span class="toc-text">调度器 Dispatcher</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="toc-text">调度算法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#FCFS-First-Come-First-Served%EF%BC%89"><span class="toc-text">FCFS (First-Come, First-Served）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#SJF-P-NP"><span class="toc-text">SJF (P&#x2F;NP)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BC%98%E5%85%88%E7%BA%A7%E8%B0%83%E5%BA%A6-PS-P-NP"><span class="toc-text">优先级调度 PS (P&#x2F;NP)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E7%89%87%E8%BD%AE%E8%BD%AC%E8%B0%83%E5%BA%A6-RR-P-NP"><span class="toc-text">时间片轮转调度 RR (P&#x2F;NP)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E9%A5%A5%E9%A5%BF"><span class="toc-text">关于饥饿</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%9A%E7%BA%A7%E9%98%9F%E5%88%97%E8%B0%83%E5%BA%A6-Multilevel-Queue-Scheduling"><span class="toc-text">多级队列调度 Multilevel Queue Scheduling</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%9A%E7%BA%A7%E5%8F%8D%E9%A6%88%E9%98%9F%E5%88%97-Multilevel-Feedback-Queue-Scheduling"><span class="toc-text">多级反馈队列 Multilevel Feedback Queue Scheduling</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%81%E7%AE%A1%E7%90%86%EF%BC%88%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5%EF%BC%89"><span class="toc-text">锁管理（进程同步）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5-Process-Synchronization"><span class="toc-text">进程同步 Process Synchronization</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E5%90%8C%E6%AD%A5"><span class="toc-text">如何实现同步</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%9F%E8%AF%AD-%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C-Atomic"><span class="toc-text">原语 &#x2F; 原子操作 Atomic</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Test-amp-Set"><span class="toc-text">Test&amp;Set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Swap"><span class="toc-text">Swap</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Samophere"><span class="toc-text">Samophere</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%BB%E9%94%81%E9%97%AE%E9%A2%98-Deadlock"><span class="toc-text">死锁问题 Deadlock</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Deadlock-Characterization"><span class="toc-text">Deadlock Characterization</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Resource-Allocation-Graph"><span class="toc-text">Resource-Allocation Graph</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Handling-Deadlocks"><span class="toc-text">Handling Deadlocks</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Deadlock-preverntion-amp-avoidance"><span class="toc-text">Deadlock preverntion &amp; avoidance</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#PREVENTION"><span class="toc-text">PREVENTION</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#AVOIDANCE"><span class="toc-text">AVOIDANCE</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E4%B8%8E%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98"><span class="toc-text">内存与虚拟内存</span></a></li></ol></li></ol></div></div></widget>
+
+
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+  
+  
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" id="home" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">collection</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/files/courseNotes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84.html">courseNotes</a></div><div id="post-meta">更新于&nbsp;<time datetime="2023-03-19T17:57:22.402Z">2023-03-20</time></div></div>
+
+  <article class='md-text content wiki'>
+  <h1 class="article-title"><span>现代操作系统CS2310 速效版</span></h1>
+  <h2 id="操作系统基础"><a href="#操作系统基础" class="headerlink" title="操作系统基础"></a>操作系统基础</h2><ul>
+<li><p>关于抽象abstaction</p>
+<ul>
+<li>（计算机组成的重要概念）</li>
+<li>层次化抽象</li>
+<li>将系统划分成多个层次，每个层次都对下层屏蔽了具体实现细节，只向上层提供了一组简单的接口，从而简化了系统的设计和维护。</li>
+<li>对于计算机系统结构，可以抽象为硬件层、操作系统层、系统程序层、应用程序层、用户层。每个层次都对下层屏蔽了具体实现细节，只提供了一组简单的接口。</li>
+</ul>
+</li>
+<li><p>虚拟机 (Vitural machines) </p>
+<ul>
+<li>==virtualization layer==<ul>
+<li>vitural cpu &amp; memory &amp; devices<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230320014833.png" alt=""></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>什么是计算机操作系统 (Operating system / OS) ？</p>
+<ul>
+<li>一种介于计算机用户与计算机应用间的“程序”</li>
+<li>一个系统资源的分配者、其它程序的控制者</li>
+</ul>
+</li>
+<li><p>系统调用 (System Call) </p>
+<ul>
+<li>OS提供的可编程接口<ul>
+<li>比如 fork() exit() wait() (unix) 等</li>
+</ul>
+</li>
+<li>比起使用管理员权限的系统调用，OS也向各类服务提供应用程序接口 ( Application program interface / Api)<ul>
+<li>简单，易移植</li>
+<li>eg. Win32 API, POSIX API(UNIX, Linux, Mac OS), Java API(JVM)<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230320014441.png" alt=""></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>提供服务<ul>
+<li>GUI</li>
+<li>program execution</li>
+<li>IO operations</li>
+<li>File-system manipulation</li>
+<li>communications</li>
+<li>error detection</li>
+<li>resource allocation</li>
+<li>accouting</li>
+<li>protection &amp; security</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Outline<ul>
+<li>进程管理<ul>
+<li>进程/线程/同步/死锁</li>
+</ul>
+</li>
+<li>内存管理<ul>
+<li>内存/虚拟内存</li>
+</ul>
+</li>
+<li>存储管理<ul>
+<li>文件系统/大容量存储结构/IO系统</li>
+</ul>
+</li>
+<li>分布式系统结构</li>
+</ul>
+</li>
+</ul>
+<h2 id="进-线程调度"><a href="#进-线程调度" class="headerlink" title="进/线程调度"></a>进/线程调度</h2><h3 id="线程-threads"><a href="#线程-threads" class="headerlink" title="线程 threads"></a>线程 threads</h3><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230320011903.png" alt=""></p>
+<ul>
+<li>线程 threads</li>
+</ul>
+<h4 id="并发-amp-并行"><a href="#并发-amp-并行" class="headerlink" title="并发 &amp; 并行"></a>并发 &amp; 并行</h4><ul>
+<li>并发 Concurrency</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230320012314.png" alt=""></p>
+<ul>
+<li>并行  Parallelism  (multi-core system)</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230320012354.png" alt=""></p>
+<h4 id="进程-vs-线程"><a href="#进程-vs-线程" class="headerlink" title="进程 vs 线程"></a>进程 vs 线程</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>进程</th>
+<th>线程</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>独立存在</td>
+<td>作为进程子集存在</td>
+</tr>
+<tr>
+<td>携带更多状态信息</td>
+<td>共享内存.系统资源</td>
+</tr>
+<tr>
+<td>独立地址空间</td>
+<td>共享地址空间</td>
+</tr>
+<tr>
+<td>仅通过IPC通信交互</td>
+<td>更多方式</td>
+</tr>
+<tr>
+<td>上下文切换比较慢</td>
+<td>同进程内切换速度很快</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="用户线程-user-threads-amp-核线程-kernel-threads"><a href="#用户线程-user-threads-amp-核线程-kernel-threads" class="headerlink" title="用户线程 (user threads) &amp; 核线程 (kernel threads)"></a>用户线程 (user threads) &amp; 核线程 (kernel threads)</h4><ul>
+<li>Many-to-one<br>多个用户线程对核隐藏<br>单个用户线程出现问题会导致同组线程都出问题；不能并行运行</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230320013040.png" alt=""></p>
+<ul>
+<li>One-to-one<br>高并行支持<br>创建kernel thread有开销<br>Linux, windows NT/XP/2000, Solaris 9+</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230320013107.png" alt=""></p>
+<ul>
+<li><p>Many-to-many<br>操作系统重构一定数量核线程<br>Windows NT/2000 with the ThreadFiber package</p>
+</li>
+<li><p>Two-level<br>在Many-to-many的基础上运行用户线程与核线程1对1绑定</p>
+</li>
+</ul>
+<h3 id="进程-process"><a href="#进程-process" class="headerlink" title="进程 process"></a>进程 process</h3><ul>
+<li><p>进程 process  ( = job 作业)</p>
+<ul>
+<li><strong>program</strong> becomes <strong>process</strong> when the exe file is <strong>loaded into memory</strong><ul>
+<li>开始运行的程序被载入内存，成为进程（此处的“内存”、之后的“组分”与<strong>虚拟内存</strong>有关）</li>
+</ul>
+</li>
+<li>1 program can be <strong>several</strong> processes<ul>
+<li>一个程序可以产生多个进程</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>一个进程的组成部分 conposition: </p>
+<ul>
+<li><strong>栈 stack</strong></li>
+<li>…</li>
+<li><strong>堆 heap</strong><ul>
+<li>memroy dynamically allocated during run time</li>
+</ul>
+</li>
+<li>数据 data</li>
+<li>文本 text<ul>
+<li>programme code</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>进程的状态 process state</p>
+</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../../assets/Pasted%20image%2020230224141118.png" alt=""></p>
+<ul>
+<li><p>一个新的进程的一生：</p>
+<ul>
+<li><strong>创建</strong> (new)</li>
+<li><strong>就绪</strong> (ready)<ul>
+<li>进程就绪，等待处理器分配资源</li>
+<li>比如CPU正在忙着处理别的进程，可能新的进程就要等待</li>
+</ul>
+</li>
+<li><strong>运行</strong> (run)<ul>
+<li>执行指令</li>
+</ul>
+</li>
+<li><strong>等待</strong> (wait)<ul>
+<li>进程未就绪，等待事件的发生或完成</li>
+<li>比如等待键盘输入字符</li>
+</ul>
+</li>
+<li><strong>终止</strong> (terminated)</li>
+</ul>
+</li>
+<li><p><strong>PCB</strong> (Process control block)</p>
+<ul>
+<li>state</li>
+<li>num</li>
+<li>counter</li>
+<li>registers</li>
+<li>mem limits</li>
+<li>list of open files</li>
+<li>…</li>
+</ul>
+</li>
+<li><p>CPU的进程切换过程</p>
+</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../../assets/Pasted%20image%2020230224141611.png" alt=""></p>
+<h3 id="CPU调度-cpu-scheduling"><a href="#CPU调度-cpu-scheduling" class="headerlink" title="CPU调度 cpu scheduling"></a>CPU调度 cpu scheduling</h3><h4 id="抢占-preemptive-和-非抢占-nonpreemptive"><a href="#抢占-preemptive-和-非抢占-nonpreemptive" class="headerlink" title="抢占 preemptive 和 非抢占 nonpreemptive"></a>抢占 preemptive 和 非抢占 nonpreemptive</h4><ul>
+<li>一个处于Run状态的进程是否可根据调度规则在运行过程中被其它进程<strong>中断</strong>？<ul>
+<li>能 -&gt; 抢占式：允许中断</li>
+<li>不能 -&gt; 非抢占式：除非进程结束或者进入等待状态，即释放CPU资源，不允许另一个进程获取其CPU资源</li>
+</ul>
+</li>
+</ul>
+<h4 id="什么是CPU调度"><a href="#什么是CPU调度" class="headerlink" title="什么是CPU调度"></a>什么是CPU调度</h4><p>在进程的状态发生以下变化时，CPU可能作“调度”决策</p>
+<ol>
+<li>run -&gt; wait</li>
+<li>run -&gt; ready</li>
+<li>wait -&gt; ready</li>
+<li>terminates</li>
+</ol>
+<p>在1.4时做决策 -&gt; 非抢占 (处理进程的等待和结束)<br>在2.3时做决策 -&gt; 抢占 (处理新的ready进程)</p>
+<h4 id="调度器-Dispatcher"><a href="#调度器-Dispatcher" class="headerlink" title="调度器 Dispatcher"></a>调度器 Dispatcher</h4><ul>
+<li><p>控制CPU</p>
+<ul>
+<li>切换上下文</li>
+<li>切换进程</li>
+<li>切换用户/管理员权限</li>
+<li>用户程序重启</li>
+</ul>
+</li>
+<li><p>调度延迟 Dispatch latency</p>
+</li>
+</ul>
+<p>time it takes for the dispatcher to stop one process and start another running. </p>
+<h4 id="调度算法"><a href="#调度算法" class="headerlink" title="调度算法"></a>调度算法</h4><p>均为人为定义，可能会有版本差别。<br>可以将一切调度理解为队列的设计、出入队规则的设计。<br>一般不标注可抢占时，认为不可抢占。</p>
+<p><em>先有四种基础决策。</em></p>
+<h5 id="FCFS-First-Come-First-Served）"><a href="#FCFS-First-Come-First-Served）" class="headerlink" title="FCFS (First-Come, First-Served）"></a>FCFS (First-Come, First-Served）</h5><ul>
+<li>Convoy effect - short process behind long process</li>
+<li>非常基础和朴素的安排方法</li>
+<li>短进程不友好</li>
+</ul>
+<h5 id="SJF-P-NP"><a href="#SJF-P-NP" class="headerlink" title="SJF (P/NP)"></a>SJF (P/NP)</h5><p>Shortest-Job-First</p>
+<ul>
+<li>先处理（预估的）总耗时最短的工作<ul>
+<li>SJF(P) <ul>
+<li>-&gt; 先处理（预估的）剩余耗时最短的工作</li>
+<li>小心地处理新进程和被抢占的进程的顺序</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>理论最优解</li>
+<li>事实上，难点在于很难预测到底耗时多久</li>
+<li><strong>会导致饥饿</strong><ul>
+<li>等电梯。你住在高楼层。电梯总优先服务低楼层的人下楼。</li>
+<li>低楼层总有人按电梯。</li>
+<li>你永远等不到电梯。</li>
+<li>类似地，优先级调度也会导致饥饿。</li>
+</ul>
+</li>
+</ul>
+<h5 id="优先级调度-PS-P-NP"><a href="#优先级调度-PS-P-NP" class="headerlink" title="优先级调度 PS (P/NP)"></a>优先级调度 PS (P/NP)</h5><p>Priority Scheduling</p>
+<ul>
+<li>先处理高优先级进程</li>
+<li>注意同优先级进程的处理方式</li>
+</ul>
+<h5 id="时间片轮转调度-RR-P-NP"><a href="#时间片轮转调度-RR-P-NP" class="headerlink" title="时间片轮转调度 RR (P/NP)"></a>时间片轮转调度 RR (P/NP)</h5><p>Round-Robin Scheduling<br>在RR(quatum=q)算法下，每个进程获得一个时间片time slice，长度为q。</p>
+<ul>
+<li>在无抢占情况下，进程会运行时间片q后从队尾重新入队或因完成而终止</li>
+<li>在允许抢占的情况下，进程可能会运行时间片q后从队尾重新入队或因完成而终止，也可能因为抢占而被重新添加到队列尾端。</li>
+<li>关于q<ul>
+<li>当取quatum为一个极大的值，相当于FCFS，对短进程不友好</li>
+<li>当取quatum为一个极小的值，符合RR的意图，但是会消耗大量时间用于进程切换</li>
+<li>需要一个较为合适的取值</li>
+</ul>
+</li>
+</ul>
+<h5 id="关于饥饿"><a href="#关于饥饿" class="headerlink" title="关于饥饿"></a>关于饥饿</h5><ul>
+<li>FCFS 不会导致饥饿</li>
+<li>SJF, PS均会导致饥饿</li>
+<li>RR 可以有效避免饥饿</li>
+</ul>
+<p><em>以下为混合决策，更加自定义化，请认真查看题目说明。</em></p>
+<h5 id="多级队列调度-Multilevel-Queue-Scheduling"><a href="#多级队列调度-Multilevel-Queue-Scheduling" class="headerlink" title="多级队列调度 Multilevel Queue Scheduling"></a>多级队列调度 Multilevel Queue Scheduling</h5><p>multiques, eg. foreground &amp; background</p>
+<ul>
+<li>each queue has own scheduling algo</li>
+<li>schedule between queues: <ul>
+<li>eg1. fixed prority<ul>
+<li>serve all from queue1, then 2</li>
+<li>may cause starvation</li>
+</ul>
+</li>
+<li>eg2. time slice<ul>
+<li>each queue has a time slice<br>…</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="多级反馈队列-Multilevel-Feedback-Queue-Scheduling"><a href="#多级反馈队列-Multilevel-Feedback-Queue-Scheduling" class="headerlink" title="多级反馈队列 Multilevel Feedback Queue Scheduling"></a>多级反馈队列 Multilevel Feedback Queue Scheduling</h5><p>a kind of ↑</p>
+<ul>
+<li>structure:<ul>
+<li>queues</li>
+<li>each queue’s sche algo</li>
+<li>method <ul>
+<li>when to upgrade jobs</li>
+<li>when to demote jobs</li>
+<li>which queue a process will enter when that process needs service</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>classic example:</strong><br>  Q1(RR(8))-&gt;Q2(RR(16))-&gt;Q3(FCFS)<br>  In Q1/Q2, not completed -&gt; degrade and queue<br>  If not used up and not degrade, requeue</li>
+</ul>
+<h2 id="锁管理（进程同步）"><a href="#锁管理（进程同步）" class="headerlink" title="锁管理（进程同步）"></a>锁管理（进程同步）</h2><h3 id="进程同步-Process-Synchronization"><a href="#进程同步-Process-Synchronization" class="headerlink" title="进程同步 Process Synchronization"></a>进程同步 Process Synchronization</h3><ul>
+<li><p>Critical Section Problem</p>
+<ul>
+<li>临界资源：每个进程的访问互斥<br>(When one process is in critical section, no other processes may be in its critical section)</li>
+<li>find protocol to solve</li>
+</ul>
+</li>
+<li><p>Critical Section</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">do &#123;  </span><br><span class="line">entry section  </span><br><span class="line">	critical section  </span><br><span class="line">exit section  </span><br><span class="line">	remainder section  </span><br><span class="line">&#125; while (TRUE)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>To solve this</p>
+<ul>
+<li>Mutual Exclusion</li>
+<li>Progress<ul>
+<li>don’t postpone indefinitely</li>
+</ul>
+</li>
+<li>Bounded Waiting<ul>
+<li>Sequential Access</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="如何实现同步"><a href="#如何实现同步" class="headerlink" title="如何实现同步"></a>如何实现同步</h4><h4 id="原语-原子操作-Atomic"><a href="#原语-原子操作-Atomic" class="headerlink" title="原语 / 原子操作 Atomic"></a>原语 / 原子操作 Atomic</h4><p>Many systems provide hardware support for critical section code  </p>
+<ul>
+<li>Some machines provide special <strong>atomic hardware instructions</strong>  （原语）<ul>
+<li>Atomic = non-interruptable  </li>
+</ul>
+</li>
+</ul>
+<h4 id="Test-amp-Set"><a href="#Test-amp-Set" class="headerlink" title="Test&amp;Set"></a>Test&amp;Set</h4><p>Either test memory word and set value: TestAndSet ()  </p>
+<ul>
+<li><p>Definition</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">boolean TestAndSet (boolean *target)  </span><br><span class="line">&#123;  </span><br><span class="line">	boolean rv = *target;  </span><br><span class="line">	*target = TRUE;  </span><br><span class="line">	return rv:  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Example (share bool Lock(False))</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Solution:</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">	<span class="keyword">while</span> ( TestAndSet ( &amp;lock ))</span><br><span class="line">	;   <span class="comment">// do nothing</span></span><br><span class="line">	<span class="comment">//    critical section</span></span><br><span class="line">	lock = FALSE;</span><br><span class="line">	<span class="comment">//    remainder section</span></span><br><span class="line">&#125; <span class="keyword">while</span> (TRUE)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>-&gt;(Add bounded-waiting)<br><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;  </span><br><span class="line">	waiting[i] = TRUE;  </span><br><span class="line">	key = TRUE;  </span><br><span class="line">	<span class="keyword">while</span> (waiting[i] &amp;&amp; key)  </span><br><span class="line">		key = TestAndSet(&amp;lock);  </span><br><span class="line">	waiting[i] = FALSE;  </span><br><span class="line">		<span class="comment">// critical section  </span></span><br><span class="line">	j = (i + <span class="number">1</span>) % n;  </span><br><span class="line">	<span class="keyword">while</span> ((j != i) &amp;&amp; !waiting[j])  </span><br><span class="line">		j = (j + <span class="number">1</span>) % n;  </span><br><span class="line">	<span class="keyword">if</span> (j == i)  </span><br><span class="line">		lock = FALSE;  </span><br><span class="line">	<span class="keyword">else</span>  </span><br><span class="line">		waiting[j] = FALSE;  </span><br><span class="line">		<span class="comment">// remainder section  </span></span><br><span class="line">&#125; <span class="keyword">while</span> (TRUE);  </span><br></pre></td></tr></table></figure></p>
+<h4 id="Swap"><a href="#Swap" class="headerlink" title="Swap"></a>Swap</h4><p>Or swap contents of two memory words: Swap()</p>
+<ul>
+<li>Example<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;  </span><br><span class="line">	key = TRUE;  </span><br><span class="line">	<span class="keyword">while</span> ( key == TRUE)  </span><br><span class="line">		Swap (&amp;lock, &amp;key );  </span><br><span class="line">			<span class="comment">// critical section  </span></span><br><span class="line">		lock = FALSE;  </span><br><span class="line">			<span class="comment">// remainder section  </span></span><br><span class="line">&#125; <span class="keyword">while</span> (TRUE);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="Samophere"><a href="#Samophere" class="headerlink" title="Samophere"></a>Samophere</h4><p>Semaphore是一种用于线程同步的机制，可以用于多线程编程中控制访问共享资源。</p>
+<p>Semaphore提供了两个主要的操作：wait（等待）和signal（发信号）。Semaphore的值为整数，初始值可以是任意的正整数，表示可用的资源数目。Semaphore的值只能在wait和signal操作中改变，且改变是原子的，所以可以避免竞态条件。</p>
+<p>在C语言中，Semaphore是通过系统提供的sem_t类型来表示的。</p>
+<ol>
+<li><p>wait（等待）：当一个线程想要使用Semaphore代表的共享资源时，它需要调用wait操作。如果Semaphore的值为正数，则该线程可以使用该资源，同时Semaphore的值减1；如果Semaphore的值为0，则该线程将被阻塞，直到有其他线程释放资源并增加Semaphore的值为止。</p>
+<p>语法：<code>int sem_wait(sem_t *sem);</code></p>
+</li>
+<li><p>signal（发信号）：当一个线程使用完Semaphore代表的共享资源时，它需要调用signal操作。这将增加Semaphore的值，并唤醒等待该Semaphore的线程，以便它们可以继续使用资源。</p>
+<p>语法：<code>int sem_post(sem_t *sem);</code></p>
+</li>
+</ol>
+<p>Semaphore还有其他一些操作，例如初始化、销毁等。在使用Semaphore时，需要注意避免死锁等问题，通常需要仔细考虑线程的同步关系，避免资源竞争等问题。</p>
+<h3 id="死锁问题-Deadlock"><a href="#死锁问题-Deadlock" class="headerlink" title="死锁问题 Deadlock"></a>死锁问题 Deadlock</h3><h4 id="Deadlock-Characterization"><a href="#Deadlock-Characterization" class="headerlink" title="Deadlock Characterization"></a>Deadlock Characterization</h4><ul>
+<li>Mutual exclusion<br>  only one process at a time can use a resource  </li>
+<li>Hold and wait<br>  process holding at least one resource is waiting to  acquire additional resources held by other processes  </li>
+<li>No preemption<br>  a resource can be released only voluntarily by the process holding it, after that process has completed its task  </li>
+<li><p>Circular wait<br>  哲学家吃饭都拿左边筷子</p>
+</li>
+<li><p>Each process utilizes a resource as follows:  </p>
+<ul>
+<li>request  </li>
+<li>use  </li>
+<li>release</li>
+</ul>
+</li>
+</ul>
+<h4 id="Resource-Allocation-Graph"><a href="#Resource-Allocation-Graph" class="headerlink" title="Resource-Allocation Graph"></a>Resource-Allocation Graph</h4><ul>
+<li>V: <ul>
+<li>P: P1,P2… (process list)</li>
+<li>R: R1,R2… (resource list)</li>
+</ul>
+</li>
+<li><p>E:</p>
+<ul>
+<li>request edges</li>
+<li>assignment edges</li>
+</ul>
+</li>
+<li><p>Judge deadlock by graph</p>
+<ul>
+<li>no circle -&gt; no deadlock</li>
+<li>1 circle -&gt; <ul>
+<li>1 instance / resource type -&gt; deadlock</li>
+<li><blockquote>
+<p>1 instance / … -&gt; possibility of deadlock</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Handling-Deadlocks"><a href="#Handling-Deadlocks" class="headerlink" title="Handling Deadlocks"></a>Handling Deadlocks</h4><h4 id="Deadlock-preverntion-amp-avoidance"><a href="#Deadlock-preverntion-amp-avoidance" class="headerlink" title="Deadlock preverntion &amp; avoidance"></a>Deadlock preverntion &amp; avoidance</h4><h5 id="PREVENTION"><a href="#PREVENTION" class="headerlink" title="PREVENTION"></a>PREVENTION</h5><h6 id="restrain"><a href="#restrain" class="headerlink" title="restrain"></a>restrain</h6><p>shown in [deadlock characterization]</p>
+<h6 id="add-a-priori-info"><a href="#add-a-priori-info" class="headerlink" title="add a priori info"></a>add a priori info</h6><ul>
+<li>each process declare max of resources needed</li>
+</ul>
+<h6 id="resource-allocation"><a href="#resource-allocation" class="headerlink" title="resource-allocation"></a>resource-allocation</h6><ul>
+<li>avoidance algo dynamically examines <strong>resource-allocation</strong>, ensure no circular-wait<ul>
+<li>be defined by available/allocated resourvces, max demands of processes</li>
+</ul>
+</li>
+</ul>
+<p><strong>-&gt; WHAT IS SAFE MODE?</strong> </p>
+<ul>
+<li><p>system check if allocation leaves the system in a ~</p>
+</li>
+<li><p>defination</p>
+<ul>
+<li>If Pi’s resource needs are not immediately available, then Pi can wait until all Pj have finished  </li>
+<li>When all Pj are finished, Pi can obtain needed resources, execute, return allocated resources, and terminate  </li>
+<li>When Pi terminates, Pi+1 can obtain its needed resources, and so on</li>
+<li>Otherwise, system is in <strong>unsafe state</strong></li>
+</ul>
+</li>
+<li><p>If a system is in safe state -&gt; no deadlocks  </p>
+</li>
+<li>If a system is in unsafe state -&gt; possibility of deadlock  </li>
+<li>Avoidance -&gt; ensure that a system will never enter an unsafe state.<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230315211405.png" alt=""></li>
+<li>safe sequence</li>
+<li>eg: find a safe sequence with available resource = 3</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>maximum needs</th>
+<th>holds</th>
+<th>needs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P0</td>
+<td>10</td>
+<td>5</td>
+<td>5</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>4</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>9</td>
+<td>2</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Avai</th>
+<th>P1+</th>
+<th>P1-</th>
+<th>P0+</th>
+<th>P0-</th>
+<th>P2+</th>
+<th>P2-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>1</td>
+<td>5</td>
+<td>0</td>
+<td>10</td>
+<td>3</td>
+<td>12</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>P1 -&gt; P0 -&gt; P2<br>每一步寻找可运行的process，完成后释放process和它的所有资源。<br>如果找不到可运行的process，则出现unsafe state。</p>
+<h5 id="AVOIDANCE"><a href="#AVOIDANCE" class="headerlink" title="AVOIDANCE"></a>AVOIDANCE</h5><p>Whenever a process requests a resource, the request is granted only if the allocation leaves the system in a safe state.</p>
+<h6 id="Single-instance-of-a-resource-type"><a href="#Single-instance-of-a-resource-type" class="headerlink" title="Single instance of a resource type"></a>Single instance of a resource type</h6><ul>
+<li><p>resource-allocation graph: </p>
+<ul>
+<li>Each process must a priori claim maximum use</li>
+<li>claim edge 有向虚线表示, request edge 实线 &amp; assignment edge 实线</li>
+<li>claim edge -(process is requesting)&gt; request edge <ul>
+<li>-(process has got resource)&gt; assignment edge</li>
+<li>-(process is releasing resource)&gt;claim edge</li>
+<li>-(process has released resources and finished)&gt;<strong>deleted</strong><br>The request can be granted only if converting the request edge to an assignment edge does not result in the formation of <strong>a circle in the resource allocation graph</strong>. </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>The graph represents the relationships between resources and processes in the system. </p>
+</li>
+<li>Only <strong>the requesting processes</strong> and <strong>the allocating edges</strong> will be added to the graph. </li>
+<li>When a process requests a resource, the request edge will be added to the resource allocation graph, and the graph will be checked for the presence of a cycle to determine whether the resource can be allocated. <ul>
+<li>cycle -&gt;?deadlock -&gt; take measures to resolve the deadlock. </li>
+<li>no cycle -&gt;added, arranged, fulfilled</li>
+<li>In other words, the request can be granted only if converting the request edge to an assignment edge does not result in the formation of <strong>a circle in the resource allocation graph</strong>. </li>
+</ul>
+</li>
+</ul>
+<h6 id="Multiple-instance-of-a-resource-type"><a href="#Multiple-instance-of-a-resource-type" class="headerlink" title="Multiple instance of a resource type"></a>Multiple instance of a resource type</h6><p><strong>The banker’s algorithm</strong></p>
+<ul>
+<li>Defination<br>Let n = number of processes, and m = number of resources types.</li>
+<li><p><strong>Available</strong>: Vector of length m.<br>If available[j] = k, there are k instances of resource type Rj available  </p>
+</li>
+<li><p><strong>Max</strong>: n x m matrix.<br>If Max[i,j] = k, then process Pi may request at  most k instances of resource type Rj  </p>
+</li>
+<li><p><strong>Allocation</strong>: n x m matrix.<br>If Allocation[i,j] = k then Pi is currently allocated k instances of Rj  </p>
+</li>
+<li><p><strong>Need</strong>: n x m matrix.<br>If Need[i,j] = k, then Pi may need k more instances of Rj to complete its task </p>
+</li>
+<li><p><strong>Need[i,j] = Max[i,j] – Allocation[i,j]</strong></p>
+</li>
+<li><p>the algorithm</p>
+<ol>
+<li>work := available, finish[i] = false</li>
+<li>find i that<ol>
+<li>finish[i] = false</li>
+<li>need[i] &lt;= work</li>
+<li>if i = -1, go to 4</li>
+</ol>
+</li>
+<li>work = work + allocation[i], finish[i] = true, go to 2</li>
+<li>if finish[i] = true for all i -&gt; ok, else !ok</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>deadlock detection &amp; recovery</li>
+</ul>
+<h3 id="内存与虚拟内存"><a href="#内存与虚拟内存" class="headerlink" title="内存与虚拟内存"></a>内存与虚拟内存</h3>
+  
+
+
+  </article>
+  
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">回顾上一篇</div><a href="/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F2.html">现代操作系统2-CS2310</a></div><div class="item" id="next"></div></section></div>
+
+  
+
+  <div class='related-wrap md-text reveal' id="comments">
+    <section class='header cmt-title cap theme'>
+      <p>评论区仅供交流~</p>
+
+    </section>
+    <section class='body cmt-body giscus'>
+      
+
+<svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="giscus" data-repo="aleryxiao/aleryxiao.github.io" data-repo-id="R_kgDOIdw0jw" data-category="Announcements" data-category-id="DIC_kwDOIdw0j84CTXeH" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" data-loading="lazy" crossorigin="anonymous"></div>
+
+    </section>
+  </div>
+
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="sitemap"><div class="sitemap-group"><span class="fs14">博客</span><a href="/">近期</a><a href="/categories">分类</a><a href="/tags">标签</a><a href="/">归档</a></div><div class="sitemap-group"><span class="fs14">整理</span><a href="/wiki">文件夹</a></div><div class="sitemap-group"><span class="fs14">社交</span><a href="/friend">友链</a><a href="/guestbook">留言板</a></div><div class="sitemap-group"><span class="fs14">更多</span><a href="/about">关于</a><a target="_blank" rel="noopener" href="https://github.com/aleryxiao">GitHub</a></div></div><div class="text"><p>本站由 <a target="_blank" rel="noopener" href="https://space.bilibili.com/19610138">@AleryXiao</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.18.5';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+  <script>
+  function loadJS() {
+    const els = document.querySelectorAll("#comments #giscus");
+    if (els.length === 0) return;
+    els.forEach((el, i) => {
+      try {
+        el.innerHTML = '';
+      } catch (error) {
+        console.log(error);
+      }
+      var script = document.createElement('script');
+      script.src = 'https://giscus.app/client.js';
+      script.async = true;
+      for (let key of Object.keys(el.attributes)) {
+        let attr = el.attributes[key];
+        if (['class', 'id'].includes(attr.name) === false) {
+          script.setAttribute(attr.name, attr.value);
+        }
+      }
+      el.appendChild(script);
+    });
+  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+    loadJS();
+  });
+</script>
+
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>

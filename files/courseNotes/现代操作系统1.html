@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>courseNotes：现代操作系统1-CS2310 - 極楽浄土</title>
+
+  
+    <meta name="description" content="SJTU-CS2310 现代操作系统 课程笔记1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="现代操作系统1-CS2310">
+<meta property="og:url" content="https://floatdesu.github.io/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F1.html">
+<meta property="og:site_name" content="極楽浄土">
+<meta property="og:description" content="SJTU-CS2310 现代操作系统 课程笔记1">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://floatdesu.github.io/assets/Pasted%20image%2020230224141118.png">
+<meta property="og:image" content="https://floatdesu.github.io/assets/Pasted%20image%2020230224141611.png">
+<meta property="og:image" content="https://floatdesu.github.io/assets/Pasted%20image%2020230320011903.png">
+<meta property="og:image" content="https://floatdesu.github.io/assets/Pasted%20image%2020230315211405.png">
+<meta property="article:published_time" content="2023-03-10T15:54:37.000Z">
+<meta property="article:modified_time" content="2023-03-19T17:19:09.168Z">
+<meta property="article:author" content="AleryXiao">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://floatdesu.github.io/assets/Pasted%20image%2020230224141118.png">
+  
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="極楽浄土" type="application/atom+xml">
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="/site_assets/favicon.jpg">
+  
+
+  
+
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='wiki'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/site_assets/head.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">極楽浄土</div><div class="sub normal cap">フロトの理发店</div><div class="sub hover cap" style="opacity:0"> @AleryXiao</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item" href="/">posts</a><a class="nav-item active" href="/wiki/">collection</a><a class="nav-item" href="/about/">about</a></nav>
+</header>
+
+
+<div class="widgets">
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/files/courseNotes/" placeholder="在 /files/courseNotes/ 中搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+
+
+
+<widget class="widget-wrapper toc multi" id="data-toc"><div class="widget-header cap dis-select"><span class="name">现代操作系统1-CS2310</span></div><div class="widget-body fs14"><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84.html#start"><span class="toc-text">计算机系统结构-CS2305</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E7%AE%97%E6%B3%95%E4%B8%8E%E5%A4%8D%E6%9D%82%E6%80%A7.html"><span class="toc-text">算法与复杂性-CS2308</span></a></div><div class="doc-tree active"><a class="doc-tree-link active" href="/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F1.html"><span class="toc-text">现代操作系统1-CS2310</span></a><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Slides1-Outline"><span class="toc-text">Slides1 Outline</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Slides2-Operating-system-structures"><span class="toc-text">Slides2  Operating-system structures</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Slide3-Processes"><span class="toc-text">Slide3 Processes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Slides4-Threads"><span class="toc-text">Slides4 Threads</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Slides5-Cpu-scheduling"><span class="toc-text">Slides5 Cpu scheduling</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CPU-Scheduling-Algorithms"><span class="toc-text">CPU Scheduling Algorithms</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#FCFS"><span class="toc-text">FCFS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SJF-P-NP"><span class="toc-text">SJF (P&#x2F;NP)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PS-P-NP"><span class="toc-text">PS (P&#x2F;NP)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#RR-P-NP"><span class="toc-text">RR (P&#x2F;NP)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Multilevel-Queue-Scheduling"><span class="toc-text">Multilevel Queue Scheduling</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Multilevel-Feedback-Queue-Scheduling"><span class="toc-text">Multilevel Feedback Queue Scheduling</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Slide6-Process-Synchronization"><span class="toc-text">Slide6 Process Synchronization</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Synchronization-Hardware"><span class="toc-text">Synchronization Hardware</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Atomic"><span class="toc-text">Atomic</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Test-amp-Set"><span class="toc-text">Test&amp;Set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Swap"><span class="toc-text">Swap</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Samophere"><span class="toc-text">Samophere</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Slide7-Deadlock"><span class="toc-text">Slide7 Deadlock</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Deadlock-Characterization"><span class="toc-text">Deadlock Characterization</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Resource-Allocation-Graph"><span class="toc-text">Resource-Allocation Graph</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Handling-Deadlocks"><span class="toc-text">Handling Deadlocks</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Deadlock-preverntion-amp-avoidance"><span class="toc-text">Deadlock preverntion &amp; avoidance</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#PREVENTION"><span class="toc-text">PREVENTION</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#AVOIDANCE"><span class="toc-text">AVOIDANCE</span></a></li></ol></li></ol></li></ol></li></ol></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F2.html"><span class="toc-text">现代操作系统2-CS2310</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F0.html"><span class="toc-text">现代操作系统CS2310 速效版</span></a></div></div></widget>
+
+
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+  
+  
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" id="home" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">collection</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/files/courseNotes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84.html">courseNotes</a></div><div id="post-meta">更新于&nbsp;<time datetime="2023-03-19T17:19:09.168Z">2023-03-20</time></div></div>
+
+  <article class='md-text content wiki'>
+  <h1 class="article-title"><span>现代操作系统1-CS2310</span></h1>
+  <h2 id="Slides1-Outline"><a href="#Slides1-Outline" class="headerlink" title="Slides1 Outline"></a>Slides1 Outline</h2><ul>
+<li><p>4 components of a computer system<br>users -&gt; app pro -&gt; sys pro -&gt; operating system -&gt; computer hardware</p>
+</li>
+<li><p>Operating system:<br>A program that acts as an intermediary between the computer user and the  computer hardware</p>
+</li>
+<li><p>Course outline :</p>
+<ul>
+<li>process management<ul>
+<li>processes, threads</li>
+<li>CPU scheduling</li>
+<li>process synchronization</li>
+<li>deadlocks</li>
+</ul>
+</li>
+<li>memory management<ul>
+<li>main/virtu memory</li>
+</ul>
+</li>
+<li>storage management</li>
+<li>representative modern os</li>
+<li>distributed systems</li>
+</ul>
+</li>
+</ul>
+<h2 id="Slides2-Operating-system-structures"><a href="#Slides2-Operating-system-structures" class="headerlink" title="Slides2  Operating-system structures"></a>Slides2  Operating-system structures</h2><ul>
+<li><p>System call</p>
+<ul>
+<li>Programming interface to the services provided by the OS</li>
+<li>Api:<ul>
+<li>application program interface</li>
+<li>for programs to access rather than directly use system call</li>
+<li>eg. Win32 API, POSIX API(UNIX, Linux, Mac OS), Java API(JVM)</li>
+<li>easy, portable</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Services</p>
+<ul>
+<li>GUI</li>
+<li>program execution</li>
+<li>IO operations</li>
+<li>File-system manipulation</li>
+<li>communications</li>
+<li>error detection</li>
+<li>resource allocation</li>
+<li>accouting</li>
+<li>protection &amp; security</li>
+</ul>
+</li>
+<li><p>Vitural machines</p>
+<ul>
+<li>==virtualization layer==<ul>
+<li>vitural cpu &amp; memory &amp; devices</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Slide3-Processes"><a href="#Slide3-Processes" class="headerlink" title="Slide3 Processes"></a>Slide3 Processes</h2><ul>
+<li><p>process 进程 ( = job 作业)</p>
+<ul>
+<li>program becomes process when the exe file is loaded into mem</li>
+<li>1 program can be several processes</li>
+</ul>
+</li>
+<li><p>conposition:</p>
+<ul>
+<li>stack</li>
+<li>…</li>
+<li>heap<ul>
+<li>memroy dynamically allocated during run time</li>
+</ul>
+</li>
+<li>data</li>
+<li>text<ul>
+<li>programme code</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>process state</p>
+</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../../assets/Pasted%20image%2020230224141118.png" alt=""></p>
+<ul>
+<li>new<br>  created</li>
+<li>ready<br>  waiting for processor</li>
+<li>running<br>  executing instuctions</li>
+<li>waiting<br>  wait for events</li>
+<li><p>terminated<br>  finished</p>
+</li>
+<li><p>PCB (Process control block)</p>
+<ul>
+<li>state</li>
+<li>num</li>
+<li>counter</li>
+<li>registers</li>
+<li>mem limits</li>
+<li>list of open files</li>
+<li>…</li>
+</ul>
+</li>
+<li><p>process representation in linux</p>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">pid t pid; <span class="comment">/* process identifier */</span>  </span><br><span class="line"><span class="type">long</span> state; <span class="comment">/* state of the process */</span>  </span><br><span class="line"><span class="type">unsigned</span> <span class="type">int</span> time slice <span class="comment">/* scheduling information */</span>  </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">task</span> <span class="keyword">struct</span> *<span class="title">parent</span>;</span> <span class="comment">/* this process’s parent */</span>  </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">list</span> <span class="title">head</span> <span class="title">children</span>;</span> <span class="comment">/* this process’s children */</span>  </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">files</span> <span class="keyword">struct</span> *<span class="title">files</span>;</span> <span class="comment">/* list of open files */</span>  </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">mm</span> <span class="keyword">struct</span> *<span class="title">mm</span>;</span> <span class="comment">/* address space of this pro */</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>cpu switch between processes</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../../assets/Pasted%20image%2020230224141611.png" alt=""></p>
+<h2 id="Slides4-Threads"><a href="#Slides4-Threads" class="headerlink" title="Slides4 Threads"></a>Slides4 Threads</h2><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230320011903.png" alt=""></p>
+<h2 id="Slides5-Cpu-scheduling"><a href="#Slides5-Cpu-scheduling" class="headerlink" title="Slides5 Cpu scheduling"></a>Slides5 Cpu scheduling</h2><ul>
+<li><p>you may review # Slide3 Processes</p>
+</li>
+<li><p>CPU scheduling decisions may take place when a process:  </p>
+<ol>
+<li>Switches from running to waiting state  </li>
+<li>Switches from running to ready state  </li>
+<li>Switches from waiting to ready state  </li>
+<li>Terminates<br>Scheduling under 1 and 4 is ==nonpreemptive==, scheduling under 2 and 3 is ==preemptive==</li>
+</ol>
+</li>
+<li><p>About preemptive: </p>
+<ul>
+<li>Nonpreemptive Scheduling：非抢占的（进程一旦开始就不能==interrupt==（可以==wait==）<br>  Once the CPU has been allocated to a  process, the process keeps the CPU until it releases the CPU either by  terminating or by switching to the waiting state  </li>
+<li>Preemptive Scheduling: 抢占的（允许进程打断）<br>  The CPU is allocated to the process for a  limited amount of time and then taken away</li>
+</ul>
+</li>
+<li><p>Dispatcher<br>  gives control of the CPU to the process selected by the short-term scheduler: </p>
+<ul>
+<li>switching context</li>
+<li>switching to user mode</li>
+<li>jumping to the proper location in the user program to restart that program<br>Dispatch latency – time it takes for the dispatcher to stop one process and start another running. </li>
+</ul>
+</li>
+</ul>
+<h3 id="CPU-Scheduling-Algorithms"><a href="#CPU-Scheduling-Algorithms" class="headerlink" title="CPU Scheduling Algorithms"></a>CPU Scheduling Algorithms</h3><h4 id="FCFS"><a href="#FCFS" class="headerlink" title="FCFS"></a>FCFS</h4><p>First-Come, First-Served</p>
+<ul>
+<li>Convoy effect - short process behind long process</li>
+</ul>
+<h4 id="SJF-P-NP"><a href="#SJF-P-NP" class="headerlink" title="SJF (P/NP)"></a>SJF (P/NP)</h4><p>Shortest-Job-First</p>
+<ul>
+<li>SJF is optimal – gives minimum average waiting time for a given set of  processes  </li>
+<li>The difficulty is knowing the length of the next CPU request<br>-&gt; How to estimate? </li>
+<li>* you may decide how to treat a preemitted process and a new coming process</li>
+</ul>
+<h4 id="PS-P-NP"><a href="#PS-P-NP" class="headerlink" title="PS (P/NP)"></a>PS (P/NP)</h4><p>Priority Scheduling</p>
+<ul>
+<li>first serve process with high priority</li>
+<li>* you may decide how to treat 2 processes’ sequence with the same priority</li>
+</ul>
+<h4 id="RR-P-NP"><a href="#RR-P-NP" class="headerlink" title="RR (P/NP)"></a>RR (P/NP)</h4><p>Round-Robin Scheduling</p>
+<ul>
+<li>Each process gets a small unit of CPU time (time quantum q), usually 10- 100 milliseconds.<br>After this time has elapsed, the process is preempted and added to the end of the ready queue.</li>
+</ul>
+<h4 id="Multilevel-Queue-Scheduling"><a href="#Multilevel-Queue-Scheduling" class="headerlink" title="Multilevel Queue Scheduling"></a>Multilevel Queue Scheduling</h4><p>multiques, eg. foreground &amp; background</p>
+<ul>
+<li>each queue has own scheduling algo</li>
+<li>schedule between queues: <ul>
+<li>eg1. fixed prority<ul>
+<li>serve all from queue1, then 2</li>
+<li>may cause starvation</li>
+</ul>
+</li>
+<li>eg2. time slice<ul>
+<li>each queue has a time slice<br>…</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Multilevel-Feedback-Queue-Scheduling"><a href="#Multilevel-Feedback-Queue-Scheduling" class="headerlink" title="Multilevel Feedback Queue Scheduling"></a>Multilevel Feedback Queue Scheduling</h4><p>a kind of ↑</p>
+<ul>
+<li>structure:<ul>
+<li>queues</li>
+<li>each queue’s sche algo</li>
+<li>method <ul>
+<li>when to upgrade jobs</li>
+<li>when to demote jobs</li>
+<li>which queue a process will enter when that process needs service</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>classic example:</strong><br>  Q1(RR(8))-&gt;Q2(RR(16))-&gt;Q3(FCFS)<br>  In Q1/Q2, not completed -&gt; degrade and queue<br>  If not used up and not degrade, requeue</li>
+</ul>
+<h2 id="Slide6-Process-Synchronization"><a href="#Slide6-Process-Synchronization" class="headerlink" title="Slide6 Process Synchronization"></a>Slide6 Process Synchronization</h2><ul>
+<li><p>Critical Section Problem</p>
+<ul>
+<li>临界资源：每个进程的访问互斥<br>(When one process is in critical section, no other processes may be in its critical section)</li>
+<li>find protocol to solve</li>
+</ul>
+</li>
+<li><p>Critical Section</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">do &#123;  </span><br><span class="line">entry section  </span><br><span class="line">	critical section  </span><br><span class="line">exit section  </span><br><span class="line">	remainder section  </span><br><span class="line">&#125; while (TRUE)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>To solve this</p>
+<ul>
+<li>Mutual Exclusion</li>
+<li>Progress<ul>
+<li>don’t postpone indefinitely</li>
+</ul>
+</li>
+<li>Bounded Waiting<ul>
+<li>Sequential Access</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Synchronization-Hardware"><a href="#Synchronization-Hardware" class="headerlink" title="Synchronization Hardware"></a>Synchronization Hardware</h3><h4 id="Atomic"><a href="#Atomic" class="headerlink" title="Atomic"></a>Atomic</h4><p>Many systems provide hardware support for critical section code  </p>
+<ul>
+<li>Some machines provide special <strong>atomic hardware instructions</strong>  （原语）<ul>
+<li>Atomic = non-interruptable  </li>
+</ul>
+</li>
+</ul>
+<h4 id="Test-amp-Set"><a href="#Test-amp-Set" class="headerlink" title="Test&amp;Set"></a>Test&amp;Set</h4><p>Either test memory word and set value: TestAndSet ()  </p>
+<ul>
+<li><p>Definition</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">boolean TestAndSet (boolean *target)  </span><br><span class="line">&#123;  </span><br><span class="line">	boolean rv = *target;  </span><br><span class="line">	*target = TRUE;  </span><br><span class="line">	return rv:  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Example (share bool Lock(False))</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">Solution:</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">	<span class="keyword">while</span> ( TestAndSet ( &amp;lock ))</span><br><span class="line">	;   <span class="comment">// do nothing</span></span><br><span class="line">	<span class="comment">//    critical section</span></span><br><span class="line">	lock = FALSE;</span><br><span class="line">	<span class="comment">//    remainder section</span></span><br><span class="line">&#125; <span class="keyword">while</span> (TRUE)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>-&gt;(Add bounded-waiting)<br><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;  </span><br><span class="line">	waiting[i] = TRUE;  </span><br><span class="line">	key = TRUE;  </span><br><span class="line">	<span class="keyword">while</span> (waiting[i] &amp;&amp; key)  </span><br><span class="line">		key = TestAndSet(&amp;lock);  </span><br><span class="line">	waiting[i] = FALSE;  </span><br><span class="line">		<span class="comment">// critical section  </span></span><br><span class="line">	j = (i + <span class="number">1</span>) % n;  </span><br><span class="line">	<span class="keyword">while</span> ((j != i) &amp;&amp; !waiting[j])  </span><br><span class="line">		j = (j + <span class="number">1</span>) % n;  </span><br><span class="line">	<span class="keyword">if</span> (j == i)  </span><br><span class="line">		lock = FALSE;  </span><br><span class="line">	<span class="keyword">else</span>  </span><br><span class="line">		waiting[j] = FALSE;  </span><br><span class="line">		<span class="comment">// remainder section  </span></span><br><span class="line">&#125; <span class="keyword">while</span> (TRUE);  </span><br></pre></td></tr></table></figure></p>
+<h4 id="Swap"><a href="#Swap" class="headerlink" title="Swap"></a>Swap</h4><p>Or swap contents of two memory words: Swap()</p>
+<ul>
+<li>Example<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;  </span><br><span class="line">	key = TRUE;  </span><br><span class="line">	<span class="keyword">while</span> ( key == TRUE)  </span><br><span class="line">		Swap (&amp;lock, &amp;key );  </span><br><span class="line">			<span class="comment">// critical section  </span></span><br><span class="line">		lock = FALSE;  </span><br><span class="line">			<span class="comment">// remainder section  </span></span><br><span class="line">&#125; <span class="keyword">while</span> (TRUE);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="Samophere"><a href="#Samophere" class="headerlink" title="Samophere"></a>Samophere</h4><p>Semaphore是一种用于线程同步的机制，可以用于多线程编程中控制访问共享资源。</p>
+<p>Semaphore提供了两个主要的操作：wait（等待）和signal（发信号）。Semaphore的值为整数，初始值可以是任意的正整数，表示可用的资源数目。Semaphore的值只能在wait和signal操作中改变，且改变是原子的，所以可以避免竞态条件。</p>
+<p>在C语言中，Semaphore是通过系统提供的sem_t类型来表示的。</p>
+<ol>
+<li><p>wait（等待）：当一个线程想要使用Semaphore代表的共享资源时，它需要调用wait操作。如果Semaphore的值为正数，则该线程可以使用该资源，同时Semaphore的值减1；如果Semaphore的值为0，则该线程将被阻塞，直到有其他线程释放资源并增加Semaphore的值为止。</p>
+<p>语法：<code>int sem_wait(sem_t *sem);</code></p>
+</li>
+<li><p>signal（发信号）：当一个线程使用完Semaphore代表的共享资源时，它需要调用signal操作。这将增加Semaphore的值，并唤醒等待该Semaphore的线程，以便它们可以继续使用资源。</p>
+<p>语法：<code>int sem_post(sem_t *sem);</code></p>
+</li>
+</ol>
+<p>Semaphore还有其他一些操作，例如初始化、销毁等。在使用Semaphore时，需要注意避免死锁等问题，通常需要仔细考虑线程的同步关系，避免资源竞争等问题。</p>
+<h2 id="Slide7-Deadlock"><a href="#Slide7-Deadlock" class="headerlink" title="Slide7 Deadlock"></a>Slide7 Deadlock</h2><h3 id="Deadlock-Characterization"><a href="#Deadlock-Characterization" class="headerlink" title="Deadlock Characterization"></a>Deadlock Characterization</h3><ul>
+<li>Mutual exclusion<br>  only one process at a time can use a resource  </li>
+<li>Hold and wait<br>  process holding at least one resource is waiting to  acquire additional resources held by other processes  </li>
+<li>No preemption<br>  a resource can be released only voluntarily by the process holding it, after that process has completed its task  </li>
+<li><p>Circular wait<br>  哲学家吃饭都拿左边筷子</p>
+</li>
+<li><p>Each process utilizes a resource as follows:  </p>
+<ul>
+<li>request  </li>
+<li>use  </li>
+<li>release</li>
+</ul>
+</li>
+</ul>
+<h3 id="Resource-Allocation-Graph"><a href="#Resource-Allocation-Graph" class="headerlink" title="Resource-Allocation Graph"></a>Resource-Allocation Graph</h3><ul>
+<li>V: <ul>
+<li>P: P1,P2… (process list)</li>
+<li>R: R1,R2… (resource list)</li>
+</ul>
+</li>
+<li><p>E:</p>
+<ul>
+<li>request edges</li>
+<li>assignment edges</li>
+</ul>
+</li>
+<li><p>Judge deadlock by graph</p>
+<ul>
+<li>no circle -&gt; no deadlock</li>
+<li>1 circle -&gt; <ul>
+<li>1 instance / resource type -&gt; deadlock</li>
+<li><blockquote>
+<p>1 instance / … -&gt; possibility of deadlock</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Handling-Deadlocks"><a href="#Handling-Deadlocks" class="headerlink" title="Handling Deadlocks"></a>Handling Deadlocks</h3><h4 id="Deadlock-preverntion-amp-avoidance"><a href="#Deadlock-preverntion-amp-avoidance" class="headerlink" title="Deadlock preverntion &amp; avoidance"></a>Deadlock preverntion &amp; avoidance</h4><h5 id="PREVENTION"><a href="#PREVENTION" class="headerlink" title="PREVENTION"></a>PREVENTION</h5><h6 id="restrain"><a href="#restrain" class="headerlink" title="restrain"></a>restrain</h6><p>shown in [deadlock characterization]</p>
+<h6 id="add-a-priori-info"><a href="#add-a-priori-info" class="headerlink" title="add a priori info"></a>add a priori info</h6><ul>
+<li>each process declare max of resources needed</li>
+</ul>
+<h6 id="resource-allocation"><a href="#resource-allocation" class="headerlink" title="resource-allocation"></a>resource-allocation</h6><ul>
+<li>avoidance algo dynamically examines <strong>resource-allocation</strong>, ensure no circular-wait<ul>
+<li>be defined by available/allocated resourvces, max demands of processes</li>
+</ul>
+</li>
+</ul>
+<p><strong>-&gt; WHAT IS SAFE MODE?</strong> </p>
+<ul>
+<li><p>system check if allocation leaves the system in a ~</p>
+</li>
+<li><p>defination</p>
+<ul>
+<li>If Pi’s resource needs are not immediately available, then Pi can wait until all Pj have finished  </li>
+<li>When all Pj are finished, Pi can obtain needed resources, execute, return allocated resources, and terminate  </li>
+<li>When Pi terminates, Pi+1 can obtain its needed resources, and so on</li>
+<li>Otherwise, system is in <strong>unsafe state</strong></li>
+</ul>
+</li>
+<li><p>If a system is in safe state -&gt; no deadlocks  </p>
+</li>
+<li>If a system is in unsafe state -&gt; possibility of deadlock  </li>
+<li>Avoidance -&gt; ensure that a system will never enter an unsafe state.<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230315211405.png" alt=""></li>
+<li>safe sequence</li>
+<li>eg: find a safe sequence with available resource = 3</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>maximum needs</th>
+<th>holds</th>
+<th>needs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P0</td>
+<td>10</td>
+<td>5</td>
+<td>5</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>4</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>9</td>
+<td>2</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Avai</th>
+<th>P1+</th>
+<th>P1-</th>
+<th>P0+</th>
+<th>P0-</th>
+<th>P2+</th>
+<th>P2-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>1</td>
+<td>5</td>
+<td>0</td>
+<td>10</td>
+<td>3</td>
+<td>12</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>P1 -&gt; P0 -&gt; P2<br>每一步寻找可运行的process，完成后释放process和它的所有资源。<br>如果找不到可运行的process，则出现unsafe state。</p>
+<h5 id="AVOIDANCE"><a href="#AVOIDANCE" class="headerlink" title="AVOIDANCE"></a>AVOIDANCE</h5><p>Whenever a process requests a resource, the request is granted only if the allocation leaves the system in a safe state.</p>
+<h6 id="Single-instance-of-a-resource-type"><a href="#Single-instance-of-a-resource-type" class="headerlink" title="Single instance of a resource type"></a>Single instance of a resource type</h6><ul>
+<li><p>resource-allocation graph: </p>
+<ul>
+<li>Each process must a priori claim maximum use</li>
+<li>claim edge 有向虚线表示, request edge 实线 &amp; assignment edge 实线</li>
+<li>claim edge -(process is requesting)&gt; request edge <ul>
+<li>-(process has got resource)&gt; assignment edge</li>
+<li>-(process is releasing resource)&gt;claim edge</li>
+<li>-(process has released resources and finished)&gt;<strong>deleted</strong><br>The request can be granted only if converting the request edge to an assignment edge does not result in the formation of <strong>a circle in the resource allocation graph</strong>. </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>The graph represents the relationships between resources and processes in the system. </p>
+</li>
+<li>Only <strong>the requesting processes</strong> and <strong>the allocating edges</strong> will be added to the graph. </li>
+<li>When a process requests a resource, the request edge will be added to the resource allocation graph, and the graph will be checked for the presence of a cycle to determine whether the resource can be allocated. <ul>
+<li>cycle -&gt;?deadlock -&gt; take measures to resolve the deadlock. </li>
+<li>no cycle -&gt;added, arranged, fulfilled</li>
+<li>In other words, the request can be granted only if converting the request edge to an assignment edge does not result in the formation of <strong>a circle in the resource allocation graph</strong>. </li>
+</ul>
+</li>
+</ul>
+<h6 id="Multiple-instance-of-a-resource-type"><a href="#Multiple-instance-of-a-resource-type" class="headerlink" title="Multiple instance of a resource type"></a>Multiple instance of a resource type</h6><p><strong>The banker’s algorithm</strong></p>
+<ul>
+<li>Defination<br>Let n = number of processes, and m = number of resources types.</li>
+<li><p><strong>Available</strong>: Vector of length m.<br>If available[j] = k, there are k instances of resource type Rj available  </p>
+</li>
+<li><p><strong>Max</strong>: n x m matrix.<br>If Max[i,j] = k, then process Pi may request at  most k instances of resource type Rj  </p>
+</li>
+<li><p><strong>Allocation</strong>: n x m matrix.<br>If Allocation[i,j] = k then Pi is currently allocated k instances of Rj  </p>
+</li>
+<li><p><strong>Need</strong>: n x m matrix.<br>If Need[i,j] = k, then Pi may need k more instances of Rj to complete its task </p>
+</li>
+<li><p><strong>Need[i,j] = Max[i,j] – Allocation[i,j]</strong></p>
+</li>
+<li><p>the algorithm</p>
+<ol>
+<li>work := available, finish[i] = false</li>
+<li>find i that<ol>
+<li>finish[i] = false</li>
+<li>need[i] &lt;= work</li>
+<li>if i = -1, go to 4</li>
+</ol>
+</li>
+<li>work = work + allocation[i], finish[i] = true, go to 2</li>
+<li>if finish[i] = true for all i -&gt; ok, else !ok</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>deadlock detection &amp; recovery</li>
+</ul>
+
+  
+
+
+  </article>
+  
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">回顾上一篇</div><a href="/files/courseNotes/%E7%AE%97%E6%B3%95%E4%B8%8E%E5%A4%8D%E6%9D%82%E6%80%A7.html">算法与复杂性-CS2308</a></div><div class="item" id="next"><div class="note">接下来阅读</div><a href="/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F2.html">现代操作系统2-CS2310</a></div></section></div>
+
+  
+
+  <div class='related-wrap md-text reveal' id="comments">
+    <section class='header cmt-title cap theme'>
+      <p>评论区仅供交流~</p>
+
+    </section>
+    <section class='body cmt-body giscus'>
+      
+
+<svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="giscus" data-repo="aleryxiao/aleryxiao.github.io" data-repo-id="R_kgDOIdw0jw" data-category="Announcements" data-category-id="DIC_kwDOIdw0j84CTXeH" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" data-loading="lazy" crossorigin="anonymous"></div>
+
+    </section>
+  </div>
+
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="sitemap"><div class="sitemap-group"><span class="fs14">博客</span><a href="/">近期</a><a href="/categories">分类</a><a href="/tags">标签</a><a href="/">归档</a></div><div class="sitemap-group"><span class="fs14">整理</span><a href="/wiki">文件夹</a></div><div class="sitemap-group"><span class="fs14">社交</span><a href="/friend">友链</a><a href="/guestbook">留言板</a></div><div class="sitemap-group"><span class="fs14">更多</span><a href="/about">关于</a><a target="_blank" rel="noopener" href="https://github.com/aleryxiao">GitHub</a></div></div><div class="text"><p>本站由 <a target="_blank" rel="noopener" href="https://space.bilibili.com/19610138">@AleryXiao</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.18.5';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+  <script>
+  function loadJS() {
+    const els = document.querySelectorAll("#comments #giscus");
+    if (els.length === 0) return;
+    els.forEach((el, i) => {
+      try {
+        el.innerHTML = '';
+      } catch (error) {
+        console.log(error);
+      }
+      var script = document.createElement('script');
+      script.src = 'https://giscus.app/client.js';
+      script.async = true;
+      for (let key of Object.keys(el.attributes)) {
+        let attr = el.attributes[key];
+        if (['class', 'id'].includes(attr.name) === false) {
+          script.setAttribute(attr.name, attr.value);
+        }
+      }
+      el.appendChild(script);
+    });
+  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+    loadJS();
+  });
+</script>
+
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>
