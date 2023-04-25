@@ -1,5 +1,6 @@
-https://float0108.github.io/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F2.html
+https://float0108.github.io/files/courseNotes/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(8086).html
 https://float0108.github.io/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F1.html
+https://float0108.github.io/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F2.html
 https://float0108.github.io/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F3.html
 https://float0108.github.io/Codes/d4872b1e.html
 https://float0108.github.io/Private/c342359b.html
@@ -81,7 +82,6 @@ https://float0108.github.io/Private/6bd4f70b.html
 https://float0108.github.io/Homework/58af5547.html
 https://float0108.github.io/Homework/ee42f67c.html
 https://float0108.github.io/Coding/5b511fc.html
-https://float0108.github.io/Coding/74e40bab.html
 https://float0108.github.io/Tavg/SakuraA/e2a2d525.html
 https://float0108.github.io/Tavg/SakuraA/9ce67f3c.html
 https://float0108.github.io/Tavg/Sakura/b7813dd8.html
