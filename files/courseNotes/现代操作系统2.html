@@ -20,24 +20,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" content="#f8f8f8">
   
-  <title>courseNotes：现代操作系统CS2310 （下）存储与文件系统 - 極楽浄土</title>
+  <title>courseNotes：现代操作系统2-CS2310 - 極楽浄土</title>
 
   
-    <meta name="description" content="SJTU-CS2310 现代操作系统 （速效版）">
+    <meta name="description" content="SJTU-CS2310 现代操作系统 课程笔记2">
 <meta property="og:type" content="website">
-<meta property="og:title" content="现代操作系统CS2310 （下）存储与文件系统">
+<meta property="og:title" content="现代操作系统2-CS2310">
 <meta property="og:url" content="https://float0108.github.io/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F2.html">
 <meta property="og:site_name" content="極楽浄土">
-<meta property="og:description" content="SJTU-CS2310 现代操作系统 （速效版）">
+<meta property="og:description" content="SJTU-CS2310 现代操作系统 课程笔记2">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230316232506.png">
 <meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230316232901.png">
 <meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230316235007.png">
 <meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230317005831.png">
 <meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230317005822.png">
-<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230425102536.png">
 <meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230331010733.png">
-<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230425022644.png">
-<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230425022709.png">
 <meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230415031202.png">
 <meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230415031456.png">
 <meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230415031437.png">
@@ -55,11 +53,12 @@
 <meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230416012023.png">
 <meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230416014446.png">
 <meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230416020129.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230416022332.png">
 <meta property="article:published_time" content="2023-03-10T15:54:37.000Z">
-<meta property="article:modified_time" content="2023-04-25T03:03:52.081Z">
+<meta property="article:modified_time" content="2023-04-23T17:15:19.955Z">
 <meta property="article:author" content="AleryXiao">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://float0108.github.io/assets/Pasted%20image%2020230316232901.png">
+<meta name="twitter:image" content="https://float0108.github.io/assets/Pasted%20image%2020230316232506.png">
   
   
 
@@ -114,7 +113,7 @@
 
 
 
-<widget class="widget-wrapper toc multi" id="data-toc"><div class="widget-header cap dis-select"><span class="name">现代操作系统CS2310 （下）存储与文件系统</span></div><div class="widget-body fs14"><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84.html#start"><span class="toc-text">计算机系统结构-CS2305</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(8086).html"><span class="toc-text">计算机组成-汇编语言-CS2307</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E7%AE%97%E6%B3%95%E4%B8%8E%E5%A4%8D%E6%9D%82%E6%80%A7.html"><span class="toc-text">算法与复杂性-CS2308</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F1.html"><span class="toc-text">现代操作系统CS2310 （上）进程管理</span></a></div><div class="doc-tree active"><a class="doc-tree-link active" href="/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F2.html"><span class="toc-text">现代操作系统CS2310 （下）存储与文件系统</span></a><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E4%B8%8E%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98"><span class="toc-text">内存与虚拟内存</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Memory-Management-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="toc-text">Memory Management 内存管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Allocation-Table-%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E8%A1%A8"><span class="toc-text">Allocation Table 内存分配表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Contiguous-memory-allocation-%E8%BF%9E%E7%BB%AD%E5%BC%8F%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D"><span class="toc-text">Contiguous memory allocation  连续式内存分配</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Non-contiguous-memory-allocation-%E9%9D%9E%E8%BF%9E%E7%BB%AD%E5%BC%8F%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D"><span class="toc-text">Non-contiguous memory allocation  非连续式内存分配</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Paging-%E5%86%85%E5%AD%98%E5%88%86%E9%A1%B5"><span class="toc-text">Paging 内存分页</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#The-realization-of-page-table-structure"><span class="toc-text">The realization of page table structure</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Segmentation-%E5%86%85%E5%AD%98%E5%88%86%E6%AE%B5"><span class="toc-text">Segmentation 内存分段</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Segmentation-and-paging-scheme"><span class="toc-text">Segmentation and paging scheme</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Virtual-Memory-%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98"><span class="toc-text">Virtual Memory 虚拟内存</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Page-Replacement-Algorithms-%E9%A1%B5%E9%9D%A2%E6%9B%BF%E6%8D%A2%E7%AE%97%E6%B3%95"><span class="toc-text">Page-Replacement Algorithms 页面替换算法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E5%AE%B9%E9%87%8F%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F"><span class="toc-text">大容量存储系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Disk-%E5%9F%BA%E7%A1%80"><span class="toc-text">Disk 基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Disk-Scheduling-Algorithms"><span class="toc-text">Disk-Scheduling Algorithms</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSD-vs-HDD"><span class="toc-text">SSD vs HDD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Space-amp-Disk-Management"><span class="toc-text">Space &amp; Disk Management</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Disk-Attachment"><span class="toc-text">Disk Attachment</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RAID"><span class="toc-text">RAID</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Network-Attached-Storage"><span class="toc-text">Network-Attached Storage</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="toc-text">文件系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#File"><span class="toc-text">File</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#File-operations"><span class="toc-text">File operations</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Open-files"><span class="toc-text">Open files</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Disk-Structure"><span class="toc-text">Disk Structure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#File-Directory"><span class="toc-text">File Directory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#File-Allocation-Methods"><span class="toc-text">File Allocation Methods</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Contiguous-Allocation"><span class="toc-text">Contiguous Allocation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Linked-Allocation"><span class="toc-text">Linked Allocation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#File-Allocation-Table-FAT"><span class="toc-text">File-Allocation Table (FAT)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#FAT-vs-linked-allocation"><span class="toc-text">FAT vs linked allocation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Indexed-Allocation"><span class="toc-text">Indexed Allocation</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#I-node-management"><span class="toc-text">I-node management</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#I-O-%E7%B3%BB%E7%BB%9F"><span class="toc-text">I&#x2F;O 系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#I-O-Hardware"><span class="toc-text">I&#x2F;O Hardware</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Addressing-amp-instruction-system"><span class="toc-text">Addressing &amp; instruction system</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#I-O-system"><span class="toc-text">I&#x2F;O system</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Programmed-I-O"><span class="toc-text">Programmed I&#x2F;O</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Interrupt-Driven-I-O"><span class="toc-text">Interrupt-Driven I&#x2F;O</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Direct-Memory-Access-DMA"><span class="toc-text">Direct Memory Access (DMA)</span></a></li></ol></li></ol></li></ol></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F3.html"><span class="toc-text">现代操作系统CS2310 （附）虚拟机和分布式</span></a></div></div></widget>
+<widget class="widget-wrapper toc multi" id="data-toc"><div class="widget-header cap dis-select"><span class="name">现代操作系统2-CS2310</span></div><div class="widget-body fs14"><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84.html#start"><span class="toc-text">计算机系统结构-CS2305</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(8086).html"><span class="toc-text">计算机组成-汇编语言-CS2307</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E7%AE%97%E6%B3%95%E4%B8%8E%E5%A4%8D%E6%9D%82%E6%80%A7.html"><span class="toc-text">算法与复杂性-CS2308</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F1.html"><span class="toc-text">现代操作系统CS2310 （上）进程管理</span></a></div><div class="doc-tree active"><a class="doc-tree-link active" href="/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F2.html"><span class="toc-text">现代操作系统2-CS2310</span></a><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Slides8-Memory"><span class="toc-text">Slides8 Memory</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Memory-Management"><span class="toc-text">Memory Management</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Contiguous-memory-allocation"><span class="toc-text">Contiguous memory allocation</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Multiple-partition-allocation"><span class="toc-text">Multiple-partition allocation</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Non-contiguous-memory-allocation"><span class="toc-text">Non-contiguous memory allocation</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Defination"><span class="toc-text">Defination</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Implement"><span class="toc-text">Implement</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Page-table-structure"><span class="toc-text">Page table structure</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Segmentation"><span class="toc-text">Segmentation</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Slides9-Virtual-Memory"><span class="toc-text">Slides9 Virtual Memory</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Slides10-Mass-Storage-Systems"><span class="toc-text">Slides10 Mass-Storage Systems</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Disk-stucture"><span class="toc-text">Disk stucture</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Overview-of-Mass-Storage-Structure"><span class="toc-text">Overview of Mass Storage Structure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Disk-Scheduling-Algorithms"><span class="toc-text">Disk-Scheduling Algorithms</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSD-vs-HDD"><span class="toc-text">SSD vs HDD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Space-amp-Disk-Management"><span class="toc-text">Space &amp; Disk Management</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#More-About-Clusters-Blocks-and-Tracks-%E2%80%A6"><span class="toc-text">More About Clusters, Blocks and Tracks …</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HDD"><span class="toc-text">HDD</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SSD"><span class="toc-text">SSD</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Disk-Attachment"><span class="toc-text">Disk Attachment</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RAID"><span class="toc-text">RAID</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Network-Attached-Storage"><span class="toc-text">Network-Attached Storage</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Slides11-File-System"><span class="toc-text">Slides11 File System</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#File"><span class="toc-text">File</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#File-operations"><span class="toc-text">File operations</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Open-files"><span class="toc-text">Open files</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Disk-Structure"><span class="toc-text">Disk Structure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#File-Directory"><span class="toc-text">File Directory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#File-Allocation-Methods"><span class="toc-text">File Allocation Methods</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Contiguous-Allocation"><span class="toc-text">Contiguous Allocation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Linked-Allocation"><span class="toc-text">Linked Allocation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#File-Allocation-Table-FAT"><span class="toc-text">File-Allocation Table (FAT)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#FAT-vs-linked-allocation"><span class="toc-text">FAT vs linked allocation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Indexed-Allocation"><span class="toc-text">Indexed Allocation</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#I-node-management"><span class="toc-text">I-node management</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Slides12-I-O-System"><span class="toc-text">Slides12 I&#x2F;O System</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#I-O-Hardware"><span class="toc-text">I&#x2F;O Hardware</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Addressing-amp-instruction-system"><span class="toc-text">Addressing &amp; instruction system</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#I-O-system"><span class="toc-text">I&#x2F;O system</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Programmed-I-O"><span class="toc-text">Programmed I&#x2F;O</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Interrupt-Driven-I-O"><span class="toc-text">Interrupt-Driven I&#x2F;O</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Direct-Memory-Access-DMA"><span class="toc-text">Direct Memory Access (DMA)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Slides13-Virtual-Machines"><span class="toc-text">Slides13 Virtual Machines</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Overview"><span class="toc-text">Overview</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Slides14-Distributed-System-Structures"><span class="toc-text">Slides14 Distributed System Structures</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Slides15-Distributed-System-Systems"><span class="toc-text">Slides15 Distributed System Systems</span></a></li></ol></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F0.html"><span class="toc-text">现代操作系统CS2310 速效版</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F3.html"><span class="toc-text">现代操作系统CS2310 （附）虚拟机和分布式</span></a></div></div></widget>
 
 
 
@@ -130,31 +129,20 @@
 
   
   
-<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" id="home" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">collection</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/files/courseNotes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84.html">courseNotes</a></div><div id="post-meta">更新于&nbsp;<time datetime="2023-04-25T03:03:52.081Z">2023-04-25</time></div></div>
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" id="home" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">collection</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/files/courseNotes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84.html">courseNotes</a></div><div id="post-meta">更新于&nbsp;<time datetime="2023-04-23T17:15:19.955Z">2023-04-24</time></div></div>
 
   <article class='md-text content wiki'>
-  <h1 class="article-title"><span>现代操作系统CS2310 （下）存储与文件系统</span></h1>
-  <h2 id="内存与虚拟内存"><a href="#内存与虚拟内存" class="headerlink" title="内存与虚拟内存"></a>内存与虚拟内存</h2><p>MMU (Memory Management Unit)<br>    Hardware component (通常作为一个主板模块与CPU和内存分别相连)<br>    在CPU发生访问需求时，根据<strong>内存映射表</strong>将CPU中的逻辑内存地址转换成内存中的物理内存地址<br>        每次开机，OS都会从硬盘中读取地址映射表，并将其存储到内存中的特定位置<br>        OS会将这个位置，也就是<strong>地址映射表的基地址</strong>存储在MMU的 relocation register 重定位寄存器。</p>
-<h3 id="Memory-Management-内存管理"><a href="#Memory-Management-内存管理" class="headerlink" title="Memory Management 内存管理"></a>Memory Management 内存管理</h3><h4 id="Allocation-Table-内存分配表"><a href="#Allocation-Table-内存分配表" class="headerlink" title="Allocation Table 内存分配表"></a>Allocation Table 内存分配表</h4><p>由于内存分配表的大小通常比较小，而且遍历它的开销相对较低，所以一般的内存管理方法都使用内存分配表来记录内存的分配情况，使OS可以快速查找到可用的内存块并将其分配给进程。</p>
-<ul>
-<li>记录内存中分区的起始地址、大小、是否已分配等信息</li>
-<li>可看作是一个逻辑上的表格，其中每个表项代表一块内存区域</li>
-<li>由OS在启动时初始化，分配时动态更新</li>
+  <h1 class="article-title"><span>现代操作系统2-CS2310</span></h1>
+  <h2 id="Slides8-Memory"><a href="#Slides8-Memory" class="headerlink" title="Slides8 Memory"></a>Slides8 Memory</h2><p>MMU<br>    relocation register<br>    CPU -(Logical Addr)&gt; MMU -(Physical Address)&gt; memory</p>
+<h3 id="Memory-Management"><a href="#Memory-Management" class="headerlink" title="Memory Management"></a>Memory Management</h3><h4 id="Contiguous-memory-allocation"><a href="#Contiguous-memory-allocation" class="headerlink" title="Contiguous memory allocation"></a>Contiguous memory allocation</h4><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230316232506.png" alt=""></p>
+<h5 id="Multiple-partition-allocation"><a href="#Multiple-partition-allocation" class="headerlink" title="Multiple-partition allocation"></a>Multiple-partition allocation</h5><ul>
+<li>When a process arrives, it is allocated memory from a hole large enough to accommodate it</li>
+<li>Process exiting frees its partition, adjacent free partitions combined</li>
+<li>Operating system maintains information about:  <ul>
+<li>a) allocated partitions </li>
+<li>b) free partitions (hole)<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230316232901.png" alt=""><h6 id="Dynamic-Storage-Allocation-Problem"><a href="#Dynamic-Storage-Allocation-Problem" class="headerlink" title="Dynamic Storage-Allocation Problem"></a>Dynamic Storage-Allocation Problem</h6></li>
 </ul>
-<h4 id="Contiguous-memory-allocation-连续式内存分配"><a href="#Contiguous-memory-allocation-连续式内存分配" class="headerlink" title="Contiguous memory allocation  连续式内存分配"></a>Contiguous memory allocation  连续式内存分配</h4><p><strong>Defination</strong></p>
-<ul>
-<li>将可用的内存空间视为<strong>连续的地址空间</strong></li>
-<li>进程被分配的内存空间也必须是<strong>连续的物理内存空间</strong>。</li>
-</ul>
-<p><strong>Multiple-partition allocation 多区分配</strong> </p>
-<ul>
-<li>一种典型的连续式内存分配</li>
-<li>维护内存分配表（包含已分配分区和未分配 (holes) 分区的信息）</li>
-</ul>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230316232901.png" alt=""></p>
-<ul>
-<li><p><strong>Dynamic Storage-Allocation Problem  动态存储分配问题</strong></p>
-<ul>
+</li>
 <li>First-fit</li>
 <li>Best-fit<ul>
 <li>Allocate the smallest hole that is big enough</li>
@@ -163,413 +151,195 @@
 </ul>
 </li>
 <li>Worst-fit<ul>
-<li>Similarly<br>First-fit &amp; best-fit better than worst-fit in terms of speed and storage</li>
+<li>Similarly<br>First-fit &amp; best-fit better than worst-fit in terms of <strong>speed and storage  utilization</strong>. <h6 id="Fragmentation"><a href="#Fragmentation" class="headerlink" title="Fragmentation"></a>Fragmentation</h6></li>
 </ul>
 </li>
+<li>External Fragmentation – total memory space exists to satisfy a request,<br>but it is not contiguous  </li>
+<li>Internal Fragmentation <ul>
+<li>allocated memory may be slightly larger than requested memory; this size difference is memory internal to a partition, but not being used  </li>
 </ul>
 </li>
-<li><p>50%规则<br>  使用First fit算法来分配内存时，会发现对于N个块已经被分配，有0.5N个块被浪费在碎片上。其中1/3的碎片可能无法使用，这就是“50%规则”</p>
-</li>
-</ul>
-<p>分配出去的空间释放后大小未必能够匹配后续需分配的内存大小，导致 <strong>内存碎片 (memory fragmentation)</strong>  形成。</p>
-<ul>
-<li><p><strong>内存碎片 memory fragmentation</strong> </p>
-<ul>
-<li>内存中零散、未被充分利用的小块空闲内存</li>
-<li>外部碎片 (external)<ul>
-<li>总内存空间可满足要求，但不连续</li>
+<li>First fit analysis reveals that given N blocks allocated, another 0.5 N blocks  lost to fragmentation  <ul>
+<li>1/3 may be unusable -&gt; 50-percent rule</li>
 </ul>
 </li>
-<li><p>内部碎片 (internal)</p>
-<ul>
-<li>分配的空间可能大于需要</li>
-<li>分区内部有被分配而未使用的空间</li>
+<li>A solution : Compaction -&gt; reduce external fragmentation<ul>
+<li>shuffle memory</li>
+<li>possible only if relocation is dynamic, done at execution time</li>
 </ul>
 </li>
-<li><p>过多碎片可能导致内存空间无法有效利用，也会增加分配内存的开销。</p>
-</li>
+<li>Another solution : Permit <strong>noncontiguous memory allocation</strong><ul>
+<li>-&gt; paging &amp; segmentation<h4 id="Non-contiguous-memory-allocation"><a href="#Non-contiguous-memory-allocation" class="headerlink" title="Non-contiguous memory allocation"></a>Non-contiguous memory allocation</h4><h5 id="Defination"><a href="#Defination" class="headerlink" title="Defination"></a>Defination</h5></li>
 </ul>
 </li>
-<li><p>解决方案</p>
-<ol>
-<li>内存紧缩/重排 compaction/shuffle<ul>
-<li>效率问题</li>
-<li>-&gt; 伙伴系统</li>
-</ul>
-</li>
-<li>允许不连续分配 noncontiguous memory allocation<ul>
-<li>内存的分页与分段 paging &amp; segmentation</li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
-<p><strong>Buddy System 伙伴系统*</strong></p>
-<ul>
-<li>将内存分成大小相等的块，每个块都有一个大小的指数级别，例如2的幂次方</li>
-<li>当分配内存时，伙伴系统会按照2的幂次方去寻找最合适的可用块<ul>
-<li>如果找到一个较大的块，它就会被拆分成两个较小的块，并将它们标记为伙伴块</li>
-<li>当释放内存时，伙伴系统会将相邻的伙伴块合并成一个更大的块=</li>
-</ul>
-</li>
-<li>可以尽量减少传统连续分配模式产生的内存碎片</li>
-<li>使用比较复杂的数据结构管理伙伴关系和未分配内存</li>
-<li>Linux</li>
-</ul>
-<h4 id="Non-contiguous-memory-allocation-非连续式内存分配"><a href="#Non-contiguous-memory-allocation-非连续式内存分配" class="headerlink" title="Non-contiguous memory allocation  非连续式内存分配"></a>Non-contiguous memory allocation  非连续式内存分配</h4><ul>
 <li>allow noncontiguous physical address space</li>
+<li>divide physical memory into fix-sized blocks —FRAMES<ul>
+<li>size is power of 2, 512b - 16Mb</li>
+<li>keep track of all free frames</li>
 </ul>
-<h5 id="Paging-内存分页"><a href="#Paging-内存分页" class="headerlink" title="Paging 内存分页"></a>Paging 内存分页</h5><p><strong>Defination</strong></p>
-<ul>
-<li>FRAMES 框<ul>
-<li>将物理内存分为固定大小的块<ul>
-<li>大小为2的因数，512b-16MB</li>
-<li>最小空间占用单位（依然可能存在内部碎片）</li>
+</li>
+<li>divide logical memory into same sized blocks —PAGES</li>
+<li>to run a program of N pages -&gt; find N free frames</li>
+<li>maintain a page table to translate addresses<br>(still have internal fragmentation)<br>-&gt; P -&gt; F translator<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230316235007.png" alt=""><h5 id="Implement"><a href="#Implement" class="headerlink" title="Implement"></a>Implement</h5></li>
+<li>Address generated by CPU is divided into:  <ul>
+<li>Page number (p)<ul>
+<li>used as an index into a page table, which contains base address of each page in physical memory  </li>
+</ul>
+</li>
+<li>Page offset (d)<ul>
+<li>combined with base address to define the physical<br>memory address that is sent to the memory unit<br>Page table is kept in main memory  </li>
 </ul>
 </li>
 </ul>
 </li>
-<li>PAGES 页<ul>
-<li>将逻辑内存分为同样大小的块</li>
-</ul>
-</li>
-<li>运行方式<ul>
-<li>需要N页内存以运行程序 = 寻找N个空闲页框</li>
-</ul>
-</li>
-<li>PAGE TABLE 页表<ul>
-<li>一种特殊的内存分配表，跟踪页与框的分配情况</li>
-<li>将逻辑页的地址翻译为物理框的地址 (page id -&gt; frame id)<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230316235007.png" alt=""></li>
-</ul>
-</li>
-</ul>
-<p><strong>Implementation</strong></p>
-<ul>
-<li><p>逻辑地址表示为 \<page-number, page offset></p>
-<ul>
-<li>divided by CPU</li>
-<li>page number (p)<ul>
-<li>页表中的页编号</li>
-</ul>
-</li>
-<li>page offset (d)<ul>
-<li>对应页/框内部所需信息的偏移量</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Keep a page table</p>
-<ul>
-<li>PTBR: Page-table base register in CPU<ul>
-<li>records the address of the table</li>
-</ul>
-</li>
-<li>PTLR: Page-table length register in CPU<ul>
-<li>indicates the length of the table</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>Obviously, every data/instruction access requires 2 memory accesses  (access the table and allocate the unit according to the table)</p>
-<ul>
-<li>Add a <strong>TLB</strong> to accelerate<ul>
-<li>translation lookaside buffer</li>
-<li>record recent accessed table item</li>
-<li>HIT<ul>
-<li>fast access</li>
-</ul>
-</li>
-<li>MISS<ul>
-<li>load to TLB, try to hit next time</li>
-</ul>
-</li>
-<li>EAT (Effective Access Time)<ul>
-<li>Associative Lookup = ε time / unit</li>
+<li>Page-table base register (PTBR) points to the page table  </li>
+<li>Page-table length register (PTLR) indicates size of the page table  </li>
+<li>In this scheme every data/instruction access requires <strong>two</strong> memory<br>accesses<br>-&gt;</li>
+<li>associative memory or translation lookaside buffers <strong>(TLBs)</strong><ul>
+<li>hit -&gt; fast access</li>
+<li>miss -&gt; load to TLB</li>
+<li>Effective Access Time (EAT)<ul>
+<li>Associative Lookup = ε time unit</li>
 <li>Hi ration = α</li>
-<li>EAT = (1 + ε) α + (2 + ε)(1 – α) </li>
+<li>EAT = (1 + ε) α + (2 + ε)(1 – α)  <h5 id="Page-table-structure"><a href="#Page-table-structure" class="headerlink" title="Page table structure"></a>Page table structure</h5><h6 id="Hierarchical-Page-Tables"><a href="#Hierarchical-Page-Tables" class="headerlink" title="Hierarchical Page Tables"></a>Hierarchical Page Tables</h6></li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-<h5 id="The-realization-of-page-table-structure"><a href="#The-realization-of-page-table-structure" class="headerlink" title="The realization of page table structure"></a>The realization of page table structure</h5><p><strong>Hierarchical Page Tables 多层表</strong></p>
-<p>将虚拟地址分成多个部分，每个部分都有一个表。</p>
-<ul>
-<li>windows</li>
 <li>eg. 2-level paging table -&gt; forward-mapped page table<ul>
-<li>10-bit page num*2 + 12-bit offset</li>
+<li>10-bit page num*2 + 12-bit offset<h6 id="Hashed-Page-Tables"><a href="#Hashed-Page-Tables" class="headerlink" title="Hashed Page Tables"></a>Hashed Page Tables</h6><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230317005831.png" alt=""><h6 id="Inverted-Page-Tables"><a href="#Inverted-Page-Tables" class="headerlink" title="Inverted Page Tables"></a>Inverted Page Tables</h6><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230317005822.png" alt=""><br><strong>まとめ</strong><br>Hierarchical Page Tables，Hashed Page Tables和Inverted Page Tables都是操作系统中用于将<strong>虚拟地址映射到物理地址的数据结构</strong>。<br>Hierarchical Page Tables是一种多层表，将虚拟地址分成多个部分，每个部分都有一个表。<br>Hashed Page Tables是一种哈希页表，虚拟页号在虚拟地址中被哈希到哈希表中。<br>Inverted Page Tables是一种全局页表，由操作系统维护，用于所有进程。在Inverted Page Tables中，条目数等于主存中的帧数。与传统的页表相比，Inverted Page Tables具有更小的内存占用，但查找时间更长。<br>这些数据结构在许多操作系统中都有使用。例如，Linux使用了Inverted Page Tables，而Windows使用了Hierarchical Page Tables。Hashed Page Tables也被许多操作系统使用，例如FreeBSD和Solaris。<h5 id="Segmentation"><a href="#Segmentation" class="headerlink" title="Segmentation"></a>Segmentation</h5>Memory-management scheme that supports user view of memory<br>Logical address consists of a two tuple:  <strong><segment-number, offset></strong></li>
 </ul>
 </li>
-</ul>
-<p><strong>Hashed Page Tables 哈希页表</strong></p>
-<ul>
-<li>虚拟页号在虚拟地址中被哈希到哈希表中。</li>
-<li>FreeBSD, Solaris</li>
-</ul>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230317005831.png" alt=""></p>
-<p><strong>Inverted Page Tables 全局页表</strong></p>
-<ul>
-<li>由操作系统维护，用于所有进程的页表。</li>
-<li>条目数等于主存中的帧数。</li>
-<li>与传统的页表相比具有更小的内存占用（比较直接），但查找时间更长。</li>
-<li>Linux</li>
-</ul>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230317005822.png" alt=""></p>
-<h5 id="Segmentation-内存分段"><a href="#Segmentation-内存分段" class="headerlink" title="Segmentation 内存分段"></a>Segmentation 内存分段</h5><p>Memory-management scheme that supports user view of memory</p>
-<ul>
-<li><p>可以认为段是一种大小不固定的“页”</p>
-</li>
-<li><p>Logical address defined as <strong><segment-number, offset></strong></p>
-<ul>
-<li>( in paging scheme, we use <page-number, offset> )</li>
+<li>Segment table – maps two-dimensional physical addresses; </li>
+<li>each table entry has:  <ul>
+<li>base: contains the starting physical address where the segments<br>reside in memory  </li>
+<li>limit: specifies the length of the segment  </li>
 </ul>
 </li>
-<li><p>Segment table 分段表</p>
-<ul>
-<li>maps two-dimensional physical addresses</li>
-</ul>
-</li>
-<li><p>each table entry has</p>
-<ul>
-<li>base<ul>
-<li>contains the starting physical address where the segments reside in memory</li>
-</ul>
-</li>
-<li>limit<ul>
-<li>specifies the length of the segment  </li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Simularly keeping the <strong>Segment-Table</strong></p>
-<ul>
-<li>Segment-table base register (STBR)<ul>
-<li>segment table’s location in memory  </li>
-</ul>
-</li>
-<li>Segment-table length register (STLR) <ul>
-<li>indicates number of segments  </li>
-<li>used by a program:<ul>
-<li>segment number s is legal if s &lt; STLR</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="Segmentation-and-paging-scheme"><a href="#Segmentation-and-paging-scheme" class="headerlink" title="Segmentation and paging scheme"></a>Segmentation and paging scheme</h4><ul>
-<li>Windows</li>
-</ul>
-<h3 id="Virtual-Memory-虚拟内存"><a href="#Virtual-Memory-虚拟内存" class="headerlink" title="Virtual Memory 虚拟内存"></a>Virtual Memory 虚拟内存</h3><ul>
-<li><p>Virtual Address Space 虚拟地址空间</p>
-<ul>
+<li>Segment-table base register (STBR) -&gt; segment table’s location in memory  </li>
+<li>Segment-table length register (STLR) indicates number of segments<br>used by a program; segment number s is legal if s &lt; STLR<h2 id="Slides9-Virtual-Memory"><a href="#Slides9-Virtual-Memory" class="headerlink" title="Slides9 Virtual Memory"></a>Slides9 Virtual Memory</h2></li>
+<li>Virtual Address Space<ul>
 <li>Enables sparse address spaces with holes left for growth, dynamically  linked libraries, etc</li>
 <li>easily shared during fork()</li>
-<li>COW (Copy-on-write)</li>
-<li>Lazy Swapper (Pager)<ul>
-<li>never swaps a page into memory unless page will be needed</li>
+<li>COW(Copy-on-write)</li>
+<li>Lazy Swapper (Pager) ：never swaps a page into memory unless page will<br>be needed</li>
 </ul>
 </li>
-</ul>
-</li>
-<li><p>Valid-Invalid Bit</p>
-<ul>
+<li>Valid-Invalid Bit<ul>
 <li>each table entry associates with a ~ bit</li>
-<li>v -&gt; memory resident ({address} v) </li>
-<li>i -&gt; not-in-memory (i)</li>
+<li>V -&gt; memory resident ({address} v) , i -&gt; not-in-memory ({\ i})</li>
 <li>entry is i -&gt; <strong>page fault</strong></li>
 </ul>
 </li>
-<li><p>Dirty bit</p>
-<ul>
-<li>each table entry associates with a ~ bit</li>
-<li>if needed to be written to the disk, dirty bit = 1</li>
-<li>reduce overhead of page transfers</li>
-</ul>
-</li>
-<li><p>Page Fault 内存缺页</p>
-<ul>
-<li>if there is a reference to a page and the page is not in memory (i), the  reference will <strong>trap</strong> to operating system</li>
+<li>Page Fault<ul>
+<li>if there is a reference to a page and the page is not in memory (i), the<br>reference will trap to operating system</li>
 </ul>
 </li>
 </ul>
-<blockquote>
 <ol>
 <li>Operating system looks at page table to decide:<br> Invalid reference -&gt; abort  / Just not in memory  </li>
 <li><strong>Get</strong> empty frame  </li>
 <li><strong>Swap</strong> page into frame via scheduled disk operation  </li>
 <li>Reset tables to indicate page now in memory  (Set validation bit = v)</li>
-<li>Restart the instruction that caused the page fault</li>
+<li>Restart the instruction that caused the page fault<br>-&gt; what if there’s no Free Frame? </li>
 </ol>
-</blockquote>
-<p> -&gt; 如果不存在空闲页框？</p>
 <ul>
-<li>Page replacement 页面置换<ul>
-<li>目标：找到一种会导致最少的内存缺页 page faults 的算法</li>
-</ul>
-</li>
+<li>Page replacement<br>an algorithm which will result in minimum number of page faults</li>
 </ul>
 <ol>
-<li>确定来源页在磁盘上的位置</li>
-<li>试着找到一个空闲页框<ul>
-<li>有 -&gt; 用</li>
-<li>没有 -&gt; 使用页面置换算法找一个victime frame</li>
-<li>Write victim frame to disk if dirty</li>
+<li>Find the location of the desired page on disk  </li>
+<li>Find a free frame:  <ul>
+<li>If there is a free frame, use it  </li>
+<li>If there is no free frame, use a page replacement algorithm to select a<br>victim frame  </li>
+<li><strong>Write victim frame to disk if dirty (Use modify (dirty) bit to reduce overhead of page transfers)</strong>  </li>
 </ul>
+<ol>
+<li>Bring the desired page into the (newly) free frame; update the page and<br>frame tables  </li>
+</ol>
 </li>
-<li>Bring the desired page into the (newly) free frame; update the page and frame tables  </li>
 <li>Continue the process by restarting the instruction that caused the trap</li>
 </ol>
-<p>怎么选择 the desired page？</p>
-<h4 id="Page-Replacement-Algorithms-页面替换算法"><a href="#Page-Replacement-Algorithms-页面替换算法" class="headerlink" title="Page-Replacement Algorithms 页面替换算法"></a>Page-Replacement Algorithms 页面替换算法</h4><p><strong>FIFO</strong></p>
 <ul>
-<li>First-In, First-Out</li>
-<li>记录页表项进入TLB的时间戳</li>
-<li>将最早进入TLB的页面替换出去</li>
-</ul>
-<p><strong>LRU</strong></p>
-<ul>
-<li>Least Recently Used</li>
-<li>记录页表项在TLB中最后一次被访问的时间戳</li>
-<li>将访问时间最早的页表项替换出去</li>
-</ul>
-<p><strong>Second-chance page replacement algorithm</strong></p>
-<ul>
-<li>给页表项附加一个引用位 reference bit（0/1）</li>
-<li>当需要发生替换时，对于每个被遍历到的页表项：<ul>
-<li>如果引用位为1，则设置为0并检查下一个页面<ul>
-<li>每次替换都从上次结束的位置继续</li>
-</ul>
-</li>
-<li>如果引用位为0，则进行替换并初始化引用位为1</li>
+<li>How to choose ‘desired pages’ : Page-Replacement Algorithms<ul>
+<li>FIFO</li>
 </ul>
 </li>
 </ul>
-<h2 id="大容量存储系统"><a href="#大容量存储系统" class="headerlink" title="大容量存储系统"></a>大容量存储系统</h2><h3 id="Disk-基础"><a href="#Disk-基础" class="headerlink" title="Disk 基础"></a>Disk 基础</h3><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230425102536.png" alt=""><br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230331010733.png" alt=""></p>
-<p><strong>Hard Disk Drive (HDD)</strong></p>
+<h2 id="Slides10-Mass-Storage-Systems"><a href="#Slides10-Mass-Storage-Systems" class="headerlink" title="Slides10 Mass-Storage Systems"></a>Slides10 Mass-Storage Systems</h2><h3 id="Disk-stucture"><a href="#Disk-stucture" class="headerlink" title="Disk stucture"></a>Disk stucture</h3><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230331010733.png" alt=""><br> -&gt; addressed as large 1-d arrays of logical blocks (smallest unit)</p>
+<ol>
+<li>The 1-dimensional array of logical blocks is mapped into the sectors of the disk sequentially  </li>
+</ol>
 <ul>
-<li>Overview<ul>
+<li>Sector 0 is the first sector of the first track on the outermost cylinder  </li>
+<li>Mapping proceeds in order through that track, then the rest of the tracks in that cylinder, and then through the rest of the cylinders from outermost to innermost  </li>
+<li>Difficulty in mapping from logical to physical address:  </li>
+<li>Except for bad sectors  </li>
+<li>Non-constant # of sectors per track via constant angular velocity<h3 id="Overview-of-Mass-Storage-Structure"><a href="#Overview-of-Mass-Storage-Structure" class="headerlink" title="Overview of Mass Storage Structure"></a>Overview of Mass Storage Structure</h3></li>
+<li>Magnetic disks provide bulk of secondary storage of modern computers  <ul>
 <li>Drives rotate at 60 to 250 times per second  </li>
 <li>Transfer rate is rate at which data flows between drive and computer  </li>
-<li><strong>Positioning time (random-access time)</strong> is time to move disk arm to <strong>desired cylinder (seek time)</strong> and <strong>time for desired sector to rotate under  the disk head (rotational latency)</strong></li>
+<li><strong>Positioning time (random-access time)</strong> is time to move disk arm to <strong>desired cylinder (seek time)</strong> and <strong>time for desired sector to rotate under  the disk head (rotational latency)</strong><h3 id="Disk-Scheduling-Algorithms"><a href="#Disk-Scheduling-Algorithms" class="headerlink" title="Disk-Scheduling Algorithms"></a>Disk-Scheduling Algorithms</h3>Idle disk can immediately work on I/O request, busy disk means work must<br>be queued  (Optimization algorithms only make sense when a queue exists)</li>
 </ul>
 </li>
+<li>FCFS<br>按queue处理</li>
+<li>SSTF<br>Shortest Seek Time First selects the request with the minimum seek time  from the current head position (当前最近)</li>
+<li>SCAN<br>The disk arm starts <strong>at one end of the disk</strong>, and <strong>moves toward the other end</strong>,<br><strong>servicing</strong> requests <strong>until it gets to the other end of the disk</strong>, where the head<br>movement is reversed and service continues.</li>
+<li>C-SCAN<br>The head moves <strong>from one end of the disk to the other,</strong> servicing requests as it goes. When it reaches the other end, it <strong>immediately returns</strong> to the beginning of the disk, <strong>without servicing</strong> any requests on the return trip.</li>
+<li>C-LOOK<br>Similar to C-SCAN, but doesn’t reach the two ends.<br>Arm only goes as far as the last request in each direction, then reverses direction immediately, without first going all the way to the end of the disk<br>-》 <strong>in C-XXXX</strong> , arm services always occur in one direction. when they are moving are the opposite direction, they ‘<strong>immediately returns</strong>‘.</li>
 </ul>
-<ol>
-<li><p>柱面 (cylinder) &amp; 磁道（track）</p>
+<h3 id="SSD-vs-HDD"><a href="#SSD-vs-HDD" class="headerlink" title="SSD vs HDD"></a>SSD vs HDD</h3><p><strong>Nonvolatile memory devices</strong></p>
 <ul>
-<li>一个盘片的同心圆轨道称为track，所有盘片上的Track组成的一个柱面状的物理结构程伟cylinder</li>
-<li>在同一Cylinder上的所有track可以同时被磁头访问</li>
-<li>按cylinder编号不按track编号</li>
-<li>（SSD不存在这两个概念）</li>
+<li>disk-drive like -&gt; solid-state disks (SSD)</li>
 </ul>
-</li>
-<li><p>扇区 (sector)</p>
 <ul>
-<li>一个盘片的同心圆轨道内的一个扇形区域</li>
-<li>扇区0是第一个磁道的第一块扇区</li>
-<li>每个track的扇区数不固定，与磁盘设计时的角速度有关</li>
-</ul>
-</li>
-<li><p>块（block）：</p>
-<ul>
-<li>由多个扇区组成，大小由OS决定</li>
-</ul>
-</li>
-<li>簇（cluster）：<ul>
-<li>一组相邻的扇区的集合，大小可以由用户修改</li>
-<li>大多数文件系统会将多个块组成一个簇（cluster）进行管理。簇是文件系统中的最小单位，也可以被视为文件系统与磁盘交互的基本单位。</li>
-</ul>
-</li>
-</ol>
-<ul>
-<li>逻辑地址的编码<ul>
-<li>large 1-d arrays of logical blocks (smallest unit)</li>
-<li>is mapped into the sectors of the disk sequentially  </li>
-<li>Mapping proceeds in order through that track, <strong>then the rest of the tracks in that cylinder</strong>, and then through the rest of the cylinders from outermost to innermost  </li>
-<li>Difficulty in mapping from logical to physical address</li>
-<li>Except for bad sectors  <ul>
-<li>操作系统检查坏块并在编码时排除</li>
+<li>(Other forms include USB drives (thumb drive, flash drive), DRAM stick, and main storage in devices like smartphones  )</li>
+<li>Storage capacity / price<br>  capacity: HDD usually &gt; SSD<pre><code>  magnetic disks (HDD) hold much more data.
+</code></pre>  price : SDD usually &gt; HDD (per MB)</li>
+<li>Reliability<ul>
+<li>SSD &gt; HDD<ul>
+<li>SSDs have no moving parts (like magnetic disks and read/write heads) -&gt;less possible to damage</li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-<p><strong>Solid-State Disks (SSD)</strong></p>
-<ol>
-<li>页（page）<ul>
-<li>页是SSD中最小的可寻址单元，大小由SSD自身决定，通常为4KB或8KB。</li>
-</ul>
-</li>
-<li>块（block）<ul>
-<li>类似HHD。由多个页构成，大小由SSD自身决定</li>
-<li>为了增大擦除时一次性操作的块的大小延长寿命，在SSD中通常更大，通常为128KB或256KB大小。（理由后面细说）</li>
-</ul>
-</li>
-</ol>
-<h3 id="Disk-Scheduling-Algorithms"><a href="#Disk-Scheduling-Algorithms" class="headerlink" title="Disk-Scheduling Algorithms"></a>Disk-Scheduling Algorithms</h3><p>Idle disk can immediately work on I/O request<br>Busy disk means work must be queued<br>(Optimization algorithms only make sense when a queue exists)</p>
-<ul>
-<li><p>FCFS<br>  按queue处理</p>
-</li>
-<li><p>SSTF (Shortest Seek Time First)<br>  selects the request with the minimum seek time  from the current head position (当前最近)</p>
-</li>
-<li><p>SCAN<br>  The disk arm starts <strong>at one end of the disk</strong>, and <strong>moves toward the other end</strong>,<br>  <strong>servicing</strong> requests <strong>until it gets to the other end of the disk</strong>, where the head<br>  movement is reversed and service continues.</p>
-</li>
-</ul>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230425022644.png" alt=""></p>
-<ul>
-<li><p>C-SCAN<br>  The head moves <strong>from one end of the disk to the other,</strong> servicing requests as it goes. When it reaches the other end, it <strong>immediately returns</strong> to the beginning of the disk, <strong>without servicing</strong> any requests on the return trip.</p>
-</li>
-<li><p>C-LOOK<br>  Similar to C-SCAN, but doesn’t reach the two ends.<br>  Arm only goes as far as the last request in each direction, then reverses direction immediately, without first going all the way to the end of the disk</p>
-</li>
-</ul>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230425022709.png" alt=""></p>
-<p>-》 <strong>in C-XXXX</strong> , arm services always <strong>occur in one direction.</strong> when they are moving are the opposite direction, they ‘<strong>immediately returns</strong>‘.</p>
-<h3 id="SSD-vs-HDD"><a href="#SSD-vs-HDD" class="headerlink" title="SSD vs HDD"></a>SSD vs HDD</h3><ul>
-<li><p>Nonvolatile memory devices 非易失性存储器设备</p>
-</li>
-<li><p>Storage capacity / price<br>  capacity: HDD usually &gt; SSD</p>
-<pre><code>  magnetic disks (HDD) hold much more data.
-</code></pre><p>  price : SDD usually &gt; HDD (per MB)</p>
-</li>
-<li><p>Reliability</p>
-<ul>
-<li>SSD &gt; HDD</li>
-<li>SSDs have no moving parts (like magnetic disks and read/write heads)<ul>
-<li>less possible to damage</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Lifespan</p>
-<ul>
+<li>==Lifespan==<ul>
 <li>SSD &lt;&lt; HDD</li>
 <li>-&gt; SSD need to be <strong>carefully</strong> managed (storage units have a certain erasing and writing life) -&gt; <strong>disk management</strong></li>
 <li><strong>LET’S TALK ABOUT IT LATER</strong></li>
 </ul>
 </li>
-<li><p>Speed</p>
-<ul>
+<li>Speed<ul>
 <li>SSD &gt;&gt; HDD</li>
 <li>No moving parts, so no seek time or rotational latency</li>
 </ul>
 </li>
-<li><p>Bus speed</p>
-<ul>
+<li>Bus speed<ul>
 <li>SSD requires a direct connection to a high-speed bus (such as PCI) for maximum performance</li>
 <li>(while HDDs are not subject to this limitation)</li>
 </ul>
 </li>
-<li><p>==Disk management &amp; Space management==</p>
-<ul>
+<li>==Disk management==<ul>
+<li>SSDs need to implement complex flash controller algorithms, such as garbage collection, wear leveling, etc., to manage storage space. </li>
+<li>HDDs, on the other hand, require low-level formatting (physical formatting) and logical formatting (logical formatting) to create file systems and deal with problems such as bad blocks.</li>
 <li><strong>LET’S TALK ABOUT IT LATER</strong></li>
 </ul>
 </li>
+<li>==Space management==<ul>
+<li>In HDD, the file system usually uses clusters (簇) to manage disk space, and the size of the cluster is usually fixed. </li>
+<li>In SSD, due to the complexity of its internal data management method, the file system usually needs to adopt different space management strategies, such as TRIM command and garbage collection (Garbage Collection), etc., to maintain the performance and lifespan of SSD.</li>
+<li><strong>LET’S TALK ABOUT IT LATER</strong><h3 id="Space-amp-Disk-Management"><a href="#Space-amp-Disk-Management" class="headerlink" title="Space &amp; Disk Management"></a>Space &amp; Disk Management</h3></li>
 </ul>
-<h3 id="Space-amp-Disk-Management"><a href="#Space-amp-Disk-Management" class="headerlink" title="Space &amp; Disk Management"></a>Space &amp; Disk Management</h3><p><strong>HDD</strong></p>
-<ul>
+</li>
+</ul>
+<h4 id="More-About-Clusters-Blocks-and-Tracks-…"><a href="#More-About-Clusters-Blocks-and-Tracks-…" class="headerlink" title="More About Clusters, Blocks and Tracks …"></a>More About Clusters, Blocks and Tracks …</h4><p>HDD </p>
+<ol>
+<li>簇（cluster）：簇是一组相邻的扇区（sector）的集合，<strong>是文件系统中的最小单位。</strong> </li>
+<li>块（block）：块是磁盘上用于<strong>存储数据的逻辑单位</strong>，通常由<strong>多个扇区</strong>组成。块是文件系统管理磁盘空间的基本单位（读写数据的基本单位）。</li>
+<li>磁道（track）：磁道是磁盘上的一个圆形轨道，由多个扇区组成。磁道是磁盘上进行数据读写的基本单位，磁头（head）在磁道上移动，可以读取或写入扇区中的数据。（只属于HDD的物理概念，SSD不存在这个概念）<br>SSD</li>
+<li>页（page）：页是SSD中最小的可读写单元，通常为4KB或8KB大小。</li>
+<li>块（block）类似HHD。由多个页构成。为了增大擦除时一次性操作的块的大小延长寿命，在SSD中通常更大，通常为128KB或256KB大小。（理由后面细说）</li>
+</ol>
+<h4 id="HDD"><a href="#HDD" class="headerlink" title="HDD"></a>HDD</h4><ul>
 <li>-&gt; Dividing a disk into <strong>sectors</strong> that the disk controller can read and write  <ul>
 <li>Each sector can hold header information + data + error correction code (<strong>ECC</strong>)  </li>
 <li>Usually 512b data but can be selectable  </li>
@@ -592,8 +362,7 @@
 <ul>
 <li>Boot code + partition table (contains pointer to boot partition)</li>
 </ul>
-<p><strong>SSD</strong></p>
-<ul>
+<h4 id="SSD"><a href="#SSD" class="headerlink" title="SSD"></a>SSD</h4><ul>
 <li>Read and written in <strong>“page”</strong> increments (think sector) <ul>
 <li>==but can’t overwrite in place==<ul>
 <li>Must first be erased, and erases happen in larger “block” increments</li>
@@ -669,7 +438,7 @@
 </ul>
 </li>
 <li>Parallel access to multiple disk improves performance  <ul>
-<li>bit-level striping  <ul>
+<li>Bit-level striping  <ul>
 <li>split the bits of each byte across multiple disks  </li>
 </ul>
 </li>
@@ -690,6 +459,21 @@
 </ul>
 </li>
 </ul>
+<p>交织分布奇偶校验（如RAID 5）和复制（如RAID 1）是两种不同的数据保护策略，它们在数据存储和容错方式上有以下区别：</p>
+<ol>
+<li>存储方式：交织分布奇偶校验将奇偶校验信息分布存储在多个数据盘中，与原始数据分散存储在不同的盘上，从而实现数据和奇偶校验信息的分离存储。而复制方式则是将数据完全复制到多个独立的盘上，从而实现数据的冗余存储。</li>
+<li>存储效率：交织分布奇偶校验在存储效率方面较为高效，因为它只需要使用一个额外的奇偶校验盘来存储校验信息，而原始数据可以充分利用所有的数据盘进行存储，从而提供了较高的存储容量。而复制方式则需要将数据完全复制到多个盘上，因此存储效率较低，通常只能提供50%的存储容量。</li>
+<li>容错能力：交织分布奇偶校验和复制方式在容错能力上有所不同。交织分布奇偶校验可以容忍单个数据盘的故障，通过从其他数据盘和奇偶校验盘中恢复数据。而复制方式可以容忍多个数据盘的故障，因为数据被完全复制到多个盘上，只要其中一个副本可用，数据就可以被访问。</li>
+<li>性能：交织分布奇偶校验和复制方式在性能方面也有所不同。交织分布奇偶校验在读性能上通常比较高，因为可以并行地从多个数据盘读取数据。但在写性能上可能受到奇偶校验盘的限制，因为写操作需要同时更新数据和奇偶校验信息。而复制方式在读性能上可能较低，因为需要从多个副本中选择一个进行读取，但在写性能上通常较高，因为数据只需要写入一个副本。</li>
+</ol>
+<p>假设有一个包含4个数据盘和1个奇偶校验盘的RAID 5阵列，其中数据盘分别标记为D1、D2、D3、D4，奇偶校验盘标记为P。当一个数据盘出现故障时，可以通过从其他数据盘和奇偶校验盘中恢复数据。<br>例如，当D2数据盘出现故障时，需要从其他数据盘和奇偶校验盘中恢复D2上的数据。RAID 5使用异或（XOR）运算来生成奇偶校验信息，该运算具有可逆性，可以用于数据恢复。<br>假设D1、D3和D4上的数据分别为A、B和C，而P上的奇偶校验信息为A XOR B XOR C。现在需要恢复D2上的数据B，可以通过执行以下步骤：</p>
+<ol>
+<li>从D1、D3和D4中读取对应位置上的数据，得到A、B和C的值。</li>
+<li>从奇偶校验盘P中读取对应位置上的奇偶校验信息，得到A XOR B XOR C的值。</li>
+<li>通过对已知的A、B和C的值以及A XOR B XOR C的值执行异或运算，即 (A XOR B XOR C) XOR (A XOR C) = B，得到D2上的数据B的值。</li>
+<li>将得到的B的值写入到替换后的新数据盘D2上，完成数据恢复。</li>
+</ol>
+<p>这样，通过从其他数据盘和奇偶校验盘中恢复数据，可以在某个数据盘出现故障时保护数据的完整性，并维持RAID 5阵列的可靠性和可用性。</p>
 <h3 id="Network-Attached-Storage"><a href="#Network-Attached-Storage" class="headerlink" title="Network-Attached Storage"></a>Network-Attached Storage</h3><ul>
 <li>Network-attached storage (NAS) is storage made available over a network rather than over a local connection (such as a bus)  <ul>
 <li>Remotely attaching to file systems  </li>
@@ -702,16 +486,12 @@
 </li>
 </ul>
 <p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230415031456.png" alt=""></p>
-<ul>
-<li>Storage Area Network（SAN）存储区域网络<ul>
-<li>Common in large storage environments  </li>
-<li>Multiple hosts attached to multiple storage arrays - flexible</li>
-<li>use high-speed buses，like Fibre Channel or iSCSI</li>
-</ul>
-</li>
-</ul>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230415031437.png" alt=""></p>
-<h2 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h2><h3 id="File"><a href="#File" class="headerlink" title="File"></a>File</h3><p>A file is a named collection of related information that is recorded on<br>secondary storage.  </p>
+<p>Storage Area Network（SAN）存储区域网络</p>
+<pre><code>- Common in large storage environments  
+- Multiple hosts attached to multiple storage arrays - flexible
+- use high-speed buses，like Fibre Channel or iSCSI
+</code></pre><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230415031437.png" alt=""></p>
+<h2 id="Slides11-File-System"><a href="#Slides11-File-System" class="headerlink" title="Slides11 File System"></a>Slides11 File System</h2><h3 id="File"><a href="#File" class="headerlink" title="File"></a>File</h3><p>A file is a named collection of related information that is recorded on<br>secondary storage.  </p>
 <ul>
 <li><strong>Attributes</strong><ul>
 <li>Name</li>
@@ -737,7 +517,7 @@
 <li>Time, Date, User identification</li>
 </ul>
 </li>
-<li>Information about files are kept in the directory structure, which is maintained on the disk</li>
+<li>Information about files are kept in the directory structure, which is<br>maintained on the disk</li>
 </ul>
 <h3 id="File-operations"><a href="#File-operations" class="headerlink" title="File operations"></a>File operations</h3><ul>
 <li>Create  </li>
@@ -843,8 +623,7 @@
 </li>
 <li>Grouping – logical grouping of files by properties, (e.g., all Java programs, all games, …)</li>
 </ul>
-<p><strong>Single-Level Directory</strong>  </p>
-<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230415231146.png" alt=""></p>
+<p><strong>Single-Level Directory</strong><br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230415231146.png" alt=""></p>
 <ul>
 <li>A single directory for all users  </li>
 <li>Efficiency problem  </li>
@@ -881,6 +660,11 @@
 </ul>
 <p><strong>General Graph Directory</strong></p>
 <h3 id="File-Allocation-Methods"><a href="#File-Allocation-Methods" class="headerlink" title="File Allocation Methods"></a>File Allocation Methods</h3><p>An allocation method refers to how disk blocks are allocated for files  </p>
+<ul>
+<li>Contiguous allocation  </li>
+<li>Linked allocation  </li>
+<li>Indexed allocation</li>
+</ul>
 <h4 id="Contiguous-Allocation"><a href="#Contiguous-Allocation" class="headerlink" title="Contiguous Allocation"></a>Contiguous Allocation</h4><ul>
 <li>连续分配 each file occupies a set of contiguous blocks  <ul>
 <li>Simple<ul>
@@ -959,8 +743,8 @@
 <li>如何找空格子<ul>
 <li>都需要遍历获取已占用的格子的信息<ul>
 <li>FAT：查询文件分配表直到找到未分配的块</li>
-<li>链式分配：从文件系统的起始位置开始，沿着链表遍历已占用的文件块，直到找到一个未占用的文件块</li>
-<li>这时，FAT就显著比链式分配快</li>
+<li>linked allocation：从文件系统的起始位置开始，沿着链表遍历已占用的文件块，直到找到一个未占用的文件块</li>
+<li>这时，FAT就显著比linked allocation快</li>
 </ul>
 </li>
 </ul>
@@ -1035,10 +819,8 @@
 </table>
 </div>
 <ul>
-<li><p>Assume that free blocks are allocated in logical order starting with block 11. Also it has been determined that blocks 17 and 32 are <strong>bad</strong> and cannot be allocated.  </p>
-</li>
-<li><p>Draw a block diagram showing the structure of the I-node and the blocks that are allocated for  </p>
-<ul>
+<li>Assume that free blocks are allocated in logical order starting with block 11. Also it has been determined that blocks 17 and 32 are <strong>bad</strong> and cannot be allocated.<br>  - </li>
+<li>Draw a block diagram showing the structure of the I-node and the blocks that are allocated for  <ul>
 <li>Original file size of <strong>3 blocks</strong>  (IN THE 1ST NODE)</li>
 <li>Adding 4 blocks   (single-indirect is enough)</li>
 <li>Adding 17 blocks (need double-indirect)</li>
@@ -1048,63 +830,18 @@
 <p>3+4blocks (4 in first I-node and 3 in single-indirect)<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230416012148.png" alt=""></p>
 <p>3+4+17blocks (4 in first I-node, 8 in single-indirect,11 in double-indirect )</p>
 <p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230416012023.png" alt=""></p>
-<p><strong>Quiz</strong></p>
-<p>Suppose a file system is constructed using blocks of 32 bytes. A pointer<br>needs 4 bytes. The I-node structure is as follows (word, value):  </p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>num</th>
-<th>content</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>permission word</td>
-</tr>
-<tr>
-<td>1</td>
-<td>file size</td>
-</tr>
-<tr>
-<td>2</td>
-<td>direct block</td>
-</tr>
-<tr>
-<td>3</td>
-<td>direct block</td>
-</tr>
-<tr>
-<td>4</td>
-<td>direct block</td>
-</tr>
-<tr>
-<td>5</td>
-<td>single-indirect</td>
-</tr>
-<tr>
-<td>6</td>
-<td>double-indirect</td>
-</tr>
-<tr>
-<td>7</td>
-<td>triple-indirect</td>
-</tr>
-</tbody>
-</table>
-</div>
+<p><strong>Quiz</strong><br>Suppose a file system is constructed using blocks of 32 bytes. A pointer<br>needs 4 bytes. The I-node structure is as follows (word, value):<br>num|content<br>—|—<br>0|permission word<br>1|file size<br>2|direct block<br>3|direct block<br>4|direct block<br>5|single-indirect<br>6|double-indirect<br>7|triple-indirect</p>
 <ul>
 <li>Assume that free blocks are allocated in logical order starting with block 100. Also it has been determined that blocks 107, 108, 109, and 112 are bad and cannot be allocated.  </li>
-<li>Draw a block diagram showing the structure of the I-node and the blocks that are allocated for<ul>
+<li>Draw a block diagram showing the structure of the I-node and the blocks that are allocated for  <ul>
 <li>Original file size of 3 blocks  </li>
-<li>Adding 7 blocks</li>
-<li>Adding 24 blocks</li>
-<li>Adding 64 blocks </li>
+<li>Adding 7 blocks  </li>
+<li>Adding 24 blocks  </li>
+<li>Adding 64 blocks  </li>
 </ul>
 </li>
 </ul>
-<h2 id="I-O-系统"><a href="#I-O-系统" class="headerlink" title="I/O 系统"></a>I/O 系统</h2><h3 id="I-O-Hardware"><a href="#I-O-Hardware" class="headerlink" title="I/O Hardware"></a>I/O Hardware</h3><ul>
+<h2 id="Slides12-I-O-System"><a href="#Slides12-I-O-System" class="headerlink" title="Slides12 I/O System"></a>Slides12 I/O System</h2><h3 id="I-O-Hardware"><a href="#I-O-Hardware" class="headerlink" title="I/O Hardware"></a>I/O Hardware</h3><ul>
 <li><p>Incredible variety of I/O devices  </p>
 <ul>
 <li>Storage devices <ul>
@@ -1217,13 +954,39 @@
 </tbody>
 </table>
 </div>
-
+<h2 id="Slides13-Virtual-Machines"><a href="#Slides13-Virtual-Machines" class="headerlink" title="Slides13 Virtual Machines"></a>Slides13 Virtual Machines</h2><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><ul>
+<li>Fundamental idea<ul>
+<li>abstract hardware of a single computer into several different execution environments  </li>
+<li>Similar to layered approach</li>
+<li>But layer creates virtual system (virtual machine, or VM) on which operation systems or applications can run  </li>
+</ul>
+</li>
+<li>Several components<ul>
+<li>Host 宿主机<ul>
+<li>underlying hardware system where VM runs  </li>
+</ul>
+</li>
+<li>Virtual machine manager (VMM) 虚拟机管理器  / hypervisor (hyper-V) 虚拟化监控程序<ul>
+<li>creates and runs virtual machines by providing interface that is identical to the host </li>
+<li>(except in the case of paravirtualization 部分虚拟化)  </li>
+</ul>
+</li>
+<li>Guest 客户机<ul>
+<li>process provided with virtual copy 虚拟副本 of the host  </li>
+<li>usually an operating system </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Single physical machine can run multiple operating systems concurrently 同时, each in its own virtual machine<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230416022332.png" alt=""></li>
+</ul>
+<h2 id="Slides14-Distributed-System-Structures"><a href="#Slides14-Distributed-System-Structures" class="headerlink" title="Slides14 Distributed System Structures"></a>Slides14 Distributed System Structures</h2><h2 id="Slides15-Distributed-System-Systems"><a href="#Slides15-Distributed-System-Systems" class="headerlink" title="Slides15 Distributed System Systems"></a>Slides15 Distributed System Systems</h2>
   
 
 
   </article>
   
-<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">回顾上一篇</div><a href="/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F1.html">现代操作系统CS2310 （上）进程管理</a></div><div class="item" id="next"><div class="note">接下来阅读</div><a href="/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F3.html">现代操作系统CS2310 （附）虚拟机和分布式</a></div></section></div>
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">回顾上一篇</div><a href="/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F1.html">现代操作系统CS2310 （上）进程管理</a></div><div class="item" id="next"><div class="note">接下来阅读</div><a href="/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F0.html">现代操作系统CS2310 速效版</a></div></section></div>
 
   
 

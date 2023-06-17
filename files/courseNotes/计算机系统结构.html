@@ -30,6 +30,8 @@
 <meta property="og:site_name" content="極楽浄土">
 <meta property="og:description" content="SJTU-CS2305 计算机系统结构 课程笔记">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230529013339.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230604231322.png">
 <meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230311000839.png">
 <meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230311215011.png">
 <meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230311233646.png">
@@ -37,11 +39,15 @@
 <meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230311234237.png">
 <meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230311234900.png">
 <meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230311235345.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230604234056.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230604234115.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230514161812.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230514161942.png">
 <meta property="article:published_time" content="2023-03-10T15:54:37.000Z">
-<meta property="article:modified_time" content="2023-03-11T18:01:58.000Z">
+<meta property="article:modified_time" content="2023-06-04T16:14:34.733Z">
 <meta property="article:author" content="AleryXiao">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://float0108.github.io/assets/Pasted%20image%2020230311000839.png">
+<meta name="twitter:image" content="https://float0108.github.io/assets/Pasted%20image%2020230529013339.png">
   
   
 
@@ -96,7 +102,7 @@
 
 
 
-<widget class="widget-wrapper toc multi" id="data-toc"><div class="widget-header cap dis-select"><span class="name">计算机系统结构-CS2305</span></div><div class="widget-body fs14"><div class="doc-tree active"><a class="doc-tree-link active" href="/files/courseNotes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84.html#start"><span class="toc-text">计算机系统结构-CS2305</span></a><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MIPS%E5%9F%BA%E7%A1%80"><span class="toc-text">MIPS基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Mips%E6%8C%87%E4%BB%A4%E7%BB%93%E6%9E%84"><span class="toc-text">Mips指令结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84"><span class="toc-text">结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-text">寄存器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8%E4%BD%BF%E7%94%A8%E8%A7%84%E8%8C%83"><span class="toc-text">寄存器使用规范</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4"><span class="toc-text">基础指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%8B%E5%8F%96%E5%80%BC"><span class="toc-text">赋取值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%97%E6%9C%AF"><span class="toc-text">算术</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Go-To"><span class="toc-text">Go To</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%AA%E6%8C%87%E4%BB%A4"><span class="toc-text">伪指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A0%86%E6%A0%88"><span class="toc-text">堆栈</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E5%99%A8%E8%AE%BE%E8%AE%A1"><span class="toc-text">处理器设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E5%91%A8%E6%9C%9F%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-text">单周期处理器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%85%83%E4%BB%B6"><span class="toc-text">基本元件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E5%8D%95%E5%85%83%EF%BC%9A%E5%AF%84%E5%AD%98%E5%99%A8%E6%96%87%E4%BB%B6"><span class="toc-text">状态单元：寄存器文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E5%8D%95%E5%85%83%EF%BC%9A%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-text">状态单元：存储器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%E4%B8%8A%E7%9A%84%E5%85%B6%E5%AE%83%E5%8D%95%E5%85%83"><span class="toc-text">数据通路上的其它单元</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%E8%BF%9E%E6%8E%A5"><span class="toc-text">数据通路连接</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%96%E6%8C%87%E4%BB%A4"><span class="toc-text">取指令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E8%AF%91%E7%A0%81"><span class="toc-text">指令译码</span></a></li></ol></li></ol></li></ol></li></ol></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(8086).html"><span class="toc-text">计算机组成-汇编语言-CS2307</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E7%AE%97%E6%B3%95%E4%B8%8E%E5%A4%8D%E6%9D%82%E6%80%A7.html"><span class="toc-text">算法与复杂性-CS2308</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F1.html"><span class="toc-text">现代操作系统CS2310 （上）进程管理</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F2.html"><span class="toc-text">现代操作系统CS2310 （下）存储与文件系统</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F3.html"><span class="toc-text">现代操作系统CS2310 （附）虚拟机和分布式</span></a></div></div></widget>
+<widget class="widget-wrapper toc multi" id="data-toc"><div class="widget-header cap dis-select"><span class="name">计算机系统结构-CS2305</span></div><div class="widget-body fs14"><div class="doc-tree active"><a class="doc-tree-link active" href="/files/courseNotes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84.html#start"><span class="toc-text">计算机系统结构-CS2305</span></a><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E8%A1%A8%E7%A4%BA"><span class="toc-text">数表示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B4%E6%95%B0"><span class="toc-text">整数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%8D"><span class="toc-text">位</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%BA%A2%E5%87%BA"><span class="toc-text">溢出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B4%E6%95%B0%E4%B9%98%E6%B3%95"><span class="toc-text">整数乘法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E6%95%B0"><span class="toc-text">小数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="toc-text">浮点数的表示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IEEE754%E6%B5%AE%E7%82%B9%E6%95%B0"><span class="toc-text">IEEE754浮点数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8"><span class="toc-text">数据存储</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MIPS%E5%9F%BA%E7%A1%80"><span class="toc-text">MIPS基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Mips%E6%8C%87%E4%BB%A4%E7%BB%93%E6%9E%84"><span class="toc-text">Mips指令结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84"><span class="toc-text">结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-text">寄存器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8%E4%BD%BF%E7%94%A8%E8%A7%84%E8%8C%83"><span class="toc-text">寄存器使用规范</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4"><span class="toc-text">基础指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%8B%E5%8F%96%E5%80%BC"><span class="toc-text">赋取值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%97%E6%9C%AF"><span class="toc-text">算术</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Go-To"><span class="toc-text">Go To</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%AA%E6%8C%87%E4%BB%A4"><span class="toc-text">伪指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A0%86%E6%A0%88"><span class="toc-text">堆栈</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E5%99%A8%E8%AE%BE%E8%AE%A1"><span class="toc-text">处理器设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E5%91%A8%E6%9C%9F%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-text">单周期处理器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%85%83%E4%BB%B6"><span class="toc-text">基本元件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E5%8D%95%E5%85%83%EF%BC%9A%E5%AF%84%E5%AD%98%E5%99%A8%E6%96%87%E4%BB%B6"><span class="toc-text">状态单元：寄存器文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E5%8D%95%E5%85%83%EF%BC%9A%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-text">状态单元：存储器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%E4%B8%8A%E7%9A%84%E5%85%B6%E5%AE%83%E5%8D%95%E5%85%83"><span class="toc-text">数据通路上的其它单元</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%E8%BF%9E%E6%8E%A5"><span class="toc-text">数据通路连接</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%96%E6%8C%87%E4%BB%A4"><span class="toc-text">取指令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E8%AF%91%E7%A0%81"><span class="toc-text">指令译码</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E4%BF%A1%E5%8F%B7"><span class="toc-text">控制信号</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E6%80%A7%E4%B8%8E%E5%86%92%E9%99%A9"><span class="toc-text">相关性与冒险</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E5%86%92%E9%99%A9"><span class="toc-text">结构冒险</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E5%92%8C%E6%95%B0%E6%8D%AE"><span class="toc-text">指令和数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8%E6%96%87%E4%BB%B6%E7%9A%84%E8%AF%BB%E5%86%99"><span class="toc-text">寄存器文件的读写</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%86%92%E9%99%A9"><span class="toc-text">数据冒险</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E5%86%92%E9%99%A9"><span class="toc-text">控制冒险</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98"><span class="toc-text">高速缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%80%E9%83%A8%E6%80%A7%E5%8E%9F%E7%90%86-locality"><span class="toc-text">局部性原理 locality</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%B0%E5%9D%80%E6%98%A0%E5%B0%84"><span class="toc-text">地址映射</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5-direct-mapped"><span class="toc-text">直接 (direct mapped)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%A8%E7%9B%B8%E8%81%94-fully-associated"><span class="toc-text">全相联 (fully-associated)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%84%E7%9B%B8%E8%81%94-set-associated"><span class="toc-text">组相联 (set-associated)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99%E7%AD%96%E7%95%A5"><span class="toc-text">写策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%BF%E6%8D%A2%E7%AD%96%E7%95%A5"><span class="toc-text">替换策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cache%E5%8F%8B%E5%A5%BD%E7%9A%84%E4%BB%A3%E7%A0%81"><span class="toc-text">Cache友好的代码</span></a></li></ol></li></ol></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(8086).html"><span class="toc-text">计算机组成-汇编语言-CS2307</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E7%AE%97%E6%B3%95%E4%B8%8E%E5%A4%8D%E6%9D%82%E6%80%A7.html"><span class="toc-text">算法与复杂性-CS2308</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F1.html"><span class="toc-text">现代操作系统CS2310 （上）进程管理</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F2.html"><span class="toc-text">现代操作系统2-CS2310</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F0.html"><span class="toc-text">现代操作系统CS2310 速效版</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F3.html"><span class="toc-text">现代操作系统CS2310 （附）虚拟机和分布式</span></a></div></div></widget>
 
 
 
@@ -112,11 +118,101 @@
 
   
   
-<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" id="home" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">collection</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/files/courseNotes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84.html">courseNotes</a></div><div id="post-meta">更新于&nbsp;<time datetime="2023-03-11T18:01:58.000Z">2023-03-12</time></div></div>
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" id="home" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">collection</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/files/courseNotes/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84.html">courseNotes</a></div><div id="post-meta">更新于&nbsp;<time datetime="2023-06-04T16:14:34.733Z">2023-06-05</time></div></div>
 
   <article class='md-text content wiki'>
   <h1 class="article-title"><span>计算机系统结构-CS2305</span></h1>
-  <h2 id="MIPS基础"><a href="#MIPS基础" class="headerlink" title="MIPS基础"></a>MIPS基础</h2><h3 id="Mips指令结构"><a href="#Mips指令结构" class="headerlink" title="Mips指令结构"></a>Mips指令结构</h3><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020230311000839.png" alt=""></p>
+  <h2 id="数表示"><a href="#数表示" class="headerlink" title="数表示"></a>数表示</h2><h3 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h3><p>正/反/补<br>补：取反+1<br>（负数比整数多一个）</p>
+<p>sign/unsigned<br>$[x] = x \ge 0 \, ? \, x : (2^{n+1} + x)$<br>$[x+y] = [x] + [y]$</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230529013339.png" alt=""></p>
+<h4 id="位"><a href="#位" class="headerlink" title="位"></a>位</h4><p>&amp;|^~</p>
+<p>扩展<br>0扩展/符号位扩展</p>
+<p>截断<br><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> i = <span class="number">32768</span>; <span class="comment">// 0x00008000h</span></span><br><span class="line"><span class="type">short</span> si = (<span class="type">short</span>) i; <span class="comment">// 0x8000h</span></span><br><span class="line"><span class="type">int</span> j = si; <span class="comment">// 0xFFFF8000H -32768</span></span><br></pre></td></tr></table></figure></p>
+<p>左移 <code>sll</code></p>
+<ul>
+<li>抛弃最高位</li>
+<li>可能发生溢出</li>
+</ul>
+<p>右移</p>
+<ul>
+<li>逻辑右移：左补0 <code>srl</code></li>
+<li>算术右移：左补符号 <code>sra</code></li>
+</ul>
+<h4 id="溢出"><a href="#溢出" class="headerlink" title="溢出"></a>溢出</h4><ul>
+<li>符号位：{+} + {+} -&gt; {-} ，{-} + {-} -&gt; {+}</li>
+<li>CarryIn[N-1] XOR CarryOut[N-1]</li>
+</ul>
+<h4 id="整数乘法"><a href="#整数乘法" class="headerlink" title="整数乘法"></a>整数乘法</h4><ul>
+<li><p>乘一位左移一位</p>
+<ul>
+<li>模拟手算</li>
+</ul>
+</li>
+<li><p>不存在==补码乘法==</p>
+<ul>
+<li>原码乘法器（先转原码，乘算，再转补码）</li>
+<li>Booth算法<ul>
+<li>原理：将乘法转换为对2^n的加法、</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>C语言：抛弃前w位，保留后w位</p>
+<ul>
+<li>无论2个w位数字表示无符号数还是补码，截断后得到的w位竭股肱都是在正确的</li>
+<li>无符号乘法和有符号乘法共用乘法部件</li>
+</ul>
+</li>
+<li><p>移位等效：$u &lt;&lt; k$ 总等效于 $u \times 2^k$</p>
+<ul>
+<li>对无符号和有符号数都有效</li>
+<li>速度快，编译器会自动优化</li>
+</ul>
+</li>
+<li><p>溢出防范</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">int x,y; </span><br><span class="line">x = 65535; // 0000 FFFFH</span><br><span class="line">y = x * x; // FFFE 0001H -&gt; -131071</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">int ele_cnt = 2^20 + 1, ele_size = 4096 = 2^12;</span><br><span class="line">int* array = (int*) malloc(ele_cnt * ele_size); // ans = 2^12 溢出</span><br></pre></td></tr></table></figure>
+<h3 id="小数"><a href="#小数" class="headerlink" title="小数"></a>小数</h3><h4 id="浮点数的表示"><a href="#浮点数的表示" class="headerlink" title="浮点数的表示"></a>浮点数的表示</h4><p>S + E + M （规格化位0.1xxxx）</p>
+<ul>
+<li>$N = (-1)^S \times M \times R^E$</li>
+<li>S 符号位 - 正负</li>
+<li>M 尾数 - 纯小数</li>
+<li>E 阶数 （浮点数的指数） 是整数</li>
+<li>计算机二进制取基R = 2</li>
+<li><code>13.125 = 0.1101001 * 2^100</code></li>
+<li><p>阶码多 -&gt; 范围大，尾数多 -&gt; 精度高</p>
+</li>
+<li><p>16位浮点</p>
+<ul>
+<li>4位阶码+12位尾数含符号位</li>
+</ul>
+</li>
+</ul>
+<h4 id="IEEE754浮点数"><a href="#IEEE754浮点数" class="headerlink" title="IEEE754浮点数"></a>IEEE754浮点数</h4><p>$(-1)^s \times 1.m \times 2^{e-127}$</p>
+<p>规格化为1.xxxx，把1缺省存储，尾数范围加一位</p>
+<p>float32: 约7位decimal小数（24尾数位）<br>    $2\times 10^{-38} &lt; N &lt; 2.0 \times 10^{38}$</p>
+<p>double64: 约15位decimal小数（53尾数位）<br>    $2\times 10^{-308} &lt; N &lt; 2.0 \times 10^{308}$</p>
+<p>先比较符号位，负数符号位是1，之后可以和unsigned integer一样比较大小</p>
+<p>计算：</p>
+<ol>
+<li>对阶</li>
+<li>尾数相加</li>
+<li>规格化检查</li>
+<li>舍入</li>
+<li>溢出检测</li>
+</ol>
+<p>浮点运算不是精确的<br>    和大很多的数相加的时候会丢失比较小的数（可表示尾数的位数有限）<br>    （对阶时阶码差的绝对值&gt;25）</p>
+<p>舍入<br>    最近<br>        判断后面的位数构成的数是否&gt;100…0 ？ <100.00
+        如果等于100...0，**令最后一位为偶数**
+    正向
+        -><br>    负向<br>        &lt;-<br>    截断<br>        朝0</p>
+<p>double/float -&gt; int<br>    可能溢出<br>    发生0方向舍入<br>    (int)3.3/1.1 = 2<br>    不要用\==判断，而是fabs(3.0-a)&gt;0.00001</p>
+<h3 id="数据存储"><a href="#数据存储" class="headerlink" title="数据存储"></a>数据存储</h3><p>大/小数端</p>
+<p>大：最低字节存储在高地址<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230604231322.png" alt=""><br>*这种存储是以字节单位的</p>
+<p>字对齐<br>    对齐/非对齐</p>
+<h2 id="MIPS基础"><a href="#MIPS基础" class="headerlink" title="MIPS基础"></a>MIPS基础</h2><h3 id="Mips指令结构"><a href="#Mips指令结构" class="headerlink" title="Mips指令结构"></a>Mips指令结构</h3><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020230311000839.png" alt=""></p>
 <h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><ul>
 <li><p>注释 <code>#注释</code></p>
 </li>
@@ -233,6 +329,226 @@
 </ul>
 </li>
 </ul>
+<h4 id="控制信号"><a href="#控制信号" class="headerlink" title="控制信号"></a>控制信号</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>信号名称</th>
+<th>无效(=0)时的作用</th>
+<th>有效(=1)时的作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RegDst</td>
+<td>写寄存器在寄存器文件中的目标寄存器的编号来自于rt字段</td>
+<td>写寄存器在寄存器文件中的目标寄存器的编号来自于rd字段</td>
+</tr>
+<tr>
+<td>RegWrite</td>
+<td>无</td>
+<td>写数据输入的值，写入到目标寄存器编号（rt或者rd）选择的通用寄存器</td>
+</tr>
+<tr>
+<td>ALUSrc</td>
+<td>ALU的第二个操作数来自于寄存器</td>
+<td>ALU的第二个操作数来自于立即数</td>
+</tr>
+<tr>
+<td>MemWrite</td>
+<td>无</td>
+<td>将地址输入指定位置的存储器内容替换为写数据输入的值</td>
+</tr>
+<tr>
+<td>MemtoReg</td>
+<td>送往寄存器文件写数据输入的值来自于ALU的输出</td>
+<td>送往寄存器文件写数据输入的值来自于数据存储器的输出</td>
+</tr>
+<tr>
+<td>ExtOP</td>
+<td>16位立即数零扩展到32位</td>
+<td>16位立即数带符号扩展到32位</td>
+</tr>
+<tr>
+<td>Branch</td>
+<td>选择PC+4作为PC输入端</td>
+<td>是一条应该转移的分支指令</td>
+</tr>
+<tr>
+<td>Jump</td>
+<td>不选择Jump目标地址，而是选择PC+4或者条件转移目标地址，作为PC输入端</td>
+<td>是一条应该转移的分支指令，选择Jump目标地址作为PC输入端</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="相关性与冒险"><a href="#相关性与冒险" class="headerlink" title="相关性与冒险"></a>相关性与冒险</h2><p>冒险：<br>    结构冒险<br>        硬件资源相关性<br>    数据冒险<br>        数据依赖性<br>    控制冒险<br>        转移指令引起，需要根据指令的结果决定下一步</p>
+<h4 id="结构冒险"><a href="#结构冒险" class="headerlink" title="结构冒险"></a>结构冒险</h4><h5 id="指令和数据"><a href="#指令和数据" class="headerlink" title="指令和数据"></a>指令和数据</h5><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230604234056.png" alt=""></p>
+<p>方案1：插入空指令</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230604234115.png" alt=""></p>
+<p>方案2：指令存储器和数据存储器相互独立</p>
+<h5 id="寄存器文件的读写"><a href="#寄存器文件的读写" class="headerlink" title="寄存器文件的读写"></a>寄存器文件的读写</h5><p>设置相互独立的读写口，写在前半周期完成，读在后半周期完成</p>
+<h4 id="数据冒险"><a href="#数据冒险" class="headerlink" title="数据冒险"></a>数据冒险</h4><p>写后读数据冒险<br>    需要修改目标寄存器内容，尚未写入，而新指令需要读取该寄存器</p>
+<p>“读存储器-使用 ” 冒险<br>    目标寄存器需要读入内容，尚未写入，而新指令需要读取该寄存器</p>
+<p>软件解决：插入空指令</p>
+<p>硬件解决：<br>流水线停顿<br>前向传递（forwarding）<br>    不等写回寄存器，就将产生的结果直接传送到当前周期需要结果的功能单元 (例如： ALU)的输入端<br>    <strong>不能</strong>解决读存储器冒险<br>        需要一个周期停顿（等待读取指令完成DM）</p>
+<h4 id="控制冒险"><a href="#控制冒险" class="headerlink" title="控制冒险"></a>控制冒险</h4><p>流水线遇到分支（转移）指令和其它改变PC值的指令时，会引起流水线的停顿<br>例如<br>无条件转移（j, jal, jr) 和 条件转移 (beq, bne)</p>
+<p>Jump: flush<br>    清空IF/ID段中的指令</p>
+<p>转移控制槽（编译器和处理器的约定）</p>
+<p>-&gt; 解决方案：转移预测<br>静态：程序执行前预测</p>
+<p>动态：程序执行时预测</p>
+<h2 id="高速缓存"><a href="#高速缓存" class="headerlink" title="高速缓存"></a>高速缓存</h2><p>CPU register -&gt; [SRAM -&gt; DRAM] ==内存== -&gt; [SSD -&gt; 磁盘/光盘] ==外存==</p>
+<ul>
+<li>cache 存储器（ Cache memories ） <ul>
+<li>在处理器附近增加一个小容量快速存储器(cache) </li>
+<li>基于SRAM，由硬件自动管理 </li>
+</ul>
+</li>
+<li>cache基本思想: <ul>
+<li>频繁访问的数据块存储在cache中 </li>
+<li>CPU 首先在cache中查找想访问的数据，而不是直接访问主存 </li>
+<li>我们希望被访问数据存放在cache中<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230514161812.png" alt=""></li>
+</ul>
+</li>
+</ul>
+<h3 id="局部性原理-locality"><a href="#局部性原理-locality" class="headerlink" title="局部性原理 locality"></a>局部性原理 locality</h3><ul>
+<li>时间局部性<ul>
+<li>最近访问的项目，在不久的将来将会被访问</li>
+</ul>
+</li>
+<li>空间局部性<ul>
+<li>与当前项目地址邻近的项目很可能会同时被访问</li>
+</ul>
+</li>
+</ul>
+<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ul>
+<li>块<ul>
+<li>一般为多个字</li>
+<li>（空间局部性）</li>
+</ul>
+</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../assets/Pasted%20image%2020230514161942.png" alt=""></p>
+<ul>
+<li><p>命中Hit / 失效Miss</p>
+<ul>
+<li>需要访问的元素所在块是否被存储在cache中</li>
+<li>Miss：<ul>
+<li>从内存中取出该块</li>
+<li>放置在cache中<ul>
+<li>放置策略</li>
+<li>替换策略</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>命中率h</li>
+<li>平均访问时间<ul>
+<li>$t_a=ht_c+(1-h)t_m$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>关键问题</p>
+<ol>
+<li>如何判断数据是否在cache中<br>数据查找 Data Identification</li>
+<li>如何查找数据位置<br>地址映射 Address Mapping</li>
+<li>cache满后如何处理<br>替换策略 Placement Policy</li>
+<li>保持cache和memory一致性<br>写入策略 Write Policy</li>
+</ol>
+</li>
+</ul>
+<h3 id="地址映射"><a href="#地址映射" class="headerlink" title="地址映射"></a>地址映射</h3><h5 id="直接-direct-mapped"><a href="#直接-direct-mapped" class="headerlink" title="直接 (direct mapped)"></a>直接 (direct mapped)</h5><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Main address</th>
+<th>Tag Bits</th>
+<th>Index Bits</th>
+<th>Offset Bits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/</td>
+<td>区编号（upper）</td>
+<td>区索引</td>
+<td>块内偏移</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>数据块大小 Block_Size = 2^Offset_Bits<br>缓存 Cache_Size = Block_Size * Cache_Entries ( = 2^Index_Bits) </p>
+<p>* Valid Bit<br>-&gt; each tag entry has an indicator to show if it’s valid</p>
+<p>==主存分区 （区号tag bits），每一个区索引（index bits）对应缓存块的一行，比较tag确认Hit/Miss==</p>
+<p>优点</p>
+<ul>
+<li>地址变换速度快，一对一映射 </li>
+<li>替换算法简单、容易实现</li>
+</ul>
+<p>缺点</p>
+<ul>
+<li>容易冲突，cache利用率低 </li>
+<li>命中率低</li>
+</ul>
+<h5 id="全相联-fully-associated"><a href="#全相联-fully-associated" class="headerlink" title="全相联 (fully-associated)"></a>全相联 (fully-associated)</h5><h5 id="组相联-set-associated"><a href="#组相联-set-associated" class="headerlink" title="组相联 (set-associated)"></a>组相联 (set-associated)</h5><p>主存地址 = Tag + 组 + 块内偏移<br>-》<br>Cache地址 = 路 + 组 + 块内偏移</p>
+<p>直接-》组相联-》全相连</p>
+<p>每组可存一个tag / 每组可以存多个tag（数量=路数） / 共一组，可以存很多的tag（tag是全局的）</p>
+<h3 id="写策略"><a href="#写策略" class="headerlink" title="写策略"></a>写策略</h3><ul>
+<li><p>Cache命中的基础上</p>
+<ul>
+<li>写直达法 Write-through<ul>
+<li>直接向内存中写入数据</li>
+<li>写入cache的同时写入memory</li>
+</ul>
+</li>
+<li>写回法 Write-back<ul>
+<li>推迟对内存的写入直到数据所在缓存的行被替换</li>
+<li>添加dirty bit（页面重写标志位）</li>
+<li>只写入cache，被替换时修改</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Cahce失效的基础上</p>
+<ul>
+<li>按写分配 Write-allocate<ul>
+<li>cache读入失效行</li>
+<li>与write-back搭配</li>
+</ul>
+</li>
+<li>不按写分配<ul>
+<li>直接向内存写入，不读入缓存</li>
+<li>与write-through搭配</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>策略总结</p>
+<ul>
+<li>写直达+不按写分配法 (Write-through + No-write-allocate) <ul>
+<li>安全性更高</li>
+</ul>
+</li>
+<li>写回法+按写分配法 (Write-back + Write-allocate)<ul>
+<li>速度更快</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="替换策略"><a href="#替换策略" class="headerlink" title="替换策略"></a>替换策略</h3><p>（在现代操作系统讲过）</p>
+<ul>
+<li>随机替换</li>
+<li>先进先出FIFO</li>
+<li>近期最少使用LRU</li>
+<li>伪LRU<ul>
+<li>Clock</li>
+</ul>
+</li>
+<li>NMRU</li>
+</ul>
+<h3 id="Cache友好的代码"><a href="#Cache友好的代码" class="headerlink" title="Cache友好的代码"></a>Cache友好的代码</h3><p>eg. C语言的数组元素是以行为主顺序分配的，同一行的元素被分配在连续的内存空间中 -&gt; 利用了空间局部性</p>
 
   
 
