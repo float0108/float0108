@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>courseNotes：现代操作系统CS2310 （附）虚拟机和分布式 - 極楽浄土</title>
+
+  
+    <meta name="description" content="SJTU-CS2310 现代操作系统 （速效版）">
+<meta property="og:type" content="website">
+<meta property="og:title" content="现代操作系统CS2310 （附）虚拟机和分布式">
+<meta property="og:url" content="https://float0108.github.io/files/courseNotes/2022(2)/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F3.html">
+<meta property="og:site_name" content="極楽浄土">
+<meta property="og:description" content="SJTU-CS2310 现代操作系统 （速效版）">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230416022332.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230425013424.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230425014843.png">
+<meta property="article:published_time" content="2023-03-10T15:54:37.000Z">
+<meta property="article:modified_time" content="2024-02-19T02:16:53.992Z">
+<meta property="article:author" content="AleryXiao">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://float0108.github.io/assets/Pasted%20image%2020230416022332.png">
+  
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="極楽浄土" type="application/atom+xml">
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="/site_assets/favicon.jpg">
+  
+
+  
+
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='wiki'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/site_assets/head.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">極楽浄土</div><div class="sub normal cap">フロトの理发店</div><div class="sub hover cap" style="opacity:0"> @AleryXiao</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item" href="/">posts</a><a class="nav-item active" href="/wiki/">collection</a><a class="nav-item" href="/about/">about</a></nav>
+</header>
+
+
+<div class="widgets">
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/files/courseNotes/" placeholder="在 /files/courseNotes/ 中搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+
+
+
+<widget class="widget-wrapper toc multi" id="data-toc"><div class="widget-header cap dis-select"><span class="name">现代操作系统CS2310 （附）虚拟机和分布式</span></div><div class="widget-body fs14"><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2022(2)/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84.html#start"><span class="toc-text">计算机系统结构-CS2305</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2022(2)/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(8086).html"><span class="toc-text">计算机组成-汇编语言-CS2307</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2022(2)/%E7%AE%97%E6%B3%95%E4%B8%8E%E5%A4%8D%E6%9D%82%E6%80%A7.html"><span class="toc-text">算法与复杂性-CS2308</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2022(2)/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F1.html"><span class="toc-text">现代操作系统CS2310 （上）进程管理</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2022(2)/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F2.html"><span class="toc-text">现代操作系统2-CS2310</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2022(2)/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F0.html"><span class="toc-text">现代操作系统CS2310 速效版</span></a></div><div class="doc-tree active"><a class="doc-tree-link active" href="/files/courseNotes/2022(2)/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F3.html"><span class="toc-text">现代操作系统CS2310 （附）虚拟机和分布式</span></a><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA"><span class="toc-text">虚拟机</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Overview"><span class="toc-text">Overview</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F-Distributed-System"><span class="toc-text">分布式系统 Distributed System</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84"><span class="toc-text">分布式系统结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Motivation-%E5%8A%A8%E6%9C%BA"><span class="toc-text">Motivation 动机</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-vs-%E5%88%86%E5%B8%83%E5%BC%8F%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-text">网络操作系统 vs 分布式操作系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Network-Structure-%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84"><span class="toc-text">Network Structure 网络结构</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E5%8C%BA%E5%9F%9F%E7%BD%91%E7%BB%9C-Local-Area-Network%EF%BC%88LAN%EF%BC%89"><span class="toc-text">本地区域网络 Local-Area Network（LAN）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B9%BF%E5%9F%9F%E7%BD%91-Wide-Area-Network%EF%BC%88-WAN%EF%BC%89"><span class="toc-text">广域网 Wide-Area Network（ WAN）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91-Network-Topology"><span class="toc-text">网络拓扑 Network Topology</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="toc-text">分布式文件系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80"><span class="toc-text">基础</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%91%BD%E5%90%8D-Naming"><span class="toc-text">命名 Naming</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%91%BD%E5%90%8D%E7%BB%93%E6%9E%84"><span class="toc-text">命名结构</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E6%96%87%E4%BB%B6%E8%AE%BF%E9%97%AE%E4%B8%8E%E7%BC%93%E5%AD%98"><span class="toc-text">远程文件访问与缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BC%93%E5%AD%98%E6%9B%B4%E6%96%B0%E7%AD%96%E7%95%A5-Cache-Update-Policy"><span class="toc-text">缓存更新策略 Cache Update Policy</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%80%E8%87%B4%E6%80%A7-Consistency"><span class="toc-text">一致性 Consistency</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BC%93%E5%AD%98%E5%92%8C%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E6%9C%BA%E5%88%B6%E6%AF%94%E8%BE%83"><span class="toc-text">缓存和远程服务机制比较</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Stateful-File-Service-%E7%8A%B6%E6%80%81%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1"><span class="toc-text">Stateful File Service 状态文件服务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%A4%8D%E5%88%B6-File-Replication"><span class="toc-text">文件复制 File Replication</span></a></li></ol></li></ol></li></ol></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2022(2)/%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.html"><span class="toc-text">高级数据结构-SE2322</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2023(1)/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.html"><span class="toc-text">CS3311 计算机网络</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2023(1)/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%8E%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80.html"><span class="toc-text">密码学与信息安全基础-CS3314</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2023(1)/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%EF%BC%88B%E7%B1%BB%EF%BC%89.html"><span class="toc-text">人工智能-CS3317</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95.html"><span class="toc-text">软件测试-SE3336</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86.html"><span class="toc-text">软件测试-SE3336</span></a></div></div></widget>
+
+
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+  
+  
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" id="home" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">collection</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/files/courseNotes/2022(2)/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84.html">courseNotes</a></div><div id="post-meta">更新于&nbsp;<time datetime="2024-02-19T02:16:53.992Z">2024-02-19</time></div></div>
+
+  <article class='md-text content wiki'>
+  <h1 class="article-title"><span>现代操作系统CS2310 （附）虚拟机和分布式</span></h1>
+  <h2 id="虚拟机"><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h2><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><ul>
+<li>Fundamental idea<ul>
+<li>abstract hardware of a single computer into several different execution environments  </li>
+<li>Similar to layered approach</li>
+<li>But layer creates virtual system (virtual machine, or VM) on which operation systems or applications can run  </li>
+</ul>
+</li>
+<li>Several components<ul>
+<li>Host 宿主机<ul>
+<li>underlying hardware system where VM runs  </li>
+</ul>
+</li>
+<li>Virtual machine manager (VMM) 虚拟机管理器  / hypervisor (hyper-V) 虚拟化监控程序<ul>
+<li>creates and runs virtual machines by providing interface that is identical to the host </li>
+<li>(except in the case of paravirtualization 部分虚拟化)  </li>
+</ul>
+</li>
+<li>Guest 客户机<ul>
+<li>process provided with virtual copy 虚拟副本 of the host  </li>
+<li>usually an operating system </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Single physical machine can run multiple operating systems concurrently 同时, each in its own virtual machine<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020230416022332.png" alt=""></li>
+</ul>
+<h2 id="分布式系统-Distributed-System"><a href="#分布式系统-Distributed-System" class="headerlink" title="分布式系统 Distributed System"></a>分布式系统 Distributed System</h2><h3 id="分布式系统结构"><a href="#分布式系统结构" class="headerlink" title="分布式系统结构"></a>分布式系统结构</h3><h4 id="Motivation-动机"><a href="#Motivation-动机" class="headerlink" title="Motivation 动机"></a>Motivation 动机</h4><p>在分布式系统中，多个计算机节点（node）协同工作以完成某项任务。这种方式比单个计算机处理大规模问题更高效。因此，分布式系统在大规模计算和数据处理方面有着广泛的应用。</p>
+<ul>
+<li>分布式系统是由松散耦合的处理器通过通信网络相互连接而成的集合。</li>
+<li>处理器<ul>
+<li>也称为节点/计算机/机器/主机等</li>
+<li>站点 Site 指处理器的位置</li>
+</ul>
+</li>
+<li><p>好处</p>
+<ul>
+<li>资源共享 Resource sharing<ul>
+<li>在远程站点共享和打印文件</li>
+<li>在分布式数据库中处理信息</li>
+<li>使用远程专用硬件设备</li>
+</ul>
+</li>
+<li>计算速度提升 Computation speedup<ul>
+<li>负载均衡 load sharing</li>
+</ul>
+</li>
+<li>可靠性<ul>
+<li>检测和从站点故障中恢复，功能转移，重新整合失败的站点</li>
+</ul>
+</li>
+<li>通信<ul>
+<li>消息传递</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Example<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020230425013424.png" alt=""></p>
+</li>
+<li><p>中心的格子代表整个网络，表示分布式系统的总体框架</p>
+</li>
+<li>三类站点接入网络<ul>
+<li>Site A “server”<ul>
+<li>站点上有一个服务器</li>
+<li>它可以为其他站点提供服务</li>
+</ul>
+</li>
+<li>Site B  “client”<ul>
+<li>站点上有一个客户端</li>
+<li>它可以向服务器请求服务</li>
+</ul>
+</li>
+<li>Site A 和 Site B 可以互相通信。</li>
+<li>Site C  “resources”<ul>
+<li>有一些资源，如硬件设备、数据库等</li>
+<li>Site C 与其他站点没有直接的连接，但可以通过网络来访问其中的资源</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="网络操作系统-vs-分布式操作系统"><a href="#网络操作系统-vs-分布式操作系统" class="headerlink" title="网络操作系统 vs 分布式操作系统"></a>网络操作系统 vs 分布式操作系统</h4><p>网络操作系统主要是为了方便用户在多个计算机之间进行远程访问和操作，而分布式操作系统则是整合了多个计算机的系统资源，让它们像一个系统一样工作，能够实现负载均衡、资源共享、容错等功能。两者的目标和实现方式都有很大的差异。</p>
+<p><strong>网络操作系统</strong></p>
+<ul>
+<li>用户知道有多个计算机。显式地访问不同计算机的资源，可以通过以下方式实现：<ul>
+<li>远程登录到适当的远程计算机（telnet、ssh）</li>
+<li>远程桌面（Microsoft Windows）</li>
+<li>通过文件传输协议（FTP）机制从远程计算机传输数据到本地计算机</li>
+</ul>
+</li>
+</ul>
+<p><strong>分布式操作系统</strong></p>
+<ul>
+<li>用户不知道有多个计算机</li>
+<li>访问远程资源类似于访问本地资源 </li>
+<li>数据迁移 <ul>
+<li>通过传输整个文件或仅传输立即任务所需的文件部分来传输数据</li>
+</ul>
+</li>
+<li>计算迁移 <ul>
+<li>在系统中传输计算而不是数据</li>
+</ul>
+</li>
+<li>进程迁移 <ul>
+<li>在不同站点执行整个进程或进程的部分</li>
+</ul>
+</li>
+<li>负载平衡 <ul>
+<li>在网络中分配进程以平衡工作负载</li>
+</ul>
+</li>
+<li>计算加速 <ul>
+<li>子进程可以在不同站点同时运行</li>
+</ul>
+</li>
+<li>硬件优先 <ul>
+<li>进程执行可能需要专门的处理器</li>
+</ul>
+</li>
+<li>软件优先 <ul>
+<li>所需软件可能仅在特定站点可用</li>
+</ul>
+</li>
+<li>数据访问 <ul>
+<li>在不同站点运行进程时，访问相应数据的方法可能不同</li>
+</ul>
+</li>
+</ul>
+<h4 id="Network-Structure-网络结构"><a href="#Network-Structure-网络结构" class="headerlink" title="Network Structure 网络结构"></a>Network Structure 网络结构</h4><p>（从这里开始全是计算机网络的课程内容……不愧是你SJTU（。。。））</p>
+<h5 id="本地区域网络-Local-Area-Network（LAN）"><a href="#本地区域网络-Local-Area-Network（LAN）" class="headerlink" title="本地区域网络 Local-Area Network（LAN）"></a>本地区域网络 Local-Area Network（LAN）</h5><ul>
+<li>设计用于覆盖小范围地理区域。</li>
+<li>多路访问总线、环形或星形网络</li>
+<li>速度约为10-100兆比特/秒，甚至千兆比特/秒</li>
+<li>广播快速且便宜</li>
+<li>节点<ul>
+<li>通常是工作站和/或个人计算机</li>
+<li>几个（通常是一个或两个）大型机</li>
+</ul>
+</li>
+</ul>
+<h5 id="广域网-Wide-Area-Network（-WAN）"><a href="#广域网-Wide-Area-Network（-WAN）" class="headerlink" title="广域网 Wide-Area Network（ WAN）"></a>广域网 Wide-Area Network（ WAN）</h5><ul>
+<li>链接地理上分离的站点</li>
+<li>通过远距离线路进行点对点连接（通常是从电话公司租用）</li>
+<li>速度约为1.544-45兆比特/秒</li>
+<li>广播通常需要多个消息</li>
+<li>节点<ul>
+<li>通常有高比例的大型机 mainframes</li>
+</ul>
+</li>
+</ul>
+<h5 id="网络拓扑-Network-Topology"><a href="#网络拓扑-Network-Topology" class="headerlink" title="网络拓扑 Network Topology"></a>网络拓扑 Network Topology</h5><p>网络拓扑结构 </p>
+<ul>
+<li>系统中的站点可以以多种方式进行物理连接，可以根据以下标准进行比较： <ul>
+<li>安装成本 - 将系统中的各个站点连接起来的成本有多高？ </li>
+<li>通信成本 - 从站点A发送消息到站点B需要多长时间？ </li>
+<li>可靠性 - 如果系统中的链接或站点发生故障，是否仍然可以相互通信？ </li>
+</ul>
+</li>
+<li>不同的拓扑结构可用图形表示，其节点对应于站点<ul>
+<li>从节点A到节点B的边缘对应于两个站点之间的直接连接</li>
+</ul>
+</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020230425014843.png" alt=""></p>
+<p> 分布式系统需要一个底层的网络基础架构来支持节点间的通信。网络结构包括网络硬件和软件组件。</p>
+<ol>
+<li><p>Network Topology（网络拓扑） 网络拓扑指的是计算机网络中连接节点的方式。常见的网络拓扑包括总线、环、星型、树形、网状等。</p>
+</li>
+<li><p>Communication Structure（通信结构） 通信结构是指节点间数据传输的方式。常见的通信结构包括客户端-服务器结构、对等结构、多播结构等。</p>
+</li>
+<li><p>Communication Protocols（通信协议） 通信协议是指节点间通信所遵循的规则。常见的通信协议包括TCP/IP协议、HTTP协议、FTP协议等。</p>
+</li>
+<li><p>Robustness（健壮性） 分布式系统需要具备健壮性，即在节点故障、网络故障等不可避免的情况下能够继续运行。为实现健壮性，分布式系统需要具备一些特性，例如冗余、容错性等。</p>
+</li>
+<li><p>Design Issues（设计问题） 设计分布式系统时需要考虑一些问题，例如数据一致性、同步、并发等。</p>
+</li>
+<li><p>An Example: Networking（案例：网络） 网络是一个典型的分布式系统，它由多个节点组成，并通过网络协议实现节点间通信。网络的设计需要考虑节点的安全性、带宽管理等问题。</p>
+</li>
+</ol>
+<h3 id="分布式文件系统"><a href="#分布式文件系统" class="headerlink" title="分布式文件系统"></a>分布式文件系统</h3><h4 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h4><p>DFS 的结构是由服务、服务器和客户端三个组成部分构成的，其中客户端接口应该是透明的，使得用户可以像访问本地文件一样访问远程文件，提高了文件共享和管理的效率。</p>
+<ol>
+<li>Service<br> 运行在一个或多个计算机上的软件实体，向预先未知的客户端提供特定类型的功能。</li>
+<li>Server<br>运行在单个计算机上的服务软件，负责提供服务。</li>
+<li>Client<br>可以使用一组操作调用服务的进程，形成<strong>客户端接口 Client interface</strong>。对于文件服务的客户端接口由一组原始文件操作（创建、删除、读取、写入等）组成。</li>
+<li>DFS 的客户端接口应该是<strong>透明 transparent</strong>的，即不应区分本地文件和远程文件。<ul>
+<li>指用户可以像访问本地文件一样访问远程文件，而不必关心文件实际存储在在哪个服务器、哪个位置。</li>
+<li>通过透明的 DFS，用户可以访问整个分布式系统中的文件，而不必关心它们存储在哪里。</li>
+</ul>
+</li>
+</ol>
+<p>DFS 通常由多个服务器组成，这些服务器分别处理文件存储和管理、数据备份、安全性、性能等方面的任务。<br>此外，DFS 还支持数据冗余和备份，以提高系统的可靠性和容错性。</p>
+<h4 id="命名-Naming"><a href="#命名-Naming" class="headerlink" title="命名 Naming"></a>命名 Naming</h4><p>定义：逻辑对象与物理对象之间的映射关系 mapping</p>
+<p>-&gt; 多级映射 Multilevel mapping</p>
+<ul>
+<li>对文件的抽象隐藏了文件实际存储在磁盘上的细节</li>
+<li>因此需要实现：<ul>
+<li>从名称到标识符Name to identifier，</li>
+<li>从标识符到块和位置 Identifier to blocks and locations (inode)<br>的映射</li>
+</ul>
+</li>
+<li>对于一个文件存在多个副本的情况，映射将变得更加复杂<ul>
+<li>对于在多个站点复制的文件，映射会返回该文件副本的位置集合，多个副本的存在以及它们的位置都是被隐藏的。</li>
+</ul>
+</li>
+</ul>
+<h5 id="命名结构"><a href="#命名结构" class="headerlink" title="命名结构"></a>命名结构</h5><p><strong>目标</strong></p>
+<ul>
+<li>位置透明性 Location transparency<ul>
+<li>文件名不揭示文件的物理存储位置<ul>
+<li>（用户不需要知道文件存储在哪个服务器上，就能通过文件名来访问该文件）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>位置独立性 Location independence <ul>
+<li>文件名不需要在文件的物理存储位置发生变化时进行更改<ul>
+<li>（用户在访问文件时，不受文件实际存储位置的影响）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>命名方法</strong></p>
+<ol>
+<li><p>&lt;主机名,本地名&gt;</p>
+<ul>
+<li>保证了唯一的系统范围内名称</li>
+<li>不支持位置独立性&amp;位置透明性。</li>
+</ul>
+</li>
+<li><p>目录树 directory tree</p>
+<ul>
+<li>将远程目录附加到本地目录构成连贯的目录树</li>
+<li>只有已经挂载的远程目录可以被透明地访问</li>
+<li>UNIX</li>
+</ul>
+</li>
+<li><p>组件文件系统的完全集成 total integration of the component file systems</p>
+<ul>
+<li>一个全局名称结构跨越系统中的所有文件</li>
+<li>如果某个服务器不可用，某些不同机器上的目录也会变得不可用</li>
+<li>比较复杂，支持位置独立性和位置透明性</li>
+<li>AFS</li>
+</ul>
+</li>
+</ol>
+<h4 id="远程文件访问与缓存"><a href="#远程文件访问与缓存" class="headerlink" title="远程文件访问与缓存"></a>远程文件访问与缓存</h4><p>Remote File Access &amp; Cache </p>
+<ol>
+<li>可以通过远程过程调用（RPC）支持远程文件访问</li>
+<li>缓存<ul>
+<li>在缓存中保留最近访问的磁盘块处理重复访问相同信息<ul>
+<li>如果需要的数据不在缓存中，从服务器端获取一份数据的副本，然后在缓存副本上执行访问操作</li>
+</ul>
+</li>
+<li>文件有一个主副本存储在服务器上，但文件的（部分）副本分散在不同的缓存中</li>
+<li>缓存一致性问题 Cache-consistency problem<ul>
+<li>保持缓存副本与主文件的一致性<br>-&gt; 这种远程文件访问机制有时也被称为网络虚拟内存</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>使用磁盘/主存进行缓存？<ol>
+<li>磁盘<ul>
+<li>可靠</li>
+<li>恢复期间，缓存的数据仍保留在磁盘上，无需再次获取 </li>
+</ul>
+</li>
+<li>主存<ul>
+<li>允许工作站无磁盘，节省成本</li>
+<li>数据访问更快</li>
+<li>更大的内存可以提高性能</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>服务器缓存通常在主存中，不管用户缓存的位置在哪里，使用主存缓存可以为服务器和用户提供单一的缓存机制</li>
+</ul>
+</li>
+</ol>
+<h5 id="缓存更新策略-Cache-Update-Policy"><a href="#缓存更新策略-Cache-Update-Policy" class="headerlink" title="缓存更新策略 Cache Update Policy"></a>缓存更新策略 Cache Update Policy</h5><ol>
+<li><p>写穿（Write-through）</p>
+<ul>
+<li>将数据放置在任何缓存中后立即通过到磁盘上</li>
+<li>可靠性高，但性能差</li>
+</ul>
+</li>
+<li><p>延迟写（Delayed-write 或 Write Back）</p>
+<ul>
+<li>修改写入缓存，稍后再写入服务器</li>
+<li>写入操作快速完成，但有些数据可能在写回之前被覆盖，因此根本不需要写回</li>
+<li>可靠性差；未写入的数据将在用户机器崩溃时丢失</li>
+<li>变体1：定期扫描缓存，并刷新自上次扫描以来已被修改的块</li>
+<li>变体2：在关闭文件时写回，将数据写回服务器<ul>
+<li>对于长时间打开且经常修改的文件最佳</li>
+<li>AFS</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h5 id="一致性-Consistency"><a href="#一致性-Consistency" class="headerlink" title="一致性 Consistency"></a>一致性 Consistency</h5><p>本地缓存的数据是否与主副本一致？ </p>
+<ul>
+<li><p>客户端主动检查 Client-initiated approach</p>
+<ul>
+<li>客户端启动有效性检查</li>
+<li>服务器检查本地数据是否与主副本一致</li>
+<li>有效性检查validity check和访问性能access performance之间进行权衡</li>
+</ul>
+</li>
+<li><p>服务器主动检查Server-initiated approach</p>
+<ul>
+<li>服务器为每个客户端记录（部分）它缓存的文件</li>
+<li>当服务器检测到潜在的不一致时，必须采取措施</li>
+</ul>
+</li>
+</ul>
+<h5 id="缓存和远程服务机制比较"><a href="#缓存和远程服务机制比较" class="headerlink" title="缓存和远程服务机制比较"></a>缓存和远程服务机制比较</h5><ol>
+<li>缓存机制能够高效地处理许多远程访问，因为本地缓存可以快速响应大多数远程访问，而仅偶尔需要访问服务器。<ul>
+<li>可以减少服务器负载和网络流量。</li>
+<li>可以提高可扩展性。</li>
+</ul>
+</li>
+<li>远程服务机制需要处理每一个远程访问，导致网络流量、服务器负载和性能开销的增加。</li>
+<li>在缓存中，对于写访问较少的情况下表现更好。<ul>
+<li>频繁写操作会导致解决缓存一致性问题的重大开销。</li>
+</ul>
+</li>
+<li>在具有本地磁盘或大容量主存储器的机器上执行时，可以从缓存中受益。</li>
+<li>对于无磁盘、小内存容量机器上的远程访问，应该使用远程服务方法。</li>
+<li>在缓存中，较低层的机器接口与上层用户接口不同。</li>
+<li>在远程服务中，机器接口反映了本地用户文件系统接口。</li>
+</ol>
+<h4 id="Stateful-File-Service-状态文件服务"><a href="#Stateful-File-Service-状态文件服务" class="headerlink" title="Stateful File Service 状态文件服务"></a>Stateful File Service 状态文件服务</h4><ul>
+<li>状态服务机制<ol>
+<li>客户端打开一个文件</li>
+<li>服务器从其磁盘中获取有关文件的信息，将其存储在内存中，并为客户端提供对于客户端和打开文件唯一的连接标识符</li>
+<li>标识符在之后的访问中使用，直到会话结束</li>
+<li>服务器必须收回不再活动的客户端使用的主存空间</li>
+</ol>
+</li>
+<li><p>性能</p>
+<ul>
+<li>较少的磁盘访问</li>
+<li>状态服务器知道文件是否以顺序访问的方式打开，因此可以预读下一个块</li>
+</ul>
+</li>
+<li><p>无状态文件服务器 Stateless File Server </p>
+<ul>
+<li>通过使每个请求自包含避免状态信息</li>
+<li>每个请求标识文件和文件位置</li>
+<li>无需通过打开和关闭操作建立和终止连接</li>
+</ul>
+</li>
+</ul>
+<p><strong>区别</strong></p>
+<ul>
+<li><p>失败恢复</p>
+<ul>
+<li>有状态的服务器在崩溃时会失去所有易失性状态<ul>
+<li>通过基于与客户端对话的恢复协议恢复状态，或中止崩溃发生时正在进行的操作</li>
+<li>服务器需要知道客户端故障，以便回收为记录崩溃客户端进程状态而分配的空间（孤儿检测和消除）</li>
+</ul>
+</li>
+<li>使用无状态服务器，服务器失败和恢复的影响几乎是不可察觉的<ul>
+<li>新的重生服务器可以回答自包含请求而无需任何困难</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>使用健壮的无状态服务的惩罚</p>
+<ul>
+<li>较长的请求消息</li>
+<li>较慢的请求处理</li>
+<li>对 DFS 设计施加额外的限制</li>
+</ul>
+</li>
+<li><p>某些环境需要状态服务</p>
+<ul>
+<li>使用服务器发起的缓存验证的服务器无法提供无状态服务，因为它维护记录哪个客户端缓存了哪个文件的记录</li>
+<li>UNIX 使用文件描述符和隐式偏移是固有的有状态的；服务器必须维护映射文件描述符到 inode 的表，并存储文件中的当前偏移量</li>
+</ul>
+</li>
+</ul>
+<h4 id="文件复制-File-Replication"><a href="#文件复制-File-Replication" class="headerlink" title="文件复制 File Replication"></a>文件复制 File Replication</h4><ul>
+<li>同一文件的副本存储在相互独立的机器上</li>
+<li>提高可用性并缩短服务时间</li>
+<li><strong>命名方案</strong><ul>
+<li>将复制文件名映射到特定副本</li>
+<li>复制的存在对上层不可见</li>
+<li>副本必须通过不同的低级名称互相区分</li>
+<li>但有时候为了性能目的，文件复制机制对用户是可见的，如Lucas</li>
+</ul>
+</li>
+<li>更新<ul>
+<li>文件的副本表示同一逻辑实体</li>
+<li>对任何副本的更新必须反映在<strong>所有</strong>其他副本上</li>
+</ul>
+</li>
+<li>需求复制 Demand replication<ul>
+<li>读取非本地副本会导致它在本地缓存，从而生成新的非主副本</li>
+</ul>
+</li>
+</ul>
+
+  
+
+
+  </article>
+  
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">回顾上一篇</div><a href="/files/courseNotes/2022(2)/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F2.html">现代操作系统2-CS2310</a></div><div class="item" id="next"><div class="note">接下来阅读</div><a href="/files/courseNotes/2022(2)/%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.html">高级数据结构-SE2322</a></div></section></div>
+
+  
+
+  <div class='related-wrap md-text reveal' id="comments">
+    <section class='header cmt-title cap theme'>
+      <p>评论区仅供交流~</p>
+
+    </section>
+    <section class='body cmt-body giscus'>
+      
+
+<svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="giscus" data-repo="aleryxiao/aleryxiao.github.io" data-repo-id="R_kgDOIdw0jw" data-category="Announcements" data-category-id="DIC_kwDOIdw0j84CTXeH" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" data-loading="lazy" crossorigin="anonymous"></div>
+
+    </section>
+  </div>
+
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="sitemap"><div class="sitemap-group"><span class="fs14">博客</span><a href="/">近期</a><a href="/categories">分类</a><a href="/tags">标签</a><a href="/">归档</a></div><div class="sitemap-group"><span class="fs14">整理</span><a href="/wiki">文件夹</a></div><div class="sitemap-group"><span class="fs14">社交</span><a href="/friend">友链</a><a href="/guestbook">留言板</a></div><div class="sitemap-group"><span class="fs14">更多</span><a href="/about">关于</a><a target="_blank" rel="noopener" href="https://github.com/aleryxiao">GitHub</a></div></div><div class="text"><p>本站由 <a target="_blank" rel="noopener" href="https://space.bilibili.com/19610138">@AleryXiao</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.18.5';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+  <script>
+  function loadJS() {
+    const els = document.querySelectorAll("#comments #giscus");
+    if (els.length === 0) return;
+    els.forEach((el, i) => {
+      try {
+        el.innerHTML = '';
+      } catch (error) {
+        console.log(error);
+      }
+      var script = document.createElement('script');
+      script.src = 'https://giscus.app/client.js';
+      script.async = true;
+      for (let key of Object.keys(el.attributes)) {
+        let attr = el.attributes[key];
+        if (['class', 'id'].includes(attr.name) === false) {
+          script.setAttribute(attr.name, attr.value);
+        }
+      }
+      el.appendChild(script);
+    });
+  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+    loadJS();
+  });
+</script>
+
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>

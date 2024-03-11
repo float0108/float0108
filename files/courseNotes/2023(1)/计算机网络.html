@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>courseNotes：CS3311 计算机网络 - 極楽浄土</title>
+
+  
+    <meta name="description" content="SJTU-CS3311 计算机网络">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CS3311 计算机网络">
+<meta property="og:url" content="https://float0108.github.io/files/courseNotes/2023(1)/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.html">
+<meta property="og:site_name" content="極楽浄土">
+<meta property="og:description" content="SJTU-CS3311 计算机网络">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230718065703.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230718072255.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230718072638.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230718073233.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020240108120947.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020240108121002.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020240108131500.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020240108130755.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020231106144138.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020231105163653.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020231106144724.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020240108132902.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020231213201412.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020231213201921.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020231213202247.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020231213202415.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020231213202833.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020231213203133.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020231213203451.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020231213203913.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020231213203939.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020231213204135.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020231213204306.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020231213204346.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020231213210244.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020231213205826.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020231213214839.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020231213215444.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020231213215252.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020231213220141.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020231213233950.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020231213234511.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020231213234915.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020231214000623.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020231214003609.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230718075133.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230718075528.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230718080809.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230718080852.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230718081626.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230718083736.png">
+<meta property="article:published_time" content="2023-11-04T15:02:00.000Z">
+<meta property="article:modified_time" content="2024-02-19T02:16:15.881Z">
+<meta property="article:author" content="AleryXiao">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://float0108.github.io/assets/Pasted%20image%2020230718065703.png">
+  
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="極楽浄土" type="application/atom+xml">
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="/site_assets/favicon.jpg">
+  
+
+  
+
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='wiki'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/site_assets/head.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">極楽浄土</div><div class="sub normal cap">フロトの理发店</div><div class="sub hover cap" style="opacity:0"> @AleryXiao</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item" href="/">posts</a><a class="nav-item active" href="/wiki/">collection</a><a class="nav-item" href="/about/">about</a></nav>
+</header>
+
+
+<div class="widgets">
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/files/courseNotes/" placeholder="在 /files/courseNotes/ 中搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+
+
+
+<widget class="widget-wrapper toc multi" id="data-toc"><div class="widget-header cap dis-select"><span class="name">CS3311 计算机网络</span></div><div class="widget-body fs14"><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2022(2)/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84.html#start"><span class="toc-text">计算机系统结构-CS2305</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2022(2)/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(8086).html"><span class="toc-text">计算机组成-汇编语言-CS2307</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2022(2)/%E7%AE%97%E6%B3%95%E4%B8%8E%E5%A4%8D%E6%9D%82%E6%80%A7.html"><span class="toc-text">算法与复杂性-CS2308</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2022(2)/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F1.html"><span class="toc-text">现代操作系统CS2310 （上）进程管理</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2022(2)/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F2.html"><span class="toc-text">现代操作系统2-CS2310</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2022(2)/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F0.html"><span class="toc-text">现代操作系统CS2310 速效版</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2022(2)/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F3.html"><span class="toc-text">现代操作系统CS2310 （附）虚拟机和分布式</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2022(2)/%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.html"><span class="toc-text">高级数据结构-SE2322</span></a></div><div class="doc-tree active"><a class="doc-tree-link active" href="/files/courseNotes/2023(1)/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.html"><span class="toc-text">CS3311 计算机网络</span></a><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ch1-%E8%AE%A1%E7%BD%91%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-text">ch1 计网体系结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0"><span class="toc-text">计算机网络概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84-amp-%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B"><span class="toc-text">体系结构&amp;参考模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ch2-%E5%BA%94%E7%94%A8%E5%B1%82"><span class="toc-text">ch2 应用层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DNS"><span class="toc-text">DNS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web-and-HTTP"><span class="toc-text">Web and HTTP</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#WWW"><span class="toc-text">WWW</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTP"><span class="toc-text">HTTP</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FTP"><span class="toc-text">FTP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Electronic-Mail"><span class="toc-text">Electronic Mail</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P2P-applications"><span class="toc-text">P2P applications</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Socket-programming-with-TCP-UDP"><span class="toc-text">Socket programming with TCP&#x2F;UDP</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ch3-%E4%BC%A0%E8%BE%93%E5%B1%82"><span class="toc-text">ch3 传输层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Multiplexing-and-demultiplexing"><span class="toc-text">Multiplexing and demultiplexing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%AE%E9%94%99%E6%A3%80%E6%B5%8B%EF%BC%9ACRC"><span class="toc-text">差错检测：CRC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E4%B8%BB%E8%A6%81%E5%8D%8F%E8%AE%AE"><span class="toc-text">两个主要协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#UDP"><span class="toc-text">UDP</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A6%96%E9%83%A8%E6%A0%BC%E5%BC%8F"><span class="toc-text">首部格式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#UDP%E6%A0%A1%E9%AA%8C"><span class="toc-text">UDP校验</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E7%89%B9%E7%82%B9"><span class="toc-text">主要特点</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TCP"><span class="toc-text">TCP</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#TCP-congestion-control"><span class="toc-text">TCP congestion control</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AB%AF%E5%8F%A3"><span class="toc-text">端口</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ch4-%E7%BD%91%E7%BB%9C%E5%B1%82"><span class="toc-text">ch4 网络层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Virtual-Circuit-and-Datagram-Switching"><span class="toc-text">Virtual-Circuit and Datagram Switching</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Datagram-Switching"><span class="toc-text">Datagram Switching</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Virtual-Circuit"><span class="toc-text">Virtual-Circuit</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Router-architecture"><span class="toc-text">Router architecture</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Input-Port-Queuing"><span class="toc-text">Input Port Queuing</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Output-Port-Queuing"><span class="toc-text">Output Port Queuing</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Packet-Scheduling"><span class="toc-text">Packet Scheduling</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IP-Internet-Protocol"><span class="toc-text">IP: Internet Protocol</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Datagram-format"><span class="toc-text">Datagram format</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#IP-Header-TOS"><span class="toc-text">IP Header TOS</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#IP-Fragmentation-and-Reassembly"><span class="toc-text">IP Fragmentation and Reassembly</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IPv4"><span class="toc-text">IPv4</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#VLSM-Variable-Length-Subnet-Mask-%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81"><span class="toc-text">VLSM (Variable Length Subnet Mask) 子网掩码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#CIDR%E8%A1%A8%E7%A4%BA%E6%B3%95-Classless-InterDomain-Routing"><span class="toc-text">CIDR表示法 Classless InterDomain Routing</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DHCP"><span class="toc-text">DHCP</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#NAT-Network-Address-Translation"><span class="toc-text">NAT: Network Address Translation</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#NAT-traversa-problem"><span class="toc-text">NAT traversa- problem</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ICMP-Internet-Contro-Message-Protocol"><span class="toc-text">ICMP (Internet Contro- Message Protocol)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IPv6"><span class="toc-text">IPv6</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SDN"><span class="toc-text">SDN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E9%80%89%E6%8B%A9-Routing"><span class="toc-text">路由选择 Routing</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E9%80%89%E6%8B%A9%E7%AE%97%E6%B3%95"><span class="toc-text">路由选择算法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Link-State-Routing-LSR"><span class="toc-text">Link State Routing (LSR)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Distance-vector-routing-DVR-%E8%B7%9D%E7%A6%BB%E5%90%91%E9%87%8F%E8%B7%AF%E7%94%B1"><span class="toc-text">Distance vector routing (DVR) 距离向量路由</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#LSR-vs-DVR"><span class="toc-text">LSR vs DVR</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Hierarchical-Routing-%E5%B1%82%E6%AC%A1%E8%B7%AF%E7%94%B1%E7%AE%97%E6%B3%95"><span class="toc-text">Hierarchical Routing 层次路由算法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Broadcast-routing"><span class="toc-text">Broadcast routing</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#In-network-duplication"><span class="toc-text">In-network duplication</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Reverse-Path-Forwarding"><span class="toc-text">Reverse Path Forwarding</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ch5-%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82"><span class="toc-text">ch5 数据链路层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Functions"><span class="toc-text">Functions</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%81%E8%A3%85%E6%88%90%E5%B8%A7"><span class="toc-text">封装成帧</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%8F%E6%98%8E%E4%BC%A0%E8%BE%93"><span class="toc-text">透明传输</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Two-point-to-point-Data-Link-Protocols"><span class="toc-text">Two point-to-point Data Link  Protocols</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ch6-%E7%89%A9%E7%90%86%E5%B1%82"><span class="toc-text">ch6 物理层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F"><span class="toc-text">通信方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E6%96%B9%E5%BC%8F"><span class="toc-text">传输方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A5%88%E6%B0%8F%E5%87%86%E5%88%99"><span class="toc-text">奈氏准则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A6%99%E5%86%9C%E5%AE%9A%E7%90%86"><span class="toc-text">香农定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E7%A0%81-amp-%E8%B0%83%E5%88%B6"><span class="toc-text">编码&amp;调制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE-gt-%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7%EF%BC%88%E7%BC%96%E7%A0%81%EF%BC%89"><span class="toc-text">数据 -&gt; 数字信号（编码）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A8%A1%E6%8B%9F%E6%95%B0%E6%8D%AE-gt-%E6%95%B0%E5%AD%97%E4%BF%A1%E5%8F%B7"><span class="toc-text">模拟数据 -&gt; 数字信号</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE-gt-%E6%A8%A1%E6%8B%9F%E4%BF%A1%E5%8F%B7%EF%BC%88%E8%B0%83%E5%88%B6%EF%BC%89"><span class="toc-text">数据 -&gt; 模拟信号（调制）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A8%A1%E6%8B%9F%E6%95%B0%E6%8D%AE-gt-%E6%A8%A1%E6%8B%9F%E4%BF%A1%E5%8F%B7"><span class="toc-text">模拟数据 -&gt; 模拟信号</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E4%BA%A4%E6%8D%A2"><span class="toc-text">数据交换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%B5%E8%B7%AF%E4%BA%A4%E6%8D%A2"><span class="toc-text">电路交换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%A5%E6%96%87%E4%BA%A4%E6%8D%A2"><span class="toc-text">报文交换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2"><span class="toc-text">分组交换</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E4%BB%8B%E8%B4%A8"><span class="toc-text">传输介质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E5%A4%87"><span class="toc-text">设备</span></a></li></ol></li></ol></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2023(1)/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%8E%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80.html"><span class="toc-text">密码学与信息安全基础-CS3314</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2023(1)/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%EF%BC%88B%E7%B1%BB%EF%BC%89.html"><span class="toc-text">人工智能-CS3317</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95.html"><span class="toc-text">软件测试-SE3336</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86.html"><span class="toc-text">软件测试-SE3336</span></a></div></div></widget>
+
+
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+  
+  
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" id="home" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">collection</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/files/courseNotes/2022(2)/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84.html">courseNotes</a></div><div id="post-meta">更新于&nbsp;<time datetime="2024-02-19T02:16:15.881Z">2024-02-19</time></div></div>
+
+  <article class='md-text content wiki'>
+  <h1 class="article-title"><span>CS3311 计算机网络</span></h1>
+  <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV19E411D78Q">王道烤盐</a></p>
+<h2 id="ch1-计网体系结构"><a href="#ch1-计网体系结构" class="headerlink" title="ch1 计网体系结构"></a>ch1 计网体系结构</h2><h3 id="计算机网络概述"><a href="#计算机网络概述" class="headerlink" title="计算机网络概述"></a>计算机网络概述</h3><ul>
+<li>组成部分</li>
+<li>工作方式<ul>
+<li>边缘部分<ul>
+<li>用户直接使用</li>
+<li>C/S <ul>
+<li>client-server<ul>
+<li>* B/S: brower-server</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>P2P</li>
+</ul>
+</li>
+<li>核心部分</li>
+</ul>
+</li>
+<li>功能组成<ul>
+<li>通信子网</li>
+<li>资源子网<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020230718065703.png" alt=""></li>
+</ul>
+</li>
+<li>性能指标<ul>
+<li>速率，带宽，吞吐量</li>
+<li>时延<ul>
+<li>发送/传输~，传播~，排队~，处理~</li>
+<li>时延带宽积 -&gt; 容量</li>
+<li>RTT 往返时延<ul>
+<li>发送方发送 -&gt; 发送方接收到确认</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>利用率</li>
+</ul>
+</li>
+</ul>
+<h3 id="体系结构-amp-参考模型"><a href="#体系结构-amp-参考模型" class="headerlink" title="体系结构&amp;参考模型"></a>体系结构&amp;参考模型</h3><p>计算机网络的各层及其协议的集合</p>
+<ul>
+<li>7层OSI模型（法定标准）</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020230718072255.png" alt=""><br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020230718072638.png" alt=""></p>
+<ul>
+<li>4层TCP/IP模型 （事实标准）</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020230718073233.png" alt=""></p>
+<h2 id="ch2-应用层"><a href="#ch2-应用层" class="headerlink" title="ch2 应用层"></a>ch2 应用层</h2><ul>
+<li><p>Application architecture</p>
+<ul>
+<li>Client-server</li>
+<li>P2P</li>
+<li>hybrid of client-server and P2P<ul>
+<li>Skype: <strong>centralized server</strong> to find address of remote party, then <strong>client-client connection</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Sockets：进程与计算机网络之间的接口</p>
+</li>
+<li><p>transport service 一些指标</p>
+<ul>
+<li>data loss</li>
+<li>delay</li>
+<li>throughput</li>
+<li>security</li>
+</ul>
+</li>
+<li><p><strong>Internet transport services</strong></p>
+<ul>
+<li><strong>TCP</strong><ul>
+<li>connection-oriented: 需要先建立连接</li>
+<li>reliable transport</li>
+<li>flow control: 发送的消息不会overwhelm接收方（对于接收方）</li>
+<li>congestion control: 控制网络不会拥堵（对于网络）</li>
+</ul>
+</li>
+<li><strong>UDP</strong><ul>
+<li>use packet-switch</li>
+<li>unreliable data transfer</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Process identifier = IP address + port number</p>
+</li>
+</ul>
+<h3 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h3><ul>
+<li>DNS (Domain Name System):  map <code>www.sjtu.edu.cn</code> —&gt; <code>202.120.2.119</code><ul>
+<li>distributed, hierarchical database</li>
+<li><strong>root name servers</strong></li>
+<li>TLD (top-level domains)</li>
+<li><strong>Local name server</strong>: Client needs to be configured with local name server manually or via DHCP.<ul>
+<li>找到DNS name的方法：<strong>iterated query</strong></li>
+</ul>
+</li>
+<li>先local DNS server，然后让local DNS server去找：root DNS server，TLD DNS server，authoritative DNS server<ul>
+<li>找到DNS name的方法：<strong>recursice query</strong></li>
+</ul>
+</li>
+<li>先找local DNS server，然后local DNS sever找root DNS server，然后root DNS server找TLD DNS server，然后TLD DNS server找authoritative DNS server。</li>
+</ul>
+</li>
+</ul>
+<h3 id="Web-and-HTTP"><a href="#Web-and-HTTP" class="headerlink" title="Web and HTTP"></a>Web and HTTP</h3><h4 id="WWW"><a href="#WWW" class="headerlink" title="WWW"></a>WWW</h4><p>client/server model with <strong>http</strong></p>
+<ul>
+<li>首先用DNS把url转换成IP address</li>
+<li>建立tcp connection</li>
+<li>发送http request</li>
+<li>等待http response</li>
+<li>fetch embedded resources</li>
+<li>清除闲置的tcp connection</li>
+</ul>
+<h4 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h4><p>Hyper Text Transfer Protocol</p>
+<ul>
+<li>使用TCP，先建立TCP连接，然后用http发送请求</li>
+<li>http是stateless的：不维持状态</li>
+<li><p><strong>cookies</strong>：server在client那里drop一个cookie，保存着server state。然后每次client发消息，就把之前的cookie一起发给server。<strong>相当于给client配了一个id，然后server可以在数据库里记录client的情况</strong></p>
+</li>
+<li><p><strong>HTTP Performance</strong>: Page Load Time (PLT)</p>
+<ul>
+<li><strong>Round Trip Time</strong> (RTT): <ul>
+<li>time for a small packet to travel from client to server and back. 一个来回叫一个RTT</li>
+</ul>
+</li>
+<li><strong>Page Load Time</strong> (PLT): <ul>
+<li>one RTT to initiate <strong>TCP</strong> connection</li>
+<li>one RTT for HTTP request and first few bytes of HTTP</li>
+<li>file transmission time</li>
+<li><strong>total = 2RTT + transmit time</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Nonpersistent HTTP</strong>:<ul>
+<li>one object sent over one TCP connection，每次发都要新建一个新的tcp connection</li>
+<li>PLT = N*RTT + transmit time</li>
+</ul>
+</li>
+<li><strong>Ways to decrease PLT</strong><ul>
+<li>同时并行发多个http请求</li>
+<li>尽量用persistent http</li>
+<li>move content closer to client</li>
+<li>SPDY，一种更快的web protocol</li>
+</ul>
+</li>
+<li><strong>web cache</strong> (proxy server)<ul>
+<li>目标：不用server，加个cache就行（中间环节）</li>
+<li>browser直接发request到cache，如果有则拿，没有的话cache再向server请求</li>
+<li><strong>cache acts as both client and server</strong></li>
+</ul>
+</li>
+<li><strong>conditional GET</strong>：cache在发GET给server的时候，加个modify的date，如果date不一样，那server就返回新的data。否则就不用返回新data，回一个304 not modified。</li>
+<li><strong>content delivery networks</strong>：client接收完内容后，再把内容发给其他server和cache。这样下次别人要用可以直接拿cache和server里的。</li>
+</ul>
+<h3 id="FTP"><a href="#FTP" class="headerlink" title="FTP"></a>FTP</h3><ul>
+<li>Client-server model</li>
+<li>有两种connection，分开的：<ul>
+<li>TCP control connection，是<strong>persistent</strong>的</li>
+<li>TCP data connection，每个文件都要新开一个connection，是<strong>non-persistent</strong></li>
+</ul>
+</li>
+<li>FTP server maintains <strong>“state”</strong>: current directory, earlier authentication</li>
+</ul>
+<h3 id="Electronic-Mail"><a href="#Electronic-Mail" class="headerlink" title="Electronic Mail"></a>Electronic Mail</h3><p>email是怎么做到receiver不在的时候我们的mail也能发到呢？</p>
+<ul>
+<li>四个部分<ul>
+<li>user agents</li>
+<li>mail servers</li>
+<li>transfer protocol (SMTP) ，服务器之间发送email</li>
+<li>access protocol (POP3, IMAP)，从服务器拿取email</li>
+</ul>
+</li>
+</ul>
+<h3 id="P2P-applications"><a href="#P2P-applications" class="headerlink" title="P2P applications"></a>P2P applications</h3><ul>
+<li><p>P2P挑战：</p>
+<ul>
+<li>No servers on which to rely: Communication must be peer-to-peer and self-organizing, not client-server. 必须自己调度！</li>
+<li>Limited capabilities: How can one peer deliver content to all other peers? 一个人要发很多人怎么办？</li>
+<li>Decentralized indexing: How will peers find content,find each other? 怎么找到其他人？</li>
+<li>Participation incentives: Why will peers help each other? 为什么要互相帮助？</li>
+</ul>
+</li>
+<li><p>Distributed Hash Table (DHT)</p>
+<ul>
+<li>Circular DHT: 每个peer只知道后继节点的ID. $ID(peer)=hash(IP, port)$</li>
+<li>key look up: 平均$O(N)$的复杂度</li>
+<li>key look up with shortcuts: 每个peer也维持一些shortcut，可以降到$O(logN)$</li>
+<li><strong>DHT Finger Table：</strong> chap2-2, P25</li>
+<li>peer leave and join: 每个peer记住它后面两个节点，定时ping一下看看在不在，第一个节点走了的话，就让第二个节点把它的后面节点发过来。</li>
+</ul>
+</li>
+<li><p>BitTorrent Protocol</p>
+<ul>
+<li>选一个要接收的文件，和<strong>tracker</strong>请求peer list，然后和peer们进行传输</li>
+<li><strong>tit-for-tat:</strong> 一报还一报。过程：</li>
+</ul>
+<ol>
+<li>alice给bob乐观地来点加速，alice成为bob的top 4</li>
+<li>bob回报alice，bob也成为alice的top 4</li>
+</ol>
+<ul>
+<li>Trackerless BitTorrent: 用DHT来标记文件和peer</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>P2P Case study: Skype<ul>
+<li>hierarchical overlay with <strong>SuperNodes</strong></li>
+<li>问题：alice和bob都在NAT之后</li>
+<li>解决方法:</li>
+<li>Alice and Bob connectwith their SNs.</li>
+<li>Relay is chosen. Each peer initiates session with relay.</li>
+<li>Peers can now communicate through NATs via relay.</li>
+</ul>
+</li>
+</ul>
+<h3 id="Socket-programming-with-TCP-UDP"><a href="#Socket-programming-with-TCP-UDP" class="headerlink" title="Socket programming with TCP/UDP"></a>Socket programming with TCP/UDP</h3><ul>
+<li><p>什么是socket：a door between application process and end-endtransport protocol (UDP or TCP) 应用层和传输层的桥梁</p>
+</li>
+<li><p>server和client得有一个socket number</p>
+<ul>
+<li>socket用<strong>port number和IP</strong>进行区分</li>
+</ul>
+</li>
+<li><p>需要connection的socket（TCP）：</p>
+</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020240108120947.png" alt=""></p>
+<ul>
+<li>不需要connection的socket（UDP）：</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020240108121002.png" alt=""></p>
+<h2 id="ch3-传输层"><a href="#ch3-传输层" class="headerlink" title="ch3 传输层"></a>ch3 传输层</h2><ul>
+<li><p>单位：segment</p>
+</li>
+<li><p>提供进程间的数据传输服务</p>
+<ul>
+<li>软/硬件 = 传输实体 entity</li>
+<li>（网络层：主机间）</li>
+</ul>
+</li>
+<li>复用和分用</li>
+<li>差错检测</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020240108131500.png" alt=""></p>
+<p>Segment (Transport layer) -&gt; Packet (Network layer) -&gt; Frame (Datalink layer)</p>
+<h3 id="Multiplexing-and-demultiplexing"><a href="#Multiplexing-and-demultiplexing" class="headerlink" title="Multiplexing and demultiplexing"></a>Multiplexing and demultiplexing</h3><ul>
+<li>Ports: server的port选的比较well known，client的port选的比较ephemeral（随意？）</li>
+<li><p>Upward multiplexing和downward multiplexing，看个图就明白了<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020240108130755.png" alt=""></p>
+</li>
+<li><p>Multiplexing/demultiplexing: 先把所有socket的数据都合起来发出去，再在接收方那里解开，分到不同的socket。</p>
+<ul>
+<li>带connection的demux，TCP socket：带一个四元组，src IP and port, dst IP and port</li>
+<li>不带connection的demux，UDP socket: 带一个二元组，dst IP, dst port<h3 id="差错检测：CRC"><a href="#差错检测：CRC" class="headerlink" title="差错检测：CRC"></a>差错检测：CRC</h3></li>
+</ul>
+</li>
+</ul>
+<p>Given <code>m</code> <strong>data</strong> bits, <strong>generator</strong> polynomia- of degree <code>r</code> G(x):  </p>
+<ol>
+<li><strong>Append</strong> <code>r</code> zero bits to the low-order end of the frame<ul>
+<li>(it now contains <code>m + r</code> bits.  )</li>
+</ul>
+</li>
+<li><strong>Divide</strong> the <code>m + r</code> bits with <code>r + 1</code> bit string corresponding to G(x) using modulo 2 division<ul>
+<li>(no carries for addition or borrows for subtraction. Both addition and subtraction are identica- to exclusive OR).  </li>
+<li>The remainder is the <code>r</code> bits CRC.</li>
+</ul>
+</li>
+<li><strong>Append</strong> the <code>r</code> bits to the <code>m</code> data bits into a <code>m+r</code> codeword which is divisible (modulo 2)  by G(x).  </li>
+<li>When the receiver gets the checksummed frame, it tries dividing it by G(x). If there is a remainder, there has been a transmission error.</li>
+</ol>
+<h3 id="两个主要协议"><a href="#两个主要协议" class="headerlink" title="两个主要协议"></a>两个主要协议</h3><ul>
+<li>UDP 用户数据报协议<ul>
+<li>提供无连接服务</li>
+<li>对方的运输层在收到UDP报文后，不需要给出任何确认</li>
+<li>单位：UDP用户数据报</li>
+<li>低时延，小文件适用</li>
+</ul>
+</li>
+<li>TCP 传输控制协议<ul>
+<li>提供面向连接的服务</li>
+<li>不提供广播或多播服务</li>
+<li>单位：TCP报文段</li>
+<li>高时延，大文件适用<h4 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h4></li>
+</ul>
+</li>
+<li>无连接</li>
+<li>不保证可靠交付<ul>
+<li>可能发生lost,error,out of order (可在应用层增加可靠性)</li>
+</ul>
+</li>
+<li>面向报文<ul>
+<li>适合一次性传输少量数据</li>
+</ul>
+</li>
+<li>实时传输，无拥塞控制</li>
+<li><p>首部开销小</p>
+<h5 id="首部格式"><a href="#首部格式" class="headerlink" title="首部格式"></a>首部格式</h5></li>
+<li><p>8B，由4部分构成</p>
+</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020231106144138.png" alt=""></p>
+<ul>
+<li>UDP长度：数据报差别</li>
+<li><p>检验和：检测是否出错</p>
+</li>
+<li><p>分用如果找不到目的端口，则由发送方发送不可达信息（ICMP）</p>
+</li>
+</ul>
+<h5 id="UDP校验"><a href="#UDP校验" class="headerlink" title="UDP校验"></a>UDP校验</h5><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020231105163653.png" alt=""></p>
+<ul>
+<li>伪首部只用于计算检验和，不向下传送也不向上递交</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020231106144724.png" alt=""></p>
+<ul>
+<li>具体步骤（发送端）<ul>
+<li>填上伪首部</li>
+<li>全0填充检验和字段</li>
+<li>全0填充数据部分</li>
+<li><strong>伪首部+首部+数据采用二进制反码求和</strong></li>
+<li>和求反码填入检验和字段</li>
+<li>去掉伪首部并发送。</li>
+</ul>
+</li>
+<li>（接收端）<ul>
+<li>填上伪首部</li>
+<li>伪首部+首部+数据采用二进制反码求和</li>
+<li>结果全1则无差错</li>
+</ul>
+</li>
+</ul>
+<h5 id="主要特点"><a href="#主要特点" class="headerlink" title="主要特点"></a>主要特点</h5><ul>
+<li>UDP是无连接的  </li>
+<li>UDP使用尽最大努力交付  </li>
+<li>UDP是面向报文的  </li>
+<li>UDP对应用层交下来的报文，既不合并，也不拆分，而是保留这些报文的边界  </li>
+<li>应用程序必须选择合适大小的报文<br>  若报文太长，IP层在传送时可能要进行分片<br>  若报文太短，会使IP数据报的首部的相对长度太大  </li>
+<li>UDP没有拥塞控制<br>  因此网络出现的拥塞不会使源主机的发送速率降低  </li>
+<li>UDP支持一对一、一对多、多对一和多对多的交互通信  </li>
+<li>UDP的首部开销小，只有8个字节，比TCP的20个字节的首部要短</li>
+</ul>
+<p>Why UDP?</p>
+<ul>
+<li>no connection establishment (which can add delay)</li>
+<li>no retransmission (which can add delay)</li>
+<li>simple: no connection state at sender, receiver</li>
+<li>small segment header: 8 bytes</li>
+<li>no flow control and congestion control: <ul>
+<li>UDP can blast away as fast as desired</li>
+</ul>
+</li>
+</ul>
+<h4 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h4><ol>
+<li><p><strong>Go-Back-N (GBN):</strong></p>
+<ul>
+<li><strong>发送方：</strong> GBN是一种滑动窗口协议，发送方可以连续发送多个数据帧，直到达到窗口大小为止。发送方会等待收到对窗口内所有数据帧的确认，然后才能发送下一个窗口的数据帧。</li>
+<li><strong>接收方：</strong> 接收方按序接收数据帧，如有帧丢失，就会回退（Go-Back）并重新请求所有未确认的帧。<ul>
+<li>接收方丢弃所有失序分组</li>
+</ul>
+</li>
+<li><strong>优点</strong>：接收方只需要缓存一个包就行，不需要缓存失序分组</li>
+</ul>
+</li>
+<li><p>**Selective Repeat (SR):</p>
+<ul>
+<li>只重传那些没有正确ACK的包</li>
+<li>发送方和接收方都维持相同大小的window size。接收方把接收到的都buffer住。<ul>
+<li>$sending\ window + receiving\ window \leq MAX\ SEQ+1$</li>
+</ul>
+</li>
+<li><strong>发送方：</strong> SR也是一种滑动窗口协议，允许发送方同时发送多个数据帧。与GBN不同，发送方只需要重传丢失的帧，而不是整个窗口。</li>
+<li><strong>接收方：</strong> 接收方按序接收数据帧，并确认它们。即使有帧丢失，接收方也会继续按序接收后续的帧。</li>
+</ul>
+</li>
+<li><p><strong>Transmission Contro- Protoco- (TCP):</strong></p>
+<ul>
+<li><strong>特点：</strong> TCP是一种面向连接的协议，提供可靠的、有序的数据传输。它使用滑动窗口协议，但其设计更为复杂。TCP包括流量控制、拥塞控制、连接建立和断开等多个功能。</li>
+<li><strong>连接建立：</strong> 通过==三次握手==建立连接，确保双方都准备好进行通信。</li>
+<li><strong>累积确认：</strong> TCP使用==累积确认==的机制。这意味着如果接收方成功接收了某个字节之前的所有字节，它只需确认最后一个字节，而不必逐个确认每个字节。</li>
+<li><strong>累积确认号和确认标志：</strong> <ul>
+<li>TCP报文头部中的确认号字段指示下一个期望接收的字节。</li>
+<li>确认标志（ACK标志）用于指示报文是一个确认报文。</li>
+</ul>
+</li>
+<li><strong>滑动窗口：</strong> <ul>
+<li>使用滑动窗口来控制发送和接收的数据量，以提高网络利用率。</li>
+</ul>
+</li>
+<li><strong>可靠性：</strong> <ul>
+<li>提供==数据确认==、==重传==机制以确保数据的可靠传输。</li>
+</ul>
+</li>
+<li><strong>流量控制和拥塞控制：</strong> <ul>
+<li>TCP包括流量控制机制，防止快速发送方淹没较慢的接收方；包括拥塞控制，以应对网络拥塞情况。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h5 id="TCP-congestion-control"><a href="#TCP-congestion-control" class="headerlink" title="TCP congestion control"></a>TCP congestion control</h5><p>congestion control: open loop, closed loop</p>
+<ul>
+<li>Congestion Avoidance：提前预测，及时避免，主要两种方法<ul>
+<li>host centric：TCP congestion control</li>
+<li>Router-centric: warning bit, choke packet, load shedding</li>
+</ul>
+</li>
+<li><strong>AIMD</strong>: Additive Increase, Multiplicative Decrease<ul>
+<li>MD: decrease window by factor of 2 when loss，减少的时候一下子除以2</li>
+<li>AI: additive increase until packet loss，增加的时候一个个加</li>
+</ul>
+</li>
+<li>Explicit Congestion Notification：<ul>
+<li>直接通知堵塞的packet的sender</li>
+</ul>
+</li>
+</ul>
+<p>丢包判断:</p>
+<ol>
+<li>time out</li>
+<li>连续3个duplicate的ACK</li>
+</ol>
+<ul>
+<li>TCP Tahoe/Reno implements <strong>AIMD</strong> to limit the sending rate.</li>
+<li>Sender uses <strong>packet loss</strong> as the network congestion signal.</li>
+<li>TCP use a Congestion Window (CongWin) next to the window granted by the receiver.<ul>
+<li>The actual window size is the minimum of the two.</li>
+<li><strong>Self-clocking</strong>: The CongWin size should be adjusted frequently, to match the networking carrying capacity</li>
+</ul>
+</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020240108132902.png" alt=""></p>
+<h3 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h3><ul>
+<li>虽然通信的终点是应用进程，但只要把所传送的报文交到目的主机的某个合适的目的端口</li>
+<li><p>TCP/IP的运输层用一个16位端口号来标志一个端口，端口号<strong>只具有本地意义</strong></p>
+</li>
+<li><p>服务端</p>
+<ul>
+<li>熟知端口号 0-1023</li>
+<li>登记端口号 1024-49151</li>
+</ul>
+</li>
+<li>客户端<ul>
+<li>仅在客户进程运行时才动态选择</li>
+<li>49152-65535</li>
+</ul>
+</li>
+<li>套接字 = IP + 端口号<ul>
+<li>IP确定主机</li>
+<li>端口号确定进程</li>
+</ul>
+</li>
+</ul>
+<h2 id="ch4-网络层"><a href="#ch4-网络层" class="headerlink" title="ch4 网络层"></a>ch4 网络层</h2><p>主要任务：把分组从源端传输到目的端，为分组交换网上的不同主机提供通信服务 allow packets to be sent between any pair or hosts</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020231213201412.png" alt=""></p>
+<p>路由器的工作：</p>
+<ul>
+<li><strong>routing</strong>: determine route from source to dest; determine the output link.</li>
+<li><strong>forwarding/switching</strong>: move packets from router’s input to appropriate router output</li>
+<li><strong>congestion control</strong>: drop packets, update routing table</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020231213201921.png" alt=""></p>
+<p>IP service model:</p>
+<ul>
+<li>Datagram 数据报</li>
+<li>Unreliable</li>
+<li>Best effort</li>
+<li>Connectionless<ul>
+<li>No per-flow state, might mis-sequece packets</li>
+</ul>
+</li>
+</ul>
+<h3 id="Virtual-Circuit-and-Datagram-Switching"><a href="#Virtual-Circuit-and-Datagram-Switching" class="headerlink" title="Virtual-Circuit and Datagram Switching"></a>Virtual-Circuit and Datagram Switching</h3><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020231213202247.png" alt=""></p>
+<h4 id="Datagram-Switching"><a href="#Datagram-Switching" class="headerlink" title="Datagram Switching"></a>Datagram Switching</h4><ul>
+<li>destination address as the index of forwarding</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020231213202415.png" alt=""></p>
+<ul>
+<li>Forwarding table 转发表</li>
+<li>Longest Prefix Matching<ul>
+<li>减小转发表长度</li>
+</ul>
+</li>
+</ul>
+<h4 id="Virtual-Circuit"><a href="#Virtual-Circuit" class="headerlink" title="Virtual-Circuit"></a>Virtual-Circuit</h4><p>VC consists of:  </p>
+<ul>
+<li>path from source to destination  </li>
+<li>VC numbers  </li>
+<li>entries in routers along path  </li>
+</ul>
+<p>packet carries <strong>VC number</strong> (rather than dest address) as the index of forwarding</p>
+<p>转发表示例：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>incoming interface</th>
+<th>incoming VC#</th>
+<th>outgoing interface</th>
+<th>outgoing VC#</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>12</td>
+<td>3</td>
+<td>22</td>
+</tr>
+<tr>
+<td>2</td>
+<td>63</td>
+<td>1</td>
+<td>18</td>
+</tr>
+<tr>
+<td>3</td>
+<td>7</td>
+<td>2</td>
+<td>17</td>
+</tr>
+<tr>
+<td>1</td>
+<td>97</td>
+<td>3</td>
+<td>87</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020231213202833.png" alt=""></p>
+<h3 id="Router-architecture"><a href="#Router-architecture" class="headerlink" title="Router architecture"></a>Router architecture</h3><ul>
+<li>Four parts: input and output port, routing processor and switching fabric.</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020231213203133.png" alt=""></p>
+<p>Two key router functions:  </p>
+<ul>
+<li>run routing protocol<ul>
+<li>RIP, OSPF, BGP</li>
+</ul>
+</li>
+<li>forwarding datagrams from incoming to outgoing link</li>
+</ul>
+<h4 id="Input-Port-Queuing"><a href="#Input-Port-Queuing" class="headerlink" title="Input Port Queuing"></a>Input Port Queuing</h4><ul>
+<li>Head-of-the-Line (HOL) blocking: <ul>
+<li>queued datagram at front of queue prevents others in queue from moving forward</li>
+</ul>
+</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020231213203451.png" alt=""></p>
+<h4 id="Output-Port-Queuing"><a href="#Output-Port-Queuing" class="headerlink" title="Output Port Queuing"></a>Output Port Queuing</h4><ul>
+<li>buffering when arriva- rate via switch exceeds output line speed  </li>
+<li>queueing (delay) and loss due to output port buffer overflow!</li>
+</ul>
+<h4 id="Packet-Scheduling"><a href="#Packet-Scheduling" class="headerlink" title="Packet Scheduling"></a>Packet Scheduling</h4><p>Scheduling: </p>
+<ul>
+<li>chooses among queued datagrams for transmission  <ul>
+<li>fair queuing  </li>
+<li>weighted fair queuing</li>
+</ul>
+</li>
+</ul>
+<h3 id="IP-Internet-Protocol"><a href="#IP-Internet-Protocol" class="headerlink" title="IP: Internet Protocol"></a>IP: Internet Protocol</h3><h4 id="Datagram-format"><a href="#Datagram-format" class="headerlink" title="Datagram format"></a>Datagram format</h4><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020231213203913.png" alt=""></p>
+<h5 id="IP-Header-TOS"><a href="#IP-Header-TOS" class="headerlink" title="IP Header TOS"></a>IP Header TOS</h5><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020231213203939.png" alt=""></p>
+<h5 id="IP-Fragmentation-and-Reassembly"><a href="#IP-Fragmentation-and-Reassembly" class="headerlink" title="IP Fragmentation and Reassembly"></a>IP Fragmentation and Reassembly</h5><ul>
+<li>Network links have Maximum Transmission Unit (MTU)</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020231213204135.png" alt=""></p>
+<h4 id="IPv4"><a href="#IPv4" class="headerlink" title="IPv4"></a>IPv4</h4><ul>
+<li><strong>Classfu- IP addressing</strong></li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020231213204306.png" alt=""></p>
+<ul>
+<li><strong>Specia- addresses</strong></li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020231213204346.png" alt=""></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Address</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>10.0.0.0 - 10.255.255.255</td>
+</tr>
+<tr>
+<td>B</td>
+<td>172.16.0.0 - 172.31.255.255</td>
+</tr>
+<tr>
+<td>C</td>
+<td>192.168.0.0 - 192.168.255.255</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Subnetting</strong>: dividing an IP network into two or more<br>networks</p>
+<h5 id="VLSM-Variable-Length-Subnet-Mask-子网掩码"><a href="#VLSM-Variable-Length-Subnet-Mask-子网掩码" class="headerlink" title="VLSM (Variable Length Subnet Mask) 子网掩码"></a>VLSM (Variable Length Subnet Mask) 子网掩码</h5><ul>
+<li>IP address = subnet id + host id</li>
+</ul>
+<ul>
+<li><p>how to denote subnet mask?  </p>
+<ul>
+<li>a.b.c.d/x, where x is # bits in subnet portion of address  </li>
+<li>1 for subnet id bits, 0 for host id bits (e.g. 255.255.255.0)</li>
+</ul>
+</li>
+<li><p>how to assign IP addresses for the subnets? </p>
+<ul>
+<li>fix subnet part first</li>
+<li>fix host part first</li>
+</ul>
+</li>
+</ul>
+<p>-&gt; Given a class C IP address <code>223.1.1.0</code>,  how to assign IP  addresses for the subnets?</p>
+<ul>
+<li>Host first</li>
+<li>Subnet first:<ul>
+<li>6 subnets (&gt;= 8 parts, host ID &lt;= 5 bits)</li>
+<li>-&gt; x = 27</li>
+<li>.32 -&gt; .64 -&gt; .96 … -&gt; .192 (use broadcast address to indicate al- IP under a subnet)</li>
+</ul>
+</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020231213210244.png" alt=""></p>
+<ul>
+<li><p><strong>网络地址</strong>：表示了整个网络，不能被分配给具体的主机。例如，在子网掩码为/24的网络中，网络地址是第一个地址，即 <code>x.x.x.0</code>，不属于主机地址</p>
+</li>
+<li><p><strong>广播地址：</strong> 广播地址用于将数据包发送到网络上的所有主机。例如，在子网掩码为/24的网络中，广播地址是最后一个地址，即 <code>x.x.x.255</code>。</p>
+</li>
+</ul>
+<h5 id="CIDR表示法-Classless-InterDomain-Routing"><a href="#CIDR表示法-Classless-InterDomain-Routing" class="headerlink" title="CIDR表示法 Classless InterDomain Routing"></a>CIDR表示法 Classless InterDomain Routing</h5><ul>
+<li>Assign <strong>class C addresses</strong> in contiguous blocks of 256 addresses so that multiple entries in routing table can be reduced into one</li>
+</ul>
+<p>CIDR表示法（a.b.c.d/x）转换为子网掩码通过将所有32位的二进制数中的前 <code>x</code> 位设置为 <code>1</code>，然后将 <code>32-x</code> 设置为 <code>0</code> 来完成。</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020231213205826.png" alt=""></p>
+<ul>
+<li><code>/26</code>确定了subnet标识符的长度为32位IP地址的前26位</li>
+<li>subnet mask的前25位则位1，其余位设置为0，即可得到子网掩码</li>
+</ul>
+<h4 id="DHCP"><a href="#DHCP" class="headerlink" title="DHCP"></a>DHCP</h4><p>DHCP的工作流程如下：</p>
+<ul>
+<li>设备连接到网络时，它发送DHCP请求（DHCP Discover）以寻找可用的DHCP服务器。</li>
+<li>DHCP服务器收到请求后，为设备提供IP地址和其他配置信息（DHCP Offer）。</li>
+<li>设备选择一个提供的配置，并向选择的DHCP服务器发送请求（DHCP Request）。</li>
+<li>服务器确认请求，设备获得分配的IP地址和配置信息（DHCP Ack）。</li>
+</ul>
+<p>通常路由器或无线路由器会集成DHCP服务器功能，以便自动为连接到网络的设备分配IP地址。</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020231213214839.png" alt=""></p>
+<h5 id="NAT-Network-Address-Translation"><a href="#NAT-Network-Address-Translation" class="headerlink" title="NAT: Network Address Translation"></a>NAT: Network Address Translation</h5><ul>
+<li>Motivation:<br>  hosts in LANs use private IP addresses and share one public IP address for Internet access:  <ul>
+<li>handle public IP address shortage.  </li>
+<li>can change addresses of devices in LAN without notifying  outside world  </li>
+<li>can change ISP without changing addresses of devices in LAN </li>
+<li>devices inside not explicitly addressable, visible by outside world (a security plus).</li>
+</ul>
+</li>
+</ul>
+<h5 id="NAT-traversa-problem"><a href="#NAT-traversa-problem" class="headerlink" title="NAT traversa- problem"></a>NAT traversa- problem</h5><ul>
+<li>solution 1: 静态NAT端口映射在NAT设备上手动配置<ul>
+<li>statically configure NAT to forward incoming connection requests at given port to server</li>
+<li>e.g., (123.76.29.7, port 2500) always forwarded to 10.0.0.1 port 25000</li>
+</ul>
+</li>
+</ul>
+<p>端口地址转换（Port Address Translation，PAT）结合使用。在PAT中，多个设备可以共享同一个公共IP地址，但通过使用不同的端口号来区分它们。<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020231213215444.png" alt=""></p>
+<ul>
+<li>solution 2: <strong>Universa- Plug and Play (UPnP) Internet Gateway Device (IGD) Protocol</strong>. NATed主机可以在运行时动态配置端口映射，无需手动干预NAT规则。</li>
+<li>==automate static NAT port map configuration==<ul>
+<li>Allows NATed host to:  <ul>
+<li>learn public IP address (138.76.29.7)  **学习公共IP地址<ul>
+<li>NATed主机可以使用UPnP协议获取与NAT设备关联的公共IP地址。这对于NATed主机了解其在互联网上的外部标识是很有用的。</li>
+</ul>
+</li>
+<li>add/remove port mappings (with lease times) **添加/删除端口映射<ul>
+<li>NATed主机可以通过UPnP协议请求NAT设备在路由器上创建或删除端口映射。这意味着NATed主机可以动态配置路由器以允许从外部访问它的服务。</li>
+<li>映射的端口是由UPnP协议与NAT设备协商确定的，租约时间规定了端口映射的持续时间，一旦过期，NAT设备可以自动删除映射。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020231213215252.png" alt=""></p>
+<ul>
+<li>solution 3: relaying (used in Skype)  <ul>
+<li>NATed client establishes connection to relay  中继</li>
+<li>Externa- client connects to relay  </li>
+<li>relay bridges packets between to connections</li>
+</ul>
+</li>
+</ul>
+<p>在中继方案中，不需要在NAT设备上配置端口映射规则，也不需要NATed客户端能够接收来自外部网络的连接。两方客户端都只需知道中继服务器的公共IP地址进行联络，而不需要直接处理彼此所在的NAT过程。</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020231213220141.png" alt=""></p>
+<h4 id="ICMP-Internet-Contro-Message-Protocol"><a href="#ICMP-Internet-Contro-Message-Protocol" class="headerlink" title="ICMP (Internet Contro- Message Protocol)"></a>ICMP (Internet Contro- Message Protocol)</h4><ul>
+<li>used by hosts &amp; routers to communicate network-leve-  information  <ul>
+<li>error reporting: unreachable host, TT- exceeded, redirect, Checksum failed etc.  </li>
+<li>echo request/reply (used by ping)  </li>
+</ul>
+</li>
+<li>network-layer “above” IP:</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020231213233950.png" alt=""></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Code</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>echo reply (ping)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0</td>
+<td>dest. network unreachable</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1</td>
+<td>dest host unreachable</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>dest protoco- unreachable</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>dest port unreachable</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+<td>==fragmentation needed== <strong>[for path MTU discovery]</strong></td>
+</tr>
+<tr>
+<td>3</td>
+<td>6</td>
+<td>dest network</td>
+</tr>
+<tr>
+<td>3</td>
+<td>7</td>
+<td>dest host</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0</td>
+<td>source quench (congestion contro- - not used)</td>
+</tr>
+<tr>
+<td>8</td>
+<td>0</td>
+<td>echo request (ping)</td>
+</tr>
+<tr>
+<td>9</td>
+<td>0</td>
+<td>route advertisement</td>
+</tr>
+<tr>
+<td>10</td>
+<td>0</td>
+<td>router discovery</td>
+</tr>
+<tr>
+<td>11</td>
+<td>0</td>
+<td>==TT- expired== <strong>[for traceroute]</strong></td>
+</tr>
+<tr>
+<td>12</td>
+<td>0</td>
+<td>bad IP header</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="IPv6"><a href="#IPv6" class="headerlink" title="IPv6"></a>IPv6</h4><ul>
+<li>Initia- motivation: <ul>
+<li>32-bit address space soon to be completely allocated.  </li>
+</ul>
+</li>
+<li><p>Additiona- motivation:  </p>
+<ul>
+<li>header format helps speed processing/forwarding  </li>
+<li>header changes to facilitate QoS  </li>
+</ul>
+</li>
+<li><p>IPv6 datagram format:  </p>
+<ul>
+<li>fixed-length ==40 byte header==</li>
+<li>extension headers allowed</li>
+</ul>
+</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020231213234511.png" alt=""></p>
+<ul>
+<li><p>IPv6 Addresses</p>
+<ul>
+<li>The 16-byte IPv6 address is written as 8 groups of 4 hexadecima- digits with colons between</li>
+<li>e.g. FE80::202:B3FF:FE1E:8329</li>
+</ul>
+</li>
+<li><p>An IPv6 address can be in one of three categories:</p>
+<ul>
+<li>Unicast: A packet sent to a unicast address is delivered to the interface identified by that address.</li>
+<li>Multicast: The packet wil- be processed by al- members of the multicast group.</li>
+<li>Anycast (new to IPv6): The packet wil- be delivered to only one of the interfaces configured for the anycast address — usually to the nearest one.</li>
+</ul>
+</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020231213234915.png" alt=""></p>
+<h3 id="SDN"><a href="#SDN" class="headerlink" title="SDN"></a>SDN</h3><p><strong>数据平面</strong>-&gt;转发过程<br>    硬件为主<br><strong>控制平面</strong>-&gt;路由选择过程（较为复杂）<br>    软件为主</p>
+<ul>
+<li>传统-&gt;SDN<ul>
+<li>传统：路由选择器执行控制平面功能。既进行转发，也维护转发表</li>
+<li>SDN：路由选择处理器负责与远程控制器通信，接受其计算的转发表项</li>
+</ul>
+</li>
+</ul>
+<h3 id="路由选择-Routing"><a href="#路由选择-Routing" class="headerlink" title="路由选择 Routing"></a>路由选择 Routing</h3><p>chap4-2</p>
+<h4 id="路由选择算法"><a href="#路由选择算法" class="headerlink" title="路由选择算法"></a>路由选择算法</h4><ul>
+<li>static/dynamic routing</li>
+</ul>
+<h5 id="Link-State-Routing-LSR"><a href="#Link-State-Routing-LSR" class="headerlink" title="Link State Routing (LSR)"></a>Link State Routing (LSR)</h5><ul>
+<li><p>Each router learns the entire network topology through<br>exchanging information with all other routers, and then<br>calculate least cost path to the other routers.  </p>
+</li>
+<li><p>Each router must do the following:  </p>
+<ul>
+<li>Discover its neighbors, measure the delay or cost to each of its neighbors.  </li>
+<li>Construct a packet telling all it has just learned.  </li>
+<li><strong>Flood 洪泛</strong> this packet to <strong>all other routers</strong>.  </li>
+<li>Compute the least cost path to every other router when costs of all the edges learnt</li>
+</ul>
+</li>
+<li><p>All least cost paths from a given source to other nodes in the network, constitute a <strong>sink tree</strong></p>
+</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020231214000623.png" alt=""></p>
+<h5 id="Distance-vector-routing-DVR-距离向量路由"><a href="#Distance-vector-routing-DVR-距离向量路由" class="headerlink" title="Distance vector routing (DVR) 距离向量路由"></a>Distance vector routing (DVR) 距离向量路由</h5><ul>
+<li><p>eg. 分布式Bellman-Ford路由算法, RIP</p>
+</li>
+<li><p>Each router maintains a table (i.e <strong>Distance Vector</strong>) with least<br>cost/distance to every other routers.</p>
+</li>
+<li><p>Each router must do the following:  </p>
+<ul>
+<li>Discover its neighbors, measure the cost to each neighbor v.  </li>
+<li>Exchange DV with the <strong>neighbors</strong>.  </li>
+<li>Recalculate DV (the new least cost to every other routers) with <strong>the Bellman-Ford equation</strong>:  $d_x(y) = min (c(x,v) + d_v(y) )$<br>  where $d_x(y)$ is least-cost from x to y, min is taken over all neighbors v of x</li>
+</ul>
+<p><strong>DVR “count to infinity” problem</strong>  </p>
+<ul>
+<li>good news travels fast.  </li>
+<li>bad news travels slowly : <ul>
+<li><strong>count-to-infinity in the presence of node crashes</strong>  </li>
+</ul>
+</li>
+<li>unsuitable for large network.<h5 id="LSR-vs-DVR"><a href="#LSR-vs-DVR" class="headerlink" title="LSR vs DVR"></a>LSR vs DVR</h5></li>
+</ul>
+</li>
+</ul>
+<ol>
+<li><strong>message complexity:</strong> how many msgs sent between all n nodes?<ul>
+<li>LS: with n nodes, E links, totally $O(n\times E)$ msgs sent</li>
+<li>DV: exchange between neighbors only, totally $O(n)$ msgs sent</li>
+</ul>
+</li>
+<li><strong>computation complexity:</strong> algorithm for calculating least cost each<ul>
+<li>LS: Dijkstra , $O(n^2)$</li>
+<li>DV: Bellman-Ford equation , $O(n)$</li>
+</ul>
+</li>
+<li><strong>speed of convergence:</strong> given a change, how long until the network re-stabilizes? <ul>
+<li>LS: 1 iteration. may have oscillations</li>
+<li>DV: n iterations. <ul>
+<li>Good news travel fast, but possible count-to-infinity problem for bad news.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Robustness:</strong> what can happen if a router fails or misbehaves?<ul>
+<li>LS: robust. Node route calculations are somewhat separated</li>
+<li>DV: an incorrect node calculation can be diffused through the entire network. A node can advertise incorrect least-cost paths to its neighbors and then pass indirectly to its neighbor’s neighbors and then to all destinations.</li>
+</ul>
+</li>
+</ol>
+<h5 id="Hierarchical-Routing-层次路由算法"><a href="#Hierarchical-Routing-层次路由算法" class="headerlink" title="Hierarchical Routing 层次路由算法"></a>Hierarchical Routing 层次路由算法</h5><p>hierarchical routing saves table size, reduced update traffic. </p>
+<ul>
+<li>“autonomous systems” (AS)<ul>
+<li>aggregate routers into regions, correspond to an administrative domain 管理域. </li>
+<li>Assigned an unique 16/32 bit number.  </li>
+</ul>
+</li>
+<li>==intra-AS==/interior gateway routing 内部网关路由<ul>
+<li>should find the least cost path as best as possible  </li>
+<li><strong>routers in same AS run same routing protocol -&gt; trusted</strong>  </li>
+<li>routers in different AS can run different intra-AS routing protocol  </li>
+</ul>
+</li>
+<li>==inter-AS==/exterior gateway routing 外部网关路由<ul>
+<li>has to deal with a lot of politics.  </li>
+<li>Routers <strong>do not automatically</strong> use the routes they find, but have to check manually whether it is allowed.</li>
+<li><strong>admin controls over how traffic routed -&gt; untrusted</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="Broadcast-routing"><a href="#Broadcast-routing" class="headerlink" title="Broadcast routing"></a>Broadcast routing</h4><h5 id="In-network-duplication"><a href="#In-network-duplication" class="headerlink" title="In-network duplication"></a>In-network duplication</h5><ul>
+<li>flooding: when node receives broadcast packet, sends copies to all neighbors  <ul>
+<li>Problems: cycles &amp; broadcast storm  </li>
+</ul>
+</li>
+<li>controlled flooding：<ul>
+<li>TTL，age  </li>
+<li>node keeps track of packet IDs already brdcsted  </li>
+<li><strong>reverse path forwarding (RPF)</strong>: <ul>
+<li>only forward packet if it arrived  on shortest path between node and source  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>spanning tree  <ul>
+<li>no redundant packets received by any node</li>
+</ul>
+</li>
+</ul>
+<h5 id="Reverse-Path-Forwarding"><a href="#Reverse-Path-Forwarding" class="headerlink" title="Reverse Path Forwarding"></a>Reverse Path Forwarding</h5><ul>
+<li>Method: use the routing table reversely. If the broadcast<br>packet comes from a node which is the next hop to the source,<br>then forwards copies of it onto all lines except the one it<br>arrived on, else discards it.  </li>
+<li>Pros: efficient and easy to implement</li>
+</ul>
+<h2 id="ch5-数据链路层"><a href="#ch5-数据链路层" class="headerlink" title="ch5 数据链路层"></a>ch5 数据链路层</h2><p>Link layer is implemented in “adaptor” (network interface card NIC) in each host and routers. </p>
+<p>Data-link layer has responsibility of transferring datagram from one node to physically adjacent node over a link (node-to-node job)</p>
+<p>Functions</p>
+<ul>
+<li>reliable data transfer 可靠传输<ul>
+<li>error control 差错控制</li>
+<li>flow control 流量控制</li>
+</ul>
+</li>
+<li>sharing a broadcast channel: multiple access control  </li>
+<li>link layer addressing 封装成帧和透明传输</li>
+</ul>
+<h3 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h3><ul>
+<li>加强物理层传输原始比特流的功能，使之对网络层表现为无差错链路</li>
+</ul>
+<h4 id="封装成帧"><a href="#封装成帧" class="headerlink" title="封装成帧"></a>封装成帧</h4><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020231214003609.png" alt=""></p>
+<ul>
+<li>添加首尾部，构成帧定界</li>
+<li>帧同步：接收方可以从二进制比特流中区分帧的起始和终止</li>
+</ul>
+<h4 id="透明传输"><a href="#透明传输" class="headerlink" title="透明传输"></a>透明传输</h4><ul>
+<li>不管所传数据是什么组合，都应当可在链路上传输。</li>
+<li>所传数据的比特组合恰好等于控制信息也不会导致误认。</li>
+</ul>
+<ol>
+<li><p>字符计数法</p>
+<ul>
+<li>容易出错</li>
+</ul>
+</li>
+<li><p>字符填充法</p>
+</li>
+</ol>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>SOH</th>
+<th>data</th>
+<th>EOT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Start of header</td>
+<td></td>
+<td>End of transimission</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>在数据段内的SOH和ESC前添加转义字节防止误判</li>
+</ul>
+<ol>
+<li>零比特填充法</li>
+</ol>
+<ul>
+<li><p>每遇到5个1就填充1个0</p>
+<h3 id="Two-point-to-point-Data-Link-Protocols"><a href="#Two-point-to-point-Data-Link-Protocols" class="headerlink" title="Two point-to-point Data Link  Protocols"></a>Two point-to-point Data Link  <br>Protocols</h3></li>
+<li><p><strong>HDLC</strong> – High-Level Data Link Control  高级数据链路控制</p>
+<ul>
+<li>A pretty old, but widely used protocol for point-to-point connections. </li>
+<li><strong>bit-oriented</strong>  </li>
+</ul>
+</li>
+<li><strong>PPP</strong> – The Point-to-Point Protocol  点到点协议<ul>
+<li>Internet standard (RFC1661 1662 1663), is used in the Internet for a variety of purposes, including router-to-router traffic and home user-to-ISP traffic. </li>
+<li><strong>byte-oriented</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="ch6-物理层"><a href="#ch6-物理层" class="headerlink" title="ch6 物理层"></a>ch6 物理层</h2><ul>
+<li>信源 - 信道 -&gt; 信宿</li>
+</ul>
+<h3 id="通信方式"><a href="#通信方式" class="headerlink" title="通信方式"></a>通信方式</h3><ul>
+<li><p>单工通信</p>
+<ul>
+<li>单一方向，单一信道</li>
+</ul>
+</li>
+<li><p>半双工/双向交替通信</p>
+<ul>
+<li>均可发送和接受，但是不能同时</li>
+<li>两条信道</li>
+</ul>
+</li>
+<li><p>全双工/双向同时通信</p>
+</li>
+</ul>
+<h3 id="传输方式"><a href="#传输方式" class="headerlink" title="传输方式"></a>传输方式</h3><ul>
+<li>串行/并行</li>
+<li><p>同步/异步</p>
+<ul>
+<li>同步：以数据区块为单位，先送出同步字符</li>
+<li>异步：以组为单位，加字符起始位和终止位</li>
+</ul>
+</li>
+<li><p>码元</p>
+<ul>
+<li>固定时长的信号波形</li>
+<li>M个离散状态 -&gt; M进制码元</li>
+</ul>
+</li>
+</ul>
+<h3 id="奈氏准则"><a href="#奈氏准则" class="headerlink" title="奈氏准则"></a>奈氏准则</h3><p>在理想低通条件下，为了避免码间串扰，极限码元传输速率为2W Baud，W为信道带宽，单位为Hz。</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020230718075133.png" alt=""></p>
+<h3 id="香农定理"><a href="#香农定理" class="headerlink" title="香农定理"></a>香农定理</h3><p>噪声存在于所有的电子设备和通信信道中。由于噪声随机产生，它的瞬时值有时会很大，因此噪声会使接收端对码元的判决产生错误。但是噪声的影响是相对的，若信号较强，那么噪声影响相对较小。因此，<strong>信噪比</strong> (信号的平均功率S/噪声的平均功率N -&gt; db表示 = $10log_{10}S/N$) 就很重要。</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020230718075528.png" alt=""></p>
+<h3 id="编码-amp-调制"><a href="#编码-amp-调制" class="headerlink" title="编码&amp;调制"></a>编码&amp;调制</h3><ul>
+<li>信号类型<ul>
+<li>基带信号：直接表达了要传输的信息的信号<ul>
+<li>数字信道 -&gt; 基带传输</li>
+</ul>
+</li>
+<li>宽带信号：基带信号调制后的频分复用模拟信号<ul>
+<li>模拟信道 -&gt; 宽带传输</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="数据-gt-数字信号（编码）"><a href="#数据-gt-数字信号（编码）" class="headerlink" title="数据 -&gt; 数字信号（编码）"></a>数据 -&gt; 数字信号（编码）</h4><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020230718080809.png" alt=""></p>
+<p>曼彻斯特编码：自同步，但是占用两倍宽度的频带，数据传输速率为调制速率的一半<br>+差分：同1异0（虚线两侧）。更强的抗干扰性</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020230718080852.png" alt=""><br>信号电平翻转表示0</p>
+<p>4B/5B：额外插入比特，保留控制码</p>
+<h5 id="模拟数据-gt-数字信号"><a href="#模拟数据-gt-数字信号" class="headerlink" title="模拟数据 -&gt; 数字信号"></a>模拟数据 -&gt; 数字信号</h5><p>高保真：PCM 脉码调制<br>    f采样频率&gt;=2f信号最高频率</p>
+<h4 id="数据-gt-模拟信号（调制）"><a href="#数据-gt-模拟信号（调制）" class="headerlink" title="数据 -&gt; 模拟信号（调制）"></a>数据 -&gt; 模拟信号（调制）</h4><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020230718081626.png" alt=""><br>调频+调相 = QAM<br>    可以表示的码元类型为相位类型数*振幅类型数</p>
+<h5 id="模拟数据-gt-模拟信号"><a href="#模拟数据-gt-模拟信号" class="headerlink" title="模拟数据 -&gt; 模拟信号"></a>模拟数据 -&gt; 模拟信号</h5><p>频分复用</p>
+<h3 id="数据交换"><a href="#数据交换" class="headerlink" title="数据交换"></a>数据交换</h3><h4 id="电路交换"><a href="#电路交换" class="headerlink" title="电路交换"></a>电路交换</h4><ul>
+<li>建立连接 -&gt; 通信 -&gt; 释放连接</li>
+<li>高占用，低时延，建立连接时间长，全双工，控制简单</li>
+</ul>
+<h4 id="报文交换"><a href="#报文交换" class="headerlink" title="报文交换"></a>报文交换</h4><p>存储转发</p>
+<ul>
+<li>只适用于数字信号</li>
+</ul>
+<h4 id="分组交换"><a href="#分组交换" class="headerlink" title="分组交换"></a>分组交换</h4><p>分组后存储转发</p>
+<ul>
+<li><p>数据报方式</p>
+<ul>
+<li>无连接服务</li>
+<li>分组多次，不能保证到达顺序</li>
+<li>每次转发进行验证后删除，有一定时延</li>
+</ul>
+</li>
+<li><p>虚电路方式</p>
+<ul>
+<li>连接服务</li>
+<li>需要携带虚电路号信息</li>
+<li>顺序保证</li>
+</ul>
+</li>
+</ul>
+<h3 id="传输介质"><a href="#传输介质" class="headerlink" title="传输介质"></a>传输介质</h3><p>物理通路</p>
+<ul>
+<li><p>导向性</p>
+<ul>
+<li>双绞线<ul>
+<li>屏蔽~ STP，非屏蔽~ UTP</li>
+</ul>
+</li>
+<li>同轴电缆</li>
+<li>光纤<ul>
+<li>光脉冲</li>
+<li>带宽极大</li>
+<li>实心纤芯 + 包层</li>
+<li>单模 -&gt; 横向，远距离；多模 -&gt; 易失真，近距离</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>非导向性</p>
+<ul>
+<li>无线电波：所有方向<ul>
+<li>强穿透，远距离</li>
+</ul>
+</li>
+<li>微波：定向<ul>
+<li>地面微波接力通信</li>
+<li>卫星通信</li>
+</ul>
+</li>
+<li>红外线/激光：定向</li>
+</ul>
+</li>
+</ul>
+<h3 id="设备"><a href="#设备" class="headerlink" title="设备"></a>设备</h3><ul>
+<li><p>中继器</p>
+<ul>
+<li>再生和还原数字信号</li>
+<li>没有存储转发功能</li>
+<li>使用范围有限制：5-4-3规则<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020230718083736.png" alt=""></li>
+</ul>
+</li>
+<li><p>集线器</p>
+<ul>
+<li>再生 放大 转发信号</li>
+<li>共享式设备</li>
+<li>非定向</li>
+</ul>
+</li>
+</ul>
+
+  
+
+
+  </article>
+  
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">回顾上一篇</div><a href="/files/courseNotes/2022(2)/%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.html">高级数据结构-SE2322</a></div><div class="item" id="next"><div class="note">接下来阅读</div><a href="/files/courseNotes/2023(1)/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%8E%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80.html">密码学与信息安全基础-CS3314</a></div></section></div>
+
+  
+
+  <div class='related-wrap md-text reveal' id="comments">
+    <section class='header cmt-title cap theme'>
+      <p>评论区仅供交流~</p>
+
+    </section>
+    <section class='body cmt-body giscus'>
+      
+
+<svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="giscus" data-repo="aleryxiao/aleryxiao.github.io" data-repo-id="R_kgDOIdw0jw" data-category="Announcements" data-category-id="DIC_kwDOIdw0j84CTXeH" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" data-loading="lazy" crossorigin="anonymous"></div>
+
+    </section>
+  </div>
+
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="sitemap"><div class="sitemap-group"><span class="fs14">博客</span><a href="/">近期</a><a href="/categories">分类</a><a href="/tags">标签</a><a href="/">归档</a></div><div class="sitemap-group"><span class="fs14">整理</span><a href="/wiki">文件夹</a></div><div class="sitemap-group"><span class="fs14">社交</span><a href="/friend">友链</a><a href="/guestbook">留言板</a></div><div class="sitemap-group"><span class="fs14">更多</span><a href="/about">关于</a><a target="_blank" rel="noopener" href="https://github.com/aleryxiao">GitHub</a></div></div><div class="text"><p>本站由 <a target="_blank" rel="noopener" href="https://space.bilibili.com/19610138">@AleryXiao</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.18.5';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+  <script>
+  function loadJS() {
+    const els = document.querySelectorAll("#comments #giscus");
+    if (els.length === 0) return;
+    els.forEach((el, i) => {
+      try {
+        el.innerHTML = '';
+      } catch (error) {
+        console.log(error);
+      }
+      var script = document.createElement('script');
+      script.src = 'https://giscus.app/client.js';
+      script.async = true;
+      for (let key of Object.keys(el.attributes)) {
+        let attr = el.attributes[key];
+        if (['class', 'id'].includes(attr.name) === false) {
+          script.setAttribute(attr.name, attr.value);
+        }
+      }
+      el.appendChild(script);
+    });
+  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+    loadJS();
+  });
+</script>
+
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>

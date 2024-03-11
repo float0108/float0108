@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>courseNotes：人工智能-CS3317 - 極楽浄土</title>
+
+  
+    <meta name="description" content="SJTU-CS3317 课程笔记 @YangYang">
+<meta property="og:type" content="website">
+<meta property="og:title" content="人工智能-CS3317">
+<meta property="og:url" content="https://float0108.github.io/files/courseNotes/2023(1)/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%EF%BC%88B%E7%B1%BB%EF%BC%89.html">
+<meta property="og:site_name" content="極楽浄土">
+<meta property="og:description" content="SJTU-CS3317 课程笔记 @YangYang">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230922173923.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230928121114.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020240103071135.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020240103071818.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020240103072838.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020240103073122.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020240103084726.png">
+<meta property="article:published_time" content="2023-03-10T15:54:37.000Z">
+<meta property="article:modified_time" content="2024-02-19T02:16:31.194Z">
+<meta property="article:author" content="AleryXiao">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://float0108.github.io/assets/Pasted%20image%2020230922173923.png">
+  
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="極楽浄土" type="application/atom+xml">
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="/site_assets/favicon.jpg">
+  
+
+  
+
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='wiki'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/site_assets/head.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">極楽浄土</div><div class="sub normal cap">フロトの理发店</div><div class="sub hover cap" style="opacity:0"> @AleryXiao</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item" href="/">posts</a><a class="nav-item active" href="/wiki/">collection</a><a class="nav-item" href="/about/">about</a></nav>
+</header>
+
+
+<div class="widgets">
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/files/courseNotes/" placeholder="在 /files/courseNotes/ 中搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+
+
+
+<widget class="widget-wrapper toc multi" id="data-toc"><div class="widget-header cap dis-select"><span class="name">人工智能-CS3317</span></div><div class="widget-body fs14"><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2022(2)/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84.html#start"><span class="toc-text">计算机系统结构-CS2305</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2022(2)/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(8086).html"><span class="toc-text">计算机组成-汇编语言-CS2307</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2022(2)/%E7%AE%97%E6%B3%95%E4%B8%8E%E5%A4%8D%E6%9D%82%E6%80%A7.html"><span class="toc-text">算法与复杂性-CS2308</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2022(2)/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F1.html"><span class="toc-text">现代操作系统CS2310 （上）进程管理</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2022(2)/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F2.html"><span class="toc-text">现代操作系统2-CS2310</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2022(2)/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F0.html"><span class="toc-text">现代操作系统CS2310 速效版</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2022(2)/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F3.html"><span class="toc-text">现代操作系统CS2310 （附）虚拟机和分布式</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2022(2)/%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.html"><span class="toc-text">高级数据结构-SE2322</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2023(1)/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.html"><span class="toc-text">CS3311 计算机网络</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2023(1)/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%8E%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80.html"><span class="toc-text">密码学与信息安全基础-CS3314</span></a></div><div class="doc-tree active"><a class="doc-tree-link active" href="/files/courseNotes/2023(1)/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%EF%BC%88B%E7%B1%BB%EF%BC%89.html"><span class="toc-text">人工智能-CS3317</span></a><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Problem-solving-agents"><span class="toc-text">Problem-solving agents</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Problem-formulation-%E5%BB%BA%E6%A8%A1"><span class="toc-text">Problem formulation 建模</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Uniformed-search-strategies-%E6%97%A0%E4%BF%A1%E6%81%AF%E6%90%9C%E7%B4%A2"><span class="toc-text">Uniformed search strategies 无信息搜索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Informed-search-strategies-%E5%90%AF%E5%8F%91%E5%BC%8F%E6%90%9C%E7%B4%A2"><span class="toc-text">Informed search strategies 启发式搜索</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Greedy-best-first-search-%E8%B4%AA%E5%A9%AA%E6%90%9C%E7%B4%A2"><span class="toc-text">Greedy best-first search 贪婪搜索</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#A-search"><span class="toc-text">A* search</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Heuristic-function"><span class="toc-text">Heuristic function</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Admissible"><span class="toc-text">Admissible</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Consistent"><span class="toc-text">Consistent</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Local-search-algorithms-%E5%B1%80%E9%83%A8%E6%90%9C%E7%B4%A2"><span class="toc-text">Local search algorithms 局部搜索</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%88%AC%E5%B1%B1%E6%B3%95-Hill-Climbing"><span class="toc-text">爬山法 Hill-Climbing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB-Simulated-annealing"><span class="toc-text">模拟退火 Simulated annealing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95-Genetic-algorithms"><span class="toc-text">遗传算法 Genetic algorithms</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E6%8A%97%E6%90%9C%E7%B4%A2"><span class="toc-text">对抗搜索</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-MiniMax-%E7%AE%97%E6%B3%95"><span class="toc-text">1. MiniMax 算法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Properties"><span class="toc-text">Properties</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%B7%B1%E5%BA%A6%E4%B8%8A%E7%9A%84%E7%AE%80%E5%8C%96%EF%BC%9ADepth-limited-search"><span class="toc-text">2. 深度上的简化：Depth-limited search</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Evaluation-function"><span class="toc-text">Evaluation function</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%AE%BD%E5%BA%A6%E4%B8%8A%E7%9A%84%E7%AE%80%E5%8C%96%EF%BC%9AAlpha-beta-%E5%89%AA%E6%9E%9D"><span class="toc-text">3. 宽度上的简化：Alpha-beta 剪枝</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Key-points"><span class="toc-text">Key points</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Properties-1"><span class="toc-text">Properties</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSP%E9%97%AE%E9%A2%98"><span class="toc-text">CSP问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Standard-search-formulation-incremental"><span class="toc-text">Standard search formulation (incremental)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Backtracking-search"><span class="toc-text">Backtracking search</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Which-variable-should-be-assigned-next%EF%BC%9F"><span class="toc-text">Which variable should be assigned next？</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Forward-checking-%E5%89%8D%E5%90%91%E6%A3%80%E6%9F%A5"><span class="toc-text">Forward checking  前向检查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Arc-3"><span class="toc-text">Arc-3</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Propositional-Logic-Models"><span class="toc-text">Propositional Logic Models</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Logic-in-general"><span class="toc-text">Logic in general</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Entailment"><span class="toc-text">Entailment</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Inference-Proofs"><span class="toc-text">Inference: Proofs</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Uncertainty"><span class="toc-text">Uncertainty</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Probability"><span class="toc-text">Probability</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF-Naive-Bayes"><span class="toc-text">朴素贝叶斯 Naive Bayes</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Probabilistic-Reasoning"><span class="toc-text">Probabilistic Reasoning</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Bayesian-networks"><span class="toc-text">Bayesian networks</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Conditional-Independence"><span class="toc-text">Conditional Independence</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bayesian-Sampling"><span class="toc-text">Bayesian Sampling</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%88%E9%AA%8C%E9%87%87%E6%A0%B7%EF%BC%88Prior-Sampling%EF%BC%89"><span class="toc-text">先验采样（Prior Sampling）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8B%92%E7%BB%9D%E9%87%87%E6%A0%B7%EF%BC%88Rejection-Sampling%EF%BC%89"><span class="toc-text">拒绝采样（Rejection Sampling）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%BC%E7%84%B6%E9%87%87%E6%A0%B7%EF%BC%88Likelihood-Weighting%EF%BC%89"><span class="toc-text">似然采样（Likelihood Weighting）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%89%E5%B8%83%E6%96%AF%E9%87%87%E6%A0%B7%EF%BC%88Gibbs-Sampling%EF%BC%89"><span class="toc-text">吉布斯采样（Gibbs Sampling）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Markov-blanket"><span class="toc-text">Markov blanket</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Probabilistic-Reasoning-over-Time"><span class="toc-text">Probabilistic Reasoning over Time</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Hidden-Markov-Model-HMM"><span class="toc-text">Hidden Markov Model (HMM)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A9%AC%E5%B0%94%E8%B4%9D%E5%A4%AB%E9%93%BE"><span class="toc-text">马尔贝夫链</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HMM%E5%BB%BA%E6%A8%A1%EF%BC%88Hidden-Markov-Model%EF%BC%89"><span class="toc-text">HMM建模（Hidden Markov Model）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E8%AF%84%E4%BB%B7-HMM-%E4%B8%AD%E6%9F%90%E4%B8%AA%E5%BA%8F%E5%88%97%E5%87%BA%E7%8E%B0%E7%9A%84%E6%A6%82%E7%8E%87%EF%BC%9A%E5%89%8D%E5%90%91%E3%80%81%E5%90%8E%E5%90%91%E7%AE%97%E6%B3%95%EF%BC%9A"><span class="toc-text">2. 评价 HMM 中某个序列出现的概率：前向、后向算法：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%B4%E7%89%B9%E6%AF%94%E7%AE%97%E6%B3%95-Viterbi-Algorithm"><span class="toc-text">维特比算法 Viterbi Algorithm</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic-Knowledge"><span class="toc-text">Basic Knowledge</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Classification"><span class="toc-text">Classification</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%EF%BC%88Unsupervised-Learning%EF%BC%89"><span class="toc-text">无监督学习（Unsupervised Learning）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%89%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%EF%BC%88Supervised-Learning%EF%BC%89"><span class="toc-text">有监督学习（Supervised Learning）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%EF%BC%88Reinforcement-Learning%EF%BC%89"><span class="toc-text">强化学习（Reinforcement Learning）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E6%8B%9F%E5%90%88%E3%80%81%E6%AC%A0%E6%8B%9F%E5%90%88"><span class="toc-text">过拟合、欠拟合</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%87%E6%8B%9F%E5%90%88%EF%BC%88Overfitting%EF%BC%89"><span class="toc-text">过拟合（Overfitting）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AC%A0%E6%8B%9F%E5%90%88%EF%BC%88Underfitting%EF%BC%89"><span class="toc-text">欠拟合（Underfitting）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%E5%92%8C%E5%9B%9E%E5%BD%92"><span class="toc-text">分类和回归</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%EF%BC%88Classification%EF%BC%89Discrete-label"><span class="toc-text">分类（Classification）Discrete label</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9E%E5%BD%92%EF%BC%88Regression%EF%BC%89Continuous-label"><span class="toc-text">回归（Regression）Continuous label</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linear-Model"><span class="toc-text">Linear Model</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="toc-text">线性回归</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0"><span class="toc-text">代价函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B1%82%E8%A7%A3%E6%96%B9%E5%BC%8F"><span class="toc-text">求解方式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E5%8C%96-Regularization"><span class="toc-text">正则化 Regularization</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Logistic-Regression-%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92"><span class="toc-text">Logistic Regression 逻辑回归</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Modeling"><span class="toc-text">Modeling</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B1%82%E8%A7%A3%E6%96%B9%E6%B3%95-MLE"><span class="toc-text">求解方法 MLE</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bayesian-Learning"><span class="toc-text">Bayesian Learning</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MLE-%E5%92%8C-MAP-%E5%9C%A8%E4%BC%B0%E8%AE%A1%E5%8F%82%E6%95%B0%E6%97%B6%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">MLE 和 MAP 在估计参数时的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1%EF%BC%88Maximum-Likelihood-Estimation-MLE%EF%BC%89"><span class="toc-text">最大似然估计（Maximum Likelihood Estimation, MLE）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E5%A4%A7%E5%90%8E%E9%AA%8C%E4%BC%B0%E8%AE%A1%EF%BC%88Maximum-A-Posterior-Estimation-MAP%EF%BC%89"><span class="toc-text">最大后验估计（Maximum A Posterior Estimation, MAP）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Bayes-Optimal-Classifier"><span class="toc-text">Bayes Optimal Classifier</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E6%AF%94"><span class="toc-text">对比</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB%E5%99%A8%EF%BC%8C%E6%9D%A1%E4%BB%B6%E7%8B%AC%E7%AB%8B%E6%80%A7%E5%81%87%E8%AE%BE"><span class="toc-text">朴素贝叶斯分类器，条件独立性假设</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB%E5%99%A8"><span class="toc-text">朴素贝叶斯分类器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E7%8B%AC%E7%AB%8B%E6%80%A7%E5%81%87%E8%AE%BE"><span class="toc-text">条件独立性假设</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%88%A4%E5%88%AB%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">生成模型与判别模型的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B"><span class="toc-text">生成模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A4%E5%88%AB%E6%A8%A1%E5%9E%8B"><span class="toc-text">判别模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8C%BA%E5%88%AB"><span class="toc-text">区别</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Support-Vector-Machine-%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA"><span class="toc-text">Support Vector Machine 支持向量机</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SVM-%E7%9A%84%E4%BC%98%E5%8C%96%E7%9B%AE%E6%A0%87"><span class="toc-text">SVM 的优化目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E5%8C%96%E6%95%88%E5%BA%94"><span class="toc-text">正则化效应</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AC%E9%97%B4%E9%9A%94-SVM%EF%BC%88Hard-Margin-SVM%EF%BC%89"><span class="toc-text">硬间隔 SVM（Hard Margin SVM）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E9%97%B4%E9%9A%94-SVM%EF%BC%88Soft-Margin-SVM%EF%BC%89"><span class="toc-text">软间隔 SVM（Soft Margin SVM）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9D%BE%E5%BC%9B%E5%9B%A0%E5%AD%90%E5%92%8C-Hinge-Loss"><span class="toc-text">松弛因子和 Hinge Loss</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9D%BE%E5%BC%9B%E5%9B%A0%E5%AD%90%EF%BC%88Slack-Variable%EF%BC%89"><span class="toc-text">松弛因子（Slack Variable）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Hinge-Loss"><span class="toc-text">Hinge Loss</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F"><span class="toc-text">支持向量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%AF%B9%E5%81%B6%E9%97%AE%E9%A2%98%E5%92%8C-Kernel-Trick"><span class="toc-text">5. 对偶问题和 Kernel Trick</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E5%81%B6%E9%97%AE%E9%A2%98"><span class="toc-text">对偶问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Kernel-Trick"><span class="toc-text">Kernel Trick</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NN"><span class="toc-text">NN</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%84%9F%E7%9F%A5%E6%9C%BA"><span class="toc-text">感知机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E5%B1%82%E6%84%9F%E7%9F%A5%E6%9C%BA"><span class="toc-text">多层感知机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3"><span class="toc-text">反向传播算法的基本思想</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95"><span class="toc-text">反向传播算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%AD%A5%E9%AA%A4"><span class="toc-text">基本步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D"><span class="toc-text">梯度下降</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0%E7%9A%84%E5%AF%BC%E6%95%B0"><span class="toc-text">激活函数的导数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0"><span class="toc-text">强化学习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E5%86%B3%E7%AD%96%E8%BF%87%E7%A8%8B%EF%BC%88MDP%EF%BC%89"><span class="toc-text">马尔可夫决策过程（MDP）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#MDP-%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">MDP 的定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Value-Utility-%E5%92%8C-Policy-%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">Value&#x2F;Utility 和 Policy 的定义</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Value-Iteration-%E5%92%8C-Policy-Iteration"><span class="toc-text">Value Iteration 和 Policy Iteration</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Value-Iteration-%E7%9A%84%E8%AE%A1%E7%AE%97%E8%BF%87%E7%A8%8B"><span class="toc-text">Value Iteration 的计算过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Policy-Iteration-%E7%9A%84%E8%AE%A1%E7%AE%97%E8%BF%87%E7%A8%8B"><span class="toc-text">Policy Iteration 的计算过程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%BF%9B%E8%A1%8C%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0"><span class="toc-text">用神经网络进行强化学习</span></a></li></ol></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95.html"><span class="toc-text">软件测试-SE3336</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86.html"><span class="toc-text">软件测试-SE3336</span></a></div></div></widget>
+
+
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+  
+  
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" id="home" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">collection</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/files/courseNotes/2022(2)/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84.html">courseNotes</a></div><div id="post-meta">更新于&nbsp;<time datetime="2024-02-19T02:16:31.194Z">2024-02-19</time></div></div>
+
+  <article class='md-text content wiki'>
+  <h1 class="article-title"><span>人工智能-CS3317</span></h1>
+  <h1 id="Part-1-Concept"><a href="#Part-1-Concept" class="headerlink" title="Part 1 Concept"></a>Part 1 Concept</h1><ol>
+<li>人工智能（AI， Artificial Intelligence） 的定义  </li>
+</ol>
+<p>课件 lecture1 第 4 页： 人工设计程序， 让机器可以像人一样智慧地行动  </p>
+<ol>
+<li>Views of AI</li>
+</ol>
+<p>Views of AI fall into <strong>four categories:</strong><br>Thinking humanly / rationally<br>Acting humanly / rationally</p>
+<p>The textbook advocates ==”acting rationally”==</p>
+<p>Thinking humanly -&gt; cognitive modeling<br>    1960s “cognitive revolution”: informationprocessing psychology<br>    now distinct from AI</p>
+<p>Acting humanly -&gt; Turing Test</p>
+<p>目的： 设计测试以验证计算机是否真的具有智能  </p>
+<ol>
+<li>==Rational Agent 理性的智能体==: </li>
+</ol>
+<ul>
+<li>For each possible percept sequence, a rational agent should select an action that is expected  <ul>
+<li>to maximize its performance measure,  </li>
+<li>given the evidence provided by the percept  sequence and whatever built-in knowledge the agent has.  </li>
+</ul>
+</li>
+<li>An agent is ==autonomous 自主的== if its behavior is determined by ==its own experience== (with ability to learn and adapt)</li>
+</ul>
+<p>e.g 下列关于 AI 的表述，正确的是:<br>==A. ==从长远角度来看，AI 发展的目标是让机器能够像人类一样行为，甚至比人类能做得更好<br>B. 智能体(agent)的自主性(autonomous)指的是按照人类设计的程序自动化地完成任务<br>==C. ==在图灵测试中，知识(knowledge)、推理能力(reasoning)、语言理解能力(language understanding)、学习能力(learning)是 AI系统的主要组成部分<br>D. 理性的智能体(rational agent)能够突破计算资源的限制，做到完美的理性化(perfect rationality )</p>
+<h1 id="Part-2-Searching"><a href="#Part-2-Searching" class="headerlink" title="Part 2 Searching"></a>Part 2 Searching</h1><h3 id="Problem-solving-agents"><a href="#Problem-solving-agents" class="headerlink" title="Problem-solving agents"></a>Problem-solving agents</h3><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020230922173923.png" alt=""></p>
+<p>States of the world are considered as <strong>wholes</strong>, with <strong>no internal structure visibl</strong>e to the problem-solving algorithms</p>
+<h3 id="Problem-formulation-建模"><a href="#Problem-formulation-建模" class="headerlink" title="Problem formulation 建模"></a>Problem formulation 建模</h3><p>A problem is defined by four items:  </p>
+<ol>
+<li><strong>initial state</strong> e.g., “at Arad“  </li>
+<li><strong>actions or successor function</strong> S(x) = set of action–state pairs  <ul>
+<li>e.g., S(Arad) = {<Arad → Zerind, Zerind>, … }  </li>
+</ul>
+</li>
+<li><strong>goal test</strong>, can be  <ul>
+<li>explicit, e.g., x = “at Bucharest”  </li>
+<li>implicit, e.g., Checkmate(x)  </li>
+</ul>
+</li>
+<li><strong>path cost (additive)</strong>  <ul>
+<li>e.g., sum of distances, number of actions executed, etc.  </li>
+<li>c(x,a,y) is the step cost, assumed to be ≥ 0  </li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>A solution is a sequence of actions leading from the initial state to a goal state</li>
+</ul>
+<h2 id="Uniformed-search-strategies-无信息搜索"><a href="#Uniformed-search-strategies-无信息搜索" class="headerlink" title="Uniformed search strategies 无信息搜索"></a>Uniformed search strategies 无信息搜索</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/187283548">https://zhuanlan.zhihu.com/p/187283548</a></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020230928121114.png" alt=""></p>
+<p>DFS和DLS找到目标节点即停止，故不符合最优性和完备性。</p>
+<p><strong>BFS:</strong> </p>
+<ul>
+<li>按层次逐步扩展，遍历整个图，找到目标节点或者证明无解。</li>
+</ul>
+<p><strong>Uniform Cost Search (UCS):</strong></p>
+<ul>
+<li>UCS仅考虑实际花费的路径代价，不使用任何启发式函数。</li>
+<li>它以代价最小的顺序扩展节点，确保找到的解是代价最小的解。</li>
+<li>-&gt; 使用启发式函数则发展为==A*搜索==。</li>
+</ul>
+<p><strong>DFS -&gt; DLS -&gt; IDS:</strong> </p>
+<ul>
+<li>DFS从起始节点开始，沿着图的深度方向尽可能深地探索。</li>
+<li>DLS在DFS的基础上，限制深度优先搜索的深度，防止无限深度的问题。</li>
+<li>IDS在DLS的基础上，不断增加深度限制来达到BFS和DFS的综合效果。</li>
+</ul>
+<p>考虑使用深度受限的 DFS 算法(Depth-limited search)来搜索目标状态 S。假设目标状态 S 所在的层深度为 d，限制的搜索深度为l，那么以下说法正确的是<br>==A. ==如果 l&gt;d，那么该算法是完备的(complete)<br>B. 如果 l&lt;d，那么该算法是完备的<br>C. 如果将深度的 DFS 算法改为迭代加深算法（Iterative deepening)，初始迭代深度 l&lt;d，那么该算法是不完备的<br>==D. ==如果将深度的 DFS 算法改为选代加深算法，初始迭代深度如果 l&lt;d，那么该算法是完备的</p>
+<h2 id="Informed-search-strategies-启发式搜索"><a href="#Informed-search-strategies-启发式搜索" class="headerlink" title="Informed search strategies 启发式搜索"></a>Informed search strategies 启发式搜索</h2><h3 id="Greedy-best-first-search-贪婪搜索"><a href="#Greedy-best-first-search-贪婪搜索" class="headerlink" title="Greedy best-first search 贪婪搜索"></a>Greedy best-first search 贪婪搜索</h3><p>use an evaluation function f(n) for each node<br>→ Expand most promising paths</p>
+<ul>
+<li>Evaluation function<ul>
+<li>f(n) = h(n) = <strong>estimate</strong> of cost from n to goal (heuristic)</li>
+</ul>
+</li>
+</ul>
+<p>不符合最优性和完备性。</p>
+<h3 id="A-search"><a href="#A-search" class="headerlink" title="A* search"></a>A* search</h3><ul>
+<li>Evaluation function<ul>
+<li>Avoid Expanding Expensive Pathes</li>
+<li>f(n) = g(n) + h(n)<ul>
+<li>g(n) = cost so far to reach n</li>
+<li>f(n) = estimated total cost of path through n to goal</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Heuristic-function"><a href="#Heuristic-function" class="headerlink" title="Heuristic function"></a>Heuristic function</h4><h5 id="Admissible"><a href="#Admissible" class="headerlink" title="Admissible"></a>Admissible</h5><p>An admissible heuristic never ==overestimates== the cost to reach the goal:<br>     $h(n) \le h^<em>(n)$ （$h^</em>(n)$ 为真实开销）</p>
+<p>e.g 对于当前问题而言，如果f与g都是满足可接受性(admissible)的启发函数(heuristics)，那么以下函数中，哪些选项也一定满足可接受性?<br>==A. max (f, g) ==<br>==B. min (f, g) ==<br>C. (fg)^0.5 + 1<br>==D. (fg)^0.5 - 1==</p>
+<h5 id="Consistent"><a href="#Consistent" class="headerlink" title="Consistent"></a>Consistent</h5><p>A heuristic is consistent if for every node n, every successor n’<br>of n generated by any action a, then $h(n) \le c(n,a,n’)+h(n’)$<br>    $f(n)$ is non-decreasing along any path. </p>
+<p>对于 A* 算法，如果启发式函数 h(n) 满足一致性（也称为“单调性”或“单调递增性”），那么在搜索树中的每条路径上，子节点的 f 值不会小于其父节点的 f 值。</p>
+<h2 id="Local-search-algorithms-局部搜索"><a href="#Local-search-algorithms-局部搜索" class="headerlink" title="Local search algorithms 局部搜索"></a>Local search algorithms 局部搜索</h2><p>interested in the solution state but not in the path to that goal<br>关注当前状态及其邻近状态，而不是系统性地探索整个搜索空间。</p>
+<p>2 key advantages:  </p>
+<ul>
+<li>use very little memory  </li>
+<li>find reasonable solutions in large or infinite (continuous) state spaces.</li>
+</ul>
+<h3 id="爬山法-Hill-Climbing"><a href="#爬山法-Hill-Climbing" class="headerlink" title="爬山法 Hill-Climbing"></a>爬山法 Hill-Climbing</h3><p>过程：</p>
+<ol>
+<li><strong>初始状态：</strong> 选择一个初始状态。</li>
+<li><strong>邻近状态：</strong> 根据问题的操作或移动规则，找到当前状态的邻近状态。</li>
+<li><strong>评估：</strong> 评估邻近状态的质量。</li>
+<li><strong>移动：</strong> 移动到具有更好评估的邻近状态。</li>
+<li><strong>迭代：</strong> 重复上述步骤直到达到局部最优解或无法移动。</li>
+</ol>
+<p>问题：</p>
+<ul>
+<li><strong>局部最优解：</strong> 爬山法可能会陷入局部最优解而无法找到全局最优解。</li>
+<li><strong>平原问题：</strong> 如果在当前状态的所有邻近状态中都没有更好的解，算法可能会停滞在平原。</li>
+</ul>
+<h3 id="模拟退火-Simulated-annealing"><a href="#模拟退火-Simulated-annealing" class="headerlink" title="模拟退火 Simulated annealing"></a>模拟退火 Simulated annealing</h3><p><strong>“退火”的目的：</strong> 模拟退火算法是对爬山法的改良，其目的是通过引入一定的随机性来跳出局部最优解，以更有可能找到全局最优解。</p>
+<p>过程：</p>
+<ol>
+<li><strong>初始温度：</strong> 设定初始温度，表示算法接受较差解的概率。</li>
+<li><strong>邻近状态：</strong> 根据问题的操作或移动规则，找到当前状态的邻近状态successor。</li>
+<li><strong>评估：</strong> 评估邻近状态的质量。</li>
+<li><strong>移动：</strong> 移动到邻近状态，即使质量较差，以一定概率接受较差解。</li>
+<li><strong>温度下降：</strong> 通过降低温度，逐渐降低接受较差解的概率。</li>
+<li><strong>迭代：</strong> 重复上述步骤直到达到一定条件（如温度足够低）。</li>
+</ol>
+<p>选择“坏”移动的概率与哪些因素有关：</p>
+<ul>
+<li><strong>温度：</strong> 初始时，温度较高，接受较差解的概率较大，随着迭代过程温度逐渐降低，接受较差解的概率减小。</li>
+</ul>
+<h3 id="遗传算法-Genetic-algorithms"><a href="#遗传算法-Genetic-algorithms" class="headerlink" title="遗传算法 Genetic algorithms"></a>遗传算法 Genetic algorithms</h3><p><strong>定义：</strong> 遗传算法是一种基于生物遗传学原理的优化算法，通过模拟自然选择、交叉和变异的过程来搜索问题的解空间。</p>
+<p>步骤和目的：</p>
+<ol>
+<li><strong>初始化种群：</strong> 随机生成初始种群，每个个体表示一个可能的解。</li>
+<li><strong>选择 Selection：</strong> 根据个体的适应度，选择一部分个体作为父代。</li>
+<li><strong>交叉 Crossover：</strong> 对选定的父代进行交叉操作，生成子代。</li>
+<li><strong>变异 Mutation：</strong> 对子代进行变异操作，引入一定程度的随机性。</li>
+<li><strong>评估：</strong> 评估种群中每个个体的适应度。</li>
+<li><strong>进化：</strong> 重复选择、交叉、变异步骤，直到满足停止条件（达到最大迭代次数或找到满意解）。</li>
+</ol>
+<p>通过模拟进化过程，希望通过适应度高的个体在种群中传递有利的特征，逐渐优化整个种群，以找到问题的解。</p>
+<p>e.g 关于遗传算法 (genetic algorithm)，下列说法正确的有:<br>A. 遗传算法属于一种局部搜索 (local search) 算法<br>==B. ==当选代次数达到预设的上界或种群 (population)的适应度(fitness) 达到期望值后，可以结束遗传算法<br>==C. ==在算法中，我们会根据个体的适应度选择产生子集，然后用子集中的个体产生”后代(offspring)<br>==D. ==交叉(crossover)的目的是产生”后代”，进行搜索状态的转移</p>
+<h3 id="对抗搜索"><a href="#对抗搜索" class="headerlink" title="对抗搜索"></a>对抗搜索</h3><p><strong>Iterative Definition:</strong> </p>
+<p>Each player should choose the best action leading to the highest utility for it assuming both players will choose the best actions afterwards. </p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1v94y1r7F8">https://www.bilibili.com/video/BV1v94y1r7F8</a></p>
+<h4 id="1-MiniMax-算法"><a href="#1-MiniMax-算法" class="headerlink" title="1. MiniMax 算法"></a>1. MiniMax 算法</h4><p><strong>Two player</strong> : MAX and MIN<br><strong>Task</strong> : find a “best” move for MAX<br>Assume that MAX moves first, and that the two players<br>move alternately.  </p>
+<ul>
+<li>MAX node  <ul>
+<li>nodes at even-numbered depths correspond to positions in which it is MAX’s move next  </li>
+</ul>
+</li>
+<li>MIN node  <ul>
+<li>nodes at odd-numbered depths correspond to positions in which it is MIN’s move next<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020240103071135.png" alt=""></li>
+</ul>
+</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020240103071818.png" alt=""></p>
+<p><strong>流程：</strong></p>
+<ol>
+<li><strong>建立决策树：</strong> 从当前局面开始，建立一棵完整的对抗搜索树，其中每个节点表示一个游戏状态，每个边表示一步合法的移动。</li>
+<li><strong>评估叶节点：</strong> 对于树中的叶节点，使用评估函数（evaluation function）进行评估，得到一个估值，表示该节点的局面对于当前玩家的好坏程度。</li>
+<li><strong>递归传递值：</strong> 从树的底部开始，逐层向上递归传递估值，玩家轮流选择最大或最小值，以反映对手的最佳选择和己方的最佳应对。</li>
+<li><strong>最终决策：</strong> 在根节点选择具有最高估值的动作，作为最终的决策。</li>
+</ol>
+<p><strong>Keypoints：</strong></p>
+<ol>
+<li><strong>最佳动作假设：</strong> Mini-Max算法假设每个玩家都会选择使其得分最大化（最佳动作）或最小化（对手最佳动作）的动作。</li>
+<li><strong>复杂性处理：</strong> 对于Mini-max树规模太大的问题，可以通过深度上和宽度上的简化来处理。-&gt; DLS和Alpha-beta剪枝</li>
+</ol>
+<h5 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h5><ul>
+<li>Complete? Yes (if tree is finite)  </li>
+<li>Optimal? Yes (against an optimal opponent)  </li>
+<li>Time complexity? O(bm) (b-legal moves; m- max tree depth)  </li>
+<li>Space complexity? O(bm) (depth-first exploration)</li>
+</ul>
+<h4 id="2-深度上的简化：Depth-limited-search"><a href="#2-深度上的简化：Depth-limited-search" class="headerlink" title="2. 深度上的简化：Depth-limited search"></a>2. 深度上的简化：Depth-limited search</h4><p>For many problems, you do not need a full contingent plan at the very beginning of the game. </p>
+<p><strong>关键点：</strong> Depth-limited search是对MiniMax的深度上的简化，即限制搜索的深度。对于未探索到的叶节点，需要定义一个evaluation function来估计局面好坏。</p>
+<h5 id="Evaluation-function"><a href="#Evaluation-function" class="headerlink" title="Evaluation function"></a>Evaluation function</h5><ol>
+<li>should order the terminal states in the same way as the true utility function;  </li>
+<li>the <strong>computation</strong> must not take too long!  </li>
+<li>for nonterminal states, the evaluation function should be strongly correlated with the <strong>actual chances of winning</strong>.</li>
+</ol>
+<p>Eg. Tic-tac-toe<br>    If p is not a winning for either player, e(p) = (no. of complete rows, columns, or diagonals that are still open for MAX) - (no. of complete rows, columns, or diagonals that are still open for MIN)</p>
+<h4 id="3-宽度上的简化：Alpha-beta-剪枝"><a href="#3-宽度上的简化：Alpha-beta-剪枝" class="headerlink" title="3. 宽度上的简化：Alpha-beta 剪枝"></a>3. 宽度上的简化：Alpha-beta 剪枝</h4><p>Compute the correct decision <strong>without looking at every node</strong> (consider the bounds of the minimax value)</p>
+<p><strong>Alpha和Beta的作用：</strong></p>
+<ul>
+<li><strong>Alpha：</strong> 用于保存当前节点的最大值。</li>
+<li><strong>Beta：</strong> 用于保存当前节点的最小值。</li>
+</ul>
+<p><strong>比较节点与 alpha、beta 值的关系：</strong></p>
+<ul>
+<li><strong>节点值大于等于 beta：</strong> 剪枝，因为对手不会选择这个节点，它已经不会影响当前节点的值。</li>
+<li><strong>节点值小于等于 alpha：</strong> 剪枝，因为当前玩家不会选择这个节点，它已经不会影响当前节点的值。</li>
+<li><p><strong>节点值介于 alpha 和 beta 之间：</strong> 更新 alpha 或 beta 的值。</p>
+</li>
+<li><p>在Max层，alpha是一个下界；在Min层，beta是一个上界。</p>
+</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020240103072838.png" alt=""><br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020240103073122.png" alt=""></p>
+<h5 id="Key-points"><a href="#Key-points" class="headerlink" title="Key points"></a>Key points</h5><ul>
+<li>The MAX player will only update the value of α.  </li>
+<li>The MIN player will only update the value of β.  </li>
+<li>While backtracking the tree, the node values will be passed to upper nodes instead of values of α and β.  </li>
+<li>Only pass the α, β values to the child nodes.  </li>
+</ul>
+<h5 id="Properties-1"><a href="#Properties-1" class="headerlink" title="Properties"></a>Properties</h5><ul>
+<li>Pruning does not affect the final result  </li>
+<li>Effectiveness depends on the ordering of successors  </li>
+<li>With “perfect ordering,” time complexity = O(bm/2)<br>→ doubles depth of search<h3 id="CSP问题"><a href="#CSP问题" class="headerlink" title="CSP问题"></a>CSP问题</h3><h4 id="Standard-search-formulation-incremental"><a href="#Standard-search-formulation-incremental" class="headerlink" title="Standard search formulation (incremental)"></a>Standard search formulation (incremental)</h4></li>
+</ul>
+<p>States are defined by the values assigned so far  </p>
+<ul>
+<li><strong>Initial state</strong>: the empty assignment { }  </li>
+<li><strong>Successor function</strong>: assign a value to an unassigned variable that does not conflict with current assignment<br>→ fail if no legal assignments  </li>
+<li><strong>Goal test</strong>: the current assignment is complete  </li>
+</ul>
+<ol>
+<li>This is the same for all CSPs  </li>
+<li>Every solution appears at depth n with n variables<br>→ use depth-first search  </li>
+<li>Path is irrelevant, so can also use complete-state formulation  </li>
+<li>$b = (n - l )d$ at depth $l$, hence $n! ·d^n$ leaves</li>
+</ol>
+<h4 id="Backtracking-search"><a href="#Backtracking-search" class="headerlink" title="Backtracking search"></a>Backtracking search</h4><ul>
+<li>DFS for CSPs with single-variable assignments</li>
+<li>the basic uninformed algorithm for CSPs  </li>
+<li><p>Only need to consider assignments to a single variable at each node ( b = d )<br>  There are $n! ·d^n$ leaves, $d^n$ possible complete assignments.</p>
+</li>
+<li><p>Backtracking search = DFS + two improvements  </p>
+</li>
+<li><strong>Idea 1: One variable at a time</strong><br>  Variable assignments are commutative  <pre><code>  \[WA = red then NT = green] same as \[NT = green then WA = red]  
+</code></pre>  Only need to consider assign value to a single variable at each step</li>
+<li><strong>Idea 2: Check constraints as you go</strong><br>  Consider only values which do not conflict previous  assignments<br>  May need some computation to check the constraints  “Incremental goal test”</li>
+</ul>
+<h5 id="Which-variable-should-be-assigned-next？"><a href="#Which-variable-should-be-assigned-next？" class="headerlink" title="Which variable should be assigned next？"></a>Which variable should be assigned next？</h5><ul>
+<li><strong>Most constrained variable</strong>: <ul>
+<li>choose the variable with the fewest legal values  <ul>
+<li>a.k.a. minimum remaining values (MRV) heuristic  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Most constraining variable (Tie-breaker)</strong>:  <ul>
+<li>choose the variable with the most constraints on remaining variables  <ul>
+<li>the <strong>degree heuristic</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Given a variable, choose <strong>the least constraining value</strong>:  <ul>
+<li>The one that rules out the fewest values in the remaining variables</li>
+</ul>
+</li>
+</ul>
+<p>首先选择 most constrained variable， minimum remaining values，如有多个这样的变量，再根据 most constraining variable</p>
+<h4 id="Forward-checking-前向检查"><a href="#Forward-checking-前向检查" class="headerlink" title="Forward checking  前向检查"></a>Forward checking  前向检查</h4><ul>
+<li><strong>Idea:</strong>  <ul>
+<li>Keep track of remaining legal values for unassigned  variables  </li>
+<li>Terminate search when any variable has no legal values</li>
+</ul>
+</li>
+<li><strong>Limitation:</strong><ul>
+<li>Arc consistency 弧一致性（弧相容性）<ul>
+<li>X →Y is consistent iff for <strong>every value</strong> x of X there is <strong>some allowed y</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>The problem:</strong> <ul>
+<li>It makes the current variable arc-consistent, but doesn’t look ahead and make all the other variables arc-consistent</li>
+</ul>
+</li>
+</ul>
+<p>e.g 在一个 CSP 问题中，我们需要满足的要求为 $x+3&gt;y$，其中x 属于 $x\in{0,1,3}$，而$y\in{3,4,5}$，那么以下关于弧相容性(arc consistency)的说法中，正确的是: </p>
+<p>A.弧x-&gt;y与弧y-&gt;x满足弧相容性<br>B.弧x-&gt;y与弧y-&gt;x都不满足弧相容性<br>C.弧x-&gt;y满足弧相容性，但弧y-&gt;x不满足弧相容性<br>==D.弧y-&gt;x满足弧相容性，但弧x-&gt;y不满足弧相容性==</p>
+<h4 id="Arc-3"><a href="#Arc-3" class="headerlink" title="Arc-3"></a>Arc-3</h4><p>一种用于处理约束满足问题的算法，它的目标是通过维护弧一致性（arc-consistency）来降低搜索空间。AC-3是一种全局的推理算法，与前向检测相比，它更注重全局的一致性。</p>
+<p><strong>算法步骤：</strong></p>
+<ol>
+<li><strong>初始化队列：</strong> 将所有约束的弧添加到一个队列中。</li>
+<li><strong>循环处理队列：</strong><ul>
+<li>从队列中取出一个约束弧（arc）。</li>
+<li>对于弧起点的变量的每个可能取值，检查是否存在与该值冲突的其他值。如果存在冲突，则将该值==从弧起点的定义域中移除==。</li>
+<li>如果某个变量的定义域发生变化，将==邻居变量指向该变量的约束弧==添加到队列中，进一步迭代邻居变量的约束弧的定义域。</li>
+</ul>
+</li>
+<li><strong>判定一致性：</strong><ul>
+<li>如果某个变量的定义域为空，表示出现了不一致，算法中止，进行回溯。</li>
+<li>如果所有变量的定义域都不为空，表示系统是一致的，可以继续进行搜索。</li>
+</ul>
+</li>
+</ol>
+<p><strong>AC-3的优势和特点：</strong></p>
+<ol>
+<li><strong>全局一致性：</strong> AC-3通过在整个问题的约束图上进行推理，更全局地维护弧一致性，有助于减小搜索空间。</li>
+<li><strong>提前检测不一致性：</strong> 与前向检测不同，AC-3在推理的过程中能够更早地检测到不一致性，因为它考虑了整个约束网络的信息。</li>
+<li><strong>减少搜索空间：</strong> 通过及时地削减变量的定义域，AC-3有助于在搜索之前减小问题的规模，提高解决问题的效率。</li>
+<li><strong>适用于约束满足问题：</strong> AC-3主要用于处理约束满足问题，其中变量之间存在约束关系。</li>
+</ol>
+<h1 id="Part3-Logical-Agent"><a href="#Part3-Logical-Agent" class="headerlink" title="Part3 Logical Agent"></a>Part3 Logical Agent</h1><h2 id="Propositional-Logic-Models"><a href="#Propositional-Logic-Models" class="headerlink" title="Propositional Logic Models"></a>Propositional Logic Models</h2><h3 id="Logic-in-general"><a href="#Logic-in-general" class="headerlink" title="Logic in general"></a>Logic in general</h3><ul>
+<li>==Logics== are formal languages for representing information such that conclusions can be drawn  </li>
+<li>==Syntax 语法== defines the sentences in the language  </li>
+<li>==Semantics 语义== define the “meaning” of sentences;  <ul>
+<li>i.e., define truth of a sentence in a world  </li>
+</ul>
+</li>
+<li>E.g., the language of arithmetic<h3 id="Entailment"><a href="#Entailment" class="headerlink" title="Entailment"></a>Entailment</h3></li>
+</ul>
+<p><strong>Entailment</strong> means that one thing follows from another: $KB \models A$<br>Entailment is a relationship between sentences (i.e., syntax) that is based on semantics. </p>
+<h3 id="Inference-Proofs"><a href="#Inference-Proofs" class="headerlink" title="Inference: Proofs"></a>Inference: Proofs</h3><ul>
+<li>A proof is a demonstration of entailment between $\alpha$ and $\beta$  </li>
+<li><strong>Method 1</strong>: model-checking<ul>
+<li>For every possible world, if $\alpha$ is true make sure that is $\beta$ true too  </li>
+<li>OK for propositional logic (finitely many worlds); <strong>not easy for first-order logic</strong>  </li>
+</ul>
+</li>
+<li><strong>Method 2</strong>: theorem-proving<ul>
+<li>Search for a sequence of proof steps (applications of inference rules) leading from $\alpha$ to $\beta$ </li>
+<li>E.g., from $P \wedge (P \Rightarrow Q)$, infer Q by Modus Ponens  </li>
+</ul>
+</li>
+</ul>
+<p><strong>Properties</strong>  </p>
+<ul>
+<li><strong>Sound</strong> algorithm: everything it claims to prove is in fact entailed  </li>
+<li><strong>Complete</strong> algorithm: every sentence that is entailed can be proved</li>
+</ul>
+<h2 id="Uncertainty"><a href="#Uncertainty" class="headerlink" title="Uncertainty"></a>Uncertainty</h2><h3 id="Probability"><a href="#Probability" class="headerlink" title="Probability"></a>Probability</h3><p><strong>先验概率（Prior Probability）:</strong></p>
+<p>先验概率是在考虑任何新证据或信息之前，对事件的概率进行的初始估计。它基于以往的知识、经验或主观判断。数学上表示为P(A)，其中A是事件。</p>
+<p><strong>条件概率（Conditional Probability）:</strong></p>
+<p>条件概率是指在给定另一个事件发生的条件下，某一事件发生的概率。表示为P(A|B)，读作“A在给定B的条件下发生的概率”，其中A和B是两个事件。</p>
+<p>条件概率可以通过以下公式计算：<br>$P(A|B) = \frac{P(A \cap B)}{P(B)}$</p>
+<p><strong>后验概率（Posterior Probability）:</strong></p>
+<p>后验概率是在考虑了新的观测数据或证据之后，对事件的概率进行重新估计。它是先验概率与新观测数据相结合得出的概率。在贝叶斯统计学中，后验概率是通过使用贝叶斯定理计算得到的。</p>
+<p>$P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}$</p>
+<p>其中：</p>
+<ul>
+<li>$P(A|B)$ 是后验概率，表示在观测到B的情况下A的概率。</li>
+<li>$P(B|A)$ 是条件概率，表示在A的情况下观测到B的概率。</li>
+<li>$P(A)$ 是先验概率，表示在没有新观测数据的情况下A的概率。</li>
+<li>$P(B)$ 是用于归一化的边际概率，表示B的概率。</li>
+</ul>
+<p>e.g 有C1和C2两个城市，它们的人口比例为 1:3。根据今年疾病发生率的统计结果，C1城 市污染严重，居民患癌症的比率为 0.1%，而 C2 城市的居民患癌症的比率为 0.02%。现在医院接诊了一名癌症患者，该患者来自 C1 市的率为？</p>
+<p>62.5%</p>
+<p><strong>联合概率（Joint Probability）:</strong></p>
+<p>联合概率是指两个或多个事件同时发生的概率。假设有两个事件A和B，它们的联合概率表示为P(A and B)，表示同时发生A和B的概率。联合概率的计算通常使用乘法规则：</p>
+<p>$P(A \cap B) = P(A) \cdot P(B|A)$</p>
+<p>其中，$P(B|A)$表示在事件A发生的条件下，事件B发生的条件概率。</p>
+<p><strong>条件独立定义（Conditional Independence）:</strong></p>
+<p>两个事件A和B在给定另一个事件C的条件下是独立的，如果满足以下条件：</p>
+<p>$P(A \cap B | C) = P(A | C) \cdot P(B | C)$</p>
+<p>这表示在给定事件C的情况下，事件A和事件B的联合概率等于它们各自的条件概率的乘积。如果这个等式成立，我们称A和B在给定C的条件下是条件独立的。</p>
+<h4 id="朴素贝叶斯-Naive-Bayes"><a href="#朴素贝叶斯-Naive-Bayes" class="headerlink" title="朴素贝叶斯 Naive Bayes"></a>朴素贝叶斯 Naive Bayes</h4><p>朴素贝叶斯是一种基于贝叶斯定理的分类算法。它的”朴素”体现在对于特征之间的条件独立性的假设，即在给定类别的条件下，<strong>每个特征都是相互独立的</strong>。这个假设是朴素贝叶斯算法的核心，使得计算条件概率变得简化。</p>
+<p>$P(\text{Cause},\text{Effect}<em>1, … ,\text{Effect}_n) = P(Cause) \prod</em>{i}^{ }P(\text{Effect}_i|Cause)$</p>
+<p><strong>朴素贝叶斯分类过程：</strong></p>
+<ol>
+<li><strong>建立模型：</strong> 基于训练数据，计算各个类别的先验概率 $P(C_i)$ 和每个特征在各个类别下的条件概率 $P(X_j | C_i)$。</li>
+<li><strong>输入测试数据：</strong> 对于给定的测试数据，计算它属于每个类别的后验概率。</li>
+<li><strong>选择类别：</strong> 选择具有最高后验概率的类别作为最终的分类结果。</li>
+</ol>
+<h2 id="Probabilistic-Reasoning"><a href="#Probabilistic-Reasoning" class="headerlink" title="Probabilistic Reasoning"></a>Probabilistic Reasoning</h2><h3 id="Bayesian-networks"><a href="#Bayesian-networks" class="headerlink" title="Bayesian networks"></a>Bayesian networks</h3><p>贝叶斯网络（Bayesian Network），也称为信念网络（Belief Network）或概率图模型，是一种用于表示变量之间条件依赖关系的图结构。它使用有向无环图（DAG）来表示变量之间的依赖关系，其中节点表示随机变量，边表示变量之间的依赖关系。</p>
+<p>具体来说，贝叶斯网络包含两个主要组成部分：</p>
+<ol>
+<li><strong>节点（Nodes）：</strong> 节点表示随机变量，每个节点代表一个特定的事件或状态。</li>
+<li><strong>边（Edges）：</strong> 有向边表示变量之间的条件依赖关系。如果节点A有一条指向节点B的边，就表示在给定节点A的情况下，节点B发生的概率可能会受到影响。</li>
+</ol>
+<p>每个节点都有一个条件概率表（Conditional Probability Table，CPT），描述了该节点在给定其父节点的条件下的概率分布。</p>
+<p><strong>因子分解定理（Node Given Its Parents）:</strong></p>
+<p>在贝叶斯网络中，因子分解定理是指一个节点在给定其父节点的条件下，可以被分解为一个条件概率表的乘积。这定理表达了节点和其父节点之间的联合概率分布的关系。</p>
+<p>对于一个节点X和其父节点集合Pa(X)，有：</p>
+<p>$P(X, Pa(X)) = P(X | Pa(X)) \cdot P(Pa(X))$</p>
+<p>其中：</p>
+<ul>
+<li>$P(X, Pa(X))$ 表示节点X和其父节点集合Pa(X)的联合概率分布。</li>
+<li>$P(X | Pa(X))$ 表示节点X在给定其父节点集合Pa(X)的条件下的概率分布。</li>
+<li>$P(Pa(X))$ 表示父节点集合Pa(X)的概率分布。</li>
+</ul>
+<p>这个因子分解定理允许贝叶斯网络中的联合概率分布可以通过对每个节点的条件概率表进行分解和组合来计算，使得网络的表示更为紧凑且易于处理。</p>
+<h3 id="Conditional-Independence"><a href="#Conditional-Independence" class="headerlink" title="Conditional Independence"></a>Conditional Independence</h3><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020240103084726.png" alt=""></p>
+<p><a target="_blank" rel="noopener" href="http://web.mit.edu/jmn/www/6.034/d-separation.pdf">复杂网络参考</a></p>
+<h3 id="Bayesian-Sampling"><a href="#Bayesian-Sampling" class="headerlink" title="Bayesian Sampling"></a>Bayesian Sampling</h3><p>HW3. Prob2</p>
+<p>用于从贝叶斯网络中抽样的方法。</p>
+<h4 id="先验采样（Prior-Sampling）"><a href="#先验采样（Prior-Sampling）" class="headerlink" title="先验采样（Prior Sampling）"></a>先验采样（Prior Sampling）</h4><p><strong>过程：</strong></p>
+<ol>
+<li>从网络的先验概率分布中对每个节点进行采样，得到一个样本。</li>
+</ol>
+<p><strong>概率计算：</strong></p>
+<ul>
+<li>根据每个节点的先验概率表进行采样。</li>
+</ul>
+<h4 id="拒绝采样（Rejection-Sampling）"><a href="#拒绝采样（Rejection-Sampling）" class="headerlink" title="拒绝采样（Rejection Sampling）"></a>拒绝采样（Rejection Sampling）</h4><p><strong>过程：</strong></p>
+<ol>
+<li>对每个节点进行先验采样。</li>
+<li>根据观测数据，决定是否接受该样本。</li>
+</ol>
+<p><strong>拒绝操作：</strong></p>
+<ul>
+<li>如果样本不符合观测数据，拒绝该样本。</li>
+</ul>
+<h4 id="似然采样（Likelihood-Weighting）"><a href="#似然采样（Likelihood-Weighting）" class="headerlink" title="似然采样（Likelihood Weighting）"></a>似然采样（Likelihood Weighting）</h4><p><strong>过程：</strong></p>
+<ol>
+<li>对观测变量赋值。</li>
+<li>从网络的条件概率分布中对每个非观测节点进行采样，同时计算权重。</li>
+<li>根据观测数据的似然性对样本进行加权。</li>
+</ol>
+<p><strong>概率计算：</strong></p>
+<ul>
+<li>对非观测节点按照条件概率表进行采样，同时计算相应的权重。</li>
+<li>权重计算：$w = w \times P(\text | \text)$</li>
+</ul>
+<h4 id="吉布斯采样（Gibbs-Sampling）"><a href="#吉布斯采样（Gibbs-Sampling）" class="headerlink" title="吉布斯采样（Gibbs Sampling）"></a>吉布斯采样（Gibbs Sampling）</h4><p><strong>过程：</strong></p>
+<ol>
+<li>初始化所有节点的值。</li>
+<li>随机选择一个节点，根据其条件概率表采样新值。</li>
+<li>重复步骤2，直到达到收敛条件。</li>
+</ol>
+<p><strong>何时采样：</strong></p>
+<ul>
+<li>在每次迭代中，只采样一个节点，而不是整个样本。</li>
+</ul>
+<p><strong>证据变量处理：</strong></p>
+<ul>
+<li>如果节点是观测节点，则保持其值不变。</li>
+</ul>
+<p><strong>采样哪些节点：</strong></p>
+<ul>
+<li>在每次迭代中，只采样一个节点，其他节点保持不变。</li>
+</ul>
+<p><strong>条件概率计算：</strong></p>
+<ul>
+<li>对于每个节点，根据其条件概率表和当前其他节点的值计算条件概率。</li>
+</ul>
+<p>贝叶斯采样方法根据具体的网络结构和需要的样本，选择适合的方法。各种方法的选择会受到计算效率和样本质量的影响。</p>
+<h5 id="Markov-blanket"><a href="#Markov-blanket" class="headerlink" title="Markov blanket"></a>Markov blanket</h5><p>在概率图模型中，马尔可夫毯 Markov Blanket 是一个<strong>节点的最小邻居集</strong>，给定其马尔可夫毯的信息，该节点与其他所有节点条件独立。</p>
+<p>换句话说，马尔可夫毯是一组节点，这组节点的信息足以使给定节点在图中的其他节点的信息条件下变得独立。</p>
+<p><strong>马尔可夫毯的定义：</strong></p>
+<p>对于一个图模型中的节点X，其马尔可夫毯定义为==所有与X有边连接的节点，以及所有与X的邻居节点相邻的节点==。形式化地表示，节点X的马尔可夫毯记为 $\text{MB}(X)$，满足：</p>
+<p>$\text{MB}(X) = \text{Pa}(X) \cup \text{Children}(X) \cup \text{Pa}(\text{Children}(X)) \setminus {X}$</p>
+<p>马尔可夫毯包含以下节点：</p>
+<ol>
+<li>节点X的<strong>父节点</strong>（$\text{Pa}(X)$）。（父亲）</li>
+<li>节点X的<strong>子节点</strong>（$\text{Children}(X)$）。（儿子）</li>
+<li>节点X的<strong>所有子节点的父节点</strong>（$\text{Pa}(\text{Children}(X))$）。（配偶）</li>
+<li>上述节点集合中去掉节点X本身（$\setminus {X}$）。</li>
+</ol>
+<p>马尔可夫毯的概念对于贝叶斯网络和马尔可夫网络等概率图模型的推断过程非常重要，因为它提供了一种局部结构，通过它，我们可以捕捉到一个节点在给定其马尔可夫毯的条件下的独立性。</p>
+<h2 id="Probabilistic-Reasoning-over-Time"><a href="#Probabilistic-Reasoning-over-Time" class="headerlink" title="Probabilistic Reasoning over Time"></a>Probabilistic Reasoning over Time</h2><h3 id="Hidden-Markov-Model-HMM"><a href="#Hidden-Markov-Model-HMM" class="headerlink" title="Hidden Markov Model (HMM)"></a>Hidden Markov Model (HMM)</h3><h4 id="马尔贝夫链"><a href="#马尔贝夫链" class="headerlink" title="马尔贝夫链"></a>马尔贝夫链</h4><ol>
+<li><p>状态空间 States Space</p>
+</li>
+<li><p>无记忆性 Memorylessness </p>
+<script type="math/tex; mode=display">P(S_t|S_{t-1},S_{t-2},S_{t-3},\dots)=P(S_t|S_{t-1})</script></li>
+<li>转移矩阵 Transition Matrix</li>
+</ol>
+<p>-&gt;</p>
+<ul>
+<li>稳态分布 Stable Distribution<ul>
+<li>遍历性 -&gt; 唯一稳态<ul>
+<li>常返性 recurrent<ul>
+<li>存在返回路径</li>
+</ul>
+</li>
+<li>非周期性</li>
+<li>两两连通</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="HMM建模（Hidden-Markov-Model）"><a href="#HMM建模（Hidden-Markov-Model）" class="headerlink" title="HMM建模（Hidden Markov Model）"></a>HMM建模（Hidden Markov Model）</h4><p>HMM是一种用于建模时序数据的概率图模型。它包含两个主要组成部分：隐状态序列和观测序列。</p>
+<ul>
+<li><strong>隐状态序列（Hidden States）：</strong> 表示系统内部不可见的状态。在每个时刻，系统处于一个隐状态，但我们无法直接观测到它。</li>
+<li><p><strong>观测序列（Observations）：</strong> 表示在每个时刻我们可以直接观测到的数据。</p>
+</li>
+<li><p><strong>状态转移概率（Transition Probabilities）：</strong> </p>
+<ul>
+<li>$p(y<em>t|y</em>{t-1})$</li>
+<li>描述在不同时刻隐状态之间的转移概率。</li>
+</ul>
+</li>
+<li><strong>发射概率（Emission Probabilities）：</strong> <ul>
+<li>$p(x_t|y_t)$</li>
+<li>描述在每个时刻从隐状态到观测状态的概率。</li>
+</ul>
+</li>
+<li><strong>初始概率分布（Initial Probabilities）：</strong> <ul>
+<li>$p(y_1)$</li>
+<li>描述在第一个时刻系统处于每个隐状态的概率。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-评价-HMM-中某个序列出现的概率：前向、后向算法："><a href="#2-评价-HMM-中某个序列出现的概率：前向、后向算法：" class="headerlink" title="2. 评价 HMM 中某个序列出现的概率：前向、后向算法："></a>2. 评价 HMM 中某个序列出现的概率：前向、后向算法：</h4><p><strong>前向算法（Forward Algorithm）：</strong><br>用于计算给定观测序列的概率。通过动态规划，从序列的开始到当前时刻，逐步计算到达当前状态的所有路径的概率之和。</p>
+<p><strong>后向算法（Backward Algorithm）：</strong><br>与前向算法相反，从序列的结束到当前时刻，逐步计算从当前状态到达序列末尾的所有路径的概率之和。</p>
+<p>前向算法和后向算法的综合结果可以用于计算给定观测序列的整体概率，即联合概率 $P(Observations | Model)$。</p>
+<h4 id="维特比算法-Viterbi-Algorithm"><a href="#维特比算法-Viterbi-Algorithm" class="headerlink" title="维特比算法 Viterbi Algorithm"></a>维特比算法 Viterbi Algorithm</h4><p>用于解码给定观测序列对应的最可能的隐状态序列。</p>
+<p>该算法利用动态规划，计算每个时刻的最可能的状态路径，最终找到使得整体概率最大的隐状态序列。</p>
+<p>维特比算法的基本步骤包括初始化、递推、终结。通过在每个时刻选择最大概率的状态路径，算法找到整体观测序列对应的最可能的隐状态序列。</p>
+<h1 id="Part4-Machine-learning"><a href="#Part4-Machine-learning" class="headerlink" title="Part4 Machine learning"></a>Part4 Machine learning</h1><h2 id="Basic-Knowledge"><a href="#Basic-Knowledge" class="headerlink" title="Basic Knowledge"></a>Basic Knowledge</h2><h3 id="Classification"><a href="#Classification" class="headerlink" title="Classification"></a>Classification</h3><h4 id="无监督学习（Unsupervised-Learning）"><a href="#无监督学习（Unsupervised-Learning）" class="headerlink" title="无监督学习（Unsupervised Learning）"></a>无监督学习（Unsupervised Learning）</h4><p>在无监督学习中，模型从==未标记==的数据中学习模式和结构。主要任务包括聚类（Clustering）和降维（Dimensionality Reduction）。</p>
+<p>在聚类中，模型试图将数据分为具有相似特征的组，而在降维中，模型试图减少数据的特征维度。</p>
+<h4 id="有监督学习（Supervised-Learning）"><a href="#有监督学习（Supervised-Learning）" class="headerlink" title="有监督学习（Supervised Learning）"></a>有监督学习（Supervised Learning）</h4><p>在有监督学习中，模型从标记的训练数据中学习，其中每个样本都有一个对应的标签或输出。主要任务包括分类（Classification）和回归（Regression）。在分类中，模型试图预测样本属于哪个类别，而在回归中，模型试图预测一个连续的数值。</p>
+<h4 id="强化学习（Reinforcement-Learning）"><a href="#强化学习（Reinforcement-Learning）" class="headerlink" title="强化学习（Reinforcement Learning）"></a>强化学习（Reinforcement Learning）</h4><p>在强化学习中，模型（代理）通过与环境的交互学习，以获得最大的累积奖励。模型通过尝试不同的行动来学习最佳策略，而环境则通过奖励或惩罚来提供反馈。</p>
+<h3 id="过拟合、欠拟合"><a href="#过拟合、欠拟合" class="headerlink" title="过拟合、欠拟合"></a>过拟合、欠拟合</h3><h4 id="过拟合（Overfitting）"><a href="#过拟合（Overfitting）" class="headerlink" title="过拟合（Overfitting）"></a>过拟合（Overfitting）</h4><p>过拟合指模型在训练集上表现良好，但在未见过的新数据上表现差。过拟合通常是因为模型过于复杂，过分适应训练数据中的噪声和细节。</p>
+<h4 id="欠拟合（Underfitting）"><a href="#欠拟合（Underfitting）" class="headerlink" title="欠拟合（Underfitting）"></a>欠拟合（Underfitting）</h4><p>欠拟合指模型无法在训练集上学到足够的模式，导致在训练集和测试集上都表现不佳。通常是因为模型过于简单，不能很好地捕捉数据中的复杂关系。</p>
+<h3 id="分类和回归"><a href="#分类和回归" class="headerlink" title="分类和回归"></a>分类和回归</h3><h4 id="分类（Classification）Discrete-label"><a href="#分类（Classification）Discrete-label" class="headerlink" title="分类（Classification）Discrete label"></a>分类（Classification）Discrete label</h4><p>一种有监督学习任务，其中模型预测输入数据属于预定义的类别中的哪一个。==输出是离散的==，通常表示类别标签。例如，垃圾邮件过滤是一个二分类问题，其中类别可以是”垃圾邮件”或”非垃圾邮件”。</p>
+<h4 id="回归（Regression）Continuous-label"><a href="#回归（Regression）Continuous-label" class="headerlink" title="回归（Regression）Continuous label"></a>回归（Regression）Continuous label</h4><p>一种有监督学习任务，==输出是连续的数值==。模型预测的是输入数据的数值或标签。例如，房价预测是一个回归问题，其中模型预测的是房屋的价格，这是一个连续的数值。</p>
+<h2 id="Linear-Model"><a href="#Linear-Model" class="headerlink" title="Linear Model"></a>Linear Model</h2><h3 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h3><p>$f_{w,b}(x)=\sum_iw_ix_i+b$</p>
+<h4 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h4><p>通常采用均方误差（Mean Squared Error，MSE）来衡量预测值与真实值之间的差异。代价函数 $J(\theta)$ 的定义如下：</p>
+<p>$J(\theta) = \frac{1}{2m} \sum<em>{i=1}^{m} (h</em>\theta(x^{(i)}) - y^{(i)})^2$</p>
+<p>其中：</p>
+<ul>
+<li>$m$ 是训练样本数量。</li>
+<li>$h_\theta(x^{(i)})$ 是模型对第 $i$ 个样本的预测值。</li>
+<li>$y^{(i)}$ 是第 $i$ 个样本的真实值。</li>
+<li>$\theta$ 是模型的参数向量。</li>
+</ul>
+<h4 id="求解方式"><a href="#求解方式" class="headerlink" title="求解方式"></a>求解方式</h4><p><strong>直接法 Normal Equation</strong></p>
+<p>通过解正规方程（Normal Equation）来直接求解最小化代价函数的参数 $\theta$。正规方程的解为：</p>
+<p>$\theta = (X^T X)^{-1} X^T y$</p>
+<p>其中，$X$ 是包含所有样本特征的矩阵，$y$ 是包含所有样本真实值的向量。</p>
+<p><strong>梯度下降法</strong></p>
+<p>通过梯度下降法迭代地更新参数 $\theta$，使代价函数 $J(\theta)$ 达到最小值。梯度下降法的更新规则为：</p>
+<p>$\theta_j := \theta_j - \alpha \frac{\partial}{\partial \theta_j} J(\theta)$</p>
+<p>其中，$\alpha$ 是学习率，$\frac{\partial}{\partial \theta_j} J(\theta)$ 是代价函数对参数 $\theta_j$ 的偏导数。</p>
+<h3 id="正则化-Regularization"><a href="#正则化-Regularization" class="headerlink" title="正则化 Regularization"></a>正则化 Regularization</h3><p>正则化：防止过拟合的技术。通常通过在损失函数中添加一个正则化项来实现。</p>
+<ul>
+<li><p><strong>L1 正则化（Lasso）</strong></p>
+<ul>
+<li>目标：最小化代价函数的同时，加上 $\lambda$ 乘以参数向量 $\theta$ 的绝对值之和。</li>
+<li>代价函数：$J(\theta) = \text{MSE}(\theta) + \lambda \sum_{i=1}^{n} |\theta_i|$<ul>
+<li>其中，$\theta$ 是模型的参数，$\text{MSE}(\theta)$ 是均方误差损失，$\lambda$ 是正则化强度。</li>
+</ul>
+</li>
+<li>适合用于==稀疏特征选择==，可以精确地将某些特征的权重缩减至零。</li>
+</ul>
+</li>
+<li><p><strong>L2 正则化（Ridge Regression）</strong></p>
+<ul>
+<li>目标：最小化代价函数的同时，加上 $\lambda$ 乘以参数向量 $\theta$ 的平方和。</li>
+<li>代价函数：$J(\theta) = \text{MSE}(\theta) + \lambda \sum_{i=1}^{n} \theta_i^2$<ul>
+<li>其中，$\theta$ 是模型的参数，$\text{MSE}(\theta)$ 是均方误差损失，$\lambda$ 是正则化强度。</li>
+</ul>
+</li>
+<li>使所有参数都变得较小，但不精确地等于零，对所有特征的权重进行==平滑处理==，从而防止某些参数对模型的影响过大。</li>
+</ul>
+</li>
+<li><p><strong>正则化的作用</strong></p>
+<ul>
+<li><strong>防止过度拟合：</strong> 正则化通过限制模型的复杂度，减少模型对训练数据的过度拟合，提高在未见过的数据上的泛化能力。</li>
+<li><strong>特征选择：</strong> L1 正则化的效果是使得一些特征的权重精确地等于零，因此可以用于特征选择，排除对模型贡献较小的特征。</li>
+<li><strong>稳定模型：</strong> 使模型的参数更加稳定，减少参数值的大幅波动，有助于提高模型的鲁棒性。</li>
+</ul>
+</li>
+</ul>
+<h3 id="Logistic-Regression-逻辑回归"><a href="#Logistic-Regression-逻辑回归" class="headerlink" title="Logistic Regression 逻辑回归"></a>Logistic Regression 逻辑回归</h3><p>$f_{w,b}(x)=\sigma(\sum_iw_ix_i+b)$</p>
+<p>$\sigma(z) = \frac{1}{1 + e^{-z}}$</p>
+<h4 id="Modeling"><a href="#Modeling" class="headerlink" title="Modeling"></a>Modeling</h4><p>Logistic Regression对输入特征进行加权线性组合，然后使用Logistic函数对结果进行概率映射。它建模的是样本属于正类别的后验概率 $P(y=1 | x;\theta)$。</p>
+<p>Logistic Regression是一种用于二分类问题的线性分类模型。通过使用Logistic函数（也称为Sigmoid函数）将线性组合的结果映射到一个[0, 1]的范围（在线性回归后加了一个sigmoid函数），表示样本属于正类别的概率，将==线性回归==变成一个==0~1输出==的分类问题。</p>
+<h4 id="求解方法-MLE"><a href="#求解方法-MLE" class="headerlink" title="求解方法 MLE"></a>求解方法 MLE</h4><p>通过最大似然估计（Maximum Likelihood Estimation，MLE）来求解模型的参数 $\theta$。</p>
+<p>对于二分类问题，Logistic Regression的似然函数为：</p>
+<p>$L(\theta) = \prod_{i=1}^{m} P(y^{(i)} | x^{(i)};\theta)^{y^{(i)}} \cdot (1 - P(y^{(i)} | x^{(i)};\theta))^{1 - y^{(i)}}$</p>
+<p>其中 $P(y | x;\theta)$ 是通过Logistic函数计算的样本属于正类别的概率。最大化似然函数等价于最小化其负对数似然（Negative Log-Likelihood）：<br>$J(\theta) = -\frac{1}{m} \sum_{i=1}^{m} [y^{(i)} \log(P(y^{(i)} | x^{(i)};\theta)) + (1 - y^{(i)}) \log(1 - P(y^{(i)} | x^{(i)};\theta))]$</p>
+<p>其中 $P(y | x;\theta)$ 为 Logistic 函数。</p>
+<p>求解方法通常使用梯度下降法。<br> $g(z) = \frac{1}{1 + e^{-z}}$ 的导数为 $g’(z) = g(z)(1 - g(z))$。</p>
+<h2 id="Bayesian-Learning"><a href="#Bayesian-Learning" class="headerlink" title="Bayesian Learning"></a>Bayesian Learning</h2><h3 id="MLE-和-MAP-在估计参数时的区别"><a href="#MLE-和-MAP-在估计参数时的区别" class="headerlink" title="MLE 和 MAP 在估计参数时的区别"></a>MLE 和 MAP 在估计参数时的区别</h3><h4 id="最大似然估计（Maximum-Likelihood-Estimation-MLE）"><a href="#最大似然估计（Maximum-Likelihood-Estimation-MLE）" class="headerlink" title="最大似然估计（Maximum Likelihood Estimation, MLE）"></a>最大似然估计（Maximum Likelihood Estimation, MLE）</h4><ul>
+<li><strong>Target：</strong> Choose 𝜃 that maximizes the probability of <strong>observed data</strong></li>
+<li><strong>Estimation：</strong> <ul>
+<li>$\hat{\theta}<em>{MLE} = \arg \max</em>{\theta} P(D|\theta) = \arg \max_{\theta} \theta^{\alpha_H}(1-\theta)^{\alpha_T}$。</li>
+</ul>
+</li>
+<li><strong>Solution：</strong> 最大化似然函数</li>
+<li><strong>特点：</strong> <ul>
+<li>As n → infinity, prior is “forgotten” ; But, for small sample size, prior is important! </li>
+</ul>
+</li>
+</ul>
+<h4 id="最大后验估计（Maximum-A-Posterior-Estimation-MAP）"><a href="#最大后验估计（Maximum-A-Posterior-Estimation-MAP）" class="headerlink" title="最大后验估计（Maximum A Posterior Estimation, MAP）"></a>最大后验估计（Maximum A Posterior Estimation, MAP）</h4><ul>
+<li><strong>Target：</strong> Choose 𝜃 that maximizes the probability of <strong>given observed data and prior belief</strong></li>
+<li><strong>Estimation：</strong> <ul>
+<li>$\hat{\theta}<em>{MAP} = \arg \max</em>{\theta} P(\theta|D) = \arg \max_{\theta}\frac{P(D|\theta) \cdot P(\theta)}{P(D)}$</li>
+</ul>
+</li>
+<li><strong>Solution：</strong> 最大化后验概率。</li>
+</ul>
+<h4 id="Bayes-Optimal-Classifier"><a href="#Bayes-Optimal-Classifier" class="headerlink" title="Bayes Optimal Classifier"></a>Bayes Optimal Classifier</h4><p>Bayes 分类器基于贝叶斯定理，通过计算给定观测数据的后验概率来进行分类。对于两个类别 $C_1$ 和 $C_2$，给定观测数据 $X$，贝叶斯分类器选择具有最大后验概率的类别：</p>
+<p>$P(C_i | X) = \frac{P(X | C_i) \cdot P(C_i)}{P(X)}$</p>
+<p>其中，$P(X)$ 是一个常量，对于分类决策没有影响，因此可以简化为：</p>
+<p>$P(C_i | X) \propto P(X | C_i) \cdot P(C_i)$</p>
+<p>Bayes 分类器选择具有最大后验概率的类别，即：</p>
+<p>$\hat{y} = \arg \max_{i} P(C_i | X)$</p>
+<h4 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h4><p>1）线性回归要求变量服从==正态分布==，逻辑回归对变量分布没有要求。<br>2）线性回归要求因变量是==连续性数值变量==，逻辑回归要求因变量是==分类型变量==。<br>3）线性回归要求自变量和因变量呈==线性关系==，逻辑回归不要求自变量和因变量呈线性关系<br>4）逻辑回归是分析因变量==取某个值的概率与自变量==的关系，而线性回归是==直接分析因变量与自变量==的关系</p>
+<h3 id="朴素贝叶斯分类器，条件独立性假设"><a href="#朴素贝叶斯分类器，条件独立性假设" class="headerlink" title="朴素贝叶斯分类器，条件独立性假设"></a>朴素贝叶斯分类器，条件独立性假设</h3><h4 id="朴素贝叶斯分类器"><a href="#朴素贝叶斯分类器" class="headerlink" title="朴素贝叶斯分类器"></a>朴素贝叶斯分类器</h4><p>朴素贝叶斯分类器是一种基于贝叶斯定理的分类算法，假设特征在给定类别的条件下是独立的。这是一个强假设，通常被称为条件独立性假设。</p>
+<p>Optimal predictor （Bayes classifier) :  $f^*=\arg\min_{f}P(f(x)\neq Y)$</p>
+<p>Equivalently,</p>
+<p>$f^{*}(x)=\arg \max _{Y=y} P(Y=y \mid X=x)$</p>
+<h4 id="条件独立性假设"><a href="#条件独立性假设" class="headerlink" title="条件独立性假设"></a>条件独立性假设</h4><p>假设特征 $X_1, X_2, \ldots, X_n$ 在给定类别 $C$ 的条件下是独立的，即：</p>
+<p>$P(X_1, X_2, \ldots, X_n | C) = P(X_1 | C) \cdot P(X_2 | C) \cdot \ldots \cdot P(X_n | C)$</p>
+<p>这使得朴素贝叶斯分类器的计算变得简单，因为可以通过计算每个特征在给定类别下的概率来估计整个观测数据的后验概率。</p>
+<h3 id="生成模型与判别模型的区别"><a href="#生成模型与判别模型的区别" class="headerlink" title="生成模型与判别模型的区别"></a>生成模型与判别模型的区别</h3><h4 id="生成模型"><a href="#生成模型" class="headerlink" title="生成模型"></a>生成模型</h4><p>生成模型试图对数据的生成过程进行建模，即学习类别的联合概率分布 $P(X, Y)$。生成模型可以通过学习类别的条件概率分布 $P(X | Y)$ 和先验概率分布 $P(Y)$ 来生成新的数据。</p>
+<h4 id="判别模型"><a href="#判别模型" class="headerlink" title="判别模型"></a>判别模型</h4><p>判别模型关注的是对观测数据进行分类的决策边界，即学习决策函数 $Y = f(X)$。判别模型直接学习类别之间的决策边界，而不是对数据的生成过程进行建模。</p>
+<h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><ul>
+<li><strong>生成模型：</strong> 学习数据的生成过程，可以用于生成新的样本。</li>
+<li><strong>判别模型：</strong> 学习类别之间的决策边界，关注分类问题。</li>
+</ul>
+<p>朴素贝叶斯分类器通常被归类为==生成模型==，因为它试图学习类别的生成过程。相比之下，逻辑回归和支持向量机等算法通常被归类为判别模型，因为它们关注的是决策边界而不是数据的生成过程。</p>
+<h2 id="Support-Vector-Machine-支持向量机"><a href="#Support-Vector-Machine-支持向量机" class="headerlink" title="Support Vector Machine 支持向量机"></a>Support Vector Machine 支持向量机</h2><p>根本思想： Maximizing margin （lec10 第 13、 14 页）  </p>
+<p>支持向量机（Support Vector Machine，SVM）之所以被视为自带正则化项，与其优化目标和决策边界的特性有关。在支持向量机中，存在一个关键的超参数 $C$，它控制了对误分类的惩罚程度。这个超参数 $C$ 在 SVM 的优化问题中起到了类似于正则化强度的作用。</p>
+<h3 id="SVM-的优化目标"><a href="#SVM-的优化目标" class="headerlink" title="SVM 的优化目标"></a>SVM 的优化目标</h3><p>SVM 的优化目标是找到一个最大间隔的决策边界，并通过最小化误分类点来优化模型。具体而言，SVM 的优化目标可以表示为：</p>
+<p>$\min<em>{w, b} \frac{1}{2} ||w||^2 + C \sum</em>{i=1}^{m} \max(0, 1 - y_i(w \cdot x_i + b))$</p>
+<p>其中：</p>
+<ul>
+<li>$w$ 是权重向量。</li>
+<li>$b$ 是偏置项。</li>
+<li>$C$ 是一个正则化超参数。</li>
+<li>$||w||^2$ 表示权重向量的 L2 范数。</li>
+<li>$y_i$ 是第 $i$ 个样本的真实标签。</li>
+<li>$x_i$ 是第 $i$ 个样本的特征向量。</li>
+</ul>
+<h3 id="正则化效应"><a href="#正则化效应" class="headerlink" title="正则化效应"></a>正则化效应</h3><ol>
+<li><p><strong>间隔最大化：</strong> SVM 的优化目标的第一项 $\frac{1}{2} ||w||^2$ 表示最大化决策边界的间隔，使得模型更加泛化。</p>
+</li>
+<li><p><strong>误分类惩罚：</strong> 通过 $\sum_{i=1}^{m} \max(0, 1 - y_i(w \cdot x_i + b))$ 项，对误分类的点进行了惩罚。这一项的大小受到 $C$ 的调节，当 $C$ 较大时，对误分类的惩罚较重，模型更倾向于拟合训练数据，可能导致过拟合；而当 $C$ 较小时，对误分类的惩罚较轻，模型更倾向于寻找更大的间隔，从而提高泛化性能。</p>
+</li>
+</ol>
+<p>通过调节超参数 $C$，可以在最大间隔和对误分类点的惩罚之间找到平衡，实现对模型的正则化。较大的 $C$ 值会导致更少的误分类但可能产生较小的间隔，而较小的 $C$ 值则可能允许更大的间隔但可能容忍更多的误分类。这种权衡使得 SVM 在一定程度上自带正则化项，帮助控制模型的复杂度，避免过度拟合。</p>
+<h3 id="硬间隔-SVM（Hard-Margin-SVM）"><a href="#硬间隔-SVM（Hard-Margin-SVM）" class="headerlink" title="硬间隔 SVM（Hard Margin SVM）"></a>硬间隔 SVM（Hard Margin SVM）</h3><p>硬间隔支持向量机是 SVM 的一种形式，其中决策边界被要求完全不允许任何训练点出现在边界之内。硬间隔 SVM 适用于训练数据是线性可分的情况，即存在一个超平面能够完美地将不同类别的样本分开。</p>
+<p>硬间隔 SVM 的优化目标是最大化两类样本点到决策边界的间隔，同时满足所有样本点都在正确的一侧，不允许出现分类错误。</p>
+<h3 id="软间隔-SVM（Soft-Margin-SVM）"><a href="#软间隔-SVM（Soft-Margin-SVM）" class="headerlink" title="软间隔 SVM（Soft Margin SVM）"></a>软间隔 SVM（Soft Margin SVM）</h3><p>软间隔支持向量机是为了处理训练数据不是线性可分的情况而提出的。在实际应用中，数据可能包含噪声或异常点，硬间隔 SVM 对这些数据非常敏感。因此，软间隔 SVM 允许一些样本出现在决策边界的错误一侧，并引入了松弛因子（slack variable）来衡量分类错误的程度。</p>
+<p>e.g 以下关于 SVM 的描述中，错误的项是?<br>==A、==硬间隔(hard margin)：如果训练数据是线性可分的，我们可以选择两个平行的超平面来分隔这两类数据，使得超平面之间的距离尽可能大。<br>B、硬间隔：如果训练数据是线性可分的，我们可以选择两个平行的超平面来分隔这两类数据，使得超平面之间的距离尽可能小。<br>C、软间隔(soft margin)：不允许有数据点位于超平面的错误一侧以及边距和超平面的正确一侧之间。<br>==D、==软间隔：允许一些数据点停留在超平面的错误一侧，以及边距和超平面的正确一侧之间。</p>
+<h4 id="松弛因子和-Hinge-Loss"><a href="#松弛因子和-Hinge-Loss" class="headerlink" title="松弛因子和 Hinge Loss"></a>松弛因子和 Hinge Loss</h4><h5 id="松弛因子（Slack-Variable）"><a href="#松弛因子（Slack-Variable）" class="headerlink" title="松弛因子（Slack Variable）"></a>松弛因子（Slack Variable）</h5><p>松弛因子是软间隔 SVM 中引入的变量，用于度量每个样本点是否违反了间隔要求。对于每个样本点，引入一个松弛因子，表示其允许偏离正确一侧的程度。优化目标包含最小化松弛因子的部分，以平衡最大化间隔和最小化分类错误之间的关系。</p>
+<h5 id="Hinge-Loss"><a href="#Hinge-Loss" class="headerlink" title="Hinge Loss"></a>Hinge Loss</h5><p>Hinge Loss 是用于衡量分类错误的损失函数，通常与松弛因子一起使用。</p>
+<p>对于第 $i$ 个样本点，其 Hinge Loss 定义为：<br>$\max(0, 1 - y_i \cdot f(x_i))$</p>
+<p>其中 $y_i$ 是样本的真实标签，$f(x_i)$ 是样本点到决策边界的距离。Hinge Loss 为正表示分类错误，为零表示分类正确。</p>
+<h3 id="支持向量"><a href="#支持向量" class="headerlink" title="支持向量"></a>支持向量</h3><p>支持向量是指在 SVM 中==用于定义决策边界的训练样本点==。</p>
+<p>在硬间隔 SVM 中，支持向量是那些恰好落在边界上的点，而在软间隔 SVM 中，支持向量可能是那些位于间隔错误一侧或在边界上的点。支持向量对决策边界的位置具有关键性的影响。</p>
+<h3 id="5-对偶问题和-Kernel-Trick"><a href="#5-对偶问题和-Kernel-Trick" class="headerlink" title="5. 对偶问题和 Kernel Trick"></a>5. 对偶问题和 Kernel Trick</h3><h4 id="对偶问题"><a href="#对偶问题" class="headerlink" title="对偶问题"></a>对偶问题</h4><p>将原始的优化问题转换为对偶问题的好处是可以更有效地使用核技巧，同时在某些情况下可以简化计算。对偶问题的解通常包含一个称为拉格朗日乘子（Lagrange Multiplier）的变量，每个训练样本对应一个拉格朗日乘子。</p>
+<h4 id="Kernel-Trick"><a href="#Kernel-Trick" class="headerlink" title="Kernel Trick"></a>Kernel Trick</h4><p>核技巧是通过将原始特征空间映射到高维空间，而无需显式计算映射后的特征向量，从而在计算中引入非线性性。核函数定义了在原始特征空间中计算两个样本点之间的内积，即 $K(x_i, x_j) = \phi(x_i)^T \cdot \phi(x_j)$。</p>
+<p>常用的核函数包括线性核、多项式核、高斯核（RBF核）等。通过使用核函数，可以在不显式计算高维特征向量的情况下，将 SVM 扩展到非线性问题。</p>
+<h2 id="NN"><a href="#NN" class="headerlink" title="NN"></a>NN</h2><h3 id="感知机"><a href="#感知机" class="headerlink" title="感知机"></a>感知机</h3><p>感知机是一种简单的神经网络结构，包含输入层和输出层，没有隐藏层。它可以用于二分类问题。<br>感知机的关键特点是其决策边界是线性的。它通过学习权重和偏置项，对输入进行线性加权求和，然后通过激活函数（通常是阶跃函数）进行输出。</p>
+<h3 id="多层感知机"><a href="#多层感知机" class="headerlink" title="多层感知机"></a>多层感知机</h3><p>多层感知机（MLP）包含输入层、一个或多个隐藏层以及输出层。每一层都由多个神经元组成，每个神经元都与前一层的所有神经元连接，权重和偏置项用于调整连接强度。</p>
+<p>由于多层感知机具有隐藏层，它能够学习非线性关系。通过引入非线性激活函数（如ReLU、Sigmoid或Tanh），神经网络可以捕捉和学习输入之间更为复杂的关系，从而解决非线性问题。</p>
+<h3 id="反向传播算法的基本思想"><a href="#反向传播算法的基本思想" class="headerlink" title="反向传播算法的基本思想"></a>反向传播算法的基本思想</h3><h4 id="反向传播算法"><a href="#反向传播算法" class="headerlink" title="反向传播算法"></a>反向传播算法</h4><p>反向传播（Backpropagation）是训练神经网络的一种常用算法。其基本思想是通过将网络的输出与真实标签之间的误差反向传播回网络，调整网络参数以最小化误差。</p>
+<h4 id="基本步骤"><a href="#基本步骤" class="headerlink" title="基本步骤"></a>基本步骤</h4><ul>
+<li><strong>前向传播（Forward Propagation）：</strong> 将输入数据通过网络进行正向传播，计算每一层的输出。</li>
+<li><strong>计算误差（Compute Loss）：</strong> 计算网络输出与真实标签之间的误差。</li>
+<li><strong>反向传播（Backward Propagation）：</strong> 将误差反向传播回网络，计算每个参数对误差的贡献。</li>
+<li><strong>更新参数（Update Parameters）：</strong> 使用梯度下降等优化算法，更新网络参数以减小误差。</li>
+</ul>
+<h4 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h4><p>梯度下降是优化算法的一种，用于最小化损失函数。在反向传播中，计算每个参数对损失函数的梯度，然后更新参数以减小梯度。这样的迭代过程将逐渐使网络收敛到局部最小值，使得网络的输出更接近真实标签。</p>
+<h4 id="激活函数的导数"><a href="#激活函数的导数" class="headerlink" title="激活函数的导数"></a>激活函数的导数</h4><p>在反向传播中，需要计算每个神经元的梯度，而这通常涉及到激活函数的导数。不同的激活函数有不同的导数计算方式，例如，Sigmoid 函数的导数可以通过 Sigmoid 函数的输出直接计算。</p>
+<h2 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h2><p>（1） 马尔可夫决策过程（MDP）的定义（Lec13 第 13 页）， value/utility 的定义， policy的定义<br>（2） 理解 value iteration 和 policy iteration 的计算过程。 Value iteration 的计算（公式在P29，课堂上讲了个例子 P30-31）； Policy iteration 的计算（P71）  </p>
+<h3 id="马尔可夫决策过程（MDP）"><a href="#马尔可夫决策过程（MDP）" class="headerlink" title="马尔可夫决策过程（MDP）"></a>马尔可夫决策过程（MDP）</h3><h4 id="MDP-的定义"><a href="#MDP-的定义" class="headerlink" title="MDP 的定义"></a>MDP 的定义</h4><p>马尔可夫决策过程是强化学习问题的数学建模框架，它包括以下要素：</p>
+<ul>
+<li><strong>状态空间 $S$：</strong> 描述问题中所有可能的状态的集合。</li>
+<li><strong>动作空间 $A$：</strong> 描述智能体可以采取的所有可能动作的集合。</li>
+<li><strong>转移概率 $P$：</strong> 描述在某个状态下执行某个动作后，下一个状态的概率分布。</li>
+<li><strong>奖励函数 $R$：</strong> 描述在某个状态执行某个动作后，智能体所获得的即时奖励。</li>
+<li><strong>折扣因子 $\gamma$：</strong> 描述未来奖励的衰减因子。</li>
+</ul>
+<h4 id="Value-Utility-和-Policy-的定义"><a href="#Value-Utility-和-Policy-的定义" class="headerlink" title="Value/Utility 和 Policy 的定义"></a>Value/Utility 和 Policy 的定义</h4><ul>
+<li><strong>Value/Utility $V(s)$：</strong> 表示从状态 $s$ 出发，按照某个策略执行动作，累计获得的期望累积奖励。</li>
+<li><strong>Policy $\pi$：</strong> 表示在每个状态下选择的动作策略。可以是确定性策略，也可以是随机策略。</li>
+</ul>
+<h3 id="Value-Iteration-和-Policy-Iteration"><a href="#Value-Iteration-和-Policy-Iteration" class="headerlink" title="Value Iteration 和 Policy Iteration"></a>Value Iteration 和 Policy Iteration</h3><h4 id="Value-Iteration-的计算过程"><a href="#Value-Iteration-的计算过程" class="headerlink" title="Value Iteration 的计算过程"></a>Value Iteration 的计算过程</h4><p>Value Iteration 是一种动态规划算法，用于找到最优策略和最优值函数。其计算过程如下：</p>
+<ol>
+<li><strong>初始化值函数 $V(s)$：</strong> 将所有状态的值初始化为零或随机值。</li>
+<li><strong>迭代更新：</strong><ul>
+<li>对于每个状态 $s$，计算新的值函数 $V’(s)$：<br>$V’(s) = \max<em>a \left( R(s, a) + \gamma \sum</em>{s’} P(s’ | s, a) \cdot V(s’) \right)$</li>
+<li>更新值函数：$V(s) \leftarrow V’(s)$</li>
+</ul>
+</li>
+<li><strong>重复迭代直到收敛。</strong></li>
+</ol>
+<h4 id="Policy-Iteration-的计算过程"><a href="#Policy-Iteration-的计算过程" class="headerlink" title="Policy Iteration 的计算过程"></a>Policy Iteration 的计算过程</h4><p>Policy Iteration 通过交替进行策略评估和策略改进来找到最优策略。其计算过程如下：</p>
+<ol>
+<li><strong>初始化策略 $\pi$：</strong> 可以是任意初始策略。</li>
+<li><strong>策略评估：</strong><ul>
+<li>使用当前策略 $\pi$ 进行值函数的评估，得到值函数 $V^\pi$：<br>$V^\pi(s) = R(s, \pi(s)) + \gamma \sum_{s’} P(s’ | s, \pi(s)) \cdot V^\pi(s’)$</li>
+</ul>
+</li>
+<li><strong>策略改进：</strong><ul>
+<li>在每个状态 $s$ 上选择使得下一个状态的值更大的<strong>动作</strong> $a$：<br>$\pi’(s) = \arg \max<em>a \left( R(s, a) + \gamma \sum</em>{s’} P(s’ | s, a) \cdot V^\pi(s’) \right)$</li>
+<li>更新策略：$\pi \leftarrow \pi’$</li>
+</ul>
+</li>
+<li><strong>重复策略评估和策略改进直到策略不再变化。</strong></li>
+</ol>
+<h3 id="用神经网络进行强化学习"><a href="#用神经网络进行强化学习" class="headerlink" title="用神经网络进行强化学习"></a>用神经网络进行强化学习</h3><p>神经网络在强化学习中可以用于近似值函数或策略函数。具体而言，可以使用深度 Q 网络（DQN）来近似状态-动作值函数，也可以使用策略梯度方法来近似策略函数。这样的神经网络可以通过与环境的交互进行训练，以逐步提高其在任务中的性能。</p>
+
+  
+
+
+  </article>
+  
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">回顾上一篇</div><a href="/files/courseNotes/2023(1)/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%8E%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80.html">密码学与信息安全基础-CS3314</a></div><div class="item" id="next"><div class="note">接下来阅读</div><a href="/files/courseNotes/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95.html">软件测试-SE3336</a></div></section></div>
+
+  
+
+  <div class='related-wrap md-text reveal' id="comments">
+    <section class='header cmt-title cap theme'>
+      <p>评论区仅供交流~</p>
+
+    </section>
+    <section class='body cmt-body giscus'>
+      
+
+<svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="giscus" data-repo="aleryxiao/aleryxiao.github.io" data-repo-id="R_kgDOIdw0jw" data-category="Announcements" data-category-id="DIC_kwDOIdw0j84CTXeH" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" data-loading="lazy" crossorigin="anonymous"></div>
+
+    </section>
+  </div>
+
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="sitemap"><div class="sitemap-group"><span class="fs14">博客</span><a href="/">近期</a><a href="/categories">分类</a><a href="/tags">标签</a><a href="/">归档</a></div><div class="sitemap-group"><span class="fs14">整理</span><a href="/wiki">文件夹</a></div><div class="sitemap-group"><span class="fs14">社交</span><a href="/friend">友链</a><a href="/guestbook">留言板</a></div><div class="sitemap-group"><span class="fs14">更多</span><a href="/about">关于</a><a target="_blank" rel="noopener" href="https://github.com/aleryxiao">GitHub</a></div></div><div class="text"><p>本站由 <a target="_blank" rel="noopener" href="https://space.bilibili.com/19610138">@AleryXiao</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.18.5';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+  <script>
+  function loadJS() {
+    const els = document.querySelectorAll("#comments #giscus");
+    if (els.length === 0) return;
+    els.forEach((el, i) => {
+      try {
+        el.innerHTML = '';
+      } catch (error) {
+        console.log(error);
+      }
+      var script = document.createElement('script');
+      script.src = 'https://giscus.app/client.js';
+      script.async = true;
+      for (let key of Object.keys(el.attributes)) {
+        let attr = el.attributes[key];
+        if (['class', 'id'].includes(attr.name) === false) {
+          script.setAttribute(attr.name, attr.value);
+        }
+      }
+      el.appendChild(script);
+    });
+  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+    loadJS();
+  });
+</script>
+
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>

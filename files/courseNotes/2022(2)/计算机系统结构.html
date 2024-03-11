@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>courseNotes：计算机系统结构-CS2305 - 極楽浄土</title>
+
+  
+    <meta name="description" content="SJTU-CS2305 计算机系统结构 课程笔记">
+<meta property="og:type" content="website">
+<meta property="og:title" content="计算机系统结构-CS2305">
+<meta property="og:url" content="https://float0108.github.io/files/courseNotes/2022(2)/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84.html">
+<meta property="og:site_name" content="極楽浄土">
+<meta property="og:description" content="SJTU-CS2305 计算机系统结构 课程笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230529013339.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230604231322.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230311000839.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230311215011.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230311233646.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230311234013.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230311234237.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230311234900.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230311235345.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230604234056.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230604234115.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230514161812.png">
+<meta property="og:image" content="https://float0108.github.io/assets/Pasted%20image%2020230514161942.png">
+<meta property="article:published_time" content="2023-03-10T15:54:37.000Z">
+<meta property="article:modified_time" content="2024-02-19T02:16:44.058Z">
+<meta property="article:author" content="AleryXiao">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://float0108.github.io/assets/Pasted%20image%2020230529013339.png">
+  
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="極楽浄土" type="application/atom+xml">
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="/site_assets/favicon.jpg">
+  
+
+  
+
+  
+
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='wiki'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/site_assets/head.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">極楽浄土</div><div class="sub normal cap">フロトの理发店</div><div class="sub hover cap" style="opacity:0"> @AleryXiao</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item" href="/">posts</a><a class="nav-item active" href="/wiki/">collection</a><a class="nav-item" href="/about/">about</a></nav>
+</header>
+
+
+<div class="widgets">
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/files/courseNotes/" placeholder="在 /files/courseNotes/ 中搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+
+
+
+<widget class="widget-wrapper toc multi" id="data-toc"><div class="widget-header cap dis-select"><span class="name">计算机系统结构-CS2305</span></div><div class="widget-body fs14"><div class="doc-tree active"><a class="doc-tree-link active" href="/files/courseNotes/2022(2)/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84.html#start"><span class="toc-text">计算机系统结构-CS2305</span></a><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E8%A1%A8%E7%A4%BA"><span class="toc-text">数表示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B4%E6%95%B0"><span class="toc-text">整数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%8D"><span class="toc-text">位</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%BA%A2%E5%87%BA"><span class="toc-text">溢出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B4%E6%95%B0%E4%B9%98%E6%B3%95"><span class="toc-text">整数乘法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E6%95%B0"><span class="toc-text">小数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="toc-text">浮点数的表示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IEEE754%E6%B5%AE%E7%82%B9%E6%95%B0"><span class="toc-text">IEEE754浮点数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8"><span class="toc-text">数据存储</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MIPS%E5%9F%BA%E7%A1%80"><span class="toc-text">MIPS基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Mips%E6%8C%87%E4%BB%A4%E7%BB%93%E6%9E%84"><span class="toc-text">Mips指令结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84"><span class="toc-text">结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-text">寄存器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8%E4%BD%BF%E7%94%A8%E8%A7%84%E8%8C%83"><span class="toc-text">寄存器使用规范</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4"><span class="toc-text">基础指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%8B%E5%8F%96%E5%80%BC"><span class="toc-text">赋取值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%97%E6%9C%AF"><span class="toc-text">算术</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Go-To"><span class="toc-text">Go To</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%AA%E6%8C%87%E4%BB%A4"><span class="toc-text">伪指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A0%86%E6%A0%88"><span class="toc-text">堆栈</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E5%99%A8%E8%AE%BE%E8%AE%A1"><span class="toc-text">处理器设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E5%91%A8%E6%9C%9F%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-text">单周期处理器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%85%83%E4%BB%B6"><span class="toc-text">基本元件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E5%8D%95%E5%85%83%EF%BC%9A%E5%AF%84%E5%AD%98%E5%99%A8%E6%96%87%E4%BB%B6"><span class="toc-text">状态单元：寄存器文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E5%8D%95%E5%85%83%EF%BC%9A%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-text">状态单元：存储器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%E4%B8%8A%E7%9A%84%E5%85%B6%E5%AE%83%E5%8D%95%E5%85%83"><span class="toc-text">数据通路上的其它单元</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%E8%BF%9E%E6%8E%A5"><span class="toc-text">数据通路连接</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%96%E6%8C%87%E4%BB%A4"><span class="toc-text">取指令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E8%AF%91%E7%A0%81"><span class="toc-text">指令译码</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E4%BF%A1%E5%8F%B7"><span class="toc-text">控制信号</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E6%80%A7%E4%B8%8E%E5%86%92%E9%99%A9"><span class="toc-text">相关性与冒险</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E5%86%92%E9%99%A9"><span class="toc-text">结构冒险</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E5%92%8C%E6%95%B0%E6%8D%AE"><span class="toc-text">指令和数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8%E6%96%87%E4%BB%B6%E7%9A%84%E8%AF%BB%E5%86%99"><span class="toc-text">寄存器文件的读写</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%86%92%E9%99%A9"><span class="toc-text">数据冒险</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E5%86%92%E9%99%A9"><span class="toc-text">控制冒险</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98"><span class="toc-text">高速缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%80%E9%83%A8%E6%80%A7%E5%8E%9F%E7%90%86-locality"><span class="toc-text">局部性原理 locality</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%B0%E5%9D%80%E6%98%A0%E5%B0%84"><span class="toc-text">地址映射</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5-direct-mapped"><span class="toc-text">直接 (direct mapped)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%A8%E7%9B%B8%E8%81%94-fully-associated"><span class="toc-text">全相联 (fully-associated)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%84%E7%9B%B8%E8%81%94-set-associated"><span class="toc-text">组相联 (set-associated)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99%E7%AD%96%E7%95%A5"><span class="toc-text">写策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%BF%E6%8D%A2%E7%AD%96%E7%95%A5"><span class="toc-text">替换策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cache%E5%8F%8B%E5%A5%BD%E7%9A%84%E4%BB%A3%E7%A0%81"><span class="toc-text">Cache友好的代码</span></a></li></ol></li></ol></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2022(2)/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(8086).html"><span class="toc-text">计算机组成-汇编语言-CS2307</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2022(2)/%E7%AE%97%E6%B3%95%E4%B8%8E%E5%A4%8D%E6%9D%82%E6%80%A7.html"><span class="toc-text">算法与复杂性-CS2308</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2022(2)/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F1.html"><span class="toc-text">现代操作系统CS2310 （上）进程管理</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2022(2)/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F2.html"><span class="toc-text">现代操作系统2-CS2310</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2022(2)/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F0.html"><span class="toc-text">现代操作系统CS2310 速效版</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2022(2)/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F3.html"><span class="toc-text">现代操作系统CS2310 （附）虚拟机和分布式</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2022(2)/%E9%AB%98%E7%BA%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.html"><span class="toc-text">高级数据结构-SE2322</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2023(1)/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C.html"><span class="toc-text">CS3311 计算机网络</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2023(1)/%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%8E%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%9F%BA%E7%A1%80.html"><span class="toc-text">密码学与信息安全基础-CS3314</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/2023(1)/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%EF%BC%88B%E7%B1%BB%EF%BC%89.html"><span class="toc-text">人工智能-CS3317</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95.html"><span class="toc-text">软件测试-SE3336</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/files/courseNotes/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86.html"><span class="toc-text">软件测试-SE3336</span></a></div></div></widget>
+
+
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+  
+  
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" id="home" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">collection</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/files/courseNotes/2022(2)/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84.html">courseNotes</a></div><div id="post-meta">更新于&nbsp;<time datetime="2024-02-19T02:16:44.058Z">2024-02-19</time></div></div>
+
+  <article class='md-text content wiki'>
+  <h1 class="article-title"><span>计算机系统结构-CS2305</span></h1>
+  <h2 id="数表示"><a href="#数表示" class="headerlink" title="数表示"></a>数表示</h2><h3 id="整数"><a href="#整数" class="headerlink" title="整数"></a>整数</h3><p>正/反/补<br>补：取反+1<br>（负数比整数多一个）</p>
+<p>sign/unsigned<br>$[x] = x \ge 0 \, ? \, x : (2^{n+1} + x)$<br>$[x+y] = [x] + [y]$</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020230529013339.png" alt=""></p>
+<h4 id="位"><a href="#位" class="headerlink" title="位"></a>位</h4><p>&amp;|^~</p>
+<p>扩展<br>0扩展/符号位扩展</p>
+<p>截断<br><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> i = <span class="number">32768</span>; <span class="comment">// 0x00008000h</span></span><br><span class="line"><span class="type">short</span> si = (<span class="type">short</span>) i; <span class="comment">// 0x8000h</span></span><br><span class="line"><span class="type">int</span> j = si; <span class="comment">// 0xFFFF8000H -32768</span></span><br></pre></td></tr></table></figure></p>
+<p>左移 <code>sll</code></p>
+<ul>
+<li>抛弃最高位</li>
+<li>可能发生溢出</li>
+</ul>
+<p>右移</p>
+<ul>
+<li>逻辑右移：左补0 <code>srl</code></li>
+<li>算术右移：左补符号 <code>sra</code></li>
+</ul>
+<h4 id="溢出"><a href="#溢出" class="headerlink" title="溢出"></a>溢出</h4><ul>
+<li>符号位：{+} + {+} -&gt; {-} ，{-} + {-} -&gt; {+}</li>
+<li>CarryIn[N-1] XOR CarryOut[N-1]</li>
+</ul>
+<h4 id="整数乘法"><a href="#整数乘法" class="headerlink" title="整数乘法"></a>整数乘法</h4><ul>
+<li><p>乘一位左移一位</p>
+<ul>
+<li>模拟手算</li>
+</ul>
+</li>
+<li><p>不存在==补码乘法==</p>
+<ul>
+<li>原码乘法器（先转原码，乘算，再转补码）</li>
+<li>Booth算法<ul>
+<li>原理：将乘法转换为对2^n的加法、</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>C语言：抛弃前w位，保留后w位</p>
+<ul>
+<li>无论2个w位数字表示无符号数还是补码，截断后得到的w位竭股肱都是在正确的</li>
+<li>无符号乘法和有符号乘法共用乘法部件</li>
+</ul>
+</li>
+<li><p>移位等效：$u &lt;&lt; k$ 总等效于 $u \times 2^k$</p>
+<ul>
+<li>对无符号和有符号数都有效</li>
+<li>速度快，编译器会自动优化</li>
+</ul>
+</li>
+<li><p>溢出防范</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">int x,y; </span><br><span class="line">x = 65535; // 0000 FFFFH</span><br><span class="line">y = x * x; // FFFE 0001H -&gt; -131071</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">int ele_cnt = 2^20 + 1, ele_size = 4096 = 2^12;</span><br><span class="line">int* array = (int*) malloc(ele_cnt * ele_size); // ans = 2^12 溢出</span><br></pre></td></tr></table></figure>
+<h3 id="小数"><a href="#小数" class="headerlink" title="小数"></a>小数</h3><h4 id="浮点数的表示"><a href="#浮点数的表示" class="headerlink" title="浮点数的表示"></a>浮点数的表示</h4><p>S + E + M （规格化位0.1xxxx）</p>
+<ul>
+<li>$N = (-1)^S \times M \times R^E$</li>
+<li>S 符号位 - 正负</li>
+<li>M 尾数 - 纯小数</li>
+<li>E 阶数 （浮点数的指数） 是整数</li>
+<li>计算机二进制取基R = 2</li>
+<li><code>13.125 = 0.1101001 * 2^100</code></li>
+<li><p>阶码多 -&gt; 范围大，尾数多 -&gt; 精度高</p>
+</li>
+<li><p>16位浮点</p>
+<ul>
+<li>4位阶码+12位尾数含符号位</li>
+</ul>
+</li>
+</ul>
+<h4 id="IEEE754浮点数"><a href="#IEEE754浮点数" class="headerlink" title="IEEE754浮点数"></a>IEEE754浮点数</h4><p>$(-1)^s \times 1.m \times 2^{e-127}$</p>
+<p>规格化为1.xxxx，把1缺省存储，尾数范围加一位</p>
+<p>float32: 约7位decimal小数（24尾数位）<br>    $2\times 10^{-38} &lt; N &lt; 2.0 \times 10^{38}$</p>
+<p>double64: 约15位decimal小数（53尾数位）<br>    $2\times 10^{-308} &lt; N &lt; 2.0 \times 10^{308}$</p>
+<p>先比较符号位，负数符号位是1，之后可以和unsigned integer一样比较大小</p>
+<p>计算：</p>
+<ol>
+<li>对阶</li>
+<li>尾数相加</li>
+<li>规格化检查</li>
+<li>舍入</li>
+<li>溢出检测</li>
+</ol>
+<p>浮点运算不是精确的<br>    和大很多的数相加的时候会丢失比较小的数（可表示尾数的位数有限）<br>    （对阶时阶码差的绝对值&gt;25）</p>
+<p>舍入<br>    最近<br>        判断后面的位数构成的数是否&gt;100…0 ？ <100.00
+        如果等于100...0，**令最后一位为偶数**
+    正向
+        -><br>    负向<br>        &lt;-<br>    截断<br>        朝0</p>
+<p>double/float -&gt; int<br>    可能溢出<br>    发生0方向舍入<br>    (int)3.3/1.1 = 2<br>    不要用\==判断，而是fabs(3.0-a)&gt;0.00001</p>
+<h3 id="数据存储"><a href="#数据存储" class="headerlink" title="数据存储"></a>数据存储</h3><p>大/小数端</p>
+<p>大：最低字节存储在高地址<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020230604231322.png" alt=""><br>*这种存储是以字节单位的</p>
+<p>字对齐<br>    对齐/非对齐</p>
+<h2 id="MIPS基础"><a href="#MIPS基础" class="headerlink" title="MIPS基础"></a>MIPS基础</h2><h3 id="Mips指令结构"><a href="#Mips指令结构" class="headerlink" title="Mips指令结构"></a>Mips指令结构</h3><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020230311000839.png" alt=""></p>
+<h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><ul>
+<li><p>注释 <code>#注释</code></p>
+</li>
+<li><p>.*</p>
+</li>
+</ul>
+<p>.data:<br>.word:<br>.text: </p>
+<h3 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h3><p>0 $zero 常量0 （The Constant Value 0） </p>
+<p>1 $at 汇编器临时变量 [a]temp<br>2-3 $v0-$v1 函数返回结果、表达式值 value returned [0-1]<br>4-7 $a0-$a3 函数调用时传递的参数 arguments [0-3]</p>
+<p>8-15 $t0-$t7 临时变量 Temporaries [0-9]<br>16-23* $s0-$s7 需要保存的临时变量  [Save]Temp [0-7]<br>24-25 $t8-$t9 临时变量 Temporaries<br>26-27 $k0-$k1 为操作系统内核保留 [Kernel]Temp [0-1]</p>
+<p>28<em> $gp 全局指针 Global Pointer<br>29</em> $sp 栈指针 Stack Pointer<br>30* $fp 结构指针/桢指针 Frame Pointer</p>
+<p>31* $ra 返回地址 Return Address<br>    # 常常用来存储code段指令地址以供函数等返回</p>
+<h4 id="寄存器使用规范"><a href="#寄存器使用规范" class="headerlink" title="寄存器使用规范"></a>寄存器使用规范</h4><ul>
+<li><p>被调用函数应该保存的：<br>  GP SP FP（指针28-30，RA不保存）<br>  S0-S7 需要保存的临时变量</p>
+</li>
+<li><p>由主调函数保存的：<br>  a1-a3 参数寄存器 （arguments）<br>  ra<br>  t0-t9 临时寄存器</p>
+</li>
+</ul>
+<h3 id="基础指令"><a href="#基础指令" class="headerlink" title="基础指令"></a>基础指令</h3><p>不含立即数（R Type）<br>{operation} {value}, {operand1}, {operand2(if exists)}</p>
+<p>含立即数（I Type）<br>{operation} {value}, (%immediate){operand}</p>
+<p>状态转移 (J Type)<br>{operation} {target}</p>
+<h4 id="赋取值"><a href="#赋取值" class="headerlink" title="赋取值"></a>赋取值</h4><p>(I - Type)<br>lw — load word<br>sw — save word</p>
+<h4 id="算术"><a href="#算术" class="headerlink" title="算术"></a>算术</h4><p>加<br>    add<br>    addi —int<br>    addu —unsigned int<br>    addui —unsigned + immediate</p>
+<p>减<br>    sub, subu</p>
+<p>与/或/或非<br>    and, andi<br>    or, ori<br>    nor</p>
+<p>左/右移 (R)<br>    sll —shift left logic<br>    srl<br>    eg. <code>sll $t2, $s0, 8</code> （逻辑移位，空出位置清零）</p>
+<h4 id="Go-To"><a href="#Go-To" class="headerlink" title="Go To"></a>Go To</h4><p><strong>bne</strong> — go to if not equal<br><strong>beq</strong> — go to if equal</p>
+<p>J %PC’ or {Label}<br>JR {$x}</p>
+<p>JAL %PC’ or {Label}<br>    转移并链接 Jump and link<br>    将下一条指令的地址,即PC+4保存在寄存器 <strong>$ra</strong> 中，从而当过程返回时可以链接到当前指令的下一条指令。</p>
+<h3 id="伪指令"><a href="#伪指令" class="headerlink" title="伪指令"></a>伪指令</h3><p>* only the assembler gets to use $at</p>
+<p>subu {}, {}, {}<br>mov {dst},{src}<br>la dst,label (load address)<br>li dst, imm (load immediate)</p>
+<h3 id="堆栈"><a href="#堆栈" class="headerlink" title="堆栈"></a>堆栈</h3><p>利用$SP完成</p>
+<figure class="highlight mips"><table><tr><td class="code"><pre><span class="line"><span class="keyword">addi </span>$<span class="built_in">sp</span>, $<span class="built_in">sp</span>, -<span class="number">4</span>  <span class="comment"># 移动指针 （push s0）</span></span><br><span class="line"><span class="keyword">sw </span>$<span class="built_in">s0</span>, <span class="number">0</span>($<span class="built_in">sp</span>)    <span class="comment"># S0入栈(保存s0的值)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">add </span>$<span class="built_in">t0</span>, $<span class="built_in">a0</span>, $<span class="built_in">a1</span>   <span class="comment"># t0 = a0 + a1</span></span><br><span class="line"><span class="keyword">add </span>$<span class="built_in">t1</span>, $<span class="built_in">a2</span>, $<span class="built_in">a3</span>  </span><br><span class="line"><span class="keyword">sub </span>$<span class="built_in">s0</span>, $<span class="built_in">t0</span>, $<span class="built_in">t1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">add </span>$<span class="built_in">v0</span>, $<span class="built_in">s0</span>, $<span class="built_in">zero</span>  <span class="comment"># MOV v0 s0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">lw </span>$<span class="built_in">s0</span>, <span class="number">0</span>($<span class="built_in">sp</span>)     <span class="comment"># 恢复s0</span></span><br><span class="line"><span class="keyword">addi </span>$<span class="built_in">sp</span>, $<span class="built_in">sp</span>, <span class="number">4</span>   <span class="comment"># 恢复栈顶指针 （pop s0）</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">jr </span>$<span class="built_in">ra</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> f;  </span><br><span class="line">f = (g + h) - (i + j);  </span><br><span class="line"><span class="keyword">return</span> f;</span><br></pre></td></tr></table></figure>
+<h2 id="处理器设计"><a href="#处理器设计" class="headerlink" title="处理器设计"></a>处理器设计</h2><p>设计处理器的五个步骤  </p>
+<ol>
+<li>分析指令系统，得出对数据通路的需求  </li>
+<li>选择数据通路上合适的组件  </li>
+<li>连接组件构成数据通路  </li>
+<li>分析每一条指令的实现，以确定控制信号  </li>
+<li>集成控制信号，完成控制逻辑</li>
+</ol>
+<h3 id="单周期处理器"><a href="#单周期处理器" class="headerlink" title="单周期处理器"></a>单周期处理器</h3><h4 id="基本元件"><a href="#基本元件" class="headerlink" title="基本元件"></a>基本元件</h4><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020230311215011.png" alt=""></p>
+<p>读状态单元的内容<br>-&gt; 通过组合逻辑电路实现指令的功能<br>-&gt; 将结果写入一个或多个状态单元</p>
+<p>每周期更新一次状态单元，是否更新需要显式信号<br>寄存器、存储器在时钟边沿来到、写允许信号有效时更新状态（下一个周期写入）</p>
+<h5 id="状态单元：寄存器文件"><a href="#状态单元：寄存器文件" class="headerlink" title="状态单元：寄存器文件"></a>状态单元：寄存器文件</h5><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020230311233646.png" alt=""></p>
+<ul>
+<li>CLK（时钟输入）：时钟边沿触发状态转换</li>
+<li><p>32个寄存器  </p>
+<ul>
+<li>两个32位输出： busA 、 busB  </li>
+<li>一个32位输入： busW  </li>
+</ul>
+</li>
+<li><p>寄存器选通</p>
+<ul>
+<li>RA（5位）：选通RA指定的寄存器</li>
+<li>RB （5位）：选通RB指定的寄存器<ul>
+<li><strong>读</strong>操作，看做一个组合电路模块的实现  </li>
+<li>RA 、 RB 有效 =&gt; busA 、 busB 有效  </li>
+</ul>
+</li>
+<li>RW（5位）： 选通Rw指定的寄存器  <ul>
+<li><strong>写</strong>操作： CLK边沿触发  </li>
+<li>当Write Enable 为1时，将busW 端口上的数据写入Rw指定的寄存器</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="状态单元：存储器"><a href="#状态单元：存储器" class="headerlink" title="状态单元：存储器"></a>状态单元：存储器</h5><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020230311234013.png" alt=""></p>
+<ul>
+<li>时钟输入 (CLK)  <ul>
+<li>改变存储器状态需要时钟边沿触发  </li>
+</ul>
+</li>
+<li>存储器总线  <ul>
+<li>32位数据输入总线: Data In  </li>
+<li>32位数据输出总线: Data Out  </li>
+</ul>
+</li>
+<li>读写操作  <ul>
+<li>读操作，看做一个组合电路模块的实现  </li>
+<li>一定时间内完成从“地址信号有效” （Address） =&gt;“数据输出” Data Out  </li>
+</ul>
+</li>
+<li>写操作：时序电路  <ul>
+<li>CLK边沿触发  </li>
+<li>Write Enable = 1: 将Data In的输入写入Address选中的那个字</li>
+</ul>
+</li>
+</ul>
+<h5 id="数据通路上的其它单元"><a href="#数据通路上的其它单元" class="headerlink" title="数据通路上的其它单元"></a>数据通路上的其它单元</h5><p>组合逻辑单元</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020230311234237.png" alt=""></p>
+<ul>
+<li>32位加法器</li>
+<li>3-8译码器</li>
+<li>ALU</li>
+<li>多路选择器 MUX</li>
+</ul>
+<h4 id="数据通路连接"><a href="#数据通路连接" class="headerlink" title="数据通路连接"></a>数据通路连接</h4><h5 id="取指令"><a href="#取指令" class="headerlink" title="取指令"></a>取指令</h5><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020230311234900.png" alt=""></p>
+<ul>
+<li>收到CLK信号<ol>
+<li>-&gt;把PC值发送给指令存储器</li>
+<li>-&gt;把PC值发送给加法器，加法器将发出PC+4信号<br> 这个信号可能接入其它组件，最后输入寄存器的并不一定是PC+4 </li>
+</ol>
+</li>
+</ul>
+<h5 id="指令译码"><a href="#指令译码" class="headerlink" title="指令译码"></a>指令译码</h5><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020230311235345.png" alt=""></p>
+<ul>
+<li>读寄存器  <ul>
+<li>指令中的寄存器地址连接到RA和RB  </li>
+<li>从寄存器文件读，输出到BusA和BusB</li>
+</ul>
+</li>
+</ul>
+<h4 id="控制信号"><a href="#控制信号" class="headerlink" title="控制信号"></a>控制信号</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>信号名称</th>
+<th>无效(=0)时的作用</th>
+<th>有效(=1)时的作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RegDst</td>
+<td>写寄存器在寄存器文件中的目标寄存器的编号来自于rt字段</td>
+<td>写寄存器在寄存器文件中的目标寄存器的编号来自于rd字段</td>
+</tr>
+<tr>
+<td>RegWrite</td>
+<td>无</td>
+<td>写数据输入的值，写入到目标寄存器编号（rt或者rd）选择的通用寄存器</td>
+</tr>
+<tr>
+<td>ALUSrc</td>
+<td>ALU的第二个操作数来自于寄存器</td>
+<td>ALU的第二个操作数来自于立即数</td>
+</tr>
+<tr>
+<td>MemWrite</td>
+<td>无</td>
+<td>将地址输入指定位置的存储器内容替换为写数据输入的值</td>
+</tr>
+<tr>
+<td>MemtoReg</td>
+<td>送往寄存器文件写数据输入的值来自于ALU的输出</td>
+<td>送往寄存器文件写数据输入的值来自于数据存储器的输出</td>
+</tr>
+<tr>
+<td>ExtOP</td>
+<td>16位立即数零扩展到32位</td>
+<td>16位立即数带符号扩展到32位</td>
+</tr>
+<tr>
+<td>Branch</td>
+<td>选择PC+4作为PC输入端</td>
+<td>是一条应该转移的分支指令</td>
+</tr>
+<tr>
+<td>Jump</td>
+<td>不选择Jump目标地址，而是选择PC+4或者条件转移目标地址，作为PC输入端</td>
+<td>是一条应该转移的分支指令，选择Jump目标地址作为PC输入端</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="相关性与冒险"><a href="#相关性与冒险" class="headerlink" title="相关性与冒险"></a>相关性与冒险</h2><p>冒险：<br>    结构冒险<br>        硬件资源相关性<br>    数据冒险<br>        数据依赖性<br>    控制冒险<br>        转移指令引起，需要根据指令的结果决定下一步</p>
+<h4 id="结构冒险"><a href="#结构冒险" class="headerlink" title="结构冒险"></a>结构冒险</h4><h5 id="指令和数据"><a href="#指令和数据" class="headerlink" title="指令和数据"></a>指令和数据</h5><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020230604234056.png" alt=""></p>
+<p>方案1：插入空指令</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020230604234115.png" alt=""></p>
+<p>方案2：指令存储器和数据存储器相互独立</p>
+<h5 id="寄存器文件的读写"><a href="#寄存器文件的读写" class="headerlink" title="寄存器文件的读写"></a>寄存器文件的读写</h5><p>设置相互独立的读写口，写在前半周期完成，读在后半周期完成</p>
+<h4 id="数据冒险"><a href="#数据冒险" class="headerlink" title="数据冒险"></a>数据冒险</h4><p>写后读数据冒险<br>    需要修改目标寄存器内容，尚未写入，而新指令需要读取该寄存器</p>
+<p>“读存储器-使用 ” 冒险<br>    目标寄存器需要读入内容，尚未写入，而新指令需要读取该寄存器</p>
+<p>软件解决：插入空指令</p>
+<p>硬件解决：<br>流水线停顿<br>前向传递（forwarding）<br>    不等写回寄存器，就将产生的结果直接传送到当前周期需要结果的功能单元 (例如： ALU)的输入端<br>    <strong>不能</strong>解决读存储器冒险<br>        需要一个周期停顿（等待读取指令完成DM）</p>
+<h4 id="控制冒险"><a href="#控制冒险" class="headerlink" title="控制冒险"></a>控制冒险</h4><p>流水线遇到分支（转移）指令和其它改变PC值的指令时，会引起流水线的停顿<br>例如<br>无条件转移（j, jal, jr) 和 条件转移 (beq, bne)</p>
+<p>Jump: flush<br>    清空IF/ID段中的指令</p>
+<p>转移控制槽（编译器和处理器的约定）</p>
+<p>-&gt; 解决方案：转移预测<br>静态：程序执行前预测</p>
+<p>动态：程序执行时预测</p>
+<h2 id="高速缓存"><a href="#高速缓存" class="headerlink" title="高速缓存"></a>高速缓存</h2><p>CPU register -&gt; [SRAM -&gt; DRAM] ==内存== -&gt; [SSD -&gt; 磁盘/光盘] ==外存==</p>
+<ul>
+<li>cache 存储器（ Cache memories ） <ul>
+<li>在处理器附近增加一个小容量快速存储器(cache) </li>
+<li>基于SRAM，由硬件自动管理 </li>
+</ul>
+</li>
+<li>cache基本思想: <ul>
+<li>频繁访问的数据块存储在cache中 </li>
+<li>CPU 首先在cache中查找想访问的数据，而不是直接访问主存 </li>
+<li>我们希望被访问数据存放在cache中<br><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020230514161812.png" alt=""></li>
+</ul>
+</li>
+</ul>
+<h3 id="局部性原理-locality"><a href="#局部性原理-locality" class="headerlink" title="局部性原理 locality"></a>局部性原理 locality</h3><ul>
+<li>时间局部性<ul>
+<li>最近访问的项目，在不久的将来将会被访问</li>
+</ul>
+</li>
+<li>空间局部性<ul>
+<li>与当前项目地址邻近的项目很可能会同时被访问</li>
+</ul>
+</li>
+</ul>
+<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ul>
+<li>块<ul>
+<li>一般为多个字</li>
+<li>（空间局部性）</li>
+</ul>
+</li>
+</ul>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="../../../assets/Pasted%20image%2020230514161942.png" alt=""></p>
+<ul>
+<li><p>命中Hit / 失效Miss</p>
+<ul>
+<li>需要访问的元素所在块是否被存储在cache中</li>
+<li>Miss：<ul>
+<li>从内存中取出该块</li>
+<li>放置在cache中<ul>
+<li>放置策略</li>
+<li>替换策略</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>命中率h</li>
+<li>平均访问时间<ul>
+<li>$t_a=ht_c+(1-h)t_m$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>关键问题</p>
+<ol>
+<li>如何判断数据是否在cache中<br>数据查找 Data Identification</li>
+<li>如何查找数据位置<br>地址映射 Address Mapping</li>
+<li>cache满后如何处理<br>替换策略 Placement Policy</li>
+<li>保持cache和memory一致性<br>写入策略 Write Policy</li>
+</ol>
+</li>
+</ul>
+<h3 id="地址映射"><a href="#地址映射" class="headerlink" title="地址映射"></a>地址映射</h3><h5 id="直接-direct-mapped"><a href="#直接-direct-mapped" class="headerlink" title="直接 (direct mapped)"></a>直接 (direct mapped)</h5><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Main address</th>
+<th>Tag Bits</th>
+<th>Index Bits</th>
+<th>Offset Bits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/</td>
+<td>区编号（upper）</td>
+<td>区索引</td>
+<td>块内偏移</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>数据块大小 Block_Size = 2^Offset_Bits<br>缓存 Cache_Size = Block_Size * Cache_Entries ( = 2^Index_Bits) </p>
+<p>* Valid Bit<br>-&gt; each tag entry has an indicator to show if it’s valid</p>
+<p>==主存分区 （区号tag bits），每一个区索引（index bits）对应缓存块的一行，比较tag确认Hit/Miss==</p>
+<p>优点</p>
+<ul>
+<li>地址变换速度快，一对一映射 </li>
+<li>替换算法简单、容易实现</li>
+</ul>
+<p>缺点</p>
+<ul>
+<li>容易冲突，cache利用率低 </li>
+<li>命中率低</li>
+</ul>
+<h5 id="全相联-fully-associated"><a href="#全相联-fully-associated" class="headerlink" title="全相联 (fully-associated)"></a>全相联 (fully-associated)</h5><h5 id="组相联-set-associated"><a href="#组相联-set-associated" class="headerlink" title="组相联 (set-associated)"></a>组相联 (set-associated)</h5><p>主存地址 = Tag + 组 + 块内偏移<br>-》<br>Cache地址 = 路 + 组 + 块内偏移</p>
+<p>直接-》组相联-》全相连</p>
+<p>每组可存一个tag / 每组可以存多个tag（数量=路数） / 共一组，可以存很多的tag（tag是全局的）</p>
+<h3 id="写策略"><a href="#写策略" class="headerlink" title="写策略"></a>写策略</h3><ul>
+<li><p>Cache命中的基础上</p>
+<ul>
+<li>写直达法 Write-through<ul>
+<li>直接向内存中写入数据</li>
+<li>写入cache的同时写入memory</li>
+</ul>
+</li>
+<li>写回法 Write-back<ul>
+<li>推迟对内存的写入直到数据所在缓存的行被替换</li>
+<li>添加dirty bit（页面重写标志位）</li>
+<li>只写入cache，被替换时修改</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Cahce失效的基础上</p>
+<ul>
+<li>按写分配 Write-allocate<ul>
+<li>cache读入失效行</li>
+<li>与write-back搭配</li>
+</ul>
+</li>
+<li>不按写分配<ul>
+<li>直接向内存写入，不读入缓存</li>
+<li>与write-through搭配</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>策略总结</p>
+<ul>
+<li>写直达+不按写分配法 (Write-through + No-write-allocate) <ul>
+<li>安全性更高</li>
+</ul>
+</li>
+<li>写回法+按写分配法 (Write-back + Write-allocate)<ul>
+<li>速度更快</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="替换策略"><a href="#替换策略" class="headerlink" title="替换策略"></a>替换策略</h3><p>（在现代操作系统讲过）</p>
+<ul>
+<li>随机替换</li>
+<li>先进先出FIFO</li>
+<li>近期最少使用LRU</li>
+<li>伪LRU<ul>
+<li>Clock</li>
+</ul>
+</li>
+<li>NMRU</li>
+</ul>
+<h3 id="Cache友好的代码"><a href="#Cache友好的代码" class="headerlink" title="Cache友好的代码"></a>Cache友好的代码</h3><p>eg. C语言的数组元素是以行为主顺序分配的，同一行的元素被分配在连续的内存空间中 -&gt; 利用了空间局部性</p>
+
+  
+
+
+  </article>
+  
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">接下来阅读</div><a href="/files/courseNotes/2022(2)/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80(8086).html">计算机组成-汇编语言-CS2307</a></div></section></div>
+
+  
+
+  <div class='related-wrap md-text reveal' id="comments">
+    <section class='header cmt-title cap theme'>
+      <p>评论区仅供交流~</p>
+
+    </section>
+    <section class='body cmt-body giscus'>
+      
+
+<svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="giscus" data-repo="aleryxiao/aleryxiao.github.io" data-repo-id="R_kgDOIdw0jw" data-category="Announcements" data-category-id="DIC_kwDOIdw0j84CTXeH" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" data-loading="lazy" crossorigin="anonymous"></div>
+
+    </section>
+  </div>
+
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="sitemap"><div class="sitemap-group"><span class="fs14">博客</span><a href="/">近期</a><a href="/categories">分类</a><a href="/tags">标签</a><a href="/">归档</a></div><div class="sitemap-group"><span class="fs14">整理</span><a href="/wiki">文件夹</a></div><div class="sitemap-group"><span class="fs14">社交</span><a href="/friend">友链</a><a href="/guestbook">留言板</a></div><div class="sitemap-group"><span class="fs14">更多</span><a href="/about">关于</a><a target="_blank" rel="noopener" href="https://github.com/aleryxiao">GitHub</a></div></div><div class="text"><p>本站由 <a target="_blank" rel="noopener" href="https://space.bilibili.com/19610138">@AleryXiao</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.18.5';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+  <script>
+  function loadJS() {
+    const els = document.querySelectorAll("#comments #giscus");
+    if (els.length === 0) return;
+    els.forEach((el, i) => {
+      try {
+        el.innerHTML = '';
+      } catch (error) {
+        console.log(error);
+      }
+      var script = document.createElement('script');
+      script.src = 'https://giscus.app/client.js';
+      script.async = true;
+      for (let key of Object.keys(el.attributes)) {
+        let attr = el.attributes[key];
+        if (['class', 'id'].includes(attr.name) === false) {
+          script.setAttribute(attr.name, attr.value);
+        }
+      }
+      el.appendChild(script);
+    });
+  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+    loadJS();
+  });
+</script>
+
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>
