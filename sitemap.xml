@@ -2,27 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://float0108.github.io/files/courseNotes/2022(2)/%E6%9C%AA%E5%91%BD%E5%90%8D.html</loc>
-    
-    <lastmod>2024-03-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://float0108.github.io/files/courseNotes/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86.html</loc>
     
     <lastmod>2024-03-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://float0108.github.io/Private/6ff890c8.html</loc>
-    
-    <lastmod>2024-03-11</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -149,15 +131,6 @@
     <loc>https://float0108.github.io/Drama-Bangumi/8b159a7.html</loc>
     
     <lastmod>2024-02-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://float0108.github.io/Private/b1a77d90.html</loc>
-    
-    <lastmod>2023-09-23</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -399,15 +372,6 @@
   
   <url>
     <loc>https://float0108.github.io/Engineer/95cd8fac.html</loc>
-    
-    <lastmod>2023-02-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://float0108.github.io/Private/ca7300c6.html</loc>
     
     <lastmod>2023-02-15</lastmod>
     
@@ -758,15 +722,6 @@
   </url>
   
   <url>
-    <loc>https://float0108.github.io/Private/844acbc3.html</loc>
-    
-    <lastmod>2023-01-02</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://float0108.github.io/Tavg/Sakura/5c602a3a.html</loc>
     
     <lastmod>2023-01-02</lastmod>
@@ -989,13 +944,6 @@
   
   <url>
     <loc>https://float0108.github.io/tags/python/</loc>
-    <lastmod>2024-03-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://float0108.github.io/tags/LearningMatome/</loc>
     <lastmod>2024-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
